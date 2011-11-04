@@ -1,0 +1,6 @@
+*.class
+bin
+build
+dist
+ebc4j*.zip
+/build.properties

@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+JoinBase (EBC4J API (Version 0.9))
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="JoinBase (EBC4J API (Version 0.9))";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/JoinBase.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?net/objectzoo/ebc/join/JoinBase.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="JoinBase.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.objectzoo.ebc.join</FONT>
+<BR>
+Class JoinBase&lt;Input1,Input2,Output&gt;</H2>
+<PRE>
+<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.ResultBase</A>&lt;Output&gt;
+      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.JoinBase&lt;Input1,Input2,Output&gt;</B>
+</PRE>
+<DL>
+<DT><DT><B>Type Parameters:</B><DD><CODE>Input1</CODE> - the type of input one of this Join<DD><CODE>Input2</CODE> - the type of input two of this Join<DD><CODE>Output</CODE> - the type of output of this Join</DL>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;Output&gt;</DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public abstract class <B>JoinBase&lt;Input1,Input2,Output&gt;</B><DT>extends <A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A>&lt;Output&gt;</DL>
+</PRE>
+
+<P>
+This is a base class that can be used to implement Join EBCs. The class implements the
+ boilerplate code required to provide two input actions and a result event as well as trace
+ logging of value input and send results. The output of this Join is created and sent for each
+ input invocation, when both input values have been set to a non <code>null</code> value at this time.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>tilmann</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html#logger">logger</A>, <A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html#logLevel">logLevel</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#JoinBase()">JoinBase</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Output</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)">createOutput</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input1</A>&nbsp;lastInput1,
+             <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input2</A>&nbsp;lastInput2)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is to be implemented by subclasses to actually create the output to be sent.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input1</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#input1Action()">input1Action</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input one to this Join</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input2</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#input2Action()">input2Action</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input two to this Join</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html#resultEvent()">resultEvent</A>, <A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html#sendResult(ResultParameter)">sendResult</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="JoinBase()"><!-- --></A><H3>
+JoinBase</H3>
+<PRE>
+public <B>JoinBase</B>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="input1Action()"><!-- --></A><H3>
+input1Action</H3>
+<PRE>
+public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input1</A>&gt; <B>input1Action</B>()</PRE>
+<DL>
+<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input one to this Join
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the input1 action of this Join</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="input2Action()"><!-- --></A><H3>
+input2Action</H3>
+<PRE>
+public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input2</A>&gt; <B>input2Action</B>()</PRE>
+<DL>
+<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input two to this Join
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the input2 action of this Join</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createOutput(java.lang.Object,java.lang.Object)"><!-- --></A><A NAME="createOutput(Input1, Input2)"><!-- --></A><H3>
+createOutput</H3>
+<PRE>
+protected abstract <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Output</A> <B>createOutput</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input1</A>&nbsp;lastInput1,
+                                       <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input2</A>&nbsp;lastInput2)</PRE>
+<DL>
+<DD>This method is to be implemented by subclasses to actually create the output to be sent.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>lastInput1</CODE> - the last value that has been input as input1<DD><CODE>lastInput2</CODE> - the last value that has been input as input2
+<DT><B>Returns:</B><DD>the output created for the joined input values</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/JoinBase.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?net/objectzoo/ebc/join/JoinBase.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="JoinBase.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+</BODY>
+</HTML>
