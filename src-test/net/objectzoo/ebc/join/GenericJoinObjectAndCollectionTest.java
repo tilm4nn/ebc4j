@@ -25,29 +25,51 @@
 package net.objectzoo.ebc.join;
 
 import static java.util.Arrays.asList;
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.junit.Test;
 
-import net.objectzoo.ebc.util.Pair;
+import net.objectzoo.ebc.test.MockAction;
 
-public class JoinCollectionsTest
+public class GenericJoinObjectAndCollectionTest
 {
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("rawtypes")
 	@Test
-	public void createOutput_creates_List_with_given_values()
+	public void sends_collection_of_TestObject_with_values_from_invocations()
 	{
-		JoinCollections<String, Integer, Pair<String, Integer>> sut = new JoinCollections<String, Integer, Pair<String, Integer>>()
+		MockAction<Collection<TestObject>> result = new MockAction<Collection<TestObject>>();
+		
+		GenericJoinObjectAndCollection<String, Integer, TestObject> sut = new GenericJoinObjectAndCollection<String, Integer, TestObject>()
 		{
 		};
+		sut.resultEvent().subscribe(result);
 		
-		List<Pair<String, Integer>> result = sut.createOutput(asList("Eins", "Zwei"), asList(1, 2));
+		sut.input1Action().invoke("String");
+		sut.input2Action().invoke(asList(1, 2));
 		
-		assertThat(result,
-			is(equalTo(asList(new Pair<String, Integer>("Eins", 1), new Pair<String, Integer>("Zwei", 2)))));
+		assertThat(result.getLastResult(),
+			is((Collection) asList(new TestObject("String", 1), new TestObject("String", 2))));
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@Test
+	public void sends_collection_of_SubTestObject_with_values_from_invocations()
+	{
+		MockAction<Collection<TestObject>> result = new MockAction<Collection<TestObject>>();
+		
+		GenericJoinObjectAndCollection<String, Integer, TestObject> sut = new GenericJoinObjectAndCollection<String, Integer, TestObject>(
+			SubTestObject.class)
+		{
+		};
+		sut.resultEvent().subscribe(result);
+		
+		sut.input1Action().invoke("String");
+		sut.input2Action().invoke(asList(1, 2));
+		
+		assertThat(result.getLastResult(),
+			is((Collection) asList(new SubTestObject("String", 1), new SubTestObject("String", 2))));
 	}
 }

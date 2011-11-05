@@ -22,7 +22,7 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package net.objectzoo.ebc.join;
+package net.objectzoo.ebc.util;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
@@ -34,13 +34,15 @@ import java.lang.reflect.Type;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-public class JoinToConstructableObjectTest
+import net.objectzoo.ebc.util.ReflectionUtils;
+
+public class ReflectionUtilsTest
 {
 	private static class Types<T extends Number>
 	{
@@ -59,7 +61,7 @@ public class JoinToConstructableObjectTest
 		@SuppressWarnings("unused")
 		public Map<Number, String> numberToStringMap;
 		
-		Type get(String fieldName)
+		public Type get(String fieldName)
 		{
 			try
 			{
@@ -91,51 +93,12 @@ public class JoinToConstructableObjectTest
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
-	@Test
-	public void createOutputElement_creates_TestObject_with_given_constructor()
-	{
-		JoinToConstructableObject<String, Integer, TestObject, TestObject> sut = new JoinToConstructableObject<String, Integer, TestObject, TestObject>(
-			(Constructor<TestObject>) TestObject.class.getConstructors()[0])
-		{
-			@Override
-			protected TestObject createOutput(String lastInput1, Integer lastInput2)
-			{
-				return null; // We do not test this
-			}
-		};
-		
-		TestObject result = sut.createOutputElement("String", 1);
-		
-		assertThat(result.s, is("String"));
-		assertThat(result.i, is(1));
-	}
-	
-	@Test
-	public void createOutputElement_creates_TestObject_with_given_class()
-	{
-		JoinToConstructableObject<Integer, Date, TestObject, TestObject> sut = new JoinToConstructableObject<Integer, Date, TestObject, TestObject>(
-			TestObject.class)
-		{
-			@Override
-			protected TestObject createOutput(Integer lastInput1, Date lastInput2)
-			{
-				return null; // We do not test this
-			}
-		};
-		
-		TestObject result = sut.createOutputElement(42, new Date(0));
-		
-		assertThat(result.d, is(new Date(0)));
-		assertThat(result.i, is(42));
-	}
-	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test
 	public void findControctorWithParameters_returns_correct_contsructor()
 	{
-		Constructor result = JoinToConstructableObject.findConstructorWithParameters(TestObject.class,
-			String.class, Integer.class);
+		Constructor result = ReflectionUtils.findConstructorWithParameters(TestObject.class, String.class,
+			Integer.class);
 		
 		assertThat(result, is(equalTo((Constructor) TestObject.class.getConstructors()[0])));
 	}
@@ -143,14 +106,14 @@ public class JoinToConstructableObjectTest
 	@Test(expected = IllegalArgumentException.class)
 	public void findControctorWithParameters_throws_exception_for_missing_constructor()
 	{
-		JoinToConstructableObject.findConstructorWithParameters(TestObject.class, String.class, String.class);
+		ReflectionUtils.findConstructorWithParameters(TestObject.class, String.class, String.class);
 	}
 	
 	@SuppressWarnings("rawtypes")
 	@Test
 	public void getRawType_returns_class_for_class_type()
 	{
-		Class<?> result = JoinToConstructableObject.getRawType(String.class);
+		Class<?> result = ReflectionUtils.getRawType(String.class);
 		
 		assertThat(result, is(equalTo(((Class) String.class))));
 	}
@@ -159,7 +122,7 @@ public class JoinToConstructableObjectTest
 	@Test
 	public void getRawType_returns_list_class_for_list_of_string_type()
 	{
-		Class<?> result = JoinToConstructableObject.getRawType(new Types().get("listOfString"));
+		Class<?> result = ReflectionUtils.getRawType(new Types().get("listOfString"));
 		
 		assertThat(result, is(equalTo((Class) List.class)));
 	}
@@ -168,7 +131,7 @@ public class JoinToConstructableObjectTest
 	@Test
 	public void getRawType_returns_array_class_for_generic_array_type()
 	{
-		Class<?> result = JoinToConstructableObject.getRawType(new Types().get("listOfStringArray"));
+		Class<?> result = ReflectionUtils.getRawType(new Types().get("listOfStringArray"));
 		
 		assertThat(result, is(equalTo((Class) List[].class)));
 	}
@@ -177,7 +140,7 @@ public class JoinToConstructableObjectTest
 	@Test
 	public void getRawType_returns_upper_bound_class_for_type_variable_type()
 	{
-		Class<?> result = JoinToConstructableObject.getRawType(new Types().get("numberBoundedTypeVariable"));
+		Class<?> result = ReflectionUtils.getRawType(new Types().get("numberBoundedTypeVariable"));
 		
 		assertThat(result, is(equalTo((Class) Number.class)));
 	}
@@ -186,7 +149,29 @@ public class JoinToConstructableObjectTest
 	@Test
 	public void getRawType_returns_upper_bound_class_for_wildcard_type()
 	{
-		Class<?> result = JoinToConstructableObject.getRawType(((ParameterizedType) new Types().get("listOfStringBoundedWildcardType")).getActualTypeArguments()[0]);
+		Class<?> result = ReflectionUtils.getRawType(((ParameterizedType) new Types().get("listOfStringBoundedWildcardType")).getActualTypeArguments()[0]);
+		
+		assertThat(result, is(equalTo((Class) String.class)));
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@Test
+	public void getGenericSuperTypeArgument_returns_type_of_first_type_parameter()
+	{
+		Class<?> result = ReflectionUtils.getRawGenericSuperTypeArgument(new HashMap<Number, String>()
+		{
+		}.getClass(), 0);
+		
+		assertThat(result, is(equalTo((Class) Number.class)));
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@Test
+	public void getGenericSuperTypeArgument_returns_type_of_second_type_parameter()
+	{
+		Class<?> result = ReflectionUtils.getRawGenericSuperTypeArgument(new HashMap<Number, String>()
+		{
+		}.getClass(), 1);
 		
 		assertThat(result, is(equalTo((Class) String.class)));
 	}
@@ -195,7 +180,7 @@ public class JoinToConstructableObjectTest
 	@Test
 	public void getTypeArgument_returns_type_of_first_type_parameter()
 	{
-		Class<?> result = JoinToConstructableObject.getTypeArgument(
+		Class<?> result = ReflectionUtils.getRawTypeArgument(
 			(ParameterizedType) new Types().get("numberToStringMap"), 0);
 		
 		assertThat(result, is(equalTo((Class) Number.class)));
@@ -205,7 +190,7 @@ public class JoinToConstructableObjectTest
 	@Test
 	public void getTypeArgument_returns_type_of_second_type_parameter()
 	{
-		Class<?> result = JoinToConstructableObject.getTypeArgument(
+		Class<?> result = ReflectionUtils.getRawTypeArgument(
 			(ParameterizedType) new Types().get("numberToStringMap"), 1);
 		
 		assertThat(result, is(equalTo((Class) String.class)));
@@ -214,7 +199,7 @@ public class JoinToConstructableObjectTest
 	@Test
 	public void getGenericSuperType_returns_generic_type_of_super_class()
 	{
-		ParameterizedType result = JoinToConstructableObject.getGenericSuperType(new ArrayList<String>().getClass());
+		ParameterizedType result = ReflectionUtils.getGenericSuperType(new ArrayList<String>().getClass());
 		
 		assertThat(result.getRawType(), is(equalTo((Type) AbstractList.class)));
 	}
@@ -222,12 +207,12 @@ public class JoinToConstructableObjectTest
 	@Test(expected = IllegalArgumentException.class)
 	public void getGenericSuperType_throws_exception_for_non_generic_type()
 	{
-		JoinToConstructableObject.getGenericSuperType(String.class);
+		ReflectionUtils.getGenericSuperType(String.class);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void getGenericSuperType_throws_exception_for_non_generic_super_type()
 	{
-		JoinToConstructableObject.getGenericSuperType(Types.class);
+		ReflectionUtils.getGenericSuperType(Types.class);
 	}
 }

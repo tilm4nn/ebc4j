@@ -47,8 +47,6 @@ public class ResultBaseTest
 		{
 			super(delegate);
 		}
-		
-		boolean called = false;
 	}
 	
 	static class TestEventDelegate implements EventDelegate<String>

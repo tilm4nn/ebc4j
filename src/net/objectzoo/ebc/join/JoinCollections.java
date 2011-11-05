@@ -24,21 +24,17 @@
  */
 package net.objectzoo.ebc.join;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 /**
- * This Join base class joins two input collections of the input element types to a collection of
- * the output element type by using a constructor of the output element type taking the two input
- * element type values as parameters. The class implements the boilerplate code required to provide
- * two input actions and a result event as well as trace logging of value input and send results.
- * The output of this Join is created and sent for each input invocation, when both input values
- * have been set to a non {@code null} value at this time. If one of the two collections given as
- * input has more items than the other the exceeding items are ignored while producing the output.
- * 
- * To use this Join create a (possibly anonymous) subclass that specifies concrete type parameters.
+ * This Join class joins two input collections of the input element types to a collection of the
+ * output element type by using a {@link JoinOutputCreator} to join the input element types to the
+ * output element type. The class implements the boilerplate code required to provide two input
+ * actions and a result event as well as trace logging of value input and send results. The output
+ * of this Join is created and sent for each input invocation, when both input values have been set
+ * to a non {@code null} value at this time. If one of the two collections given as input has more
+ * items than the other the exceeding items are ignored while producing the output.
  * 
  * @author tilmann
  * 
@@ -49,58 +45,30 @@ import java.util.List;
  * @param <OutputElement>
  *        the type of the output's elements
  */
-public abstract class JoinCollections<Input1Element, Input2Element, OutputElement>
-	extends
-	JoinToConstructableObject<Collection<Input1Element>, Collection<Input2Element>, List<OutputElement>, OutputElement>
+public class JoinCollections<Input1Element, Input2Element, OutputElement> extends
+	Join<Collection<Input1Element>, Collection<Input2Element>, List<OutputElement>>
 {
 	/**
-	 * Initializes this {@code JoinCollections} with a constructor for the output element determined
-	 * from this Join's output element type by taking a constructor that has the fitting parameter
-	 * types for this Join's input element types.
+	 * Creates a new {@code JoinCollections} using the given {@link JoinOutputCreator} to join the
+	 * input elements to the output element.
 	 * 
-	 * @throws IllegalArgumentException
-	 *         if the output element type does not have a fitting constructor
+	 * @param elementOutputCreator
+	 *        the output element creator to be used
 	 */
-	public JoinCollections()
+	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
 	{
-		super();
+		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator));
 	}
 	
-	/**
-	 * Initializes this {@code JoinCollections} with a constructor for the output elements
-	 * determined from the given type by taking a constructor that has the fitting parameter types
-	 * for this Join's input element types.
-	 * 
-	 * @param outputElementType
-	 *        the type of the output elements actually constructed in this Join
-	 * @throws IllegalArgumentException
-	 *         if the output element type is {@code null} or does not have a fitting constructor
-	 */
-	public JoinCollections(Class<? extends OutputElement> outputElementType)
+	JoinCollections()
 	{
-		super(outputElementType);
+		// only accessible to subclasses in same package
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * This implementation takes the two input collections and creates an output list with one
-	 * output value for every pair of values in the input collections.
-	 */
-	@Override
-	protected List<OutputElement> createOutput(Collection<Input1Element> lastInput1,
-											   Collection<Input2Element> lastInput2)
+	void setOutputElementCreator(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
 	{
-		List<OutputElement> output = new ArrayList<OutputElement>(Math.max(lastInput1.size(), lastInput2.size()));
-		
-		Iterator<Input1Element> input1Iter = lastInput1.iterator();
-		Iterator<Input2Element> input2Iter = lastInput2.iterator();
-		
-		while (input1Iter.hasNext() && input2Iter.hasNext())
-		{
-			output.add(createOutputElement(input1Iter.next(), input2Iter.next()));
-		}
-		
-		return output;
+		setOutputCreator(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(
+			elementOutputCreator));
 	}
+	
 }

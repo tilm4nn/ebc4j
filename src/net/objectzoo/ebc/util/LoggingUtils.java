@@ -24,19 +24,19 @@
  */
 package net.objectzoo.ebc.util;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * This class provides some convenience methods to create {@link Logger} instances for classes or
- * objects.
+ * This class provides some convenience methods to used for logging in the EBCs.
  * 
  * @author tilmann
  */
-public class LoggerFactory
+public class LoggingUtils
 {
-	private LoggerFactory()
+	private LoggingUtils()
 	{
-		
+		// No instances will be made
 	}
 	
 	/**
@@ -69,5 +69,30 @@ public class LoggerFactory
 			throw new IllegalArgumentException("Cannot create Logger for null object.");
 		}
 		return getLogger(object.getClass());
+	}
+	
+	/**
+	 * This method logs the given message and a {@link String} representation of the given parameter
+	 * obtained by {@link String#valueOf(Object)}.
+	 * 
+	 * This is provided for logging as a workaround so that this library can be used in GWT projects
+	 * because GWT's {@link Logger} implementations does not provide the method
+	 * {@link Logger#log(Level, String, Object)}.
+	 * 
+	 * @param logger
+	 *        the {@link Logger} to log to
+	 * @param level
+	 *        the {@link Level} to use
+	 * @param message
+	 *        the message to log
+	 * @param parameter
+	 *        the parameter to log
+	 */
+	public static void log(Logger logger, Level level, String message, Object parameter)
+	{
+		if (logger.isLoggable(level))
+		{
+			logger.log(level, message + parameter);
+		}
 	}
 }

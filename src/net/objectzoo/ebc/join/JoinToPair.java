@@ -41,9 +41,9 @@ public class JoinToPair<Input1, Input2> extends Join<Input1, Input2, Pair<Input1
 	/**
 	 * Crates a new {@code JoinToPair}.
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public JoinToPair()
 	{
-		super((Class) Pair.class);
+		super(new PairOutputCreator<Input1, Input2>());
 	}
+	
 }

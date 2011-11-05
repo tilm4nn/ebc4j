@@ -29,19 +29,23 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
+import net.objectzoo.ebc.test.MockAction;
 import net.objectzoo.ebc.util.Pair;
 
 public class JoinToPairTest
 {
 	@Test
-	public void createOutput_creates_Pair_with_given_values()
+	public void sends_Pair_with_values_from_invocations()
 	{
+		MockAction<Pair<String, Integer>> result = new MockAction<Pair<String, Integer>>();
+		
 		JoinToPair<String, Integer> sut = new JoinToPair<String, Integer>();
+		sut.resultEvent().subscribe(result);
 		
-		Pair<String, Integer> result = sut.createOutput("String", 1);
+		sut.input1Action().invoke("String");
+		sut.input2Action().invoke(1);
 		
-		assertThat(result.getItem1(), is("String"));
-		assertThat(result.getItem2(), is(1));
+		assertThat(result.getLastResult(), is(new Pair<String, Integer>("String", 1)));
 	}
 	
 }

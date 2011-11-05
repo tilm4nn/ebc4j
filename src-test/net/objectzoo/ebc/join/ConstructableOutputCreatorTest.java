@@ -24,30 +24,64 @@
  */
 package net.objectzoo.ebc.join;
 
-import static java.util.Arrays.asList;
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-import java.util.List;
+import java.lang.reflect.Constructor;
+import java.util.Date;
 
 import org.junit.Test;
 
-import net.objectzoo.ebc.util.Pair;
-
-public class JoinObjectAndCollectionTest
+public class ConstructableOutputCreatorTest
 {
+	static class TestObject
+	{
+		String s;
+		Integer i;
+		Date d;
+		
+		public TestObject(String s, Integer i)
+		{
+			this.s = s;
+			this.i = i;
+		}
+		
+		public TestObject(Integer i, Date d)
+		{
+			this.i = i;
+			this.d = d;
+		}
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Test
-	public void createOutput_creates_List_with_given_values()
+	public void createOutput_creates_TestObject_with_given_constructor()
 	{
-		JoinObjectAndCollection<String, Integer, Pair<String, Integer>> sut = new JoinObjectAndCollection<String, Integer, Pair<String, Integer>>()
-		{
-		};
+		ConstructableOutputCreator<String, Integer, TestObject> sut = new ConstructableOutputCreator<String, Integer, TestObject>(
+			(Constructor<TestObject>) TestObject.class.getConstructors()[0]);
 		
-		List<Pair<String, Integer>> result = sut.createOutput("String", asList(1, 2));
+		TestObject result = sut.createOutput("String", 1);
 		
-		assertThat(result,
-			is(equalTo(asList(new Pair<String, Integer>("String", 1), new Pair<String, Integer>("String", 2)))));
+		assertThat(result.s, is("String"));
+		assertThat(result.i, is(1));
 	}
+	
+	//	@Test
+	//	public void createOutputElement_creates_TestObject_with_given_class()
+	//	{
+	//		JoinToConstructableObject<Integer, Date, TestObject, TestObject> sut = new JoinToConstructableObject<Integer, Date, TestObject, TestObject>(
+	//			TestObject.class)
+	//		{
+	//			@Override
+	//			protected TestObject createOutput(Integer lastInput1, Date lastInput2)
+	//			{
+	//				return null; // We do not test this
+	//			}
+	//		};
+	//		
+	//		TestObject result = sut.createOutputElement(42, new Date(0));
+	//		
+	//		assertThat(result.d, is(new Date(0)));
+	//		assertThat(result.i, is(42));
+	//	}
 }

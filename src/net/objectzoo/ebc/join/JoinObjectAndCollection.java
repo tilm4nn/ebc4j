@@ -24,19 +24,16 @@
  */
 package net.objectzoo.ebc.join;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 /**
- * This Join base class joins a single first input value with a second collection of input elements
- * to a collection of output element by using a constructor of the output element type taking the
- * first input type and the second input element type value as parameters. The class implements the
+ * This Join class joins a single first input value with a second collection of input elements to a
+ * collection of output element by using a {@link JoinOutputCreator} to join the first input type
+ * and the second input element type to the output element type. The class implements the
  * boilerplate code required to provide two input actions and a result event as well as trace
  * logging of value input and send results. The output of this Join is created and sent for each
  * input invocation, when both input values have been set to a non {@code null} value at this time.
- * 
- * To use this Join create a (possibly anonymous) subclass that specifies concrete type parameters.
  * 
  * @author tilmann
  * 
@@ -47,51 +44,29 @@ import java.util.List;
  * @param <OutputElement>
  *        the type of the output's elements
  */
-public abstract class JoinObjectAndCollection<Input1, Input2Element, OutputElement> extends
-	JoinToConstructableObject<Input1, Collection<Input2Element>, List<OutputElement>, OutputElement>
+public class JoinObjectAndCollection<Input1, Input2Element, OutputElement> extends
+	Join<Input1, Collection<Input2Element>, List<OutputElement>>
 {
 	/**
-	 * Initializes this {@code JoinObjectAndCollection} with a constructor for the output element
-	 * determined from this Join's output element type by taking a constructor that has the fitting
-	 * parameter types for this Join's first input type and second input element type.
+	 * Creates a new {@code JoinObjectAndCollection} using the given {@link JoinOutputCreator} to
+	 * join the first input and second input elements to the output element.
 	 * 
-	 * @throws IllegalArgumentException
-	 *         if the output element type does not have a fitting constructor
+	 * @param elementOutputCreator
+	 *        the output element creator to be used
 	 */
-	public JoinObjectAndCollection()
+	public JoinObjectAndCollection(JoinOutputCreator<? super Input1, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
 	{
-		super();
+		super(new ObjectAndCollectionOutputCreator<Input1, Input2Element, OutputElement>(elementOutputCreator));
 	}
 	
-	/**
-	 * Initializes this {@code JoinObjectAndCollection} with a constructor for the output elements
-	 * determined from the given type by taking a constructor that has the fitting parameter types
-	 * for this Join's first input type and second input element type.
-	 * 
-	 * @param outputElementType
-	 *        the type of the output elements actually constructed in this Join
-	 * @throws IllegalArgumentException
-	 *         if the output element type is {@code null} or does not have a fitting constructor
-	 */
-	public JoinObjectAndCollection(Class<? extends OutputElement> outputElementType)
+	JoinObjectAndCollection()
 	{
-		super(outputElementType);
+		// only accessible to subclasses in same package
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * This implementation creates a list of output elements that contains an output element for
-	 * each element present in the last input 2 constructed together with the given last input 1.
-	 */
-	@Override
-	protected List<OutputElement> createOutput(Input1 lastInput1, Collection<Input2Element> lastInput2)
+	void setOutputElementCreator(JoinOutputCreator<? super Input1, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
 	{
-		List<OutputElement> output = new ArrayList<OutputElement>(lastInput2.size());
-		for (Input2Element input2Element : lastInput2)
-		{
-			output.add(createOutputElement(lastInput1, input2Element));
-		}
-		return output;
+		setOutputCreator(new ObjectAndCollectionOutputCreator<Input1, Input2Element, OutputElement>(
+			elementOutputCreator));
 	}
 }

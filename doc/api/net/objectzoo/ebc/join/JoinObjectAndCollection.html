@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-JoinObjectAndCollection (EBC4J API (Version 0.9))
+JoinObjectAndCollection (EBC4J API (Version 1.0))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ JoinObjectAndCollection (EBC4J API (Version 0.9))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JoinObjectAndCollection (EBC4J API (Version 0.9))";
+        parent.document.title="JoinObjectAndCollection (EBC4J API (Version 1.0))";
     }
 }
 </SCRIPT>
@@ -54,7 +54,7 @@ function windowTitle()
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/join/JoinObjectAndCollection.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="JoinObjectAndCollection.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -74,9 +74,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.join.JoinToConstructableObject">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#methods_inherited_from_class_net.objectzoo.ebc.join.Join">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;METHOD</FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -92,29 +92,29 @@ Class JoinObjectAndCollection&lt;Input1,Input2Element,OutputElement&gt;</H2>
 <PRE>
 <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
   <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.ResultBase</A>&lt;Output&gt;
-      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">net.objectzoo.ebc.join.JoinBase</A>&lt;Input1,Input2,Output&gt;
-          <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">net.objectzoo.ebc.join.JoinToConstructableObject</A>&lt;Input1,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;Input2Element&gt;,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;OutputElement&gt;,OutputElement&gt;
-              <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.JoinObjectAndCollection&lt;Input1,Input2Element,OutputElement&gt;</B>
+      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">net.objectzoo.ebc.join.Join</A>&lt;Input1,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;Input2Element&gt;,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;OutputElement&gt;&gt;
+          <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.JoinObjectAndCollection&lt;Input1,Input2Element,OutputElement&gt;</B>
 </PRE>
 <DL>
 <DT><DT><B>Type Parameters:</B><DD><CODE>Input1</CODE> - the type of input one of this Join<DD><CODE>Input2Element</CODE> - the type of input two's elements<DD><CODE>OutputElement</CODE> - the type of the output's elements</DL>
 <DL>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;OutputElement&gt;&gt;</DD>
 </DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A></DD>
+</DL>
 <HR>
 <DL>
-<DT><PRE>public abstract class <B>JoinObjectAndCollection&lt;Input1,Input2Element,OutputElement&gt;</B><DT>extends <A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A>&lt;Input1,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;Input2Element&gt;,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;OutputElement&gt;,OutputElement&gt;</DL>
+<DT><PRE>public class <B>JoinObjectAndCollection&lt;Input1,Input2Element,OutputElement&gt;</B><DT>extends <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>&lt;Input1,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;Input2Element&gt;,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;OutputElement&gt;&gt;</DL>
 </PRE>
 
 <P>
-This Join base class joins a single first input value with a second collection of input elements
- to a collection of output element by using a constructor of the output element type taking the
- first input type and the second input element type value as parameters. The class implements the
+This Join class joins a single first input value with a second collection of input elements to a
+ collection of output element by using a <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the first input type
+ and the second input element type to the output element type. The class implements the
  boilerplate code required to provide two input actions and a result event as well as trace
  logging of value input and send results. The output of this Join is created and sent for each
  input invocation, when both input values have been set to a non <code>null</code> value at this time.
- 
- To use this Join create a (possibly anonymous) subclass that specifies concrete type parameters.
 <P>
 
 <P>
@@ -132,15 +132,6 @@ This Join base class joins a single first input value with a second collection o
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 <TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
 <B>Field Summary</B></FONT></TH>
-</TR>
-</TABLE>
-&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.join.JoinToConstructableObject"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html#outputElementConstructor">outputElementConstructor</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
@@ -162,20 +153,11 @@ This Join base class joins a single first input value with a second collection o
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection()">JoinObjectAndCollection</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator)">JoinObjectAndCollection</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;&nbsp;elementOutputCreator)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
- determined from this Join's output element type by taking a constructor that has the fitting
- parameter types for this Join's first input type and second input element type.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(java.lang.Class)">JoinObjectAndCollection</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;&nbsp;outputElementType)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output elements
- determined from the given type by taking a constructor that has the fitting parameter types
- for this Join's first input type and second input element type.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
+ join the first input and second input elements to the output element.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -187,32 +169,14 @@ This Join base class joins a single first input value with a second collection o
 <TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
 <B>Method Summary</B></FONT></TH>
 </TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html#createOutput(Input1, java.util.Collection)">createOutput</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>&nbsp;lastInput1,
-             <A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>&gt;&nbsp;lastInput2)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is to be implemented by subclasses to actually create the output to be sent.</TD>
-</TR>
 </TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.join.JoinToConstructableObject"><!-- --></A>
+&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.join.Join"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A></B></TH>
+<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html#createOutputElement(java.lang.Object, java.lang.Object)">createOutputElement</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.join.JoinBase"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#input1Action()">input1Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#input2Action()">input2Action</A></CODE></TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input1Action()">input1Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#input2Action()">input2Action</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
@@ -246,65 +210,16 @@ This Join base class joins a single first input value with a second collection o
 </TR>
 </TABLE>
 
-<A NAME="JoinObjectAndCollection()"><!-- --></A><H3>
+<A NAME="JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator)"><!-- --></A><H3>
 JoinObjectAndCollection</H3>
 <PRE>
-public <B>JoinObjectAndCollection</B>()</PRE>
+public <B>JoinObjectAndCollection</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;&nbsp;elementOutputCreator)</PRE>
 <DL>
-<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
- determined from this Join's output element type by taking a constructor that has the fitting
- parameter types for this Join's first input type and second input element type.
+<DD>Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
+ join the first input and second input elements to the output element.
 <P>
 <DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output element type does not have a fitting constructor</DL>
-</DL>
-<HR>
-
-<A NAME="JoinObjectAndCollection(java.lang.Class)"><!-- --></A><H3>
-JoinObjectAndCollection</H3>
-<PRE>
-public <B>JoinObjectAndCollection</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;&nbsp;outputElementType)</PRE>
-<DL>
-<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output elements
- determined from the given type by taking a constructor that has the fitting parameter types
- for this Join's first input type and second input element type.
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>outputElementType</CODE> - the type of the output elements actually constructed in this Join
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output element type is <code>null</code> or does not have a fitting constructor</DL>
-</DL>
-
-<!-- ============ METHOD DETAIL ========== -->
-
-<A NAME="method_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Method Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="createOutput(java.lang.Object,java.util.Collection)"><!-- --></A><A NAME="createOutput(Input1, java.util.Collection)"><!-- --></A><H3>
-createOutput</H3>
-<PRE>
-protected <A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt; <B>createOutput</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>&nbsp;lastInput1,
-                                           <A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>&gt;&nbsp;lastInput2)</PRE>
-<DL>
-<DD>This method is to be implemented by subclasses to actually create the output to be sent.
- 
- This implementation creates a list of output elements that contains an output element for
- each element present in the last input 2 constructed together with the given last input 1.
-<P>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)">createOutput</A></CODE> in class <CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>&gt;,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;&gt;</CODE></DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>lastInput1</CODE> - the last value that has been input as input1<DD><CODE>lastInput2</CODE> - the last value that has been input as input2
-<DT><B>Returns:</B><DD>the output created for the joined input values</DL>
-</DD>
+<DT><B>Parameters:</B><DD><CODE>elementOutputCreator</CODE> - the output element creator to be used</DL>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
 <HR>
@@ -338,7 +253,7 @@ protected <A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/join/JoinObjectAndCollection.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="JoinObjectAndCollection.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -358,9 +273,9 @@ protected <A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.join.JoinToConstructableObject">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#methods_inherited_from_class_net.objectzoo.ebc.join.Join">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;METHOD</FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>

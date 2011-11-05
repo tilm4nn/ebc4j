@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-LoggerFactory (EBC4J API (Version 0.9))
+PairOutputCreator (EBC4J API (Version 1.0))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ LoggerFactory (EBC4J API (Version 0.9))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="LoggerFactory (EBC4J API (Version 0.9))";
+        parent.document.title="PairOutputCreator (EBC4J API (Version 1.0))";
     }
 }
 </SCRIPT>
@@ -38,7 +38,7 @@ function windowTitle()
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/LoggerFactory.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/PairOutputCreator.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
@@ -53,11 +53,11 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;NEXT CLASS</FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?net/objectzoo/ebc/util/LoggerFactory.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="LoggerFactory.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?net/objectzoo/ebc/join/PairOutputCreator.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="PairOutputCreator.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -74,9 +74,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -86,21 +86,25 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHO
 <!-- ======== START OF CLASS DATA ======== -->
 <H2>
 <FONT SIZE="-1">
-net.objectzoo.ebc.util</FONT>
+net.objectzoo.ebc.join</FONT>
 <BR>
-Class LoggerFactory</H2>
+Class PairOutputCreator&lt;Input1,Input2&gt;</H2>
 <PRE>
 <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.util.LoggerFactory</B>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.PairOutputCreator&lt;Input1,Input2&gt;</B>
 </PRE>
+<DL>
+<DT><DT><B>Type Parameters:</B><DD><CODE>Input1</CODE> - the type of input one of this Join output creator<DD><CODE>Input2</CODE> - the type of input two of this Join output creator</DL>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,<A HREF="../../../../net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util">Pair</A>&lt;Input1,Input2&gt;&gt;</DD>
+</DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>LoggerFactory</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+<DT><PRE>public class <B>PairOutputCreator&lt;Input1,Input2&gt;</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,<A HREF="../../../../net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util">Pair</A>&lt;Input1,Input2&gt;&gt;</DL>
 </PRE>
 
 <P>
-This class provides some convenience methods to create <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging"><CODE>Logger</CODE></A> instances for classes or
- objects.
+This <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> implementation crates <A HREF="../../../../net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><CODE>Pair</CODE></A> instances as output values.
 <P>
 
 <P>
@@ -112,6 +116,22 @@ This class provides some convenience methods to create <A HREF="http://java.sun.
 
 <P>
 
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html#PairOutputCreator()">PairOutputCreator</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
 <!-- ========== METHOD SUMMARY =========== -->
 
 <A NAME="method_summary"><!-- --></A>
@@ -122,19 +142,12 @@ This class provides some convenience methods to create <A HREF="http://java.sun.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/util/LoggerFactory.html#getLogger(java.lang.Class)">getLogger</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;clazz)</CODE>
+<CODE>&nbsp;<A HREF="../../../../net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util">Pair</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input1</A>,<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input2</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html#createOutput(Input1, Input2)">createOutput</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input1</A>&nbsp;input1,
+             <A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input2</A>&nbsp;input2)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retrieves a <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging"><CODE>Logger</CODE></A> for the given class' name</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/util/LoggerFactory.html#getLogger(java.lang.Object)">getLogger</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retrieves a <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging"><CODE>Logger</CODE></A> for the given object's class' name</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new output object that joins the two input values</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -149,6 +162,23 @@ This class provides some convenience methods to create <A HREF="http://java.sun.
 &nbsp;
 <P>
 
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="PairOutputCreator()"><!-- --></A><H3>
+PairOutputCreator</H3>
+<PRE>
+public <B>PairOutputCreator</B>()</PRE>
+<DL>
+</DL>
+
 <!-- ============ METHOD DETAIL ========== -->
 
 <A NAME="method_detail"><!-- --></A>
@@ -159,30 +189,20 @@ This class provides some convenience methods to create <A HREF="http://java.sun.
 </TR>
 </TABLE>
 
-<A NAME="getLogger(java.lang.Class)"><!-- --></A><H3>
-getLogger</H3>
+<A NAME="createOutput(java.lang.Object,java.lang.Object)"><!-- --></A><A NAME="createOutput(Input1, Input2)"><!-- --></A><H3>
+createOutput</H3>
 <PRE>
-public static <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</A> <B>getLogger</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;clazz)</PRE>
+public <A HREF="../../../../net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util">Pair</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input1</A>,<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input2</A>&gt; <B>createOutput</B>(<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input1</A>&nbsp;input1,
+                                        <A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input2</A>&nbsp;input2)</PRE>
 <DL>
-<DD>Retrieves a <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging"><CODE>Logger</CODE></A> for the given class' name
+<DD>Creates a new output object that joins the two input values
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>clazz</CODE> - the class to create the logger for
-<DT><B>Returns:</B><DD>a logger with class' name</DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html#createOutput(Input1, Input2)">createOutput</A></CODE> in interface <CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input1</A>,<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input2</A>,<A HREF="../../../../net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util">Pair</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input1</A>,<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input2</A>&gt;&gt;</CODE></DL>
 </DD>
-</DL>
-<HR>
-
-<A NAME="getLogger(java.lang.Object)"><!-- --></A><H3>
-getLogger</H3>
-<PRE>
-public static <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</A> <B>getLogger</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</PRE>
-<DL>
-<DD>Retrieves a <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging"><CODE>Logger</CODE></A> for the given object's class' name
-<P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>object</CODE> - the object to create the logger for
-<DT><B>Returns:</B><DD>a logger with object's class' name</DL>
+<DT><B>Parameters:</B><DD><CODE>input1</CODE> - the input one value<DD><CODE>input2</CODE> - the input two value
+<DT><B>Returns:</B><DD>the newly created output object</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -201,7 +221,7 @@ public static <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/L
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/LoggerFactory.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/PairOutputCreator.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
@@ -216,11 +236,11 @@ public static <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/L
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;NEXT CLASS</FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?net/objectzoo/ebc/util/LoggerFactory.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="LoggerFactory.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?net/objectzoo/ebc/join/PairOutputCreator.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="PairOutputCreator.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -237,9 +257,9 @@ public static <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/L
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>

@@ -28,7 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.objectzoo.ebc.SendsResult;
-import net.objectzoo.ebc.util.LoggerFactory;
+import net.objectzoo.ebc.util.LoggingUtils;
 import net.objectzoo.events.Event;
 import net.objectzoo.events.impl.EventDelegate;
 
@@ -49,7 +49,7 @@ public class ResultBase<ResultParameter> implements SendsResult<ResultParameter>
 	protected Level logLevel = Level.FINEST;
 	
 	/** The logger that can be used for this EBC's logging activities */
-	protected final Logger logger = LoggerFactory.getLogger(this);
+	protected final Logger logger = LoggingUtils.getLogger(this);
 	
 	private final EventDelegate<ResultParameter> resultEvent;
 	
@@ -105,7 +105,7 @@ public class ResultBase<ResultParameter> implements SendsResult<ResultParameter>
 	 */
 	protected void sendResult(ResultParameter parameter)
 	{
-		logger.log(logLevel, "sending result: {0}", parameter);
+		LoggingUtils.log(logger, logLevel, "sending result: ", parameter);
 		
 		resultEvent.invoke(parameter);
 	}
