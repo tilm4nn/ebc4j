@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Class Hierarchy (EBC4J API (Version 0.9))
+Class Hierarchy (EBC4J API (Version 1.0))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Class Hierarchy (EBC4J API (Version 0.9))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Class Hierarchy (EBC4J API (Version 0.9))";
+        parent.document.title="Class Hierarchy (EBC4J API (Version 1.0))";
     }
 }
 </SCRIPT>
@@ -89,21 +89,25 @@ Class Hierarchy
 </H2>
 <UL>
 <LI TYPE="circle">java.lang.<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang"><B>Object</B></A><UL>
-<LI TYPE="circle">net.objectzoo.ebc.util.<A HREF="net/objectzoo/ebc/util/LoggerFactory.html" title="class in net.objectzoo.ebc.util"><B>LoggerFactory</B></A><LI TYPE="circle">net.objectzoo.ebc.test.<A HREF="net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test"><B>MockAction</B></A>&lt;T&gt; (implements net.objectzoo.delegates.<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;T&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/CollectionsOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>CollectionsOutputCreator</B></A>&lt;Input1Element,Input2Element,OutputElement&gt; (implements net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,Output&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/ConstructableOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>ConstructableOutputCreator</B></A>&lt;Input1,Input2,Output&gt; (implements net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,Output&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.util.<A HREF="net/objectzoo/ebc/util/LoggingUtils.html" title="class in net.objectzoo.ebc.util"><B>LoggingUtils</B></A><LI TYPE="circle">net.objectzoo.ebc.test.<A HREF="net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test"><B>MockAction</B></A>&lt;T&gt; (implements net.objectzoo.delegates.<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;T&gt;)
 <LI TYPE="circle">net.objectzoo.ebc.test.<A HREF="net/objectzoo/ebc/test/MockAction0.html" title="class in net.objectzoo.ebc.test"><B>MockAction0</B></A> (implements net.objectzoo.delegates.<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A>)
-<LI TYPE="circle">net.objectzoo.ebc.util.<A HREF="net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><B>Pair</B></A>&lt;T1,T2&gt;<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl"><B>ProcessBase</B></A>&lt;ProcessParameter&gt; (implements net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>ObjectAndCollectionOutputCreator</B></A>&lt;Input1,Input2Element,OutputElement&gt; (implements net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,Output&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.util.<A HREF="net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><B>Pair</B></A>&lt;T1,T2&gt;<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/PairOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>PairOutputCreator</B></A>&lt;Input1,Input2&gt; (implements net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,Output&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl"><B>ProcessBase</B></A>&lt;ProcessParameter&gt; (implements net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;)
 <UL>
 <LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndResultBase</B></A>&lt;ProcessParameter,ResultParameter&gt; (implements net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;)
 <LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndSignalBase</B></A>&lt;ProcessParameter&gt; (implements net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A>)
 </UL>
-<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ResultBase</B></A>&lt;ResultParameter&gt; (implements net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.util.<A HREF="net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util"><B>ReflectionUtils</B></A><LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ResultBase</B></A>&lt;ResultParameter&gt; (implements net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;)
 <UL>
-<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join"><B>JoinBase</B></A>&lt;Input1,Input2,Output&gt;<UL>
-<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join"><B>JoinToConstructableObject</B></A>&lt;Input1,Input2,Output,OutputElement&gt;<UL>
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><B>Join</B></A>&lt;Input1,Input2,Output&gt;<UL>
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join"><B>GenericJoin</B></A>&lt;Input1,Input2,Output&gt;<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>JoinCollections</B></A>&lt;Input1Element,Input2Element,OutputElement&gt;<UL>
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join"><B>GenericJoinCollections</B></A>&lt;Input1Element,Input2Element,OutputElement&gt;</UL>
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>JoinObjectAndCollection</B></A>&lt;Input1,Input2Element,OutputElement&gt;<UL>
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>GenericJoinObjectAndCollection</B></A>&lt;Input1,Input2Element,OutputElement&gt;</UL>
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join"><B>JoinToPair</B></A>&lt;Input1,Input2&gt;</UL>
-<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>JoinCollections</B></A>&lt;Input1Element,Input2Element,OutputElement&gt;<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>JoinObjectAndCollection</B></A>&lt;Input1,Input2Element,OutputElement&gt;</UL>
-</UL>
 </UL>
 <LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="net/objectzoo/ebc/impl/SignalBase.html" title="class in net.objectzoo.ebc.impl"><B>SignalBase</B></A> (implements net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A>)
 <LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl"><B>StartBase</B></A> (implements net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>)
@@ -119,7 +123,7 @@ Interface Hierarchy
 <UL>
 <LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><B>CanProcess</B></A>&lt;ProcessParameter&gt;<LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><B>CanStart</B></A><UL>
 <LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/EntryPoint.html" title="interface in net.objectzoo.ebc"><B>EntryPoint</B></A></UL>
-<LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/Configurable.html" title="interface in net.objectzoo.ebc"><B>Configurable</B></A><LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/DependsOn.html" title="interface in net.objectzoo.ebc"><B>DependsOn</B></A>&lt;Dependency&gt;<LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><B>SendsResult</B></A>&lt;ResultParameter&gt;<LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><B>SendsSignal</B></A></UL>
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/Configurable.html" title="interface in net.objectzoo.ebc"><B>Configurable</B></A><LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/DependsOn.html" title="interface in net.objectzoo.ebc"><B>DependsOn</B></A>&lt;Dependency&gt;<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><B>JoinOutputCreator</B></A>&lt;Input1,Input2,Output&gt;<LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><B>SendsResult</B></A>&lt;ResultParameter&gt;<LI TYPE="circle">net.objectzoo.ebc.<A HREF="net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><B>SendsSignal</B></A></UL>
 <HR>
 
 

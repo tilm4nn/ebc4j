@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.CanStart;
-import net.objectzoo.ebc.util.LoggerFactory;
+import net.objectzoo.ebc.util.LoggingUtils;
 
 /**
  * A base class for an EBC that {@link CanStart}.
@@ -45,7 +45,7 @@ public abstract class StartBase implements CanStart
 	protected Level logLevel = Level.FINEST;
 	
 	/** The logger that can be used for this EBC's logging activities */
-	protected final Logger logger = LoggerFactory.getLogger(this);
+	protected final Logger logger = LoggingUtils.getLogger(this);
 	
 	/**
 	 * {@inheritDoc}

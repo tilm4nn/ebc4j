@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 
 import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.CanProcess;
-import net.objectzoo.ebc.util.LoggerFactory;
+import net.objectzoo.ebc.util.LoggingUtils;
 
 /**
  * A base class for an EBC that {@link CanProcess}.
@@ -48,7 +48,7 @@ public abstract class ProcessBase<ProcessParameter> implements CanProcess<Proces
 	protected Level logLevel = Level.FINEST;
 	
 	/** The logger that can be used for this EBC's logging activities */
-	protected final Logger logger = LoggerFactory.getLogger(this);
+	protected final Logger logger = LoggingUtils.getLogger(this);
 	
 	/**
 	 * {@inheritDoc}
@@ -70,7 +70,7 @@ public abstract class ProcessBase<ProcessParameter> implements CanProcess<Proces
 	
 	private void receiveProcess(ProcessParameter parameter)
 	{
-		logger.log(logLevel, "receiving parameter to process: {0}", parameter);
+		LoggingUtils.log(logger, logLevel, "receiving parameter to process: ", parameter);
 		
 		process(parameter);
 	}

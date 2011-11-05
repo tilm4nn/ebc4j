@@ -7,7 +7,6 @@
 	
 	<property name="build.dir" value="build" />
 	<property name="src.dir" value="src" />
-	<property name="src.async.dir" value="src-async" />
 	<property name="src.test.dir" value="src-test" />
 	<property name="lib.dir" value="lib" />
 	<property name="lib.test.dir" value="lib-test" />
@@ -15,10 +14,9 @@
 	<property name="doc.dir" value="doc" />
 	
 	<property name="component.name" value="ebc4j" />
-	<property name="component.async.name" value="ebc4j-async" />
 	<property name="component.gwt.name" value="ebc4j-gwt" />
 	<property name="component.title" value="EBC4J API" />
-	<property name="component.version" value="0.9" />
+	<property name="component.version" value="1.0" />
 	<property name="component.vendor" value="object-zoo" />
 	
 	<property name="compile.debug" value="true" />
@@ -33,7 +31,6 @@
 	
  	<property name="build.home" value="${basedir}/${build.dir}" />
 	<property name="src.home" value="${basedir}/${src.dir}" />
-	<property name="src.async.home" value="${basedir}/${src.async.dir}" />
 	<property name="src.test.home" value="${basedir}/${src.test.dir}" />
 	<property name="lib.home" value="${basedir}/${lib.dir}" />
 	<property name="lib.test.home" value="${basedir}/${lib.test.dir}" />
@@ -46,7 +43,6 @@
 	<!-- ========== Construct compile classpath =============================== -->
 	<path id="compile.classpath">
 		<pathelement location="${build.home}/classes" />
-		<pathelement location="${build.home}/classes-async" />
 		<fileset dir="${lib.home}">
 			<include name="*.jar" />
 		</fileset>
@@ -54,7 +50,6 @@
 	<!-- ========== Construct unit test classpath ============================= -->
 	<path id="test.classpath">
 		<pathelement location="${build.home}/classes" />
-		<pathelement location="${build.home}/classes-async" />
 		<pathelement location="${build.home}/classes-tests" />
 		<fileset dir="${lib.home}">
 			<include name="*.jar" />
@@ -67,7 +62,6 @@
 	<!-- ========== Executable Targets ======================================== -->
 	<target name="init" description="Initialize and evaluate conditionals">
 		<property name="final.name" value="${component.name}-${component.version}" />
-		<property name="final.async.name" value="${component.async.name}-${component.version}" />
 		<property name="final.gwt.name" value="${component.gwt.name}-${component.version}" />
 		<echo message="-------- ${final.name} --------" />
 		<tstamp />
@@ -75,7 +69,6 @@
 	<target name="prepare" depends="init" description="Prepare build directory">
 		<mkdir dir="${build.home}" />
 		<mkdir dir="${build.home}/classes" />
-		<mkdir dir="${build.home}/classes-async" />
 		<mkdir dir="${build.home}/classes-tests" />
 		<mkdir dir="${lib.home}" />
 	</target>
@@ -95,19 +88,6 @@
 		</javac>
 		<copy todir="${build.home}/classes">
 			<fileset dir="${src.home}" excludes="**/*.java" />
-		</copy>
-		<javac srcdir="${src.async.home}"
-			   destdir="${build.home}/classes-async"
-			   debug="${compile.debug}"
-			   deprecation="${compile.deprecation}"
-			   encoding="${source.encoding}"
-			   target="${compile.target}"
-			   source="${compile.source}"
-			   optimize="${compile.optimize}">
-			<classpath refid="compile.classpath" />
-		</javac>
-		<copy todir="${build.home}/classes-async">
-			<fileset dir="${src.async.home}" excludes="**/*.java" />
 		</copy>
 	</target>
 	<target name="compile.tests" depends="compile" description="Compile tests">
@@ -153,7 +133,6 @@
 			<classpath refid="compile.classpath" />
 			<sourcepath>
 				<pathelement location="${src.dir}" />
-				<pathelement location="${src.async.dir}" />
 			</sourcepath>
 			<arg value="-notimestamp" />
 			<link href="${jdk.javadoc}" />
@@ -189,10 +168,6 @@
 		<copy todir="${dist.home}/${src.dir}">
 			<fileset dir="${src.home}" />
 		</copy>
-		<mkdir dir="${dist.home}/${src.async.dir}" />
-		<copy todir="${dist.home}/${src.async.dir}">
-			<fileset dir="${src.async.home}" />
-		</copy>
 		<mkdir dir="${dist.home}/${src.test.dir}" />
 		<copy todir="${dist.home}/${src.test.dir}">
 			<fileset dir="${src.test.home}" />
@@ -217,16 +192,6 @@
 		        <attribute name="Implementation-Version" value="${component.version}"/>
 		    </manifest>
 		</jar>
-		<!--
-		<jar jarfile="${dist.home}/${final.async.name}.jar" basedir="${build.home}/classes-async" excludes="**/*.html">
-		    <manifest>
-		        <attribute name="Built-By" value="${user.name}"/>
-		        <attribute name="Implementation-Vendor" value="${component.vendor}"/>
-		        <attribute name="Implementation-Title" value="${component.title}"/>
-		        <attribute name="Implementation-Version" value="${component.version}"/>
-		    </manifest>
-		</jar>
-		-->
 		<jar jarfile="${dist.home}/${final.gwt.name}.jar" basedir="${build.home}/classes-gwt" excludes="**/*.html">
 		    <manifest>
 		        <attribute name="Built-By" value="${user.name}"/>
@@ -241,12 +206,6 @@
 		<delete dir="${jar.deploy}" includes="${component.name}-*-LICENSE.txt" />
 	    <copy file="${dist.home}/${final.name}.jar" todir="${jar.deploy}" />
 		<copy file="${basedir}/LICENSE.txt" tofile="${jar.deploy}/${final.name}-LICENSE.txt" />
-		<!--
-		<delete dir="${jar.deploy}" includes="${component.async.name}-*.jar" />
-		<delete dir="${jar.deploy}" includes="${component.async.name}-*-LICENSE.txt" />
-	    <copy file="${dist.home}/${final.async.name}.jar" todir="${jar.deploy}" />
-		<copy file="${basedir}/LICENSE.txt" tofile="${jar.deploy}/${final.async.name}-LICENSE.txt" />
-		-->
 	</target>
 	<target name="test" depends="compile.tests" description="Run all tests">
 		<junit printsummary="yes" showoutput="false" fork="true" forkmode="perBatch" haltonerror="true" haltonfailure="true">

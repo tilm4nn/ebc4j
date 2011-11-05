@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Join (EBC4J API (Version 0.9))
+Join (EBC4J API (Version 1.0))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Join (EBC4J API (Version 0.9))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Join (EBC4J API (Version 0.9))";
+        parent.document.title="Join (EBC4J API (Version 1.0))";
     }
 }
 </SCRIPT>
@@ -53,8 +53,8 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/join/Join.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="Join.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -74,7 +74,7 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.join.JoinToConstructableObject">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
 DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
@@ -92,9 +92,7 @@ Class Join&lt;Input1,Input2,Output&gt;</H2>
 <PRE>
 <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
   <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.ResultBase</A>&lt;Output&gt;
-      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">net.objectzoo.ebc.join.JoinBase</A>&lt;Input1,Input2,Output&gt;
-          <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">net.objectzoo.ebc.join.JoinToConstructableObject</A>&lt;Input1,Input2,Output,Output&gt;
-              <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.Join&lt;Input1,Input2,Output&gt;</B>
+      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.Join&lt;Input1,Input2,Output&gt;</B>
 </PRE>
 <DL>
 <DT><DT><B>Type Parameters:</B><DD><CODE>Input1</CODE> - the type of input one of this Join<DD><CODE>Input2</CODE> - the type of input two of this Join<DD><CODE>Output</CODE> - the type of output of this Join</DL>
@@ -102,21 +100,19 @@ Class Join&lt;Input1,Input2,Output&gt;</H2>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;Output&gt;</DD>
 </DL>
 <DL>
-<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join">JoinToPair</A></DD>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>, <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections</A>, <A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>, <A HREF="../../../../net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join">JoinToPair</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public abstract class <B>Join&lt;Input1,Input2,Output&gt;</B><DT>extends <A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A>&lt;Input1,Input2,Output,Output&gt;</DL>
+<DT><PRE>public class <B>Join&lt;Input1,Input2,Output&gt;</B><DT>extends <A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A>&lt;Output&gt;</DL>
 </PRE>
 
 <P>
-This Join base class joins two input values to an output value that has a constructor taking the
- two input values as parameters. The class implements the boilerplate code required to provide two
- input actions and a result event as well as trace logging of value input and send results. The
- output of this Join is created and sent for each input invocation, when both input values have
- been set to a non <code>null</code> value at this time.
- 
- To use this Join create a (possibly anonymous) subclass that specifies concrete type parameters.
+This is a class that can be used to implement Join EBCs. The class implements the boilerplate
+ code required to provide two input actions and a result event as well as trace logging of value
+ input and send results. The output of this Join is created and sent for each input invocation,
+ when both input values have been set to a non <code>null</code> value at this time. To actually create
+ the output an instance of <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> is needed.
 <P>
 
 <P>
@@ -134,15 +130,6 @@ This Join base class joins two input values to an output value that has a constr
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 <TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
 <B>Field Summary</B></FONT></TH>
-</TR>
-</TABLE>
-&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.join.JoinToConstructableObject"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html#outputElementConstructor">outputElementConstructor</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
@@ -164,20 +151,11 @@ This Join base class joins two input values to an output value that has a constr
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#Join()">Join</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator)">Join</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputCreator)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from this Join's
- output type by taking a constructor that has the fitting parameter types for this Join's
- input types.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#Join(java.lang.Class)">Join</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputType)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from the given
- type by taking a constructor that has the fitting parameter types for this Join's input
- types.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>Join</code> using the given <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to create the output of
+ the <code>Join</code>.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -191,30 +169,19 @@ This Join base class joins two input values to an output value that has a constr
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#createOutput(Input1, Input2)">createOutput</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>&nbsp;lastInput1,
-             <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>&nbsp;lastInput2)</CODE>
+<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input1Action()">input1Action</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is to be implemented by subclasses to actually create the output to be sent.</TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.join.JoinToConstructableObject"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A></B></TH>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input one to this Join</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html#createOutputElement(java.lang.Object, java.lang.Object)">createOutputElement</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.join.JoinBase"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#input1Action()">input1Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#input2Action()">input2Action</A></CODE></TD>
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input2Action()">input2Action</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input two to this Join</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
@@ -248,35 +215,16 @@ This Join base class joins two input values to an output value that has a constr
 </TR>
 </TABLE>
 
-<A NAME="Join()"><!-- --></A><H3>
+<A NAME="Join(net.objectzoo.ebc.join.JoinOutputCreator)"><!-- --></A><H3>
 Join</H3>
 <PRE>
-public <B>Join</B>()</PRE>
+public <B>Join</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputCreator)</PRE>
 <DL>
-<DD>Initializes this <code>Join</code> with a constructor for the output determined from this Join's
- output type by taking a constructor that has the fitting parameter types for this Join's
- input types.
+<DD>Creates a new <code>Join</code> using the given <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to create the output of
+ the <code>Join</code>.
 <P>
 <DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output type does not have a fitting constructor</DL>
-</DL>
-<HR>
-
-<A NAME="Join(java.lang.Class)"><!-- --></A><H3>
-Join</H3>
-<PRE>
-public <B>Join</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputType)</PRE>
-<DL>
-<DD>Initializes this <code>Join</code> with a constructor for the output determined from the given
- type by taking a constructor that has the fitting parameter types for this Join's input
- types.
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>outputType</CODE> - the type of the output actually constructed in this Join
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output type is <code>null</code> or does not have a fitting constructor</DL>
+<DT><B>Parameters:</B><DD><CODE>outputCreator</CODE> - the output creator to be used</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -289,23 +237,30 @@ public <B>Join</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Clas
 </TR>
 </TABLE>
 
-<A NAME="createOutput(java.lang.Object,java.lang.Object)"><!-- --></A><A NAME="createOutput(Input1, Input2)"><!-- --></A><H3>
-createOutput</H3>
+<A NAME="input1Action()"><!-- --></A><H3>
+input1Action</H3>
 <PRE>
-protected <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A> <B>createOutput</B>(<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>&nbsp;lastInput1,
-                              <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>&nbsp;lastInput2)</PRE>
+public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>&gt; <B>input1Action</B>()</PRE>
 <DL>
-<DD>This method is to be implemented by subclasses to actually create the output to be sent.
- 
- Since output type and output element type are the same, this implementation just delegates to
- <A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html#createOutputElement(java.lang.Object, java.lang.Object)"><CODE>JoinToConstructableObject.createOutputElement(Object, Object)</CODE></A>
+<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input one to this Join
 <P>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)">createOutput</A></CODE> in class <CODE><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;</CODE></DL>
+
+<DT><B>Returns:</B><DD>the input1 action of this Join</DL>
 </DD>
+</DL>
+<HR>
+
+<A NAME="input2Action()"><!-- --></A><H3>
+input2Action</H3>
+<PRE>
+public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>&gt; <B>input2Action</B>()</PRE>
+<DL>
+<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input two to this Join
+<P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>lastInput1</CODE> - the last value that has been input as input1<DD><CODE>lastInput2</CODE> - the last value that has been input as input2
-<DT><B>Returns:</B><DD>the output created for the joined input values</DL>
+
+<DT><B>Returns:</B><DD>the input2 action of this Join</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -339,8 +294,8 @@ protected <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type par
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/join/Join.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="Join.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -360,7 +315,7 @@ protected <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type par
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.join.JoinToConstructableObject">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
 DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>

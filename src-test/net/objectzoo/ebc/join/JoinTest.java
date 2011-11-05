@@ -24,54 +24,123 @@
  */
 package net.objectzoo.ebc.join;
 
+import static org.hamcrest.Matchers.sameInstance;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
-import java.util.Date;
-
+import org.junit.Before;
 import org.junit.Test;
+
+import net.objectzoo.ebc.test.MockAction;
 
 public class JoinTest
 {
+	private Join<Object, Object, Object> sut;
 	
-	static class TestObject
+	@Before
+	public void setUp()
 	{
-		String s;
-		Integer i;
-		Date d;
-		
-		public TestObject(String s, Integer i)
-		{
-			this.s = s;
-			this.i = i;
-		}
-		
-		public TestObject(Integer i, Date d)
-		{
-			this.i = i;
-			this.d = d;
-		}
+		sut = new Join<Object, Object, Object>();
 	}
 	
 	@Test
-	public void createOutput_creates_TestObject_with_given_values()
+	public void waits_for_input1_to_continue()
 	{
-		Join<String, Integer, TestObject> sut = new Join<String, Integer, TestObject>()
+		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
 		{
-		};
+			@Override
+			public Object createOutput(Object input1, Object input2)
+			{
+				fail("Did not wait for input 1");
+				return null;
+			}
+		});
 		
-		TestObject result = sut.createOutput("String", 1);
-		
-		assertThat(result.s, is("String"));
-		assertThat(result.i, is(1));
+		sut.input2Action().invoke(new Object());
+		sut.input2Action().invoke(new Object());
+		sut.input2Action().invoke(new Object());
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
-	public void constructor_throws_exception_for_missing_output_constructor()
+	@Test
+	public void waits_for_input2_to_continue()
 	{
-		new Join<Integer, Integer, TestObject>(TestObject.class)
+		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
 		{
-		};
+			@Override
+			public Object createOutput(Object input1, Object input2)
+			{
+				fail("Did not wait for input 2");
+				return null;
+			}
+		});
+		
+		sut.input1Action().invoke(new Object());
+		sut.input1Action().invoke(new Object());
+		sut.input1Action().invoke(new Object());
 	}
 	
+	@Test
+	public void creates_output_for_last_input1()
+	{
+		final Object input1 = new Object();
+		
+		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
+		{
+			@Override
+			public Object createOutput(Object input1, Object input2)
+			{
+				assertThat(input1, is(sameInstance(input1)));
+				return null;
+			}
+		});
+		
+		sut.input1Action().invoke(new Object());
+		sut.input1Action().invoke(input1);
+		sut.input2Action().invoke(new Object());
+	}
+	
+	@Test
+	public void creates_output_for_last_input2()
+	{
+		final Object input2 = new Object();
+		
+		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
+		{
+			@Override
+			public Object createOutput(Object input1, Object input2)
+			{
+				assertThat(input2, is(sameInstance(input2)));
+				return null;
+			}
+		});
+		
+		sut.input2Action().invoke(new Object());
+		sut.input2Action().invoke(input2);
+		sut.input1Action().invoke(new Object());
+	}
+	
+	@Test
+	public void sends_created_output()
+	{
+		final Object output = new Object();
+		
+		MockAction<Object> resultAction = new MockAction<Object>();
+		
+		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
+		{
+			@Override
+			public Object createOutput(Object input1, Object input2)
+			{
+				return output;
+			}
+		});
+		
+		sut.resultEvent().subscribe(resultAction);
+		
+		sut.input2Action().invoke(new Object());
+		sut.input1Action().invoke(new Object());
+		
+		assertThat(resultAction.getLastResult(), is(sameInstance(output)));
+	}
 }

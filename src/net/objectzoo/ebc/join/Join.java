@@ -24,14 +24,18 @@
  */
 package net.objectzoo.ebc.join;
 
+import java.util.logging.Level;
+
+import net.objectzoo.delegates.Action;
+import net.objectzoo.ebc.impl.ResultBase;
+import net.objectzoo.ebc.util.LoggingUtils;
+
 /**
- * This Join base class joins two input values to an output value that has a constructor taking the
- * two input values as parameters. The class implements the boilerplate code required to provide two
- * input actions and a result event as well as trace logging of value input and send results. The
- * output of this Join is created and sent for each input invocation, when both input values have
- * been set to a non {@code null} value at this time.
- * 
- * To use this Join create a (possibly anonymous) subclass that specifies concrete type parameters.
+ * This is a class that can be used to implement Join EBCs. The class implements the boilerplate
+ * code required to provide two input actions and a result event as well as trace logging of value
+ * input and send results. The output of this Join is created and sent for each input invocation,
+ * when both input values have been set to a non {@code null} value at this time. To actually create
+ * the output an instance of {@link JoinOutputCreator} is needed.
  * 
  * @author tilmann
  * 
@@ -42,47 +46,100 @@ package net.objectzoo.ebc.join;
  * @param <Output>
  *        the type of output of this Join
  */
-public abstract class Join<Input1, Input2, Output> extends
-	JoinToConstructableObject<Input1, Input2, Output, Output>
+public class Join<Input1, Input2, Output> extends ResultBase<Output>
 {
+	private Input1 lastInput1;
+	
+	private Input2 lastInput2;
+	
+	private JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator;
 	
 	/**
-	 * Initializes this {@code Join} with a constructor for the output determined from this Join's
-	 * output type by taking a constructor that has the fitting parameter types for this Join's
-	 * input types.
+	 * Creates a new {@code Join} using the given {@link JoinOutputCreator} to create the output of
+	 * the {@code Join}.
 	 * 
-	 * @throws IllegalArgumentException
-	 *         if the output type does not have a fitting constructor
+	 * @param outputCreator
+	 *        the output creator to be used
 	 */
-	public Join()
+	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator)
 	{
-		super();
+		if (outputCreator == null)
+		{
+			throw new IllegalArgumentException("outputCreator=null");
+		}
+		this.outputCreator = outputCreator;
+	}
+	
+	Join()
+	{
+		// only accessible to subclasses in same package
+	}
+	
+	private final Action<Input1> input1Action = new Action<Input1>()
+	{
+		@Override
+		public void invoke(Input1 input)
+		{
+			LoggingUtils.log(logger, Level.FINEST, "receiving input1: ", input);
+			
+			lastInput1 = input;
+			sendResultIfComplete();
+		}
+	};
+	
+	private final Action<Input2> input2Action = new Action<Input2>()
+	{
+		@Override
+		public void invoke(Input2 input)
+		{
+			LoggingUtils.log(logger, Level.FINEST, "receiving input2: ", input);
+			
+			lastInput2 = input;
+			sendResultIfComplete();
+		}
+	};
+	
+	/**
+	 * Provides an {@link Action} that is used to send input one to this Join
+	 * 
+	 * @return the input1 action of this Join
+	 */
+	public Action<Input1> input1Action()
+	{
+		return input1Action;
 	}
 	
 	/**
-	 * Initializes this {@code Join} with a constructor for the output determined from the given
-	 * type by taking a constructor that has the fitting parameter types for this Join's input
-	 * types.
+	 * Provides an {@link Action} that is used to send input two to this Join
 	 * 
-	 * @param outputType
-	 *        the type of the output actually constructed in this Join
-	 * @throws IllegalArgumentException
-	 *         if the output type is {@code null} or does not have a fitting constructor
+	 * @return the input2 action of this Join
 	 */
-	public Join(Class<? extends Output> outputType)
+	public Action<Input2> input2Action()
 	{
-		super(outputType);
+		return input2Action;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * Since output type and output element type are the same, this implementation just delegates to
-	 * {@link #createOutputElement(Object, Object)}
-	 */
-	@Override
-	protected Output createOutput(Input1 lastInput1, Input2 lastInput2)
+	private void sendResultIfComplete()
 	{
-		return createOutputElement(lastInput1, lastInput2);
+		if (lastInput1 != null && lastInput2 != null)
+		{
+			createAndSendOutput();
+		}
 	}
+	
+	private void createAndSendOutput()
+	{
+		Output output = outputCreator.createOutput(lastInput1, lastInput2);
+		sendResult(output);
+	}
+	
+	void setOutputCreator(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator)
+	{
+		if (this.outputCreator != null)
+		{
+			throw new IllegalStateException("The outputCreator can only be set once");
+		}
+		this.outputCreator = outputCreator;
+	}
+	
 }

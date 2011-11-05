@@ -46,8 +46,6 @@ public class SignalBaseTest
 		{
 			super(delegate);
 		}
-		
-		boolean called = false;
 	}
 	
 	static class TestEvent0Delegate implements Event0Delegate

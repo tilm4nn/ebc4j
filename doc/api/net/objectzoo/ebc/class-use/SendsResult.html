@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Uses of Interface net.objectzoo.ebc.SendsResult (EBC4J API (Version 0.9))
+Uses of Interface net.objectzoo.ebc.SendsResult (EBC4J API (Version 1.0))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Uses of Interface net.objectzoo.ebc.SendsResult (EBC4J API (Version 0.9))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface net.objectzoo.ebc.SendsResult (EBC4J API (Version 0.9))";
+        parent.document.title="Uses of Interface net.objectzoo.ebc.SendsResult (EBC4J API (Version 1.0))";
     }
 }
 </SCRIPT>
@@ -94,7 +94,7 @@ Packages that use <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.join"><B>net.objectzoo.ebc.join</B></A></TD>
 <TD>This package contains some ready to use Join EBCs as well as base classes that can be used to
- implement own specialized Join derivates.&nbsp;</TD>
+ implement own specialized Join subclasses.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -157,7 +157,7 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interfac
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;class</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join&lt;Input1,Input2,Output&gt;</A></B></CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin&lt;Input1,Input2,Output&gt;</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Join base class joins two input values to an output value that has a constructor taking the
@@ -166,15 +166,7 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interfac
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;class</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase&lt;Input1,Input2,Output&gt;</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a base class that can be used to implement Join EBCs.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;class</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections&lt;Input1Element,Input2Element,OutputElement&gt;</A></B></CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections&lt;Input1Element,Input2Element,OutputElement&gt;</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Join base class joins two input collections of the input element types to a collection of
@@ -184,7 +176,7 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interfac
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;class</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection&lt;Input1,Input2Element,OutputElement&gt;</A></B></CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection&lt;Input1,Input2Element,OutputElement&gt;</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Join base class joins a single first input value with a second collection of input elements
@@ -194,11 +186,30 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interfac
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;class</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject&lt;Input1,Input2,Output,OutputElement&gt;</A></B></CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join&lt;Input1,Input2,Output&gt;</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a base class that can be used to implement Join EBCs that create their output elements by
- calling a constructor that takes the two input values as parameters.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a class that can be used to implement Join EBCs.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections&lt;Input1Element,Input2Element,OutputElement&gt;</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Join class joins two input collections of the input element types to a collection of the
+ output element type by using a <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the input element types to the
+ output element type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection&lt;Input1,Input2Element,OutputElement&gt;</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Join class joins a single first input value with a second collection of input elements to a
+ collection of output element by using a <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the first input type
+ and the second input element type to the output element type.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">

@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Index (EBC4J API (Version 0.9))
+Index (EBC4J API (Version 1.0))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Index (EBC4J API (Version 0.9))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Index (EBC4J API (Version 0.9))";
+        parent.document.title="Index (EBC4J API (Version 1.0))";
     }
 }
 </SCRIPT>
@@ -76,7 +76,7 @@ function windowTitle()
 <A NAME="skip-navbar_top"></A>
 <!-- ========= END OF TOP NAVBAR ========= -->
 
-<A HREF="#_A_">A</A> <A HREF="#_C_">C</A> <A HREF="#_D_">D</A> <A HREF="#_E_">E</A> <A HREF="#_G_">G</A> <A HREF="#_H_">H</A> <A HREF="#_I_">I</A> <A HREF="#_J_">J</A> <A HREF="#_L_">L</A> <A HREF="#_M_">M</A> <A HREF="#_N_">N</A> <A HREF="#_O_">O</A> <A HREF="#_P_">P</A> <A HREF="#_R_">R</A> <A HREF="#_S_">S</A> <A HREF="#_T_">T</A> <HR>
+<A HREF="#_A_">A</A> <A HREF="#_C_">C</A> <A HREF="#_D_">D</A> <A HREF="#_E_">E</A> <A HREF="#_F_">F</A> <A HREF="#_G_">G</A> <A HREF="#_H_">H</A> <A HREF="#_I_">I</A> <A HREF="#_J_">J</A> <A HREF="#_L_">L</A> <A HREF="#_M_">M</A> <A HREF="#_N_">N</A> <A HREF="#_O_">O</A> <A HREF="#_P_">P</A> <A HREF="#_R_">R</A> <A HREF="#_S_">S</A> <A HREF="#_T_">T</A> <HR>
 <A NAME="_A_"><!-- --></A><H2>
 <B>A</B></H2>
 <DL>
@@ -103,25 +103,34 @@ Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAct
 <DL>
 <DT><A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><B>CanProcess</B></A>&lt;<A HREF="./net/objectzoo/ebc/CanProcess.html" title="type parameter in CanProcess">ProcessParameter</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
  to do so.<DT><A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><B>CanStart</B></A> - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.<DT><A HREF="./net/objectzoo/ebc/Configurable.html" title="interface in net.objectzoo.ebc"><B>Configurable</B></A> - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>EBCs that are <code>Configurable</code> can be configured with an arbitrary number of parameters.<DT><A HREF="./net/objectzoo/ebc/Configurable.html#configure(java.lang.String...)"><B>configure(String...)</B></A> - 
+ <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.<DT><A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>CollectionsOutputCreator</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html" title="type parameter in CollectionsOutputCreator">Input1Element</A>,<A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html" title="type parameter in CollectionsOutputCreator">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html" title="type parameter in CollectionsOutputCreator">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> implementation takes two input <A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util"><CODE>Collection</CODE></A>s and creates an
+ output <A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util"><CODE>List</CODE></A> with one output value for every pair of values in the input collections.<DT><A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html#CollectionsOutputCreator(net.objectzoo.ebc.join.JoinOutputCreator)"><B>CollectionsOutputCreator(JoinOutputCreator&lt;? super Input1Element, ? super Input2Element, ? extends OutputElement&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html" title="class in net.objectzoo.ebc.join">CollectionsOutputCreator</A>
+<DD>Creates a new <code>CollectionsOutputCreator</code> that uses the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A>
+ to join the given input element types to the output element type.
+<DT><A HREF="./net/objectzoo/ebc/Configurable.html" title="interface in net.objectzoo.ebc"><B>Configurable</B></A> - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>EBCs that are <code>Configurable</code> can be configured with an arbitrary number of parameters.<DT><A HREF="./net/objectzoo/ebc/Configurable.html#configure(java.lang.String...)"><B>configure(String...)</B></A> - 
 Method in interface net.objectzoo.ebc.<A HREF="./net/objectzoo/ebc/Configurable.html" title="interface in net.objectzoo.ebc">Configurable</A>
 <DD>Configure this EBC with the given configuration.
-<DT><A HREF="./net/objectzoo/ebc/join/Join.html#createOutput(Input1, Input2)"><B>createOutput(Input1, Input2)</B></A> - 
-Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
-<DD>This method is to be implemented by subclasses to actually create the output to be sent.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><B>createOutput(Input1, Input2)</B></A> - 
-Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>
-<DD>This method is to be implemented by subclasses to actually create the output to be sent.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html#createOutput(java.util.Collection, java.util.Collection)"><B>createOutput(Collection&lt;Input1Element&gt;, Collection&lt;Input2Element&gt;)</B></A> - 
-Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections</A>
-<DD>This method is to be implemented by subclasses to actually create the output to be sent.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html#createOutput(Input1, java.util.Collection)"><B>createOutput(Input1, Collection&lt;Input2Element&gt;)</B></A> - 
-Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>
-<DD>This method is to be implemented by subclasses to actually create the output to be sent.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html#createOutputElement(java.lang.Object, java.lang.Object)"><B>createOutputElement(Object, Object)</B></A> - 
-Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A>
-<DD>This method can be called to create an output element by invoking the output element
- constructor created at construction time with the given parameter values.
+<DT><A HREF="./net/objectzoo/ebc/join/ConstructableOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>ConstructableOutputCreator</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/ConstructableOutputCreator.html" title="type parameter in ConstructableOutputCreator">Input1</A>,<A HREF="./net/objectzoo/ebc/join/ConstructableOutputCreator.html" title="type parameter in ConstructableOutputCreator">Input2</A>,<A HREF="./net/objectzoo/ebc/join/ConstructableOutputCreator.html" title="type parameter in ConstructableOutputCreator">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> implementation creates the output by dynamically invoking the
+ given <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/reflect/Constructor.html?is-external=true" title="class or interface in java.lang.reflect"><CODE>Constructor</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/join/ConstructableOutputCreator.html#ConstructableOutputCreator(java.lang.reflect.Constructor)"><B>ConstructableOutputCreator(Constructor&lt;? extends Output&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/ConstructableOutputCreator.html" title="class in net.objectzoo.ebc.join">ConstructableOutputCreator</A>
+<DD>Crates a new <code>ConstructableOutputCreator</code> using the given <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/reflect/Constructor.html?is-external=true" title="class or interface in java.lang.reflect"><CODE>Constructor</CODE></A> to create
+ output values.
+<DT><A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html#createOutput(java.util.Collection, java.util.Collection)"><B>createOutput(Collection&lt;Input1Element&gt;, Collection&lt;Input2Element&gt;)</B></A> - 
+Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html" title="class in net.objectzoo.ebc.join">CollectionsOutputCreator</A>
+<DD>Creates a new output object that joins the two input values
+<DT><A HREF="./net/objectzoo/ebc/join/ConstructableOutputCreator.html#createOutput(Input1, Input2)"><B>createOutput(Input1, Input2)</B></A> - 
+Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/ConstructableOutputCreator.html" title="class in net.objectzoo.ebc.join">ConstructableOutputCreator</A>
+<DD>Creates a new output object that joins the two input values
+<DT><A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html#createOutput(Input1, Input2)"><B>createOutput(Input1, Input2)</B></A> - 
+Method in interface net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>
+<DD>Creates a new output object that joins the two input values
+<DT><A HREF="./net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html#createOutput(Input1, java.util.Collection)"><B>createOutput(Input1, Collection&lt;Input2Element&gt;)</B></A> - 
+Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="class in net.objectzoo.ebc.join">ObjectAndCollectionOutputCreator</A>
+<DD>Creates a new output object that joins the two input values
+<DT><A HREF="./net/objectzoo/ebc/join/PairOutputCreator.html#createOutput(Input1, Input2)"><B>createOutput(Input1, Input2)</B></A> - 
+Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/PairOutputCreator.html" title="class in net.objectzoo.ebc.join">PairOutputCreator</A>
+<DD>Creates a new output object that joins the two input values
 </DL>
 <HR>
 <A NAME="_D_"><!-- --></A><H2>
@@ -140,12 +149,59 @@ Method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/Pair.ht
  Two pairs are equal if both of their contained items are equal.
 </DL>
 <HR>
+<A NAME="_F_"><!-- --></A><H2>
+<B>F</B></H2>
+<DL>
+<DT><A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html#findConstructorWithParameters(java.lang.Class, java.lang.Class, java.lang.Class)"><B>findConstructorWithParameters(Class&lt;T&gt;, Class&lt;?&gt;, Class&lt;?&gt;)</B></A> - 
+Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util">ReflectionUtils</A>
+<DD>Tries to find a <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/reflect/Constructor.html?is-external=true" title="class or interface in java.lang.reflect"><CODE>Constructor</CODE></A> in the object type that takes the two parameter types as
+ parameters.
+</DL>
+<HR>
 <A NAME="_G_"><!-- --></A><H2>
 <B>G</B></H2>
 <DL>
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join"><B>GenericJoin</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Input1</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Input2</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join base class joins two input values to an output value that has a constructor taking the
+ two input values as parameters.<DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html#GenericJoin()"><B>GenericJoin()</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from this Join's
+ output type by taking a constructor that has the fitting parameter types for this Join's
+ input types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(java.lang.Class)"><B>GenericJoin(Class&lt;? extends Output&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from the given
+ type by taking a constructor that has the fitting parameter types for this Join's input
+ types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join"><B>GenericJoinCollections</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">Input1Element</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join base class joins two input collections of the input element types to a collection of
+ the output element type by using a constructor of the output element type taking the two input
+ element type values as parameters.<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections()"><B>GenericJoinCollections()</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>
+<DD>Initializes this <code>JoinCollections</code> with a constructor for the output element determined
+ from this Join's output element type by taking a constructor that has the fitting parameter
+ types for this Join's input element types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(java.lang.Class)"><B>GenericJoinCollections(Class&lt;? extends OutputElement&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>
+<DD>Initializes this <code>JoinCollections</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's input element types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>GenericJoinObjectAndCollection</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="type parameter in GenericJoinObjectAndCollection">Input1</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="type parameter in GenericJoinObjectAndCollection">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="type parameter in GenericJoinObjectAndCollection">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join base class joins a single first input value with a second collection of input elements
+ to a collection of output element by using a constructor of the output element type taking the
+ first input type and the second input element type value as parameters.<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection()"><B>GenericJoinObjectAndCollection()</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>
+<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
+ determined from this Join's output element type by taking a constructor that has the fitting
+ parameter types for this Join's first input type and second input element type.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(java.lang.Class)"><B>GenericJoinObjectAndCollection(Class&lt;? extends OutputElement&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>
+<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's first input type and second input element type.
 <DT><A HREF="./net/objectzoo/ebc/test/MockAction.html#getFirstResult()"><B>getFirstResult()</B></A> - 
 Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test">MockAction</A>
 <DD>Retrieve the parameter value given to the first invocation of this <code>MockAction</code>.
+<DT><A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html#getGenericSuperType(java.lang.Class)"><B>getGenericSuperType(Class&lt;?&gt;)</B></A> - 
+Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util">ReflectionUtils</A>
+<DD>Retrieve the generic super class type of the given concrete generic type.
 <DT><A HREF="./net/objectzoo/ebc/test/MockAction.html#getInvocationCount()"><B>getInvocationCount()</B></A> - 
 Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test">MockAction</A>
 <DD>Retrieve the number of invocations that have been conducted on this <code>MockAction</code>
@@ -161,12 +217,21 @@ Method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/Pair.ht
 <DT><A HREF="./net/objectzoo/ebc/test/MockAction.html#getLastResult()"><B>getLastResult()</B></A> - 
 Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test">MockAction</A>
 <DD>Retrieve parameter value given to the last invocation of this <code>MockAction</code>.
-<DT><A HREF="./net/objectzoo/ebc/util/LoggerFactory.html#getLogger(java.lang.Class)"><B>getLogger(Class&lt;?&gt;)</B></A> - 
-Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/LoggerFactory.html" title="class in net.objectzoo.ebc.util">LoggerFactory</A>
+<DT><A HREF="./net/objectzoo/ebc/util/LoggingUtils.html#getLogger(java.lang.Class)"><B>getLogger(Class&lt;?&gt;)</B></A> - 
+Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/LoggingUtils.html" title="class in net.objectzoo.ebc.util">LoggingUtils</A>
 <DD>Retrieves a <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging"><CODE>Logger</CODE></A> for the given class' name
-<DT><A HREF="./net/objectzoo/ebc/util/LoggerFactory.html#getLogger(java.lang.Object)"><B>getLogger(Object)</B></A> - 
-Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/LoggerFactory.html" title="class in net.objectzoo.ebc.util">LoggerFactory</A>
+<DT><A HREF="./net/objectzoo/ebc/util/LoggingUtils.html#getLogger(java.lang.Object)"><B>getLogger(Object)</B></A> - 
+Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/LoggingUtils.html" title="class in net.objectzoo.ebc.util">LoggingUtils</A>
 <DD>Retrieves a <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging"><CODE>Logger</CODE></A> for the given object's class' name
+<DT><A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html#getRawGenericSuperTypeArgument(java.lang.Class, int)"><B>getRawGenericSuperTypeArgument(Class&lt;?&gt;, int)</B></A> - 
+Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util">ReflectionUtils</A>
+<DD>Retrieve the raw type of the generic super class' type argument.
+<DT><A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html#getRawType(java.lang.reflect.Type)"><B>getRawType(Type)</B></A> - 
+Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util">ReflectionUtils</A>
+<DD>Determine the raw type for a given type
+<DT><A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html#getRawTypeArgument(java.lang.reflect.ParameterizedType, int)"><B>getRawTypeArgument(ParameterizedType, int)</B></A> - 
+Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util">ReflectionUtils</A>
+<DD>Retrieve the raw type of a given parameterized type's type argument.
 <DT><A HREF="./net/objectzoo/ebc/test/MockAction.html#getResults()"><B>getResults()</B></A> - 
 Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test">MockAction</A>
 <DD>Retrieve the parameter values of all invocations of this <code>MockAction</code> as a <A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util"><CODE>List</CODE></A>
@@ -189,11 +254,11 @@ Method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/Pair.ht
 <DT><A HREF="./net/objectzoo/ebc/DependsOn.html#inject(Dependency)"><B>inject(Dependency)</B></A> - 
 Method in interface net.objectzoo.ebc.<A HREF="./net/objectzoo/ebc/DependsOn.html" title="interface in net.objectzoo.ebc">DependsOn</A>
 <DD>Provides the given dependency implementation to this EBC.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#input1Action()"><B>input1Action()</B></A> - 
-Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>
+<DT><A HREF="./net/objectzoo/ebc/join/Join.html#input1Action()"><B>input1Action()</B></A> - 
+Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
 <DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input one to this Join
-<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#input2Action()"><B>input2Action()</B></A> - 
-Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>
+<DT><A HREF="./net/objectzoo/ebc/join/Join.html#input2Action()"><B>input2Action()</B></A> - 
+Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
 <DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input two to this Join
 <DT><A HREF="./net/objectzoo/ebc/test/MockAction.html#invoke(T)"><B>invoke(T)</B></A> - 
 Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test">MockAction</A>
@@ -213,59 +278,23 @@ Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAct
 <A NAME="_J_"><!-- --></A><H2>
 <B>J</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><B>Join</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join base class joins two input values to an output value that has a constructor taking the
- two input values as parameters.<DT><A HREF="./net/objectzoo/ebc/join/Join.html#Join()"><B>Join()</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><B>Join</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a class that can be used to implement Join EBCs.<DT><A HREF="./net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator)"><B>Join(JoinOutputCreator&lt;? super Input1, ? super Input2, ? extends Output&gt;)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
-<DD>Initializes this <code>Join</code> with a constructor for the output determined from this Join's
- output type by taking a constructor that has the fitting parameter types for this Join's
- input types.
-<DT><A HREF="./net/objectzoo/ebc/join/Join.html#Join(java.lang.Class)"><B>Join(Class&lt;? extends Output&gt;)</B></A> - 
-Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
-<DD>Initializes this <code>Join</code> with a constructor for the output determined from the given
- type by taking a constructor that has the fitting parameter types for this Join's input
- types.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join"><B>JoinBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input2</A>,<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a base class that can be used to implement Join EBCs.<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#JoinBase()"><B>JoinBase()</B></A> - 
-Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>JoinCollections</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join base class joins two input collections of the input element types to a collection of
- the output element type by using a constructor of the output element type taking the two input
- element type values as parameters.<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html#JoinCollections()"><B>JoinCollections()</B></A> - 
+<DD>Creates a new <code>Join</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to create the output of
+ the <code>Join</code>.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>JoinCollections</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join class joins two input collections of the input element types to a collection of the
+ output element type by using a <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the input element types to the
+ output element type.<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator)"><B>JoinCollections(JoinOutputCreator&lt;? super Input1Element, ? super Input2Element, ? extends OutputElement&gt;)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections</A>
-<DD>Initializes this <code>JoinCollections</code> with a constructor for the output element determined
- from this Join's output element type by taking a constructor that has the fitting parameter
- types for this Join's input element types.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(java.lang.Class)"><B>JoinCollections(Class&lt;? extends OutputElement&gt;)</B></A> - 
-Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections</A>
-<DD>Initializes this <code>JoinCollections</code> with a constructor for the output elements
- determined from the given type by taking a constructor that has the fitting parameter types
- for this Join's input element types.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>JoinObjectAndCollection</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join base class joins a single first input value with a second collection of input elements
- to a collection of output element by using a constructor of the output element type taking the
- first input type and the second input element type value as parameters.<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection()"><B>JoinObjectAndCollection()</B></A> - 
+<DD>Creates a new <code>JoinCollections</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the
+ input elements to the output element.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>JoinObjectAndCollection</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join class joins a single first input value with a second collection of input elements to a
+ collection of output element by using a <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the first input type
+ and the second input element type to the output element type.<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator)"><B>JoinObjectAndCollection(JoinOutputCreator&lt;? super Input1, ? super Input2Element, ? extends OutputElement&gt;)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>
-<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
- determined from this Join's output element type by taking a constructor that has the fitting
- parameter types for this Join's first input type and second input element type.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(java.lang.Class)"><B>JoinObjectAndCollection(Class&lt;? extends OutputElement&gt;)</B></A> - 
-Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>
-<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output elements
- determined from the given type by taking a constructor that has the fitting parameter types
- for this Join's first input type and second input element type.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join"><B>JoinToConstructableObject</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="type parameter in JoinToConstructableObject">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="type parameter in JoinToConstructableObject">Input2</A>,<A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="type parameter in JoinToConstructableObject">Output</A>,<A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="type parameter in JoinToConstructableObject">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a base class that can be used to implement Join EBCs that create their output elements by
- calling a constructor that takes the two input values as parameters.<DT><A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html#JoinToConstructableObject()"><B>JoinToConstructableObject()</B></A> - 
-Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A>
-<DD>Initializes this <code>JoinToConstructableObject</code> with a constructor for the output elements
- determined from the <code>OutputElement</code> type parameter by taking a constructor that has the
- fitting parameter types for this Join's input types.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html#JoinToConstructableObject(java.lang.reflect.Constructor)"><B>JoinToConstructableObject(Constructor&lt;? extends OutputElement&gt;)</B></A> - 
-Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A>
-<DD>Initializes this <code>JoinToConstructableObject</code> with the given constructor.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html#JoinToConstructableObject(java.lang.Class)"><B>JoinToConstructableObject(Class&lt;? extends OutputElement&gt;)</B></A> - 
-Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A>
-<DD>Initializes this <code>JoinToConstructableObject</code> with a constructor for the output elements
- determined from the given type by taking a constructor that has the fitting parameter types
- for this Join's input types.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join"><B>JoinToPair</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="type parameter in JoinToPair">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="type parameter in JoinToPair">Input2</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a Join implementation that joins the two input values to a <A HREF="./net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><CODE>Pair</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html#JoinToPair()"><B>JoinToPair()</B></A> - 
+<DD>Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
+ join the first input and second input elements to the output element.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><B>JoinOutputCreator</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="type parameter in JoinOutputCreator">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="type parameter in JoinOutputCreator">Input2</A>,<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="type parameter in JoinOutputCreator">Output</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This interface describes objects capable of creating output for <A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A>s.<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join"><B>JoinToPair</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="type parameter in JoinToPair">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="type parameter in JoinToPair">Input2</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a Join implementation that joins the two input values to a <A HREF="./net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><CODE>Pair</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html#JoinToPair()"><B>JoinToPair()</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join">JoinToPair</A>
 <DD>Crates a new <code>JoinToPair</code>.
 </DL>
@@ -273,6 +302,10 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/J
 <A NAME="_L_"><!-- --></A><H2>
 <B>L</B></H2>
 <DL>
+<DT><A HREF="./net/objectzoo/ebc/util/LoggingUtils.html#log(java.util.logging.Logger, java.util.logging.Level, java.lang.String, java.lang.Object)"><B>log(Logger, Level, String, Object)</B></A> - 
+Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/LoggingUtils.html" title="class in net.objectzoo.ebc.util">LoggingUtils</A>
+<DD>This method logs the given message and a <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang"><CODE>String</CODE></A> representation of the given parameter
+ obtained by <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true#valueOf(java.lang.Object)" title="class or interface in java.lang"><CODE>String.valueOf(Object)</CODE></A>.
 <DT><A HREF="./net/objectzoo/ebc/impl/ProcessBase.html#logger"><B>logger</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl">ProcessBase</A>
 <DD>The logger that can be used for this EBC's logging activities
@@ -285,8 +318,7 @@ Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/Signa
 <DT><A HREF="./net/objectzoo/ebc/impl/StartBase.html#logger"><B>logger</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl">StartBase</A>
 <DD>The logger that can be used for this EBC's logging activities
-<DT><A HREF="./net/objectzoo/ebc/util/LoggerFactory.html" title="class in net.objectzoo.ebc.util"><B>LoggerFactory</B></A> - Class in <A HREF="./net/objectzoo/ebc/util/package-summary.html">net.objectzoo.ebc.util</A><DD>This class provides some convenience methods to create <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging"><CODE>Logger</CODE></A> instances for classes or
- objects.<DT><A HREF="./net/objectzoo/ebc/impl/ProcessBase.html#logLevel"><B>logLevel</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/util/LoggingUtils.html" title="class in net.objectzoo.ebc.util"><B>LoggingUtils</B></A> - Class in <A HREF="./net/objectzoo/ebc/util/package-summary.html">net.objectzoo.ebc.util</A><DD>This class provides some convenience methods to used for logging in the EBCs.<DT><A HREF="./net/objectzoo/ebc/impl/ProcessBase.html#logLevel"><B>logLevel</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl">ProcessBase</A>
 <DD>The log level used for the trace logging.
 <DT><A HREF="./net/objectzoo/ebc/impl/ResultBase.html#logLevel"><B>logLevel</B></A> - 
@@ -323,14 +355,18 @@ Constructor for class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/M
 <B>N</B></H2>
 <DL>
 <DT><A HREF="./net/objectzoo/ebc/package-summary.html"><B>net.objectzoo.ebc</B></A> - package net.objectzoo.ebc<DD>This package contains interfaces that can be used to define EBCs.<DT><A HREF="./net/objectzoo/ebc/impl/package-summary.html"><B>net.objectzoo.ebc.impl</B></A> - package net.objectzoo.ebc.impl<DD>This package contains base classes that can be used to implement EBCs.<DT><A HREF="./net/objectzoo/ebc/join/package-summary.html"><B>net.objectzoo.ebc.join</B></A> - package net.objectzoo.ebc.join<DD>This package contains some ready to use Join EBCs as well as base classes that can be used to
- implement own specialized Join derivates.<DT><A HREF="./net/objectzoo/ebc/test/package-summary.html"><B>net.objectzoo.ebc.test</B></A> - package net.objectzoo.ebc.test<DD>This package contains two mock object action implementations that can be used to test EBCs.<DT><A HREF="./net/objectzoo/ebc/util/package-summary.html"><B>net.objectzoo.ebc.util</B></A> - package net.objectzoo.ebc.util<DD>This package contains utility classes that complement the EBCs.</DL>
+ implement own specialized Join subclasses.<DT><A HREF="./net/objectzoo/ebc/test/package-summary.html"><B>net.objectzoo.ebc.test</B></A> - package net.objectzoo.ebc.test<DD>This package contains two mock object action implementations that can be used to test EBCs.<DT><A HREF="./net/objectzoo/ebc/util/package-summary.html"><B>net.objectzoo.ebc.util</B></A> - package net.objectzoo.ebc.util<DD>This package contains utility classes that complement the EBCs.</DL>
 <HR>
 <A NAME="_O_"><!-- --></A><H2>
 <B>O</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html#outputElementConstructor"><B>outputElementConstructor</B></A> - 
-Variable in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinToConstructableObject.html" title="class in net.objectzoo.ebc.join">JoinToConstructableObject</A>
-<DD>Holds a reference to the constructor that is used to create the Join's output elements
+<DT><A HREF="./net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>ObjectAndCollectionOutputCreator</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="type parameter in ObjectAndCollectionOutputCreator">Input1</A>,<A HREF="./net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="type parameter in ObjectAndCollectionOutputCreator">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="type parameter in ObjectAndCollectionOutputCreator">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> implementation takes a first input and a <A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util"><CODE>Collection</CODE></A> of
+ input elements and creates a <A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util"><CODE>List</CODE></A> of output elements that contains an output element for
+ each element present in the second input constructed together with the given first input.<DT><A HREF="./net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html#ObjectAndCollectionOutputCreator(net.objectzoo.ebc.join.JoinOutputCreator)"><B>ObjectAndCollectionOutputCreator(JoinOutputCreator&lt;? super Input1, ? super Input2Element, ? extends OutputElement&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="class in net.objectzoo.ebc.join">ObjectAndCollectionOutputCreator</A>
+<DD>Creates a new <code>ObjectAndCollectionOutputCreator</code> that uses the given
+ <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the given first input type and second input element type to
+ the output element type.
 </DL>
 <HR>
 <A NAME="_P_"><!-- --></A><H2>
@@ -342,6 +378,9 @@ Constructor for class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/P
 <DT><A HREF="./net/objectzoo/ebc/util/Pair.html#Pair(T1, T2)"><B>Pair(T1, T2)</B></A> - 
 Constructor for class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util">Pair</A>
 <DD>Creates a new <code>Pair</code> with the given items.
+<DT><A HREF="./net/objectzoo/ebc/join/PairOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>PairOutputCreator</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input1</A>,<A HREF="./net/objectzoo/ebc/join/PairOutputCreator.html" title="type parameter in PairOutputCreator">Input2</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> implementation crates <A HREF="./net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><CODE>Pair</CODE></A> instances as output values.<DT><A HREF="./net/objectzoo/ebc/join/PairOutputCreator.html#PairOutputCreator()"><B>PairOutputCreator()</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/PairOutputCreator.html" title="class in net.objectzoo.ebc.join">PairOutputCreator</A>
+<DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/impl/ProcessBase.html#process(ProcessParameter)"><B>process(ProcessParameter)</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl">ProcessBase</A>
 <DD>This method is to be provided by subclasses to actually implement what's taking place when
@@ -379,7 +418,7 @@ Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/P
 <A NAME="_R_"><!-- --></A><H2>
 <B>R</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ResultBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ResultBase.html" title="type parameter in ResultBase">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ResultBase.html#ResultBase()"><B>ResultBase()</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util"><B>ReflectionUtils</B></A> - Class in <A HREF="./net/objectzoo/ebc/util/package-summary.html">net.objectzoo.ebc.util</A><DD>This class defines some Reflection utility methods used by the generic <code>Join</code> EBCs.<DT><A HREF="./net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ResultBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ResultBase.html" title="type parameter in ResultBase">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ResultBase.html#ResultBase()"><B>ResultBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A>
 <DD>Creates a new <code>ResultBase</code> that allows only a single subscriber to the result event.
 <DT><A HREF="./net/objectzoo/ebc/impl/ResultBase.html#ResultBase(boolean)"><B>ResultBase(boolean)</B></A> - 
@@ -495,7 +534,7 @@ Method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/Pair.ht
 <DD>
 </DL>
 <HR>
-<A HREF="#_A_">A</A> <A HREF="#_C_">C</A> <A HREF="#_D_">D</A> <A HREF="#_E_">E</A> <A HREF="#_G_">G</A> <A HREF="#_H_">H</A> <A HREF="#_I_">I</A> <A HREF="#_J_">J</A> <A HREF="#_L_">L</A> <A HREF="#_M_">M</A> <A HREF="#_N_">N</A> <A HREF="#_O_">O</A> <A HREF="#_P_">P</A> <A HREF="#_R_">R</A> <A HREF="#_S_">S</A> <A HREF="#_T_">T</A> 
+<A HREF="#_A_">A</A> <A HREF="#_C_">C</A> <A HREF="#_D_">D</A> <A HREF="#_E_">E</A> <A HREF="#_F_">F</A> <A HREF="#_G_">G</A> <A HREF="#_H_">H</A> <A HREF="#_I_">I</A> <A HREF="#_J_">J</A> <A HREF="#_L_">L</A> <A HREF="#_M_">M</A> <A HREF="#_N_">N</A> <A HREF="#_O_">O</A> <A HREF="#_P_">P</A> <A HREF="#_R_">R</A> <A HREF="#_S_">S</A> <A HREF="#_T_">T</A> 
 
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <A NAME="navbar_bottom"><!-- --></A>

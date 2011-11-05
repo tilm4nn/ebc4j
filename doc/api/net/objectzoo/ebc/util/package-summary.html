@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-net.objectzoo.ebc.util (EBC4J API (Version 0.9))
+net.objectzoo.ebc.util (EBC4J API (Version 1.0))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ net.objectzoo.ebc.util (EBC4J API (Version 0.9))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="net.objectzoo.ebc.util (EBC4J API (Version 0.9))";
+        parent.document.title="net.objectzoo.ebc.util (EBC4J API (Version 1.0))";
     }
 }
 </SCRIPT>
@@ -93,13 +93,16 @@ This package contains utility classes that complement the EBCs.
 <B>Class Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/util/LoggerFactory.html" title="class in net.objectzoo.ebc.util">LoggerFactory</A></B></TD>
-<TD>This class provides some convenience methods to create <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging"><CODE>Logger</CODE></A> instances for classes or
- objects.</TD>
+<TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/util/LoggingUtils.html" title="class in net.objectzoo.ebc.util">LoggingUtils</A></B></TD>
+<TD>This class provides some convenience methods to used for logging in the EBCs.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util">Pair&lt;T1,T2&gt;</A></B></TD>
 <TD>A <code>Pair</code> is a container combining two other objects of known types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util">ReflectionUtils</A></B></TD>
+<TD>This class defines some Reflection utility methods used by the generic <code>Join</code> EBCs.</TD>
 </TR>
 </TABLE>
 &nbsp;

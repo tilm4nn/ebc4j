@@ -26,6 +26,7 @@ package net.objectzoo.ebc.impl;
 
 import net.objectzoo.ebc.CanStart;
 import net.objectzoo.ebc.SendsResult;
+import net.objectzoo.ebc.util.LoggingUtils;
 import net.objectzoo.events.Event;
 import net.objectzoo.events.impl.EventDelegate;
 
@@ -98,7 +99,7 @@ public abstract class StartAndResultBase<ResultParameter> extends StartBase impl
 	 */
 	protected void sendResult(ResultParameter parameter)
 	{
-		logger.log(logLevel, "sending result: {0}", parameter);
+		LoggingUtils.log(logger, logLevel, "sending result: ", parameter);
 		
 		resultEvent.invoke(parameter);
 	}

@@ -28,7 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.objectzoo.ebc.SendsSignal;
-import net.objectzoo.ebc.util.LoggerFactory;
+import net.objectzoo.ebc.util.LoggingUtils;
 import net.objectzoo.events.Event0;
 import net.objectzoo.events.impl.Event0Delegate;
 
@@ -46,7 +46,7 @@ public class SignalBase implements SendsSignal
 	protected Level logLevel = Level.FINEST;
 	
 	/** The logger that can be used for this EBC's logging activities */
-	protected final Logger logger = LoggerFactory.getLogger(this);
+	protected final Logger logger = LoggingUtils.getLogger(this);
 	
 	private final Event0Delegate signalEvent;
 	
