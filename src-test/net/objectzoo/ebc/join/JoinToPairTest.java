@@ -26,11 +26,10 @@ package net.objectzoo.ebc.join;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-
-import org.junit.Test;
-
 import net.objectzoo.ebc.test.MockAction;
 import net.objectzoo.ebc.util.Pair;
+
+import org.junit.Test;
 
 public class JoinToPairTest
 {
@@ -39,7 +38,7 @@ public class JoinToPairTest
 	{
 		MockAction<Pair<String, Integer>> result = new MockAction<Pair<String, Integer>>();
 		
-		JoinToPair<String, Integer> sut = new JoinToPair<String, Integer>();
+		JoinToPair<String, Integer> sut = new JoinToPair<String, Integer>(false);
 		sut.resultEvent().subscribe(result);
 		
 		sut.input1Action().invoke("String");

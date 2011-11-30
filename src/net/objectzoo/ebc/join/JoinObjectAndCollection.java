@@ -32,8 +32,14 @@ import java.util.List;
  * collection of output element by using a {@link JoinOutputCreator} to join the first input type
  * and the second input element type to the output element type. The class implements the
  * boilerplate code required to provide two input actions and a result event as well as trace
- * logging of value input and send results. The output of this Join is created and sent for each
- * input invocation, when both input values have been set to a non {@code null} value at this time.
+ * logging of value input and send results.
+ * 
+ * The Join waits for every input to be set at least once before creating a result event. Once both
+ * inputs have been set an output is created and sent for each single input invocation until the
+ * Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ * 
+ * To reset the Join the {@link #resetAction()} can be invoked. If the {@code resetAfterResultEvent}
+ * parameter is set at construction time the Join is automatically reset after each result event.
  * 
  * @author tilmann
  * 
@@ -53,15 +59,19 @@ public class JoinObjectAndCollection<Input1, Input2Element, OutputElement> exten
 	 * 
 	 * @param elementOutputCreator
 	 *        the output element creator to be used
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
-	public JoinObjectAndCollection(JoinOutputCreator<? super Input1, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
+	public JoinObjectAndCollection(JoinOutputCreator<? super Input1, ? super Input2Element, ? extends OutputElement> elementOutputCreator,
+								   boolean resetAfterResultEvent)
 	{
-		super(new ObjectAndCollectionOutputCreator<Input1, Input2Element, OutputElement>(elementOutputCreator));
+		super(new ObjectAndCollectionOutputCreator<Input1, Input2Element, OutputElement>(elementOutputCreator),
+			resetAfterResultEvent);
 	}
 	
-	JoinObjectAndCollection()
+	JoinObjectAndCollection(boolean resetAfterResultEvent)
 	{
-		// only accessible to subclasses in same package
+		super(resetAfterResultEvent);
 	}
 	
 	void setOutputElementCreator(JoinOutputCreator<? super Input1, ? super Input2Element, ? extends OutputElement> elementOutputCreator)

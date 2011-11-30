@@ -30,9 +30,9 @@ import static org.junit.Assert.assertThat;
 
 import java.util.Collection;
 
-import org.junit.Test;
-
 import net.objectzoo.ebc.test.MockAction;
+
+import org.junit.Test;
 
 public class GenericJoinObjectAndCollectionTest
 {
@@ -42,7 +42,8 @@ public class GenericJoinObjectAndCollectionTest
 	{
 		MockAction<Collection<TestObject>> result = new MockAction<Collection<TestObject>>();
 		
-		GenericJoinObjectAndCollection<String, Integer, TestObject> sut = new GenericJoinObjectAndCollection<String, Integer, TestObject>()
+		GenericJoinObjectAndCollection<String, Integer, TestObject> sut = new GenericJoinObjectAndCollection<String, Integer, TestObject>(
+			false)
 		{
 		};
 		sut.resultEvent().subscribe(result);
@@ -61,7 +62,7 @@ public class GenericJoinObjectAndCollectionTest
 		MockAction<Collection<TestObject>> result = new MockAction<Collection<TestObject>>();
 		
 		GenericJoinObjectAndCollection<String, Integer, TestObject> sut = new GenericJoinObjectAndCollection<String, Integer, TestObject>(
-			SubTestObject.class)
+			SubTestObject.class, false)
 		{
 		};
 		sut.resultEvent().subscribe(result);

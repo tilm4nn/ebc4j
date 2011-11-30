@@ -29,8 +29,14 @@ package net.objectzoo.ebc.join;
  * to a collection of output element by using a constructor of the output element type taking the
  * first input type and the second input element type value as parameters. The class implements the
  * boilerplate code required to provide two input actions and a result event as well as trace
- * logging of value input and send results. The output of this Join is created and sent for each
- * input invocation, when both input values have been set to a non {@code null} value at this time.
+ * logging of value input and send results.
+ * 
+ * The Join waits for every input to be set at least once before creating a result event. Once both
+ * inputs have been set an output is created and sent for each single input invocation until the
+ * Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ * 
+ * To reset the Join the {@link #resetAction()} can be invoked. If the {@code resetAfterResultEvent}
+ * parameter is set at construction time the Join is automatically reset after each result event.
  * 
  * To use this Join create a (possibly anonymous) subclass that specifies concrete type parameters.
  * 
@@ -51,11 +57,15 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 	 * determined from this Join's output element type by taking a constructor that has the fitting
 	 * parameter types for this Join's first input type and second input element type.
 	 * 
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 * @throws IllegalArgumentException
 	 *         if the output element type does not have a fitting constructor
 	 */
-	public GenericJoinObjectAndCollection()
+	public GenericJoinObjectAndCollection(boolean resetAfterResultEvent)
 	{
+		super(resetAfterResultEvent);
+		
 		setOutputElementCreator(new ConstructableOutputCreator<Input1, Input2Element, OutputElement>(
 			GenericOutputConstructorUtils.<OutputElement> findOutputConstructor(getClass())));
 	}
@@ -67,11 +77,16 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 	 * 
 	 * @param outputElementType
 	 *        the type of the output elements actually constructed in this Join
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 * @throws IllegalArgumentException
 	 *         if the output element type is {@code null} or does not have a fitting constructor
 	 */
-	public GenericJoinObjectAndCollection(Class<? extends OutputElement> outputElementType)
+	public GenericJoinObjectAndCollection(Class<? extends OutputElement> outputElementType,
+										  boolean resetAfterResultEvent)
 	{
+		super(resetAfterResultEvent);
+		
 		setOutputElementCreator(new ConstructableOutputCreator<Input1, Input2Element, OutputElement>(
 			GenericOutputConstructorUtils.<OutputElement> findOutputConstructor(getClass(), outputElementType)));
 	}

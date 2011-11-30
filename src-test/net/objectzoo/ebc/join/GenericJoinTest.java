@@ -26,10 +26,9 @@ package net.objectzoo.ebc.join;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import net.objectzoo.ebc.test.MockAction;
 
 import org.junit.Test;
-
-import net.objectzoo.ebc.test.MockAction;
 
 public class GenericJoinTest
 {
@@ -38,7 +37,7 @@ public class GenericJoinTest
 	{
 		MockAction<TestObject> result = new MockAction<TestObject>();
 		
-		GenericJoin<String, Integer, TestObject> sut = new GenericJoin<String, Integer, TestObject>()
+		GenericJoin<String, Integer, TestObject> sut = new GenericJoin<String, Integer, TestObject>(false)
 		{
 		};
 		sut.resultEvent().subscribe(result);
@@ -55,7 +54,7 @@ public class GenericJoinTest
 		MockAction<TestObject> result = new MockAction<TestObject>();
 		
 		GenericJoin<String, Integer, TestObject> sut = new GenericJoin<String, Integer, TestObject>(
-			SubTestObject.class)
+			SubTestObject.class, false)
 		{
 		};
 		sut.resultEvent().subscribe(result);

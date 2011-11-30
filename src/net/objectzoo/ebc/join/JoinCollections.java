@@ -31,10 +31,16 @@ import java.util.List;
  * This Join class joins two input collections of the input element types to a collection of the
  * output element type by using a {@link JoinOutputCreator} to join the input element types to the
  * output element type. The class implements the boilerplate code required to provide two input
- * actions and a result event as well as trace logging of value input and send results. The output
- * of this Join is created and sent for each input invocation, when both input values have been set
- * to a non {@code null} value at this time. If one of the two collections given as input has more
- * items than the other the exceeding items are ignored while producing the output.
+ * actions and a result event as well as trace logging of value input and send results. If one of
+ * the two collections given as input has more items than the other the exceeding items are ignored
+ * while producing the output.
+ * 
+ * The Join waits for every input to be set at least once before creating a result event. Once both
+ * inputs have been set an output is created and sent for each single input invocation until the
+ * Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ * 
+ * To reset the Join the {@link #resetAction()} can be invoked. If the {@code resetAfterResultEvent}
+ * parameter is set at construction time the Join is automatically reset after each result event.
  * 
  * @author tilmann
  * 
@@ -54,15 +60,19 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 	 * 
 	 * @param elementOutputCreator
 	 *        the output element creator to be used
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
-	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
+	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator,
+						   boolean resetAfterResultEvent)
 	{
-		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator));
+		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator),
+			resetAfterResultEvent);
 	}
 	
-	JoinCollections()
+	JoinCollections(boolean resetAfterResultEvent)
 	{
-		// only accessible to subclasses in same package
+		super(resetAfterResultEvent);
 	}
 	
 	void setOutputElementCreator(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator)

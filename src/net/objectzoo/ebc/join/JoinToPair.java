@@ -40,10 +40,13 @@ public class JoinToPair<Input1, Input2> extends Join<Input1, Input2, Pair<Input1
 {
 	/**
 	 * Crates a new {@code JoinToPair}.
+	 * 
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
-	public JoinToPair()
+	public JoinToPair(boolean resetAfterResultEvent)
 	{
-		super(new PairOutputCreator<Input1, Input2>());
+		super(new PairOutputCreator<Input1, Input2>(), resetAfterResultEvent);
 	}
 	
 }

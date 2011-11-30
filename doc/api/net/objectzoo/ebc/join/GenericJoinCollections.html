@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-GenericJoinCollections (EBC4J API (Version 1.0))
+GenericJoinCollections (EBC4J API (Version 1.1))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ GenericJoinCollections (EBC4J API (Version 1.0))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="GenericJoinCollections (EBC4J API (Version 1.0))";
+        parent.document.title="GenericJoinCollections (EBC4J API (Version 1.1))";
     }
 }
 </SCRIPT>
@@ -110,10 +110,16 @@ Class GenericJoinCollections&lt;Input1Element,Input2Element,OutputElement&gt;</H
 This Join base class joins two input collections of the input element types to a collection of
  the output element type by using a constructor of the output element type taking the two input
  element type values as parameters. The class implements the boilerplate code required to provide
- two input actions and a result event as well as trace logging of value input and send results.
- The output of this Join is created and sent for each input invocation, when both input values
- have been set to a non <code>null</code> value at this time. If one of the two collections given as
- input has more items than the other the exceeding items are ignored while producing the output.
+ two input actions and a result event as well as trace logging of value input and send results. If
+ one of the two collections given as input has more items than the other the exceeding items are
+ ignored while producing the output.
+ 
+ The Join waits for every input to be set at least once before creating a result event. Once both
+ inputs have been set an output is created and sent for each single input invocation until the
+ Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ 
+ To reset the Join the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()"><CODE>Join.resetAction()</CODE></A> can be invoked. If the <code>resetAfterResultEvent</code>
+ parameter is set at construction time the Join is automatically reset after each result event.
  
  To use this Join create a (possibly anonymous) subclass that specifies concrete type parameters.
 <P>
@@ -154,7 +160,7 @@ This Join base class joins two input collections of the input element types to a
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections()">GenericJoinCollections</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(boolean)">GenericJoinCollections</A></B>(boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinCollections</code> with a constructor for the output element determined
@@ -162,7 +168,8 @@ This Join base class joins two input collections of the input element types to a
  types for this Join's input element types.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(java.lang.Class)">GenericJoinCollections</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt;&nbsp;outputElementType)</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(java.lang.Class, boolean)">GenericJoinCollections</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt;&nbsp;outputElementType,
+                       boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinCollections</code> with a constructor for the output elements
@@ -186,7 +193,7 @@ This Join base class joins two input collections of the input element types to a
 <TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input1Action()">input1Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#input2Action()">input2Action</A></CODE></TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input1Action()">input1Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#input2Action()">input2Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()">resetAction</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
@@ -220,33 +227,34 @@ This Join base class joins two input collections of the input element types to a
 </TR>
 </TABLE>
 
-<A NAME="GenericJoinCollections()"><!-- --></A><H3>
+<A NAME="GenericJoinCollections(boolean)"><!-- --></A><H3>
 GenericJoinCollections</H3>
 <PRE>
-public <B>GenericJoinCollections</B>()</PRE>
+public <B>GenericJoinCollections</B>(boolean&nbsp;resetAfterResultEvent)</PRE>
 <DL>
 <DD>Initializes this <code>JoinCollections</code> with a constructor for the output element determined
  from this Join's output element type by taking a constructor that has the fitting parameter
  types for this Join's input element types.
 <P>
 <DL>
-
+<DT><B>Parameters:</B><DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output element type does not have a fitting constructor</DL>
 </DL>
 <HR>
 
-<A NAME="GenericJoinCollections(java.lang.Class)"><!-- --></A><H3>
+<A NAME="GenericJoinCollections(java.lang.Class, boolean)"><!-- --></A><H3>
 GenericJoinCollections</H3>
 <PRE>
-public <B>GenericJoinCollections</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt;&nbsp;outputElementType)</PRE>
+public <B>GenericJoinCollections</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt;&nbsp;outputElementType,
+                              boolean&nbsp;resetAfterResultEvent)</PRE>
 <DL>
 <DD>Initializes this <code>JoinCollections</code> with a constructor for the output elements
  determined from the given type by taking a constructor that has the fitting parameter types
  for this Join's input element types.
 <P>
 <DL>
-<DT><B>Parameters:</B><DD><CODE>outputElementType</CODE> - the type of the output elements actually constructed in this Join
+<DT><B>Parameters:</B><DD><CODE>outputElementType</CODE> - the type of the output elements actually constructed in this Join<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output element type is <code>null</code> or does not have a fitting constructor</DL>
 </DL>

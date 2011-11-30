@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-JoinCollections (EBC4J API (Version 1.0))
+JoinCollections (EBC4J API (Version 1.1))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ JoinCollections (EBC4J API (Version 1.0))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JoinCollections (EBC4J API (Version 1.0))";
+        parent.document.title="JoinCollections (EBC4J API (Version 1.1))";
     }
 }
 </SCRIPT>
@@ -112,10 +112,16 @@ Class JoinCollections&lt;Input1Element,Input2Element,OutputElement&gt;</H2>
 This Join class joins two input collections of the input element types to a collection of the
  output element type by using a <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the input element types to the
  output element type. The class implements the boilerplate code required to provide two input
- actions and a result event as well as trace logging of value input and send results. The output
- of this Join is created and sent for each input invocation, when both input values have been set
- to a non <code>null</code> value at this time. If one of the two collections given as input has more
- items than the other the exceeding items are ignored while producing the output.
+ actions and a result event as well as trace logging of value input and send results. If one of
+ the two collections given as input has more items than the other the exceeding items are ignored
+ while producing the output.
+ 
+ The Join waits for every input to be set at least once before creating a result event. Once both
+ inputs have been set an output is created and sent for each single input invocation until the
+ Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ 
+ To reset the Join the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()"><CODE>Join.resetAction()</CODE></A> can be invoked. If the <code>resetAfterResultEvent</code>
+ parameter is set at construction time the Join is automatically reset after each result event.
 <P>
 
 <P>
@@ -154,7 +160,8 @@ This Join class joins two input collections of the input element types to a coll
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator)">JoinCollections</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt;&nbsp;elementOutputCreator)</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator, boolean)">JoinCollections</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt;&nbsp;elementOutputCreator,
+                boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinCollections</code> using the given <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the
@@ -177,7 +184,7 @@ This Join class joins two input collections of the input element types to a coll
 <TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input1Action()">input1Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#input2Action()">input2Action</A></CODE></TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input1Action()">input1Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#input2Action()">input2Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()">resetAction</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
@@ -211,16 +218,17 @@ This Join class joins two input collections of the input element types to a coll
 </TR>
 </TABLE>
 
-<A NAME="JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator)"><!-- --></A><H3>
+<A NAME="JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator, boolean)"><!-- --></A><H3>
 JoinCollections</H3>
 <PRE>
-public <B>JoinCollections</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt;&nbsp;elementOutputCreator)</PRE>
+public <B>JoinCollections</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt;&nbsp;elementOutputCreator,
+                       boolean&nbsp;resetAfterResultEvent)</PRE>
 <DL>
 <DD>Creates a new <code>JoinCollections</code> using the given <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the
  input elements to the output element.
 <P>
 <DL>
-<DT><B>Parameters:</B><DD><CODE>elementOutputCreator</CODE> - the output element creator to be used</DL>
+<DT><B>Parameters:</B><DD><CODE>elementOutputCreator</CODE> - the output element creator to be used<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event</DL>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
 <HR>

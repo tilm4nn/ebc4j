@@ -27,15 +27,23 @@ package net.objectzoo.ebc.join;
 import java.util.logging.Level;
 
 import net.objectzoo.delegates.Action;
+import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.impl.ResultBase;
 import net.objectzoo.ebc.util.LoggingUtils;
 
 /**
  * This is a class that can be used to implement Join EBCs. The class implements the boilerplate
  * code required to provide two input actions and a result event as well as trace logging of value
- * input and send results. The output of this Join is created and sent for each input invocation,
- * when both input values have been set to a non {@code null} value at this time. To actually create
- * the output an instance of {@link JoinOutputCreator} is needed.
+ * input and send results.
+ * 
+ * The Join waits for every input to be set at least once before creating a result event. Once both
+ * inputs have been set an output is created and sent for each single input invocation until the
+ * Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ * 
+ * To reset the Join the {@link #resetAction()} can be invoked. If the {@code resetAfterResultEvent}
+ * parameter is set at construction time the Join is automatically reset after each result event.
+ * 
+ * To actually create the output an instance of {@link JoinOutputCreator} is used.
  * 
  * @author tilmann
  * 
@@ -48,9 +56,15 @@ import net.objectzoo.ebc.util.LoggingUtils;
  */
 public class Join<Input1, Input2, Output> extends ResultBase<Output>
 {
-	private Input1 lastInput1;
+	private Input1 input1;
 	
-	private Input2 lastInput2;
+	private Input2 input2;
+	
+	private boolean input1Received;
+	
+	private boolean input2Received;
+	
+	private final boolean resetAfterResultEvent;
 	
 	private JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator;
 	
@@ -60,9 +74,14 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	 * 
 	 * @param outputCreator
 	 *        the output creator to be used
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
-	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator)
+	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator,
+				boolean resetAfterResultEvent)
 	{
+		this(resetAfterResultEvent);
+		
 		if (outputCreator == null)
 		{
 			throw new IllegalArgumentException("outputCreator=null");
@@ -70,9 +89,9 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		this.outputCreator = outputCreator;
 	}
 	
-	Join()
+	Join(boolean resetAfterResultEvent)
 	{
-		// only accessible to subclasses in same package
+		this.resetAfterResultEvent = resetAfterResultEvent;
 	}
 	
 	private final Action<Input1> input1Action = new Action<Input1>()
@@ -82,7 +101,8 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		{
 			LoggingUtils.log(logger, Level.FINEST, "receiving input1: ", input);
 			
-			lastInput1 = input;
+			input1 = input;
+			input1Received = true;
 			sendResultIfComplete();
 		}
 	};
@@ -94,7 +114,8 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		{
 			LoggingUtils.log(logger, Level.FINEST, "receiving input2: ", input);
 			
-			lastInput2 = input;
+			input2 = input;
+			input2Received = true;
 			sendResultIfComplete();
 		}
 	};
@@ -121,16 +142,29 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	
 	private void sendResultIfComplete()
 	{
-		if (lastInput1 != null && lastInput2 != null)
+		if (input1Received && input2Received)
 		{
-			createAndSendOutput();
+			createAndSendResult();
+			
+			if (resetAfterResultEvent)
+			{
+				clearInput();
+			}
 		}
 	}
 	
-	private void createAndSendOutput()
+	private void createAndSendResult()
 	{
-		Output output = outputCreator.createOutput(lastInput1, lastInput2);
+		Output output = outputCreator.createOutput(input1, input2);
 		sendResult(output);
+	}
+	
+	private void clearInput()
+	{
+		input1 = null;
+		input1Received = false;
+		input2 = null;
+		input2Received = false;
 	}
 	
 	void setOutputCreator(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator)
@@ -140,6 +174,25 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 			throw new IllegalStateException("The outputCreator can only be set once");
 		}
 		this.outputCreator = outputCreator;
+	}
+	
+	/**
+	 * Provides an {@link Action0} that is used to reset this Join
+	 * 
+	 * @return the reset action of this Join
+	 */
+	public Action0 resetAction()
+	{
+		return new Action0()
+		{
+			@Override
+			public void invoke()
+			{
+				logger.log(logLevel, "receiving resetInput");
+				
+				clearInput();
+			}
+		};
 	}
 	
 }

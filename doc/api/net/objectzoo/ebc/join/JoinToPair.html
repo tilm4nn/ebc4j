@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-JoinToPair (EBC4J API (Version 1.0))
+JoinToPair (EBC4J API (Version 1.1))
 </TITLE>
 
 
@@ -13,7 +13,7 @@ JoinToPair (EBC4J API (Version 1.0))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JoinToPair (EBC4J API (Version 1.0))";
+        parent.document.title="JoinToPair (EBC4J API (Version 1.1))";
     }
 }
 </SCRIPT>
@@ -145,7 +145,7 @@ This is a Join implementation that joins the two input values to a <A HREF="../.
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinToPair.html#JoinToPair()">JoinToPair</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinToPair.html#JoinToPair(boolean)">JoinToPair</A></B>(boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crates a new <code>JoinToPair</code>.</TD>
@@ -167,7 +167,7 @@ This is a Join implementation that joins the two input values to a <A HREF="../.
 <TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input1Action()">input1Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#input2Action()">input2Action</A></CODE></TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input1Action()">input1Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#input2Action()">input2Action</A>, <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()">resetAction</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
@@ -201,13 +201,15 @@ This is a Join implementation that joins the two input values to a <A HREF="../.
 </TR>
 </TABLE>
 
-<A NAME="JoinToPair()"><!-- --></A><H3>
+<A NAME="JoinToPair(boolean)"><!-- --></A><H3>
 JoinToPair</H3>
 <PRE>
-public <B>JoinToPair</B>()</PRE>
+public <B>JoinToPair</B>(boolean&nbsp;resetAfterResultEvent)</PRE>
 <DL>
 <DD>Crates a new <code>JoinToPair</code>.
 <P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event</DL>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
 <HR>
