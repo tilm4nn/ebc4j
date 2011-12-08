@@ -24,6 +24,8 @@
  */
 package net.objectzoo.ebc.join;
 
+import java.util.Collection;
+
 /**
  * This Join base class joins two input collections of the input element types to a collection of
  * the output element type by using a constructor of the output element type taking the two input
@@ -72,6 +74,29 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	}
 	
 	/**
+	 * Initializes this {@code JoinCollections} with a constructor for the output element determined
+	 * from this Join's output element type by taking a constructor that has the fitting parameter
+	 * types for this Join's input element types.
+	 * 
+	 * @param inputStorageProvider
+	 *        the {@link JoinInputStorageProvider} to be used by this {@code Join}. If {@code null}
+	 *        is given then the {@link #DEFAULT_INPUT_STORAGE_PROVIDER} is used or if that is also
+	 *        {@code null} a {@link BasicInputStorageProvider} is created.
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
+	 * @throws IllegalArgumentException
+	 *         if the output element type does not have a fitting constructor
+	 */
+	public GenericJoinCollections(JoinInputStorageProvider<Collection<Input1Element>, Collection<Input2Element>> inputStorageProvider,
+								  boolean resetAfterResultEvent)
+	{
+		super(inputStorageProvider, resetAfterResultEvent);
+		
+		setOutputElementCreator(new ConstructableOutputCreator<Input1Element, Input2Element, OutputElement>(
+			GenericOutputConstructorUtils.<OutputElement> findOutputConstructor(getClass())));
+	}
+	
+	/**
 	 * Initializes this {@code JoinCollections} with a constructor for the output elements
 	 * determined from the given type by taking a constructor that has the fitting parameter types
 	 * for this Join's input element types.
@@ -86,6 +111,32 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	public GenericJoinCollections(Class<? extends OutputElement> outputElementType, boolean resetAfterResultEvent)
 	{
 		super(resetAfterResultEvent);
+		
+		setOutputElementCreator(new ConstructableOutputCreator<Input1Element, Input2Element, OutputElement>(
+			GenericOutputConstructorUtils.<OutputElement> findOutputConstructor(getClass(), outputElementType)));
+	}
+	
+	/**
+	 * Initializes this {@code JoinCollections} with a constructor for the output elements
+	 * determined from the given type by taking a constructor that has the fitting parameter types
+	 * for this Join's input element types.
+	 * 
+	 * @param outputElementType
+	 *        the type of the output elements actually constructed in this Join
+	 * @param inputStorageProvider
+	 *        the {@link JoinInputStorageProvider} to be used by this {@code Join}. If {@code null}
+	 *        is given then the {@link #DEFAULT_INPUT_STORAGE_PROVIDER} is used or if that is also
+	 *        {@code null} a {@link BasicInputStorageProvider} is created.
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
+	 * @throws IllegalArgumentException
+	 *         if the output element type is {@code null} or does not have a fitting constructor
+	 */
+	public GenericJoinCollections(Class<? extends OutputElement> outputElementType,
+								  JoinInputStorageProvider<Collection<Input1Element>, Collection<Input2Element>> inputStorageProvider,
+								  boolean resetAfterResultEvent)
+	{
+		super(inputStorageProvider, resetAfterResultEvent);
 		
 		setOutputElementCreator(new ConstructableOutputCreator<Input1Element, Input2Element, OutputElement>(
 			GenericOutputConstructorUtils.<OutputElement> findOutputConstructor(getClass(), outputElementType)));

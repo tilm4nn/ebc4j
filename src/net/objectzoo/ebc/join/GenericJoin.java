@@ -62,7 +62,29 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	 */
 	public GenericJoin(boolean resetAfterResultEvent)
 	{
-		super(resetAfterResultEvent);
+		super(null, resetAfterResultEvent);
+		
+		setOutputCreator(new ConstructableOutputCreator<Input1, Input2, Output>(
+			GenericOutputConstructorUtils.<Output> findOutputConstructor(getClass())));
+	}
+	
+	/**
+	 * Initializes this {@code Join} with a constructor for the output determined from this Join's
+	 * output type by taking a constructor that has the fitting parameter types for this Join's
+	 * input types.
+	 * 
+	 * @param inputStorageProvider
+	 *        the {@link JoinInputStorageProvider} to be used by this {@code Join}. If {@code null}
+	 *        is given then the {@link #DEFAULT_INPUT_STORAGE_PROVIDER} is used or if that is also
+	 *        {@code null} a {@link BasicInputStorageProvider} is created.
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
+	 * @throws IllegalArgumentException
+	 *         if the output type does not have a fitting constructor
+	 */
+	public GenericJoin(JoinInputStorageProvider<Input1, Input2> inputStorageProvider, boolean resetAfterResultEvent)
+	{
+		super(inputStorageProvider, resetAfterResultEvent);
 		
 		setOutputCreator(new ConstructableOutputCreator<Input1, Input2, Output>(
 			GenericOutputConstructorUtils.<Output> findOutputConstructor(getClass())));
@@ -82,7 +104,32 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	 */
 	public GenericJoin(Class<? extends Output> outputType, boolean resetAfterResultEvent)
 	{
-		super(resetAfterResultEvent);
+		super(null, resetAfterResultEvent);
+		
+		setOutputCreator(new ConstructableOutputCreator<Input1, Input2, Output>(
+			GenericOutputConstructorUtils.<Output> findOutputConstructor(getClass(), outputType)));
+	}
+	
+	/**
+	 * Initializes this {@code Join} with a constructor for the output determined from the given
+	 * type by taking a constructor that has the fitting parameter types for this Join's input
+	 * types.
+	 * 
+	 * @param outputType
+	 *        the type of the output actually constructed in this Join
+	 * @param inputStorageProvider
+	 *        the {@link JoinInputStorageProvider} to be used by this {@code Join}. If {@code null}
+	 *        is given then the {@link #DEFAULT_INPUT_STORAGE_PROVIDER} is used or if that is also
+	 *        {@code null} a {@link BasicInputStorageProvider} is created.
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
+	 * @throws IllegalArgumentException
+	 *         if the output type is {@code null} or does not have a fitting constructor
+	 */
+	public GenericJoin(Class<? extends Output> outputType,
+					   JoinInputStorageProvider<Input1, Input2> inputStorageProvider, boolean resetAfterResultEvent)
+	{
+		super(inputStorageProvider, resetAfterResultEvent);
 		
 		setOutputCreator(new ConstructableOutputCreator<Input1, Input2, Output>(
 			GenericOutputConstructorUtils.<Output> findOutputConstructor(getClass(), outputType)));

@@ -49,7 +49,7 @@ public class JoinTest
 					fail("Did not wait for input 1");
 					return null;
 				}
-			}, false);
+			}, null, false);
 		
 		sut.input2Action().invoke(new Object());
 		sut.input2Action().invoke(new Object());
@@ -68,7 +68,7 @@ public class JoinTest
 					fail("Did not wait for input 2");
 					return null;
 				}
-			}, false);
+			}, null, false);
 		
 		sut.input1Action().invoke(new Object());
 		sut.input1Action().invoke(new Object());
@@ -78,7 +78,7 @@ public class JoinTest
 	@Test
 	public void reset_resets_input1()
 	{
-		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(false);
+		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(null, false);
 		
 		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
 		{
@@ -98,7 +98,7 @@ public class JoinTest
 	@Test
 	public void reset_resets_input2()
 	{
-		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(false);
+		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(null, false);
 		
 		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
 		{
@@ -118,7 +118,7 @@ public class JoinTest
 	@Test
 	public void reset_after_result_resets_input1()
 	{
-		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(true);
+		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(null, true);
 		
 		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
 		{
@@ -145,7 +145,7 @@ public class JoinTest
 	@Test
 	public void reset_after_result_resets_input2()
 	{
-		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(true);
+		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(null, true);
 		
 		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
 		{
@@ -172,7 +172,7 @@ public class JoinTest
 	@Test
 	public void sends_multiple_results_for_changing_input2()
 	{
-		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(false);
+		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(null, false);
 		
 		final AtomicInteger calls = new AtomicInteger(0);
 		
@@ -197,7 +197,7 @@ public class JoinTest
 	@Test
 	public void sends_multiple_results_for_changing_input1()
 	{
-		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(false);
+		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(null, false);
 		
 		final AtomicInteger calls = new AtomicInteger(0);
 		
@@ -222,7 +222,7 @@ public class JoinTest
 	@Test
 	public void creates_output_for_last_input1()
 	{
-		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(false);
+		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(null, false);
 		final Object input1 = new Object();
 		
 		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
@@ -243,7 +243,7 @@ public class JoinTest
 	@Test
 	public void creates_output_for_last_input2()
 	{
-		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(false);
+		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(null, false);
 		final Object input2 = new Object();
 		
 		sut.setOutputCreator(new JoinOutputCreator<Object, Object, Object>()
@@ -264,7 +264,7 @@ public class JoinTest
 	@Test
 	public void sends_created_output()
 	{
-		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(false);
+		Join<Object, Object, Object> sut = new Join<Object, Object, Object>(null, false);
 		final Object output = new Object();
 		
 		MockAction<Object> resultAction = new MockAction<Object>();

@@ -66,12 +66,39 @@ public class JoinObjectAndCollection<Input1, Input2Element, OutputElement> exten
 								   boolean resetAfterResultEvent)
 	{
 		super(new ObjectAndCollectionOutputCreator<Input1, Input2Element, OutputElement>(elementOutputCreator),
-			resetAfterResultEvent);
+			null, resetAfterResultEvent);
+	}
+	
+	/**
+	 * Creates a new {@code JoinObjectAndCollection} using the given {@link JoinOutputCreator} to
+	 * join the first input and second input elements to the output element.
+	 * 
+	 * @param elementOutputCreator
+	 *        the output element creator to be used
+	 * @param inputStorageProvider
+	 *        the {@link JoinInputStorageProvider} to be used by this {@code Join}. If {@code null}
+	 *        is given then the {@link #DEFAULT_INPUT_STORAGE_PROVIDER} is used or if that is also
+	 *        {@code null} a {@link BasicInputStorageProvider} is created.
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
+	 */
+	public JoinObjectAndCollection(JoinOutputCreator<? super Input1, ? super Input2Element, ? extends OutputElement> elementOutputCreator,
+								   JoinInputStorageProvider<Input1, Collection<Input2Element>> inputStorageProvider,
+								   boolean resetAfterResultEvent)
+	{
+		super(new ObjectAndCollectionOutputCreator<Input1, Input2Element, OutputElement>(elementOutputCreator),
+			inputStorageProvider, resetAfterResultEvent);
 	}
 	
 	JoinObjectAndCollection(boolean resetAfterResultEvent)
 	{
-		super(resetAfterResultEvent);
+		super(null, resetAfterResultEvent);
+	}
+	
+	JoinObjectAndCollection(JoinInputStorageProvider<Input1, Collection<Input2Element>> inputStorageProvider,
+							boolean resetAfterResultEvent)
+	{
+		super(inputStorageProvider, resetAfterResultEvent);
 	}
 	
 	void setOutputElementCreator(JoinOutputCreator<? super Input1, ? super Input2Element, ? extends OutputElement> elementOutputCreator)

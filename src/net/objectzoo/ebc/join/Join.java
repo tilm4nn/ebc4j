@@ -56,43 +56,19 @@ import net.objectzoo.ebc.util.LoggingUtils;
  */
 public class Join<Input1, Input2, Output> extends ResultBase<Output>
 {
-	private Input1 input1;
+	/**
+	 * The default {@link JoinInputStorageProvider} to be used when no provider is given during
+	 * construction of a {@code Join}. I this default is not set (is {@code null}) then a
+	 * {@link BasicInputStorageProvider} is created for each {@code Join}. The initial value of this
+	 * default is not set ({@code null}).
+	 */
+	public static JoinInputStorageProvider<?, ?> DEFAULT_INPUT_STORAGE_PROVIDER = null;
 	
-	private Input2 input2;
-	
-	private boolean input1Received;
-	
-	private boolean input2Received;
+	private final JoinInputStorageProvider<Input1, Input2> inputStorageProvider;
 	
 	private final boolean resetAfterResultEvent;
 	
 	private JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator;
-	
-	/**
-	 * Creates a new {@code Join} using the given {@link JoinOutputCreator} to create the output of
-	 * the {@code Join}.
-	 * 
-	 * @param outputCreator
-	 *        the output creator to be used
-	 * @param resetAfterResultEvent
-	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
-	 */
-	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator,
-				boolean resetAfterResultEvent)
-	{
-		this(resetAfterResultEvent);
-		
-		if (outputCreator == null)
-		{
-			throw new IllegalArgumentException("outputCreator=null");
-		}
-		this.outputCreator = outputCreator;
-	}
-	
-	Join(boolean resetAfterResultEvent)
-	{
-		this.resetAfterResultEvent = resetAfterResultEvent;
-	}
 	
 	private final Action<Input1> input1Action = new Action<Input1>()
 	{
@@ -101,9 +77,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		{
 			LoggingUtils.log(logger, Level.FINEST, "receiving input1: ", input);
 			
-			input1 = input;
-			input1Received = true;
-			sendResultIfComplete();
+			processInput1(input);
 		}
 	};
 	
@@ -114,11 +88,63 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		{
 			LoggingUtils.log(logger, Level.FINEST, "receiving input2: ", input);
 			
-			input2 = input;
-			input2Received = true;
-			sendResultIfComplete();
+			processInput2(input);
 		}
 	};
+	
+	private final Action0 resetAction = new Action0()
+	{
+		@Override
+		public void invoke()
+		{
+			logger.log(logLevel, "receiving reset");
+			
+			processReset();
+		}
+	};
+	
+	/**
+	 * Creates a new {@code Join} using the given {@link JoinOutputCreator} to create the output of
+	 * the {@code Join}.
+	 * 
+	 * @param outputCreator
+	 *        the output creator to be used
+	 * @param inputStorageProvider
+	 *        the {@link JoinInputStorageProvider} to be used by this {@code Join}. If {@code null}
+	 *        is given then the {@link #DEFAULT_INPUT_STORAGE_PROVIDER} is used or if that is also
+	 *        {@code null} a {@link BasicInputStorageProvider} is created.
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
+	 */
+	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator,
+				JoinInputStorageProvider<Input1, Input2> inputStorageProvider, boolean resetAfterResultEvent)
+	{
+		this(inputStorageProvider, resetAfterResultEvent);
+		
+		if (outputCreator == null)
+		{
+			throw new IllegalArgumentException("outputCreator=null");
+		}
+		this.outputCreator = outputCreator;
+	}
+	
+	@SuppressWarnings("unchecked")
+	Join(JoinInputStorageProvider<Input1, Input2> inputStorageProvider, boolean resetAfterResultEvent)
+	{
+		this.resetAfterResultEvent = resetAfterResultEvent;
+		if (inputStorageProvider != null)
+		{
+			this.inputStorageProvider = inputStorageProvider;
+		}
+		else if (DEFAULT_INPUT_STORAGE_PROVIDER != null)
+		{
+			this.inputStorageProvider = (JoinInputStorageProvider<Input1, Input2>) DEFAULT_INPUT_STORAGE_PROVIDER;
+		}
+		else
+		{
+			this.inputStorageProvider = new BasicInputStorageProvider<Input1, Input2>(this);
+		}
+	}
 	
 	/**
 	 * Provides an {@link Action} that is used to send input one to this Join
@@ -140,31 +166,61 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		return input2Action;
 	}
 	
-	private void sendResultIfComplete()
+	/**
+	 * Provides an {@link Action0} that is used to reset this Join
+	 * 
+	 * @return the reset action of this Join
+	 */
+	public Action0 resetAction()
 	{
-		if (input1Received && input2Received)
+		return resetAction;
+	}
+	
+	private void processReset()
+	{
+		JoinInputStorage<Input1, Input2> storage = getInputStorage();
+		
+		clearInput(storage);
+	}
+	
+	private void processInput1(Input1 input)
+	{
+		JoinInputStorage<Input1, Input2> storage = getInputStorage();
+		
+		storage.setInput1(input);
+		sendResultIfComplete(storage);
+	}
+	
+	private void processInput2(Input2 input)
+	{
+		JoinInputStorage<Input1, Input2> storage = getInputStorage();
+		
+		storage.setInput2(input);
+		sendResultIfComplete(storage);
+	}
+	
+	private void sendResultIfComplete(JoinInputStorage<Input1, Input2> storage)
+	{
+		if (storage.isInputComplete())
 		{
-			createAndSendResult();
+			createAndSendResult(storage);
 			
 			if (resetAfterResultEvent)
 			{
-				clearInput();
+				clearInput(storage);
 			}
 		}
 	}
 	
-	private void createAndSendResult()
+	private void createAndSendResult(JoinInputStorage<Input1, Input2> storage)
 	{
-		Output output = outputCreator.createOutput(input1, input2);
+		Output output = outputCreator.createOutput(storage.getInput1(), storage.getInput2());
 		sendResult(output);
 	}
 	
-	private void clearInput()
+	private void clearInput(JoinInputStorage<Input1, Input2> storage)
 	{
-		input1 = null;
-		input1Received = false;
-		input2 = null;
-		input2Received = false;
+		storage.clearInput();
 	}
 	
 	void setOutputCreator(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator)
@@ -176,23 +232,9 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		this.outputCreator = outputCreator;
 	}
 	
-	/**
-	 * Provides an {@link Action0} that is used to reset this Join
-	 * 
-	 * @return the reset action of this Join
-	 */
-	public Action0 resetAction()
+	private JoinInputStorage<Input1, Input2> getInputStorage()
 	{
-		return new Action0()
-		{
-			@Override
-			public void invoke()
-			{
-				logger.log(logLevel, "receiving resetInput");
-				
-				clearInput();
-			}
-		};
+		return inputStorageProvider.getInputStorage(Join.this);
 	}
 	
 }

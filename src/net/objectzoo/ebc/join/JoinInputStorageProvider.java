@@ -24,44 +24,25 @@
  */
 package net.objectzoo.ebc.join;
 
-import net.objectzoo.ebc.util.Pair;
-
 /**
- * This is a Join implementation that joins the two input values to a {@link Pair}.
+ * The {@code JoinInputStorageProvider} is used by a {@link Join} to retrieve its associated
+ * {@link JoinInputStorage} each time the storage is required.
  * 
  * @author tilmann
  * 
  * @param <Input1>
- *        the type of input one of this Join
+ *        the type of input one of the Join
  * @param <Input2>
- *        the type of input two of this Join
+ *        the type of input two of the Join
  */
-public class JoinToPair<Input1, Input2> extends Join<Input1, Input2, Pair<Input1, Input2>>
+public interface JoinInputStorageProvider<Input1, Input2>
 {
 	/**
-	 * Crates a new {@code JoinToPair}.
+	 * Retrieve the {@link JoinInputStorage} for the given {@link Join}.
 	 * 
-	 * @param resetAfterResultEvent
-	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
+	 * @param join
+	 *        the {@code Join} to retrieve the storage for
+	 * @return the {@code JoinInputStorage} of the {@code Join}
 	 */
-	public JoinToPair(boolean resetAfterResultEvent)
-	{
-		super(new PairOutputCreator<Input1, Input2>(), null, resetAfterResultEvent);
-	}
-	
-	/**
-	 * Crates a new {@code JoinToPair}.
-	 * 
-	 * @param inputStorageProvider
-	 *        the {@link JoinInputStorageProvider} to be used by this {@code Join}. If {@code null}
-	 *        is given then the {@link #DEFAULT_INPUT_STORAGE_PROVIDER} is used or if that is also
-	 *        {@code null} a {@link BasicInputStorageProvider} is created.
-	 * @param resetAfterResultEvent
-	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
-	 */
-	public JoinToPair(JoinInputStorageProvider<Input1, Input2> inputStorageProvider, boolean resetAfterResultEvent)
-	{
-		super(new PairOutputCreator<Input1, Input2>(), inputStorageProvider, resetAfterResultEvent);
-	}
-	
+	JoinInputStorage<Input1, Input2> getInputStorage(Join<Input1, Input2, ?> join);
 }
