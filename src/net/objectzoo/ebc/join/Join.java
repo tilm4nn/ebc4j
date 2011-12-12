@@ -28,6 +28,9 @@ import java.util.logging.Level;
 
 import net.objectzoo.delegates.Action;
 import net.objectzoo.delegates.Action0;
+import net.objectzoo.ebc.context.DefaultFlowContextProviderSingleton;
+import net.objectzoo.ebc.context.FlowContext;
+import net.objectzoo.ebc.context.FlowContextProvider;
 import net.objectzoo.ebc.impl.ResultBase;
 import net.objectzoo.ebc.util.LoggingUtils;
 
@@ -56,15 +59,9 @@ import net.objectzoo.ebc.util.LoggingUtils;
  */
 public class Join<Input1, Input2, Output> extends ResultBase<Output>
 {
-	/**
-	 * The default {@link JoinInputStorageProvider} to be used when no provider is given during
-	 * construction of a {@code Join}. I this default is not set (is {@code null}) then a
-	 * {@link BasicInputStorageProvider} is created for each {@code Join}. The initial value of this
-	 * default is not set ({@code null}).
-	 */
-	public static JoinInputStorageProvider<?, ?> DEFAULT_INPUT_STORAGE_PROVIDER = null;
+	private final Object INPUT_STORAGE_KEY = new Object();
 	
-	private final JoinInputStorageProvider<Input1, Input2> inputStorageProvider;
+	private final FlowContextProvider flowContextProvider;
 	
 	private final boolean resetAfterResultEvent;
 	
@@ -117,9 +114,9 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
 	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator,
-				JoinInputStorageProvider<Input1, Input2> inputStorageProvider, boolean resetAfterResultEvent)
+				FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
 	{
-		this(inputStorageProvider, resetAfterResultEvent);
+		this(flowContextProvider, resetAfterResultEvent);
 		
 		if (outputCreator == null)
 		{
@@ -128,21 +125,16 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		this.outputCreator = outputCreator;
 	}
 	
-	@SuppressWarnings("unchecked")
-	Join(JoinInputStorageProvider<Input1, Input2> inputStorageProvider, boolean resetAfterResultEvent)
+	Join(FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
 	{
 		this.resetAfterResultEvent = resetAfterResultEvent;
-		if (inputStorageProvider != null)
+		if (flowContextProvider != null)
 		{
-			this.inputStorageProvider = inputStorageProvider;
-		}
-		else if (DEFAULT_INPUT_STORAGE_PROVIDER != null)
-		{
-			this.inputStorageProvider = (JoinInputStorageProvider<Input1, Input2>) DEFAULT_INPUT_STORAGE_PROVIDER;
+			this.flowContextProvider = flowContextProvider;
 		}
 		else
 		{
-			this.inputStorageProvider = new BasicInputStorageProvider<Input1, Input2>(this);
+			this.flowContextProvider = DefaultFlowContextProviderSingleton.getInstance();
 		}
 	}
 	
@@ -234,7 +226,14 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	
 	private JoinInputStorage<Input1, Input2> getInputStorage()
 	{
-		return inputStorageProvider.getInputStorage(Join.this);
+		FlowContext context = flowContextProvider.getContext();
+		JoinInputStorage<Input1, Input2> inputStorage = context.getAttribute(INPUT_STORAGE_KEY);
+		if (inputStorage == null)
+		{
+			inputStorage = new JoinInputStorage<Input1, Input2>();
+			context.putAttribute(INPUT_STORAGE_KEY, inputStorage);
+		}
+		return inputStorage;
 	}
 	
 }

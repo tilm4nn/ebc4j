@@ -24,6 +24,8 @@
  */
 package net.objectzoo.ebc.join;
 
+import net.objectzoo.ebc.context.FlowContextProvider;
+
 /**
  * This Join base class joins two input values to an output value that has a constructor taking the
  * two input values as parameters. The class implements the boilerplate code required to provide two
@@ -82,9 +84,9 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	 * @throws IllegalArgumentException
 	 *         if the output type does not have a fitting constructor
 	 */
-	public GenericJoin(JoinInputStorageProvider<Input1, Input2> inputStorageProvider, boolean resetAfterResultEvent)
+	public GenericJoin(FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
 	{
-		super(inputStorageProvider, resetAfterResultEvent);
+		super(flowContextProvider, resetAfterResultEvent);
 		
 		setOutputCreator(new ConstructableOutputCreator<Input1, Input2, Output>(
 			GenericOutputConstructorUtils.<Output> findOutputConstructor(getClass())));
@@ -126,10 +128,10 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	 * @throws IllegalArgumentException
 	 *         if the output type is {@code null} or does not have a fitting constructor
 	 */
-	public GenericJoin(Class<? extends Output> outputType,
-					   JoinInputStorageProvider<Input1, Input2> inputStorageProvider, boolean resetAfterResultEvent)
+	public GenericJoin(Class<? extends Output> outputType, FlowContextProvider flowContextProvider,
+					   boolean resetAfterResultEvent)
 	{
-		super(inputStorageProvider, resetAfterResultEvent);
+		super(flowContextProvider, resetAfterResultEvent);
 		
 		setOutputCreator(new ConstructableOutputCreator<Input1, Input2, Output>(
 			GenericOutputConstructorUtils.<Output> findOutputConstructor(getClass(), outputType)));

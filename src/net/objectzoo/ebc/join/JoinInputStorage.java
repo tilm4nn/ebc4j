@@ -24,11 +24,12 @@
  */
 package net.objectzoo.ebc.join;
 
+import net.objectzoo.ebc.context.FlowContext;
+
 /**
- * This interface defines a storage that is used by {@link Join} implementations to store their
- * input values. A {@link Join} is not directly associated with a {@code JoinInputStorage}. Instead
- * it acquires its provider using its {@link JoinInputStorageProvider} each time the storage is
- * required.
+ * This class defines a storage that is used by {@link Join} implementations to store their input
+ * values. A {@link Join} is not directly associated with a {@code JoinInputStorage}. Instead it
+ * acquires its storage from a {@link FlowContext}
  * 
  * @author tilmann
  * 
@@ -37,28 +38,50 @@ package net.objectzoo.ebc.join;
  * @param <Input2>
  *        the type of input two of the Join
  */
-public interface JoinInputStorage<Input1, Input2>
+public class JoinInputStorage<Input1, Input2>
 {
+	private Input1 input1;
+	
+	private Input2 input2;
+	
+	private boolean input1Set;
+	
+	private boolean input2Set;
+	
 	/**
 	 * Store the input1 in this storage.
 	 * 
-	 * @param input1
+	 * @param input
 	 *        the new value for input1
 	 */
-	void setInput1(Input1 input1);
+	public void setInput1(Input1 input)
+	{
+		input1 = input;
+		input1Set = true;
+	}
 	
 	/**
 	 * Store the input2 in this storage.
 	 * 
-	 * @param input2
+	 * @param input
 	 *        the new value for input2
 	 */
-	void setInput2(Input2 input2);
+	public void setInput2(Input2 input)
+	{
+		input2 = input;
+		input2Set = true;
+	}
 	
 	/**
 	 * Clears both inputs in this storage.
 	 */
-	void clearInput();
+	public void clearInput()
+	{
+		input1 = null;
+		input1Set = false;
+		input2 = null;
+		input2Set = false;
+	}
 	
 	/**
 	 * Check whether both inputs have been set at least one time each since the input as been
@@ -66,7 +89,10 @@ public interface JoinInputStorage<Input1, Input2>
 	 * 
 	 * @return {@code} true if both inputs have been set.
 	 */
-	boolean isInputComplete();
+	public boolean isInputComplete()
+	{
+		return input1Set && input2Set;
+	}
 	
 	/**
 	 * Retrieves the input1 from this storage.
@@ -75,7 +101,14 @@ public interface JoinInputStorage<Input1, Input2>
 	 * @throws IllegalStateException
 	 *         if the input1 has not been set
 	 */
-	Input1 getInput1() throws IllegalStateException;
+	public Input1 getInput1()
+	{
+		if (!input1Set)
+		{
+			throw new IllegalStateException("Input1 has not been set.");
+		}
+		return input1;
+	}
 	
 	/**
 	 * Retrieves the input2 from this storage.
@@ -84,6 +117,13 @@ public interface JoinInputStorage<Input1, Input2>
 	 * @throws IllegalStateException
 	 *         if the input2 has not been set
 	 */
-	Input2 getInput2();
+	public Input2 getInput2()
+	{
+		if (!input2Set)
+		{
+			throw new IllegalStateException("Input2 has not been set.");
+		}
+		return input2;
+	}
 	
 }

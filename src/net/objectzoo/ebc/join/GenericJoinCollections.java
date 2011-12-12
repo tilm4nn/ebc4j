@@ -24,7 +24,7 @@
  */
 package net.objectzoo.ebc.join;
 
-import java.util.Collection;
+import net.objectzoo.ebc.context.FlowContextProvider;
 
 /**
  * This Join base class joins two input collections of the input element types to a collection of
@@ -87,10 +87,9 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	 * @throws IllegalArgumentException
 	 *         if the output element type does not have a fitting constructor
 	 */
-	public GenericJoinCollections(JoinInputStorageProvider<Collection<Input1Element>, Collection<Input2Element>> inputStorageProvider,
-								  boolean resetAfterResultEvent)
+	public GenericJoinCollections(FlowContextProvider flowContextProviderr, boolean resetAfterResultEvent)
 	{
-		super(inputStorageProvider, resetAfterResultEvent);
+		super(flowContextProviderr, resetAfterResultEvent);
 		
 		setOutputElementCreator(new ConstructableOutputCreator<Input1Element, Input2Element, OutputElement>(
 			GenericOutputConstructorUtils.<OutputElement> findOutputConstructor(getClass())));
@@ -133,10 +132,9 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	 *         if the output element type is {@code null} or does not have a fitting constructor
 	 */
 	public GenericJoinCollections(Class<? extends OutputElement> outputElementType,
-								  JoinInputStorageProvider<Collection<Input1Element>, Collection<Input2Element>> inputStorageProvider,
-								  boolean resetAfterResultEvent)
+								  FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
 	{
-		super(inputStorageProvider, resetAfterResultEvent);
+		super(flowContextProvider, resetAfterResultEvent);
 		
 		setOutputElementCreator(new ConstructableOutputCreator<Input1Element, Input2Element, OutputElement>(
 			GenericOutputConstructorUtils.<OutputElement> findOutputConstructor(getClass(), outputElementType)));

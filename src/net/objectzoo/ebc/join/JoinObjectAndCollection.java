@@ -27,6 +27,8 @@ package net.objectzoo.ebc.join;
 import java.util.Collection;
 import java.util.List;
 
+import net.objectzoo.ebc.context.FlowContextProvider;
+
 /**
  * This Join class joins a single first input value with a second collection of input elements to a
  * collection of output element by using a {@link JoinOutputCreator} to join the first input type
@@ -83,11 +85,10 @@ public class JoinObjectAndCollection<Input1, Input2Element, OutputElement> exten
 	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
 	public JoinObjectAndCollection(JoinOutputCreator<? super Input1, ? super Input2Element, ? extends OutputElement> elementOutputCreator,
-								   JoinInputStorageProvider<Input1, Collection<Input2Element>> inputStorageProvider,
-								   boolean resetAfterResultEvent)
+								   FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
 	{
 		super(new ObjectAndCollectionOutputCreator<Input1, Input2Element, OutputElement>(elementOutputCreator),
-			inputStorageProvider, resetAfterResultEvent);
+			flowContextProvider, resetAfterResultEvent);
 	}
 	
 	JoinObjectAndCollection(boolean resetAfterResultEvent)
@@ -95,10 +96,9 @@ public class JoinObjectAndCollection<Input1, Input2Element, OutputElement> exten
 		super(null, resetAfterResultEvent);
 	}
 	
-	JoinObjectAndCollection(JoinInputStorageProvider<Input1, Collection<Input2Element>> inputStorageProvider,
-							boolean resetAfterResultEvent)
+	JoinObjectAndCollection(FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
 	{
-		super(inputStorageProvider, resetAfterResultEvent);
+		super(flowContextProvider, resetAfterResultEvent);
 	}
 	
 	void setOutputElementCreator(JoinOutputCreator<? super Input1, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
