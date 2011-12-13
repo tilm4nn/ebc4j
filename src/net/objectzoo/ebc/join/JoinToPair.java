@@ -24,7 +24,7 @@
  */
 package net.objectzoo.ebc.join;
 
-import net.objectzoo.ebc.context.FlowContextProvider;
+import net.objectzoo.ebc.state.StateFactory;
 import net.objectzoo.ebc.util.Pair;
 
 /**
@@ -60,9 +60,9 @@ public class JoinToPair<Input1, Input2> extends Join<Input1, Input2, Pair<Input1
 	 * @param resetAfterResultEvent
 	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
-	public JoinToPair(FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
+	public JoinToPair(StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
-		super(new PairOutputCreator<Input1, Input2>(), flowContextProvider, resetAfterResultEvent);
+		super(new PairOutputCreator<Input1, Input2>(), stateFactory, resetAfterResultEvent);
 	}
 	
 }

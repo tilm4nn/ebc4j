@@ -27,7 +27,7 @@ package net.objectzoo.ebc.join;
 import java.util.Collection;
 import java.util.List;
 
-import net.objectzoo.ebc.context.FlowContextProvider;
+import net.objectzoo.ebc.state.StateFactory;
 
 /**
  * This Join class joins two input collections of the input element types to a collection of the
@@ -86,10 +86,10 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
 	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator,
-						   FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
+						   StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
 		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator),
-			flowContextProvider, resetAfterResultEvent);
+			stateFactory, resetAfterResultEvent);
 	}
 	
 	JoinCollections(boolean resetAfterResultEvent)
@@ -97,9 +97,9 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 		super(null, resetAfterResultEvent);
 	}
 	
-	JoinCollections(FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
+	JoinCollections(StateFactory stateFactoryr, boolean resetAfterResultEvent)
 	{
-		super(flowContextProvider, resetAfterResultEvent);
+		super(stateFactoryr, resetAfterResultEvent);
 	}
 	
 	void setOutputElementCreator(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator)

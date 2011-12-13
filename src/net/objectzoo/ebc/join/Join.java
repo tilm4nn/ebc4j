@@ -28,10 +28,10 @@ import java.util.logging.Level;
 
 import net.objectzoo.delegates.Action;
 import net.objectzoo.delegates.Action0;
-import net.objectzoo.ebc.context.DefaultFlowContextProviderSingleton;
-import net.objectzoo.ebc.context.FlowContext;
-import net.objectzoo.ebc.context.FlowContextProvider;
 import net.objectzoo.ebc.impl.ResultBase;
+import net.objectzoo.ebc.state.BasicStateFactory;
+import net.objectzoo.ebc.state.State;
+import net.objectzoo.ebc.state.StateFactory;
 import net.objectzoo.ebc.util.LoggingUtils;
 
 /**
@@ -59,9 +59,9 @@ import net.objectzoo.ebc.util.LoggingUtils;
  */
 public class Join<Input1, Input2, Output> extends ResultBase<Output>
 {
-	private final Object INPUT_STORAGE_KEY = new Object();
+	public static StateFactory DEFAULT_STATE_FACTORY = new BasicStateFactory();
 	
-	private final FlowContextProvider flowContextProvider;
+	private final State<JoinInputStorage<Input1, Input2>> inputStorage;
 	
 	private final boolean resetAfterResultEvent;
 	
@@ -114,9 +114,9 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
 	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator,
-				FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
+				StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
-		this(flowContextProvider, resetAfterResultEvent);
+		this(stateFactory, resetAfterResultEvent);
 		
 		if (outputCreator == null)
 		{
@@ -125,17 +125,20 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		this.outputCreator = outputCreator;
 	}
 	
-	Join(FlowContextProvider flowContextProvider, boolean resetAfterResultEvent)
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	Join(StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
 		this.resetAfterResultEvent = resetAfterResultEvent;
-		if (flowContextProvider != null)
+		if (stateFactory == null)
 		{
-			this.flowContextProvider = flowContextProvider;
+			if (DEFAULT_STATE_FACTORY == null)
+			{
+				throw new IllegalArgumentException(
+					"Either stateFactory must be given or Join.DEFAULT_STATE_FACTORY must be set.");
+			}
+			stateFactory = DEFAULT_STATE_FACTORY;
 		}
-		else
-		{
-			this.flowContextProvider = DefaultFlowContextProviderSingleton.getInstance();
-		}
+		this.inputStorage = (State) stateFactory.create(JoinInputStorage.class);
 	}
 	
 	/**
@@ -170,14 +173,12 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	
 	private void processReset()
 	{
-		JoinInputStorage<Input1, Input2> storage = getInputStorage();
-		
-		clearInput(storage);
+		clearInput(inputStorage.get());
 	}
 	
 	private void processInput1(Input1 input)
 	{
-		JoinInputStorage<Input1, Input2> storage = getInputStorage();
+		JoinInputStorage<Input1, Input2> storage = inputStorage.get();
 		
 		storage.setInput1(input);
 		sendResultIfComplete(storage);
@@ -185,7 +186,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	
 	private void processInput2(Input2 input)
 	{
-		JoinInputStorage<Input1, Input2> storage = getInputStorage();
+		JoinInputStorage<Input1, Input2> storage = inputStorage.get();
 		
 		storage.setInput2(input);
 		sendResultIfComplete(storage);
@@ -222,18 +223,6 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 			throw new IllegalStateException("The outputCreator can only be set once");
 		}
 		this.outputCreator = outputCreator;
-	}
-	
-	private JoinInputStorage<Input1, Input2> getInputStorage()
-	{
-		FlowContext context = flowContextProvider.getContext();
-		JoinInputStorage<Input1, Input2> inputStorage = context.getAttribute(INPUT_STORAGE_KEY);
-		if (inputStorage == null)
-		{
-			inputStorage = new JoinInputStorage<Input1, Input2>();
-			context.putAttribute(INPUT_STORAGE_KEY, inputStorage);
-		}
-		return inputStorage;
 	}
 	
 }

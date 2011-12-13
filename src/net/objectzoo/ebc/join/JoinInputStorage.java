@@ -24,12 +24,9 @@
  */
 package net.objectzoo.ebc.join;
 
-import net.objectzoo.ebc.context.FlowContext;
-
 /**
  * This class defines a storage that is used by {@link Join} implementations to store their input
- * values. A {@link Join} is not directly associated with a {@code JoinInputStorage}. Instead it
- * acquires its storage from a {@link FlowContext}
+ * values.
  * 
  * @author tilmann
  * 
