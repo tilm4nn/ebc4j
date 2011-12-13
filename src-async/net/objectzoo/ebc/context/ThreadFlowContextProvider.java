@@ -1,13 +1,10 @@
 package net.objectzoo.ebc.context;
 
-import net.objectzoo.ebc.context.FlowContext;
-import net.objectzoo.ebc.context.FlowContextProvider;
-
-public class ThreadLocalFlowContextProvider implements FlowContextProvider
+public class ThreadFlowContextProvider implements FlowContextProvider
 {
 	private ThreadLocal<FlowContext> flowContext = new ThreadLocal<FlowContext>();
 	
-	public void createContextForCurrentThread()
+	public void setupContextForCurrentThread()
 	{
 		FlowContext context = flowContext.get();
 		if (context != null)
@@ -30,5 +27,24 @@ public class ThreadLocalFlowContextProvider implements FlowContextProvider
 			throw new IllegalStateException("The current flow has no context associated with it.");
 		}
 		return context;
+	}
+	
+	FlowContext replaceContextForCurrentThread()
+	{
+		FlowContext currentFlowContext = flowContext.get();
+		flowContext.set(new FlowContext());
+		return currentFlowContext;
+	}
+	
+	void restoreContextForCurrentThread(FlowContext previousContext)
+	{
+		if (previousContext == null)
+		{
+			flowContext.remove();
+		}
+		else
+		{
+			flowContext.set(previousContext);
+		}
 	}
 }

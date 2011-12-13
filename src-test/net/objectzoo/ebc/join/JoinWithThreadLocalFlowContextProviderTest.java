@@ -1,19 +1,19 @@
 package net.objectzoo.ebc.join;
 
-import net.objectzoo.ebc.context.ThreadLocalFlowContextProvider;
+import net.objectzoo.ebc.context.ThreadFlowContextProvider;
 
 import org.junit.After;
 import org.junit.Before;
 
 public class JoinWithThreadLocalFlowContextProviderTest extends JoinTest
 {
-	private ThreadLocalFlowContextProvider threadLocalFlowContextProvider;
+	private ThreadFlowContextProvider threadLocalFlowContextProvider;
 	
 	@Before
 	public void setupFlowContext()
 	{
-		threadLocalFlowContextProvider = new ThreadLocalFlowContextProvider();
-		threadLocalFlowContextProvider.createContextForCurrentThread();
+		threadLocalFlowContextProvider = new ThreadFlowContextProvider();
+		threadLocalFlowContextProvider.setupContextForCurrentThread();
 		this.flowContextProvider = threadLocalFlowContextProvider;
 	}
 	
