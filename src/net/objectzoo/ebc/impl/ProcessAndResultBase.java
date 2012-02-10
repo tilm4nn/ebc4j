@@ -25,6 +25,7 @@
 package net.objectzoo.ebc.impl;
 
 import net.objectzoo.ebc.CanProcess;
+import net.objectzoo.ebc.ProcessAndResultFlow;
 import net.objectzoo.ebc.SendsResult;
 import net.objectzoo.ebc.util.LoggingUtils;
 import net.objectzoo.events.Event;
@@ -44,7 +45,7 @@ import net.objectzoo.events.impl.EventDelegate;
  *        the type of output of this EBC
  */
 public abstract class ProcessAndResultBase<ProcessParameter, ResultParameter> extends
-	ProcessBase<ProcessParameter> implements SendsResult<ResultParameter>
+	ProcessBase<ProcessParameter> implements ProcessAndResultFlow<ProcessParameter, ResultParameter>
 {
 	private final EventDelegate<ResultParameter> resultEvent;
 	

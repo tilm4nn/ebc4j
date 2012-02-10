@@ -26,6 +26,7 @@ package net.objectzoo.ebc.impl;
 
 import net.objectzoo.ebc.CanStart;
 import net.objectzoo.ebc.SendsSignal;
+import net.objectzoo.ebc.StartAndSignalFlow;
 import net.objectzoo.events.Event0;
 import net.objectzoo.events.impl.Event0Delegate;
 
@@ -37,7 +38,7 @@ import net.objectzoo.events.impl.Event0Delegate;
  * 
  * @author tilmann
  */
-public abstract class StartAndSignalBase extends StartBase implements SendsSignal
+public abstract class StartAndSignalBase extends StartBase implements StartAndSignalFlow
 {
 	private final Event0Delegate signalEvent;
 	

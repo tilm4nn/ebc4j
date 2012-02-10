@@ -25,6 +25,7 @@
 package net.objectzoo.ebc.impl;
 
 import net.objectzoo.ebc.CanProcess;
+import net.objectzoo.ebc.ProcessAndSignalFlow;
 import net.objectzoo.ebc.SendsSignal;
 import net.objectzoo.events.Event0;
 import net.objectzoo.events.impl.Event0Delegate;
@@ -41,7 +42,7 @@ import net.objectzoo.events.impl.Event0Delegate;
  *        the type of input processed by this EBC
  */
 public abstract class ProcessAndSignalBase<ProcessParameter> extends ProcessBase<ProcessParameter> implements
-	SendsSignal
+	ProcessAndSignalFlow<ProcessParameter>
 {
 	private final Event0Delegate signalEvent;
 	

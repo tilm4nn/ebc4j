@@ -26,6 +26,7 @@ package net.objectzoo.ebc.impl;
 
 import net.objectzoo.ebc.CanStart;
 import net.objectzoo.ebc.SendsResult;
+import net.objectzoo.ebc.StartAndResultFlow;
 import net.objectzoo.ebc.util.LoggingUtils;
 import net.objectzoo.events.Event;
 import net.objectzoo.events.impl.EventDelegate;
@@ -42,7 +43,7 @@ import net.objectzoo.events.impl.EventDelegate;
  *        the type of output of this EBC
  */
 public abstract class StartAndResultBase<ResultParameter> extends StartBase implements
-	SendsResult<ResultParameter>
+	StartAndResultFlow<ResultParameter>
 {
 	private final EventDelegate<ResultParameter> resultEvent;
 	

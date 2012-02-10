@@ -1,6 +1,6 @@
 package net.objectzoo.ebc.split;
 
-import net.objectzoo.ebc.SendsSignal;
+import net.objectzoo.ebc.ProcessAndSignalFlow;
 import net.objectzoo.ebc.impl.ProcessAndResultBase;
 import net.objectzoo.events.Event0;
 import net.objectzoo.events.impl.Event0Distributor;
@@ -15,7 +15,7 @@ import net.objectzoo.events.impl.Event0Distributor;
  *        the type of the process parameter
  */
 public class SplitProcessToSignal<Parameter> extends ProcessAndResultBase<Parameter, Parameter> implements
-	SendsSignal
+	ProcessAndSignalFlow<Parameter>
 {
 	private final Event0Distributor signalDistributor;
 	
