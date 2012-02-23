@@ -3,63 +3,58 @@ package net.objectzoo.ebc.executor;
 import net.objectzoo.ebc.CanProcess;
 import net.objectzoo.ebc.CanStart;
 import net.objectzoo.ebc.ProcessAndResultFlow;
-import net.objectzoo.ebc.SendsResult;
 import net.objectzoo.ebc.StartAndResultFlow;
-import net.objectzoo.ebc.test.MockAction;
 
 public class FlowExecutor
 {
-	private final FlowCreator ebcFlowCreator;
+	private final FlowCreator flowCreator;
 	
-	public FlowExecutor(FlowCreator theEbcFlowCreator)
+	public FlowExecutor(FlowCreator theFlowCreator)
 	{
-		ebcFlowCreator = theEbcFlowCreator;
+		flowCreator = theFlowCreator;
 	}
 	
-	public <InputParameter, FlowType extends CanProcess<InputParameter>> void process(Class<FlowType> flowClass,
-																					  InputParameter input)
+	public <ProcessParameter, FlowType extends CanProcess<ProcessParameter>> void process(Class<FlowType> flowClass,
+																						  ProcessParameter input)
 	{
-		FlowType flow = ebcFlowCreator.createFlow(flowClass);
+		FlowType flow = FlowExecutorHelpers.createFlow(flowClass, flowCreator);
 		
 		process(flow, input);
 	}
 	
-	public <InputParameter, OutputParameter, FlowType extends ProcessAndResultFlow<InputParameter, OutputParameter>> OutputParameter processAndReturnResult(Class<FlowType> flowClass,
-																																							InputParameter input)
+	public <ProcessParameter, ResultParameter, FlowType extends ProcessAndResultFlow<ProcessParameter, ResultParameter>> ResultParameter processAndReturnResult(Class<FlowType> flowClass,
+																																								ProcessParameter input)
 	{
-		FlowType flow = ebcFlowCreator.createFlow(flowClass);
+		FlowType flow = FlowExecutorHelpers.createFlow(flowClass, flowCreator);
 		
 		return processAndReturnResult(flow, input);
 	}
 	
 	public <FlowType extends CanStart> void start(Class<FlowType> flowClass)
 	{
-		FlowType flow = ebcFlowCreator.createFlow(flowClass);
+		FlowType flow = FlowExecutorHelpers.createFlow(flowClass, flowCreator);
 		
 		start(flow);
 	}
 	
-	public <OutputParameter, FlowType extends StartAndResultFlow<OutputParameter>> OutputParameter startAndReturnResult(Class<FlowType> flowClass)
+	public <ResultParameter, FlowType extends StartAndResultFlow<ResultParameter>> ResultParameter startAndReturnResult(Class<FlowType> flowClass)
 	{
-		FlowType flow = ebcFlowCreator.createFlow(flowClass);
+		FlowType flow = FlowExecutorHelpers.createFlow(flowClass, flowCreator);
 		
 		return startAndReturnResult(flow);
 	}
 	
-	public static <InputParameter, FlowType extends CanProcess<InputParameter>> void process(FlowType flow,
-																							 InputParameter input)
+	public static <ProcessParameter, FlowType extends CanProcess<ProcessParameter>> void process(FlowType flow,
+																								 ProcessParameter input)
 	{
 		flow.processAction().invoke(input);
 	}
 	
-	public static <InputParameter, OutputParameter, FlowType extends ProcessAndResultFlow<InputParameter, OutputParameter>> OutputParameter processAndReturnResult(FlowType flow,
-																																								   InputParameter input)
+	public static <ProcessParameter, ResultParameter, FlowType extends ProcessAndResultFlow<ProcessParameter, ResultParameter>> ResultParameter processAndReturnResult(FlowType flow,
+																																									   
+																																									   ProcessParameter input)
 	{
-		MockAction<OutputParameter> resultContainer = appendResultContainer(flow);
-		
-		flow.processAction().invoke(input);
-		
-		return resultContainer.getLastResult();
+		return new ProcessAndResultFlowToFuncAdapter<ProcessParameter, ResultParameter>(flow).invoke(input);
 	}
 	
 	public static <FlowType extends CanStart> void start(FlowType flow)
@@ -67,20 +62,9 @@ public class FlowExecutor
 		flow.startAction().invoke();
 	}
 	
-	public static <OutputParameter, FlowType extends StartAndResultFlow<OutputParameter>> OutputParameter startAndReturnResult(FlowType flow)
+	public static <ResultParameter, FlowType extends StartAndResultFlow<ResultParameter>> ResultParameter startAndReturnResult(FlowType flow)
 	{
-		MockAction<OutputParameter> resultContainer = appendResultContainer(flow);
-		
-		flow.startAction().invoke();
-		
-		return resultContainer.getLastResult();
+		return new StartAndResultFlowToFunc0Adapter<ResultParameter>(flow).invoke();
 	}
 	
-	private static <OutputParameter> MockAction<OutputParameter> appendResultContainer(SendsResult<OutputParameter> flow)
-	{
-		SendsResult<OutputParameter> resultSender = (SendsResult<OutputParameter>) flow;
-		MockAction<OutputParameter> resultContainer = new MockAction<OutputParameter>();
-		resultSender.resultEvent().subscribe(resultContainer);
-		return resultContainer;
-	}
 }
