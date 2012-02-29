@@ -1,4 +1,4 @@
-package net.objectzoo.ebc.split;
+package net.objectzoo.ebc.adapters;
 
 import net.objectzoo.delegates.Action;
 import net.objectzoo.delegates.Action0;

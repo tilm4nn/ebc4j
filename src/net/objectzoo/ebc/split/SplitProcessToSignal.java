@@ -1,6 +1,7 @@
 package net.objectzoo.ebc.split;
 
 import net.objectzoo.ebc.ProcessAndSignalFlow;
+import net.objectzoo.ebc.adapters.Action0ToAction;
 import net.objectzoo.ebc.impl.ProcessAndResultBase;
 import net.objectzoo.events.Event0;
 import net.objectzoo.events.impl.Event0Distributor;
