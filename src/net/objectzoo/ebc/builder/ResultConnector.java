@@ -17,14 +17,14 @@ public class ResultConnector<T>
 {
 	private Event<T> event;
 	
+	ResultConnector(SendsResult<T> flow)
+	{
+		this(flow.resultEvent());
+	}
+	
 	ResultConnector(Event<T> theEvent)
 	{
 		event = theEvent;
-	}
-	
-	ResultConnector(SendsResult<T> flow)
-	{
-		event = flow.resultEvent();
 	}
 	
 	public <T2> ResultConnector<T2> then(ProcessAndResultFlow<? super T, T2> flow)
@@ -32,6 +32,13 @@ public class ResultConnector<T>
 		then((CanProcess<? super T>) flow);
 		
 		return new ResultConnector<T2>(flow);
+	}
+	
+	public SignalConnector then(ProcessAndSignalFlow<? super T> flow)
+	{
+		then((CanProcess<? super T>) flow);
+		
+		return new SignalConnector(flow);
 	}
 	
 	public void then(CanProcess<? super T> flow)
@@ -44,25 +51,18 @@ public class ResultConnector<T>
 		event.subscribe(action);
 	}
 	
-	public SignalConnector then(StartAndSignalFlow flow)
-	{
-		then((CanStart) flow);
-		
-		return new SignalConnector(flow);
-	}
-	
-	public SignalConnector then(ProcessAndSignalFlow<? super T> flow)
-	{
-		then((CanProcess<? super T>) flow);
-		
-		return new SignalConnector(flow);
-	}
-	
 	public <T2> ResultConnector<T2> then(StartAndResultFlow<T2> flow)
 	{
 		then((CanStart) flow);
 		
 		return new ResultConnector<T2>(flow);
+	}
+	
+	public SignalConnector then(StartAndSignalFlow flow)
+	{
+		then((CanStart) flow);
+		
+		return new SignalConnector(flow);
 	}
 	
 	public void then(CanStart flow)

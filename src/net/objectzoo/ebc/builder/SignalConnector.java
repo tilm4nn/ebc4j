@@ -12,24 +12,14 @@ public class SignalConnector
 {
 	private Event0 event;
 	
+	SignalConnector(SendsSignal flow)
+	{
+		this(flow.signalEvent());
+	}
+	
 	SignalConnector(Event0 theEvent)
 	{
 		event = theEvent;
-	}
-	
-	SignalConnector(SendsSignal flow)
-	{
-		event = flow.signalEvent();
-	}
-	
-	public static SignalConnector await(Event0 event)
-	{
-		return new SignalConnector(event);
-	}
-	
-	public static SignalConnector await(SendsSignal flow)
-	{
-		return new SignalConnector(flow);
 	}
 	
 	public SignalConnector then(StartAndSignalFlow flow)
