@@ -1,8 +1,5 @@
 package net.objectzoo.ebc.adapters;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import net.objectzoo.delegates.Action;
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.events.Event;
@@ -12,8 +9,6 @@ public class EventToEvent0<T> implements Event0
 {
 	private Event<T> event;
 	
-	private Map<Action0, Action<T>> mappedActions = new HashMap<Action0, Action<T>>();
-	
 	public EventToEvent0(Event<T> event)
 	{
 		this.event = event;
@@ -22,31 +17,46 @@ public class EventToEvent0<T> implements Event0
 	@Override
 	public void subscribe(Action0 action) throws IllegalArgumentException
 	{
-		Action<T> mappedAction = getOrCreateMappedAction(action);
+		Action<T> mappedAction = createMappedAction(action);
 		
 		event.subscribe(mappedAction);
-		
-		mappedActions.put(action, mappedAction);
 	}
 	
 	@Override
 	public void unsubscribe(Action0 action) throws IllegalArgumentException
 	{
-		Action<T> mappedAction = getOrCreateMappedAction(action);
+		Action<T> mappedAction = createMappedAction(action);
 		
 		event.unsubscribe(mappedAction);
-		
-		mappedActions.remove(action);
 	}
 	
-	private Action<T> getOrCreateMappedAction(Action0 action)
+	private Action<T> createMappedAction(Action0 action)
 	{
-		Action<T> mappedAction = mappedActions.get(action);
-		if (mappedAction == null)
+		return new Action0ToAction<T>(action);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((event == null) ? 0 : event.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		EventToEvent0 other = (EventToEvent0) obj;
+		if (event == null)
 		{
-			mappedAction = new Action0ToAction<T>(action);
+			if (other.event != null) return false;
 		}
-		return mappedAction;
+		else if (!event.equals(other.event)) return false;
+		return true;
 	}
 	
 }
