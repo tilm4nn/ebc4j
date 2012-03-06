@@ -24,7 +24,14 @@
  */
 package net.objectzoo.ebc.impl;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import net.objectzoo.ebc.SendsSignal;
+import net.objectzoo.ebc.util.LoggingUtils;
+import net.objectzoo.events.Event0;
+import net.objectzoo.events.impl.Event0Delegate;
+import net.objectzoo.events.impl.Event0Distributor;
 
 /**
  * A base class for an EBC that {@link SendsSignal}.
@@ -34,15 +41,22 @@ import net.objectzoo.ebc.SendsSignal;
  * 
  * @author tilmann
  */
-public abstract class SignalBase extends SignalBoard
+public abstract class SignalBoard implements SendsSignal
 {
+	/** The log level used for the trace logging. Defaults to {@link Level#FINEST} */
+	protected Level logLevel = Level.FINEST;
+	
+	/** The logger that can be used for this EBC's logging activities */
+	protected final Logger logger = LoggingUtils.getLogger(this);
+	
+	protected final Event0Delegate signalEvent = new Event0Distributor();
+	
 	/**
-	 * This method can be used by subclasses to send the signal.
+	 * {@inheritDoc}
 	 */
-	protected void sendSignal()
+	@Override
+	public Event0 signalEvent()
 	{
-		logger.log(logLevel, "sending singal");
-		
-		signalEvent.invoke();
+		return signalEvent;
 	}
 }

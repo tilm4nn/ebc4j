@@ -24,12 +24,9 @@
  */
 package net.objectzoo.ebc.impl;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.CanStart;
-import net.objectzoo.ebc.util.LoggingUtils;
+import net.objectzoo.ebc.builder.Flow;
 
 /**
  * A base class for an EBC that {@link CanStart}.
@@ -39,31 +36,19 @@ import net.objectzoo.ebc.util.LoggingUtils;
  * 
  * @author tilmann
  */
-public abstract class StartBase implements CanStart
+public abstract class StartBase extends StartBoard
 {
-	/** The log level used for the trace logging. Defaults to {@link Level#FINEST} */
-	protected Level logLevel = Level.FINEST;
-	
-	/** The logger that can be used for this EBC's logging activities */
-	protected final Logger logger = LoggingUtils.getLogger(this);
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Action0 startAction()
+	public StartBase()
 	{
-		return startAction;
-	}
-	
-	private final Action0 startAction = new Action0()
-	{
-		@Override
-		public void invoke()
+		Flow.await(startAction).then(new Action0()
 		{
-			receiveStart();
-		}
-	};
+			@Override
+			public void invoke()
+			{
+				receiveStart();
+			}
+		});
+	}
 	
 	private void receiveStart()
 	{

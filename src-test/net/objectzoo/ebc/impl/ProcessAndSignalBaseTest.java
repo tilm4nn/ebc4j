@@ -39,16 +39,6 @@ public class ProcessAndSignalBaseTest
 {
 	static class ProcessAndSignalImpl extends ProcessAndSignalBase<String>
 	{
-		public ProcessAndSignalImpl()
-		{
-			
-		}
-		
-		public ProcessAndSignalImpl(Event0Delegate delegate)
-		{
-			super(delegate);
-		}
-		
 		boolean called = false;
 		String param = null;
 		
@@ -119,16 +109,4 @@ public class ProcessAndSignalBaseTest
 		
 		result.assertInvoked("signal event has not been send.");
 	}
-	
-	@Test
-	public void sendSignal_invokes_given_delegate()
-	{
-		TestEvent0Delegate testDelegate = new TestEvent0Delegate();
-		ProcessAndSignalImpl sut = new ProcessAndSignalImpl(testDelegate);
-		
-		sut.sendSignal();
-		
-		assertTrue("invoke has not been called", testDelegate.called);
-	}
-	
 }

@@ -38,15 +38,7 @@ public class ResultBaseTest
 {
 	static class ResultImpl extends ResultBase<String>
 	{
-		public ResultImpl()
-		{
-			
-		}
 		
-		public ResultImpl(EventDelegate<String> delegate)
-		{
-			super(delegate);
-		}
 	}
 	
 	static class TestEventDelegate implements EventDelegate<String>
@@ -91,16 +83,4 @@ public class ResultBaseTest
 		
 		assertThat(result.getLastResult(), is("FooBar"));
 	}
-	
-	@Test
-	public void sendResult_invokes_given_delegate()
-	{
-		TestEventDelegate testDelegate = new TestEventDelegate();
-		ResultImpl sut = new ResultImpl(testDelegate);
-		
-		sut.sendResult("FooBar");
-		
-		assertThat(testDelegate.result, is("FooBar"));
-	}
-	
 }

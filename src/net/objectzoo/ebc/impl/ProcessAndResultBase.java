@@ -24,12 +24,11 @@
  */
 package net.objectzoo.ebc.impl;
 
+import static net.objectzoo.ebc.builder.Flow.await;
+import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.CanProcess;
-import net.objectzoo.ebc.ProcessAndResultFlow;
 import net.objectzoo.ebc.SendsResult;
 import net.objectzoo.ebc.util.LoggingUtils;
-import net.objectzoo.events.Event;
-import net.objectzoo.events.impl.EventDelegate;
 
 /**
  * A base class for an EBC that {@link CanProcess} and {@link SendsResult}.
@@ -45,54 +44,35 @@ import net.objectzoo.events.impl.EventDelegate;
  *        the type of output of this EBC
  */
 public abstract class ProcessAndResultBase<ProcessParameter, ResultParameter> extends
-	ProcessBase<ProcessParameter> implements ProcessAndResultFlow<ProcessParameter, ResultParameter>
+	ProcessAndResultBoard<ProcessParameter, ResultParameter>
 {
-	private final EventDelegate<ResultParameter> resultEvent;
-	
-	/**
-	 * Creates a new {@code ProcessAndResultBase} that allows only a single subscriber to the result
-	 * event.
-	 */
 	public ProcessAndResultBase()
 	{
-		this(false);
-	}
-	
-	/**
-	 * Creates a new {@code ProcessAndResultBase}.
-	 * 
-	 * @param mutliSubscription
-	 *        defines if multiple subscribers are allowed for the result event
-	 */
-	public ProcessAndResultBase(boolean mutliSubscription)
-	{
-		this(EventDelegateFactory.<ResultParameter> createEventDelegate(mutliSubscription));
-	}
-	
-	/**
-	 * Creates a new {@code ProcessAndResultBase}.
-	 * 
-	 * @param resultEventDelegate
-	 *        uses the given event delegate to implement the result event
-	 */
-	public ProcessAndResultBase(EventDelegate<ResultParameter> resultEventDelegate)
-	{
-		if (resultEventDelegate == null)
+		await(processAction).then(new Action<ProcessParameter>()
 		{
-			throw new IllegalArgumentException("resultEventDelegate=null");
-		}
+			@Override
+			public void invoke(ProcessParameter parameter)
+			{
+				receiveProcess(parameter);
+			}
+		});
+	}
+	
+	private void receiveProcess(ProcessParameter parameter)
+	{
+		LoggingUtils.log(logger, logLevel, "receiving parameter to process: ", parameter);
 		
-		this.resultEvent = resultEventDelegate;
+		process(parameter);
 	}
 	
 	/**
-	 * {@inheritDoc}
+	 * This method is to be provided by subclasses to actually implement what's taking place when
+	 * the process action is invoked.
+	 * 
+	 * @param parameter
+	 *        the parameter value for the invocation
 	 */
-	@Override
-	public Event<ResultParameter> resultEvent()
-	{
-		return resultEvent;
-	}
+	protected abstract void process(ProcessParameter parameter);
 	
 	/**
 	 * This method can be used by subclasses to send the result.

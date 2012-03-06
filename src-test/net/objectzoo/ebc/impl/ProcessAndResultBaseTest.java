@@ -38,16 +38,6 @@ public class ProcessAndResultBaseTest
 {
 	static class ProcessAndResultImpl extends ProcessAndResultBase<String, String>
 	{
-		public ProcessAndResultImpl()
-		{
-			
-		}
-		
-		public ProcessAndResultImpl(EventDelegate<String> delegate)
-		{
-			super(delegate);
-		}
-		
 		boolean called = false;
 		String param = null;
 		
@@ -94,7 +84,6 @@ public class ProcessAndResultBaseTest
 		{
 			// Not testing this
 		}
-		
 	}
 	
 	@Test
@@ -118,16 +107,4 @@ public class ProcessAndResultBaseTest
 		
 		assertThat(result.getLastResult(), is("FooBar"));
 	}
-	
-	@Test
-	public void sendResult_invokes_given_delegate()
-	{
-		TestEventDelegate testDelegate = new TestEventDelegate();
-		ProcessAndResultImpl sut = new ProcessAndResultImpl(testDelegate);
-		
-		sut.sendResult("FooBar");
-		
-		assertThat(testDelegate.result, is("FooBar"));
-	}
-	
 }

@@ -12,14 +12,6 @@ import net.objectzoo.ebc.impl.ProcessAndResultBase;
  */
 public class SplitProcess<Parameter> extends ProcessAndResultBase<Parameter, Parameter>
 {
-	/**
-	 * Create a new {@code SplitProcess}
-	 */
-	public SplitProcess()
-	{
-		super(true);
-	}
-	
 	@Override
 	protected void process(Parameter parameter)
 	{

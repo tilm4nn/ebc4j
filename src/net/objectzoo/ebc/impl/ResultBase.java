@@ -24,13 +24,8 @@
  */
 package net.objectzoo.ebc.impl;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import net.objectzoo.ebc.SendsResult;
 import net.objectzoo.ebc.util.LoggingUtils;
-import net.objectzoo.events.Event;
-import net.objectzoo.events.impl.EventDelegate;
 
 /**
  * A base class for an EBC that {@link SendsResult}.
@@ -43,60 +38,8 @@ import net.objectzoo.events.impl.EventDelegate;
  * @param <ResultParameter>
  *        the type of output of this EBC
  */
-public class ResultBase<ResultParameter> implements SendsResult<ResultParameter>
+public abstract class ResultBase<ResultParameter> extends ResultBoard<ResultParameter>
 {
-	/** The log level used for the trace logging. Defaults to {@link Level#FINEST} */
-	protected Level logLevel = Level.FINEST;
-	
-	/** The logger that can be used for this EBC's logging activities */
-	protected final Logger logger = LoggingUtils.getLogger(this);
-	
-	private final EventDelegate<ResultParameter> resultEvent;
-	
-	/**
-	 * Creates a new {@code ResultBase} that allows only a single subscriber to the result event.
-	 */
-	public ResultBase()
-	{
-		this(false);
-	}
-	
-	/**
-	 * Creates a new {@code ResultBase}.
-	 * 
-	 * @param mutliSubscription
-	 *        defines if multiple subscribers are allowed for the result event
-	 */
-	public ResultBase(boolean mutliSubscription)
-	{
-		this(EventDelegateFactory.<ResultParameter> createEventDelegate(mutliSubscription));
-	}
-	
-	/**
-	 * Creates a new {@code ResultBase}.
-	 * 
-	 * @param resultEventDelegate
-	 *        uses the given event delegate to implement the result event
-	 */
-	public ResultBase(EventDelegate<ResultParameter> resultEventDelegate)
-	{
-		if (resultEventDelegate == null)
-		{
-			throw new IllegalArgumentException("resultEventDelegate=null");
-		}
-		
-		this.resultEvent = resultEventDelegate;
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Event<ResultParameter> resultEvent()
-	{
-		return resultEvent;
-	}
-	
 	/**
 	 * This method can be used by subclasses to send the result.
 	 * 

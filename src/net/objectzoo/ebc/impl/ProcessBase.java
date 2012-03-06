@@ -24,9 +24,7 @@
  */
 package net.objectzoo.ebc.impl;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
+import static net.objectzoo.ebc.builder.Flow.await;
 import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.CanProcess;
 import net.objectzoo.ebc.util.LoggingUtils;
@@ -42,31 +40,19 @@ import net.objectzoo.ebc.util.LoggingUtils;
  * @param <ProcessParameter>
  *        the type of input processed by this EBC
  */
-public abstract class ProcessBase<ProcessParameter> implements CanProcess<ProcessParameter>
+public abstract class ProcessBase<ProcessParameter> extends ProcessBoard<ProcessParameter>
 {
-	/** The log level used for the trace logging. Defaults to {@link Level#FINEST} */
-	protected Level logLevel = Level.FINEST;
-	
-	/** The logger that can be used for this EBC's logging activities */
-	protected final Logger logger = LoggingUtils.getLogger(this);
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Action<ProcessParameter> processAction()
+	public ProcessBase()
 	{
-		return processAction;
-	}
-	
-	private final Action<ProcessParameter> processAction = new Action<ProcessParameter>()
-	{
-		@Override
-		public void invoke(ProcessParameter parameter)
+		await(processAction).then(new Action<ProcessParameter>()
 		{
-			receiveProcess(parameter);
-		}
-	};
+			@Override
+			public void invoke(ProcessParameter parameter)
+			{
+				receiveProcess(parameter);
+			}
+		});
+	}
 	
 	private void receiveProcess(ProcessParameter parameter)
 	{

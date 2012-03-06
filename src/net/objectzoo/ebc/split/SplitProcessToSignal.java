@@ -1,7 +1,6 @@
 package net.objectzoo.ebc.split;
 
 import net.objectzoo.ebc.ProcessAndSignalFlow;
-import net.objectzoo.ebc.adapters.Action0ToAction;
 import net.objectzoo.ebc.impl.ProcessAndResultBase;
 import net.objectzoo.events.Event0;
 import net.objectzoo.events.impl.Event0Distributor;
@@ -18,21 +17,13 @@ import net.objectzoo.events.impl.Event0Distributor;
 public class SplitProcessToSignal<Parameter> extends ProcessAndResultBase<Parameter, Parameter> implements
 	ProcessAndSignalFlow<Parameter>
 {
-	private final Event0Distributor signalDistributor;
-	
-	/**
-	 * Create a new {@code SplitProcess}
-	 */
-	public SplitProcessToSignal()
-	{
-		signalDistributor = new Event0Distributor();
-		resultEvent().subscribe(new Action0ToAction<Parameter>(signalDistributor));
-	}
+	private final Event0Distributor signalDistributor = new Event0Distributor();
 	
 	@Override
 	protected void process(Parameter parameter)
 	{
 		sendResult(parameter);
+		signalDistributor.invoke();
 	}
 	
 	@Override

@@ -39,16 +39,6 @@ public class StartAndResultBaseTest
 {
 	static class StartAndResultImpl extends StartAndResultBase<String>
 	{
-		public StartAndResultImpl()
-		{
-			
-		}
-		
-		public StartAndResultImpl(EventDelegate<String> delegate)
-		{
-			super(delegate);
-		}
-		
 		boolean called = false;
 		
 		@Override
@@ -117,16 +107,4 @@ public class StartAndResultBaseTest
 		
 		assertThat(result.getLastResult(), is("FooBar"));
 	}
-	
-	@Test
-	public void sendResult_invokes_given_delegate()
-	{
-		TestEventDelegate testDelegate = new TestEventDelegate();
-		StartAndResultImpl sut = new StartAndResultImpl(testDelegate);
-		
-		sut.sendResult("FooBar");
-		
-		assertThat(testDelegate.result, is("FooBar"));
-	}
-	
 }

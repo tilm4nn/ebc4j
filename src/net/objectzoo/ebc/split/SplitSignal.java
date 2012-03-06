@@ -9,14 +9,6 @@ import net.objectzoo.ebc.impl.StartAndSignalBase;
  */
 public class SplitSignal extends StartAndSignalBase
 {
-	/**
-	 * Creates a new {@code SplitSignal}
-	 */
-	public SplitSignal()
-	{
-		super(true);
-	}
-	
 	@Override
 	protected void start()
 	{

@@ -24,12 +24,11 @@
  */
 package net.objectzoo.ebc.impl;
 
+import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.CanStart;
 import net.objectzoo.ebc.SendsResult;
-import net.objectzoo.ebc.StartAndResultFlow;
+import net.objectzoo.ebc.builder.Flow;
 import net.objectzoo.ebc.util.LoggingUtils;
-import net.objectzoo.events.Event;
-import net.objectzoo.events.impl.EventDelegate;
 
 /**
  * A base class for an EBC that {@link CanStart} and {@link SendsResult}.
@@ -42,55 +41,32 @@ import net.objectzoo.events.impl.EventDelegate;
  * @param <ResultParameter>
  *        the type of output of this EBC
  */
-public abstract class StartAndResultBase<ResultParameter> extends StartBase implements
-	StartAndResultFlow<ResultParameter>
+public abstract class StartAndResultBase<ResultParameter> extends StartAndResultBoard<ResultParameter>
 {
-	private final EventDelegate<ResultParameter> resultEvent;
-	
-	/**
-	 * Creates a new {@code StartAndResultBase} that allows only a single subscriber to the result
-	 * event.
-	 */
 	public StartAndResultBase()
 	{
-		this(false);
-	}
-	
-	/**
-	 * Creates a new {@code StartAndResultBase}.
-	 * 
-	 * @param mutliSubscription
-	 *        defines if multiple subscribers are allowed for the result event
-	 */
-	public StartAndResultBase(boolean mutliSubscription)
-	{
-		this(EventDelegateFactory.<ResultParameter> createEventDelegate(mutliSubscription));
-	}
-	
-	/**
-	 * Creates a new {@code StartAndResultBase}.
-	 * 
-	 * @param resultEventDelegate
-	 *        uses the given event delegate to implement the result event
-	 */
-	public StartAndResultBase(EventDelegate<ResultParameter> resultEventDelegate)
-	{
-		if (resultEventDelegate == null)
+		Flow.await(startAction).then(new Action0()
 		{
-			throw new IllegalArgumentException("resultEventDelegate=null");
-		}
+			@Override
+			public void invoke()
+			{
+				receiveStart();
+			}
+		});
+	}
+	
+	private void receiveStart()
+	{
+		logger.log(logLevel, "receiving start");
 		
-		this.resultEvent = resultEventDelegate;
+		start();
 	}
 	
 	/**
-	 * {@inheritDoc}
+	 * This method is to be provided by subclasses to actually implement what's taking place when
+	 * the start action is invoked.
 	 */
-	@Override
-	public Event<ResultParameter> resultEvent()
-	{
-		return resultEvent;
-	}
+	protected abstract void start();
 	
 	/**
 	 * This method can be used by subclasses to send the result.
@@ -104,5 +80,4 @@ public abstract class StartAndResultBase<ResultParameter> extends StartBase impl
 		
 		resultEvent.invoke(parameter);
 	}
-	
 }

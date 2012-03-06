@@ -24,11 +24,11 @@
  */
 package net.objectzoo.ebc.impl;
 
+import static net.objectzoo.ebc.builder.Flow.await;
+import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.CanProcess;
-import net.objectzoo.ebc.ProcessAndSignalFlow;
 import net.objectzoo.ebc.SendsSignal;
-import net.objectzoo.events.Event0;
-import net.objectzoo.events.impl.Event0Delegate;
+import net.objectzoo.ebc.util.LoggingUtils;
 
 /**
  * A base class for an EBC that {@link CanProcess} and {@link SendsSignal}.
@@ -41,54 +41,35 @@ import net.objectzoo.events.impl.Event0Delegate;
  * @param <ProcessParameter>
  *        the type of input processed by this EBC
  */
-public abstract class ProcessAndSignalBase<ProcessParameter> extends ProcessBase<ProcessParameter> implements
-	ProcessAndSignalFlow<ProcessParameter>
+public abstract class ProcessAndSignalBase<ProcessParameter> extends ProcessAndSignalBoard<ProcessParameter>
 {
-	private final Event0Delegate signalEvent;
-	
-	/**
-	 * Creates a new {@code SignalBase} that allows only a single subscriber to the signal event.
-	 */
 	public ProcessAndSignalBase()
 	{
-		this(false);
-	}
-	
-	/**
-	 * Creates a new {@code SignalBase}.
-	 * 
-	 * @param mutliSubscription
-	 *        defines if multiple subscribers are allowed for the signal event
-	 */
-	public ProcessAndSignalBase(boolean mutliSubscription)
-	{
-		this(EventDelegateFactory.createEvent0Delegate(mutliSubscription));
-	}
-	
-	/**
-	 * Creates a new {@code SignalBase}.
-	 * 
-	 * @param signalEventDelegate
-	 *        uses the given event delegate to implement the signal event
-	 */
-	public ProcessAndSignalBase(Event0Delegate signalEventDelegate)
-	{
-		if (signalEventDelegate == null)
+		await(processAction).then(new Action<ProcessParameter>()
 		{
-			throw new IllegalArgumentException("signalEventDelegate=null");
-		}
+			@Override
+			public void invoke(ProcessParameter parameter)
+			{
+				receiveProcess(parameter);
+			}
+		});
+	}
+	
+	private void receiveProcess(ProcessParameter parameter)
+	{
+		LoggingUtils.log(logger, logLevel, "receiving parameter to process: ", parameter);
 		
-		this.signalEvent = signalEventDelegate;
+		process(parameter);
 	}
 	
 	/**
-	 * {@inheritDoc}
+	 * This method is to be provided by subclasses to actually implement what's taking place when
+	 * the process action is invoked.
+	 * 
+	 * @param parameter
+	 *        the parameter value for the invocation
 	 */
-	@Override
-	public Event0 signalEvent()
-	{
-		return signalEvent;
-	}
+	protected abstract void process(ProcessParameter parameter);
 	
 	/**
 	 * This method can be used by subclasses to send the signal.

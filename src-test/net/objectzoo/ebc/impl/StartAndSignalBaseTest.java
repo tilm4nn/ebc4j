@@ -38,16 +38,6 @@ public class StartAndSignalBaseTest
 {
 	static class StartAndSignalImpl extends StartAndSignalBase
 	{
-		public StartAndSignalImpl()
-		{
-			
-		}
-		
-		public StartAndSignalImpl(Event0Delegate delegate)
-		{
-			super(delegate);
-		}
-		
 		boolean called = false;
 		
 		@Override
@@ -116,16 +106,4 @@ public class StartAndSignalBaseTest
 		
 		result.assertInvoked("signal event has not been send.");
 	}
-	
-	@Test
-	public void sendSignal_invokes_given_delegate()
-	{
-		TestEvent0Delegate testDelegate = new TestEvent0Delegate();
-		StartAndSignalImpl sut = new StartAndSignalImpl(testDelegate);
-		
-		sut.sendSignal();
-		
-		assertTrue("invoke has not been called", testDelegate.called);
-	}
-	
 }

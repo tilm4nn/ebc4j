@@ -24,11 +24,10 @@
  */
 package net.objectzoo.ebc.impl;
 
+import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.CanStart;
 import net.objectzoo.ebc.SendsSignal;
-import net.objectzoo.ebc.StartAndSignalFlow;
-import net.objectzoo.events.Event0;
-import net.objectzoo.events.impl.Event0Delegate;
+import net.objectzoo.ebc.builder.Flow;
 
 /**
  * A base class for an EBC that {@link CanStart} and {@link SendsSignal}.
@@ -38,54 +37,32 @@ import net.objectzoo.events.impl.Event0Delegate;
  * 
  * @author tilmann
  */
-public abstract class StartAndSignalBase extends StartBase implements StartAndSignalFlow
+public abstract class StartAndSignalBase extends StartAndSignalBoard
 {
-	private final Event0Delegate signalEvent;
-	
-	/**
-	 * Creates a new {@code StartAndSignalBase} that allows only a single subscriber to the signal
-	 * event.
-	 */
 	public StartAndSignalBase()
 	{
-		this(false);
-	}
-	
-	/**
-	 * Creates a new {@code StartAndSignalBase}.
-	 * 
-	 * @param mutliSubscription
-	 *        defines if multiple subscribers are allowed for the signal event
-	 */
-	public StartAndSignalBase(boolean mutliSubscription)
-	{
-		this(EventDelegateFactory.createEvent0Delegate(mutliSubscription));
-	}
-	
-	/**
-	 * Creates a new {@code StartAndSignalBase}.
-	 * 
-	 * @param signalEventDelegate
-	 *        uses the given event delegate to implement the signal event
-	 */
-	public StartAndSignalBase(Event0Delegate signalEventDelegate)
-	{
-		if (signalEventDelegate == null)
+		Flow.await(startAction).then(new Action0()
 		{
-			throw new IllegalArgumentException("signalEventDelegate=null");
-		}
+			@Override
+			public void invoke()
+			{
+				receiveStart();
+			}
+		});
+	}
+	
+	private void receiveStart()
+	{
+		logger.log(logLevel, "receiving start");
 		
-		this.signalEvent = signalEventDelegate;
+		start();
 	}
 	
 	/**
-	 * {@inheritDoc}
+	 * This method is to be provided by subclasses to actually implement what's taking place when
+	 * the start action is invoked.
 	 */
-	@Override
-	public Event0 signalEvent()
-	{
-		return signalEvent;
-	}
+	protected abstract void start();
 	
 	/**
 	 * This method can be used by subclasses to send the signal.

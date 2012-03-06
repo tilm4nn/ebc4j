@@ -37,15 +37,6 @@ public class SignalBaseTest
 {
 	static class SignalImpl extends SignalBase
 	{
-		public SignalImpl()
-		{
-			
-		}
-		
-		public SignalImpl(Event0Delegate delegate)
-		{
-			super(delegate);
-		}
 	}
 	
 	static class TestEvent0Delegate implements Event0Delegate
@@ -90,16 +81,4 @@ public class SignalBaseTest
 		
 		result.assertInvoked("signal event has not been send.");
 	}
-	
-	@Test
-	public void sendSignal_invokes_given_delegate()
-	{
-		TestEvent0Delegate testDelegate = new TestEvent0Delegate();
-		SignalImpl sut = new SignalImpl(testDelegate);
-		
-		sut.sendSignal();
-		
-		assertTrue("invoke has not been called", testDelegate.called);
-	}
-	
 }
