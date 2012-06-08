@@ -34,6 +34,9 @@ import java.util.logging.Logger;
  */
 public class LoggingUtils
 {
+	/** This is the default log level used by the EBC implementations and base classes */
+	public static final Level DEFAULT_EBC_LOG_LEVEL = Level.FINEST;
+	
 	private LoggingUtils()
 	{
 		// No instances will be made

@@ -36,7 +36,7 @@ import net.objectzoo.events.impl.EventDistributor;
 public abstract class ResultBoard<ResultParameter> implements SendsResult<ResultParameter>
 {
 	/** The log level used for the trace logging. Defaults to {@link Level#FINEST} */
-	protected Level logLevel = Level.FINEST;
+	protected Level logLevel = LoggingUtils.DEFAULT_EBC_LOG_LEVEL;
 	
 	/** The logger that can be used for this EBC's logging activities */
 	protected final Logger logger = LoggingUtils.getLogger(this);

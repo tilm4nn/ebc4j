@@ -24,8 +24,6 @@
  */
 package net.objectzoo.ebc.join;
 
-import java.util.logging.Level;
-
 import net.objectzoo.delegates.Action;
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.impl.ResultBase;
@@ -72,7 +70,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		@Override
 		public void invoke(Input1 input)
 		{
-			LoggingUtils.log(logger, Level.FINEST, "receiving input1: ", input);
+			LoggingUtils.log(logger, logLevel, "receiving input1: ", input);
 			
 			processInput1(input);
 		}
@@ -83,7 +81,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		@Override
 		public void invoke(Input2 input)
 		{
-			LoggingUtils.log(logger, Level.FINEST, "receiving input2: ", input);
+			LoggingUtils.log(logger, logLevel, "receiving input2: ", input);
 			
 			processInput2(input);
 		}
