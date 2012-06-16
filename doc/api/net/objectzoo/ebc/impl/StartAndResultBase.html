@@ -53,8 +53,8 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/SignalBase.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/impl/StartAndResultBase.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="StartAndResultBase.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -74,7 +74,7 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.StartBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.StartAndResultBoard">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
 DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
@@ -91,17 +91,18 @@ net.objectzoo.ebc.impl</FONT>
 Class StartAndResultBase&lt;ResultParameter&gt;</H2>
 <PRE>
 <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.StartBase</A>
-      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.impl.StartAndResultBase&lt;ResultParameter&gt;</B>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.StartBoard</A>
+      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.StartAndResultBoard</A>&lt;ResultParameter&gt;
+          <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.impl.StartAndResultBase&lt;ResultParameter&gt;</B>
 </PRE>
 <DL>
 <DT><DT><B>Type Parameters:</B><DD><CODE>ResultParameter</CODE> - the type of output of this EBC</DL>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>, <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;</DD>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>, <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;, <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;ResultParameter&gt;</DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public abstract class <B>StartAndResultBase&lt;ResultParameter&gt;</B><DT>extends <A HREF="../../../../net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl">StartBase</A><DT>implements <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;</DL>
+<DT><PRE>public abstract class <B>StartAndResultBase&lt;ResultParameter&gt;</B><DT>extends <A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard</A>&lt;ResultParameter&gt;</DL>
 </PRE>
 
 <P>
@@ -128,13 +129,22 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/CanStart.htm
 <B>Field Summary</B></FONT></TH>
 </TR>
 </TABLE>
-&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.StartBase"><!-- --></A>
+&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.StartAndResultBoard"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl">StartBase</A></B></TH>
+<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/StartBase.html#logger">logger</A>, <A HREF="../../../../net/objectzoo/ebc/impl/StartBase.html#logLevel">logLevel</A></CODE></TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html#resultEvent">resultEvent</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.StartBoard"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl">StartBoard</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html#logger">logger</A>, <A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html#logLevel">logLevel</A>, <A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html#startAction">startAction</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -150,20 +160,7 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/CanStart.htm
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html#StartAndResultBase()">StartAndResultBase</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>StartAndResultBase</code> that allows only a single subscriber to the result
- event.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html#StartAndResultBase(boolean)">StartAndResultBase</A></B>(boolean&nbsp;mutliSubscription)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>StartAndResultBase</code>.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html#StartAndResultBase(net.objectzoo.events.impl.EventDelegate)">StartAndResultBase</A></B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/impl/EventDelegate.html?is-external=true" title="class or interface in net.objectzoo.events.impl">EventDelegate</A>&lt;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="type parameter in StartAndResultBase">ResultParameter</A>&gt;&nbsp;resultEventDelegate)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>StartAndResultBase</code>.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -177,28 +174,38 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/CanStart.htm
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events">Event</A>&lt;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="type parameter in StartAndResultBase">ResultParameter</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html#resultEvent()">resultEvent</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> that is used to send the output of this EBC</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html#sendResult(ResultParameter)">sendResult</A></B>(<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="type parameter in StartAndResultBase">ResultParameter</A>&nbsp;parameter)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method can be used by subclasses to send the result.</TD>
 </TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html#start()">start</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is to be provided by subclasses to actually implement what's taking place when
+ the start action is invoked.</TD>
+</TR>
 </TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.StartBase"><!-- --></A>
+&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.StartAndResultBoard"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl">StartBase</A></B></TH>
+<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/StartBase.html#start()">start</A>, <A HREF="../../../../net/objectzoo/ebc/impl/StartBase.html#startAction()">startAction</A></CODE></TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html#resultEvent()">resultEvent</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.StartBoard"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl">StartBoard</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html#startAction()">startAction</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -208,6 +215,15 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/CanStart.htm
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.CanStart"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from interface net.objectzoo.ebc.<A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/CanStart.html#startAction()">startAction</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -228,33 +244,6 @@ StartAndResultBase</H3>
 <PRE>
 public <B>StartAndResultBase</B>()</PRE>
 <DL>
-<DD>Creates a new <code>StartAndResultBase</code> that allows only a single subscriber to the result
- event.
-<P>
-</DL>
-<HR>
-
-<A NAME="StartAndResultBase(boolean)"><!-- --></A><H3>
-StartAndResultBase</H3>
-<PRE>
-public <B>StartAndResultBase</B>(boolean&nbsp;mutliSubscription)</PRE>
-<DL>
-<DD>Creates a new <code>StartAndResultBase</code>.
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>mutliSubscription</CODE> - defines if multiple subscribers are allowed for the result event</DL>
-</DL>
-<HR>
-
-<A NAME="StartAndResultBase(net.objectzoo.events.impl.EventDelegate)"><!-- --></A><H3>
-StartAndResultBase</H3>
-<PRE>
-public <B>StartAndResultBase</B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/impl/EventDelegate.html?is-external=true" title="class or interface in net.objectzoo.events.impl">EventDelegate</A>&lt;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="type parameter in StartAndResultBase">ResultParameter</A>&gt;&nbsp;resultEventDelegate)</PRE>
-<DL>
-<DD>Creates a new <code>StartAndResultBase</code>.
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>resultEventDelegate</CODE> - uses the given event delegate to implement the result event</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -267,19 +256,16 @@ public <B>StartAndResultBase</B>(<A HREF="http://events4j-api.assembla.me/net/ob
 </TR>
 </TABLE>
 
-<A NAME="resultEvent()"><!-- --></A><H3>
-resultEvent</H3>
+<A NAME="start()"><!-- --></A><H3>
+start</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events">Event</A>&lt;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="type parameter in StartAndResultBase">ResultParameter</A>&gt; <B>resultEvent</B>()</PRE>
+protected abstract void <B>start</B>()</PRE>
 <DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> that is used to send the output of this EBC
+<DD>This method is to be provided by subclasses to actually implement what's taking place when
+ the start action is invoked.
 <P>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/SendsResult.html#resultEvent()">resultEvent</A></CODE> in interface <CODE><A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="type parameter in StartAndResultBase">ResultParameter</A>&gt;</CODE></DL>
-</DD>
-<DD><DL>
-
-<DT><B>Returns:</B><DD>the result event of this EBC</DL>
+</DL>
 </DD>
 </DL>
 <HR>
@@ -291,9 +277,6 @@ protected void <B>sendResult</B>(<A HREF="../../../../net/objectzoo/ebc/impl/Sta
 <DL>
 <DD>This method can be used by subclasses to send the result.
 <P>
-<DD><DL>
-</DL>
-</DD>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>parameter</CODE> - the parameter value for the invocation</DL>
 </DD>
@@ -329,8 +312,8 @@ protected void <B>sendResult</B>(<A HREF="../../../../net/objectzoo/ebc/impl/Sta
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/SignalBase.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/impl/StartAndResultBase.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="StartAndResultBase.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -350,7 +333,7 @@ protected void <B>sendResult</B>(<A HREF="../../../../net/objectzoo/ebc/impl/Sta
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.StartBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.StartAndResultBoard">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
 DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>

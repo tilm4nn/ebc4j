@@ -161,7 +161,8 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" t
  to join the given input element types to the output element type.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator, boolean)">Join</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputCreator,
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)">Join</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputCreator,
+     <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="class in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
      boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
@@ -177,7 +178,25 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" t
  input elements to the output element.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)">JoinCollections</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt;&nbsp;elementOutputCreator,
+                <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="class in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+                boolean&nbsp;resetAfterResultEvent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinCollections</code> using the given <A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the
+ input elements to the output element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator, boolean)">JoinObjectAndCollection</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;&nbsp;elementOutputCreator,
+                        boolean&nbsp;resetAfterResultEvent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
+ join the first input and second input elements to the output element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)">JoinObjectAndCollection</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;&nbsp;elementOutputCreator,
+                        <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="class in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
                         boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>

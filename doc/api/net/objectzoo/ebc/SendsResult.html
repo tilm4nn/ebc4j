@@ -53,7 +53,7 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../net/objectzoo/ebc/EntryPoint.html" title="interface in net.objectzoo.ebc"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/objectzoo/ebc/ProcessAndSignalFlow.html" title="interface in net.objectzoo.ebc"><B>PREV CLASS</B></A>&nbsp;
 &nbsp;<A HREF="../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../index.html?net/objectzoo/ebc/SendsResult.html" target="_top"><B>FRAMES</B></A>  &nbsp;
@@ -92,7 +92,10 @@ Interface SendsResult&lt;ResultParameter&gt;</H2>
 <DL>
 <DT><DT><B>Type Parameters:</B><DD><CODE>ResultParameter</CODE> - the type of output of this EBC</DL>
 <DL>
-<DT><B>All Known Implementing Classes:</B> <DD><A HREF="../../../net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>, <A HREF="../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>, <A HREF="../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>, <A HREF="../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>, <A HREF="../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections</A>, <A HREF="../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>, <A HREF="../../../net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join">JoinToPair</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl">StartAndResultBase</A></DD>
+<DT><B>All Known Subinterfaces:</B> <DD><A HREF="../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc">ProcessAndResultFlow</A>&lt;ProcessParameter,ResultParameter&gt;, <A HREF="../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;ResultParameter&gt;</DD>
+</DL>
+<DL>
+<DT><B>All Known Implementing Classes:</B> <DD><A HREF="../../../net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>, <A HREF="../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>, <A HREF="../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>, <A HREF="../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>, <A HREF="../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections</A>, <A HREF="../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>, <A HREF="../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>, <A HREF="../../../net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join">JoinToPair</A>, <A HREF="../../../net/objectzoo/ebc/map/MapPairToItem1.html" title="class in net.objectzoo.ebc.map">MapPairToItem1</A>, <A HREF="../../../net/objectzoo/ebc/map/MapPairToItem2.html" title="class in net.objectzoo.ebc.map">MapPairToItem2</A>, <A HREF="../../../net/objectzoo/ebc/state/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">ProcessAndClearThreadLocalStateStore</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBoard</A>, <A HREF="../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl">ResultBoard</A>, <A HREF="../../../net/objectzoo/ebc/split/SplitProcess.html" title="class in net.objectzoo.ebc.split">SplitProcess</A>, <A HREF="../../../net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split">SplitProcessToSignal</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl">StartAndResultBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard</A></DD>
 </DL>
 <HR>
 <DL>
@@ -186,7 +189,7 @@ resultEvent</H3>
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../net/objectzoo/ebc/EntryPoint.html" title="interface in net.objectzoo.ebc"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/objectzoo/ebc/ProcessAndSignalFlow.html" title="interface in net.objectzoo.ebc"><B>PREV CLASS</B></A>&nbsp;
 &nbsp;<A HREF="../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../index.html?net/objectzoo/ebc/SendsResult.html" target="_top"><B>FRAMES</B></A>  &nbsp;

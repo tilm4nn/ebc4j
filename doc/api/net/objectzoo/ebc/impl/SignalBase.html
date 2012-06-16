@@ -53,8 +53,8 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/impl/SignalBase.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="SignalBase.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -74,9 +74,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.SignalBoard">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -91,14 +91,15 @@ net.objectzoo.ebc.impl</FONT>
 Class SignalBase</H2>
 <PRE>
 <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.impl.SignalBase</B>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.SignalBoard</A>
+      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.impl.SignalBase</B>
 </PRE>
 <DL>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>SignalBase</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A></DL>
+<DT><PRE>public abstract class <B>SignalBase</B><DT>extends <A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl">SignalBoard</A></DL>
 </PRE>
 
 <P>
@@ -124,21 +125,14 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/SendsSignal.
 <TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
 <B>Field Summary</B></FONT></TH>
 </TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/SignalBase.html#logger">logger</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The logger that can be used for this EBC's logging activities</TD>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.SignalBoard"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl">SignalBoard</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Level.html?is-external=true" title="class or interface in java.util.logging">Level</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/SignalBase.html#logLevel">logLevel</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The log level used for the trace logging.</TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html#logger">logger</A>, <A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html#logLevel">logLevel</A>, <A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html#signalEvent">signalEvent</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -154,19 +148,7 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/SendsSignal.
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/SignalBase.html#SignalBase()">SignalBase</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>SignalBase</code> that allows only a single subscriber to the signal event.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/SignalBase.html#SignalBase(boolean)">SignalBase</A></B>(boolean&nbsp;mutliSubscription)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>SignalBase</code>.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/SignalBase.html#SignalBase(net.objectzoo.events.impl.Event0Delegate)">SignalBase</A></B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/impl/Event0Delegate.html?is-external=true" title="class or interface in net.objectzoo.events.impl">Event0Delegate</A>&nbsp;signalEventDelegate)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>SignalBase</code>.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -186,13 +168,14 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/SendsSignal.
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method can be used by subclasses to send the signal.</TD>
 </TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.SignalBoard"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl">SignalBoard</A></B></TH>
+</TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/SignalBase.html#signalEvent()">signalEvent</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC</TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html#signalEvent()">signalEvent</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -206,39 +189,6 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/SendsSignal.
 </TABLE>
 &nbsp;
 <P>
-
-<!-- ============ FIELD DETAIL =========== -->
-
-<A NAME="field_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Field Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="logLevel"><!-- --></A><H3>
-logLevel</H3>
-<PRE>
-protected <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Level.html?is-external=true" title="class or interface in java.util.logging">Level</A> <B>logLevel</B></PRE>
-<DL>
-<DD>The log level used for the trace logging. Defaults to <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Level.html?is-external=true#FINEST" title="class or interface in java.util.logging"><CODE>Level.FINEST</CODE></A>
-<P>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="logger"><!-- --></A><H3>
-logger</H3>
-<PRE>
-protected final <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</A> <B>logger</B></PRE>
-<DL>
-<DD>The logger that can be used for this EBC's logging activities
-<P>
-<DL>
-</DL>
-</DL>
 
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 
@@ -255,32 +205,6 @@ SignalBase</H3>
 <PRE>
 public <B>SignalBase</B>()</PRE>
 <DL>
-<DD>Creates a new <code>SignalBase</code> that allows only a single subscriber to the signal event.
-<P>
-</DL>
-<HR>
-
-<A NAME="SignalBase(boolean)"><!-- --></A><H3>
-SignalBase</H3>
-<PRE>
-public <B>SignalBase</B>(boolean&nbsp;mutliSubscription)</PRE>
-<DL>
-<DD>Creates a new <code>SignalBase</code>.
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>mutliSubscription</CODE> - defines if multiple subscribers are allowed for the signal event</DL>
-</DL>
-<HR>
-
-<A NAME="SignalBase(net.objectzoo.events.impl.Event0Delegate)"><!-- --></A><H3>
-SignalBase</H3>
-<PRE>
-public <B>SignalBase</B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/impl/Event0Delegate.html?is-external=true" title="class or interface in net.objectzoo.events.impl">Event0Delegate</A>&nbsp;signalEventDelegate)</PRE>
-<DL>
-<DD>Creates a new <code>SignalBase</code>.
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>signalEventDelegate</CODE> - uses the given event delegate to implement the signal event</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -293,23 +217,6 @@ public <B>SignalBase</B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/
 </TR>
 </TABLE>
 
-<A NAME="signalEvent()"><!-- --></A><H3>
-signalEvent</H3>
-<PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A> <B>signalEvent</B>()</PRE>
-<DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC
-<P>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/SendsSignal.html#signalEvent()">signalEvent</A></CODE> in interface <CODE><A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A></CODE></DL>
-</DD>
-<DD><DL>
-
-<DT><B>Returns:</B><DD>the signal event of this EBC</DL>
-</DD>
-</DL>
-<HR>
-
 <A NAME="sendSignal()"><!-- --></A><H3>
 sendSignal</H3>
 <PRE>
@@ -317,9 +224,6 @@ protected void <B>sendSignal</B>()</PRE>
 <DL>
 <DD>This method can be used by subclasses to send the signal.
 <P>
-<DD><DL>
-</DL>
-</DD>
 <DD><DL>
 </DL>
 </DD>
@@ -355,8 +259,8 @@ protected void <B>sendSignal</B>()</PRE>
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/impl/SignalBase.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="SignalBase.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -376,9 +280,9 @@ protected void <B>sendSignal</B>()</PRE>
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.SignalBoard">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>
