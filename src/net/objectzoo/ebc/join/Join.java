@@ -30,6 +30,7 @@ import net.objectzoo.ebc.impl.ResultBase;
 import net.objectzoo.ebc.state.BasicStateFactory;
 import net.objectzoo.ebc.state.State;
 import net.objectzoo.ebc.state.StateFactory;
+import net.objectzoo.ebc.state.ValueFactory;
 import net.objectzoo.ebc.util.LoggingUtils;
 
 /**
@@ -58,6 +59,16 @@ import net.objectzoo.ebc.util.LoggingUtils;
 public class Join<Input1, Input2, Output> extends ResultBase<Output>
 {
 	public static StateFactory DEFAULT_STATE_FACTORY = new BasicStateFactory();
+	
+	@SuppressWarnings("rawtypes")
+	private static final ValueFactory<JoinInputStorage> inputStorageFactory = new ValueFactory<JoinInputStorage>()
+	{
+		@Override
+		public JoinInputStorage create()
+		{
+			return new JoinInputStorage();
+		}
+	};
 	
 	private final State<JoinInputStorage<Input1, Input2>> inputStorage;
 	
@@ -136,7 +147,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 			}
 			stateFactory = DEFAULT_STATE_FACTORY;
 		}
-		this.inputStorage = (State) stateFactory.create(JoinInputStorage.class);
+		this.inputStorage = (State) stateFactory.create(inputStorageFactory);
 	}
 	
 	/**
