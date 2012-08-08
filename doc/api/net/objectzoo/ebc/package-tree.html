@@ -54,7 +54,7 @@ function windowTitle()
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;PREV&nbsp;
-&nbsp;<A HREF="../../../net/objectzoo/ebc/impl/package-tree.html"><B>NEXT</B></A></FONT></TD>
+&nbsp;<A HREF="../../../net/objectzoo/ebc/adapters/package-tree.html"><B>NEXT</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../index.html?net/objectzoo/ebc/package-tree.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="package-tree.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -89,9 +89,23 @@ Hierarchy For Package net.objectzoo.ebc
 Interface Hierarchy
 </H2>
 <UL>
-<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><B>CanProcess</B></A>&lt;ProcessParameter&gt;<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><B>CanStart</B></A><UL>
-<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/EntryPoint.html" title="interface in net.objectzoo.ebc"><B>EntryPoint</B></A></UL>
-<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/Configurable.html" title="interface in net.objectzoo.ebc"><B>Configurable</B></A><LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/DependsOn.html" title="interface in net.objectzoo.ebc"><B>DependsOn</B></A>&lt;Dependency&gt;<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><B>SendsResult</B></A>&lt;ResultParameter&gt;<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><B>SendsSignal</B></A></UL>
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><B>CanProcess</B></A>&lt;ProcessParameter&gt;<UL>
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><B>ProcessAndResultFlow</B></A>&lt;ProcessParameter,ResultParameter&gt; (also extends net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/ProcessAndSignalFlow.html" title="interface in net.objectzoo.ebc"><B>ProcessAndSignalFlow</B></A>&lt;ProcessParameter&gt; (also extends net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A>)
+</UL>
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><B>CanStart</B></A><UL>
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/EntryPoint.html" title="interface in net.objectzoo.ebc"><B>EntryPoint</B></A><LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><B>StartAndResultFlow</B></A>&lt;ResultParameter&gt; (also extends net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/StartAndSignalFlow.html" title="interface in net.objectzoo.ebc"><B>StartAndSignalFlow</B></A> (also extends net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A>)
+</UL>
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/Configurable.html" title="interface in net.objectzoo.ebc"><B>Configurable</B></A><LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/DependsOn.html" title="interface in net.objectzoo.ebc"><B>DependsOn</B></A>&lt;Dependency&gt;<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><B>SendsResult</B></A>&lt;ResultParameter&gt;<UL>
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><B>ProcessAndResultFlow</B></A>&lt;ProcessParameter,ResultParameter&gt; (also extends net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><B>StartAndResultFlow</B></A>&lt;ResultParameter&gt; (also extends net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>)
+</UL>
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><B>SendsSignal</B></A><UL>
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/ProcessAndSignalFlow.html" title="interface in net.objectzoo.ebc"><B>ProcessAndSignalFlow</B></A>&lt;ProcessParameter&gt; (also extends net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/StartAndSignalFlow.html" title="interface in net.objectzoo.ebc"><B>StartAndSignalFlow</B></A> (also extends net.objectzoo.ebc.<A HREF="../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>)
+</UL>
+</UL>
 <HR>
 
 
@@ -123,7 +137,7 @@ Interface Hierarchy
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;PREV&nbsp;
-&nbsp;<A HREF="../../../net/objectzoo/ebc/impl/package-tree.html"><B>NEXT</B></A></FONT></TD>
+&nbsp;<A HREF="../../../net/objectzoo/ebc/adapters/package-tree.html"><B>NEXT</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../index.html?net/objectzoo/ebc/package-tree.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="package-tree.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;

@@ -53,8 +53,8 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/impl/ProcessBase.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="ProcessBase.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -74,9 +74,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ProcessBoard">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -91,19 +91,17 @@ net.objectzoo.ebc.impl</FONT>
 Class ProcessBase&lt;ProcessParameter&gt;</H2>
 <PRE>
 <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.impl.ProcessBase&lt;ProcessParameter&gt;</B>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.ProcessBoard</A>&lt;ProcessParameter&gt;
+      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.impl.ProcessBase&lt;ProcessParameter&gt;</B>
 </PRE>
 <DL>
 <DT><DT><B>Type Parameters:</B><DD><CODE>ProcessParameter</CODE> - the type of input processed by this EBC</DL>
 <DL>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;</DD>
 </DL>
-<DL>
-<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBase</A>, <A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBase</A></DD>
-</DL>
 <HR>
 <DL>
-<DT><PRE>public abstract class <B>ProcessBase&lt;ProcessParameter&gt;</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;</DL>
+<DT><PRE>public abstract class <B>ProcessBase&lt;ProcessParameter&gt;</B><DT>extends <A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">ProcessBoard</A>&lt;ProcessParameter&gt;</DL>
 </PRE>
 
 <P>
@@ -129,21 +127,14 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/CanProcess.h
 <TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
 <B>Field Summary</B></FONT></TH>
 </TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessBase.html#logger">logger</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The logger that can be used for this EBC's logging activities</TD>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.ProcessBoard"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">ProcessBoard</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Level.html?is-external=true" title="class or interface in java.util.logging">Level</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessBase.html#logLevel">logLevel</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The log level used for the trace logging.</TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html#logger">logger</A>, <A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html#logLevel">logLevel</A>, <A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html#processAction">processAction</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -180,13 +171,14 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/CanProcess.h
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is to be provided by subclasses to actually implement what's taking place when
  the process action is invoked.</TD>
 </TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ProcessBoard"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">ProcessBoard</A></B></TH>
+</TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/impl/ProcessBase.html" title="type parameter in ProcessBase">ProcessParameter</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessBase.html#processAction()">processAction</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input to this EBC</TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html#processAction()">processAction</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -200,39 +192,6 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/CanProcess.h
 </TABLE>
 &nbsp;
 <P>
-
-<!-- ============ FIELD DETAIL =========== -->
-
-<A NAME="field_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Field Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="logLevel"><!-- --></A><H3>
-logLevel</H3>
-<PRE>
-protected <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Level.html?is-external=true" title="class or interface in java.util.logging">Level</A> <B>logLevel</B></PRE>
-<DL>
-<DD>The log level used for the trace logging. Defaults to <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Level.html?is-external=true#FINEST" title="class or interface in java.util.logging"><CODE>Level.FINEST</CODE></A>
-<P>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="logger"><!-- --></A><H3>
-logger</H3>
-<PRE>
-protected final <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</A> <B>logger</B></PRE>
-<DL>
-<DD>The logger that can be used for this EBC's logging activities
-<P>
-<DL>
-</DL>
-</DL>
 
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 
@@ -261,23 +220,6 @@ public <B>ProcessBase</B>()</PRE>
 </TR>
 </TABLE>
 
-<A NAME="processAction()"><!-- --></A><H3>
-processAction</H3>
-<PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/impl/ProcessBase.html" title="type parameter in ProcessBase">ProcessParameter</A>&gt; <B>processAction</B>()</PRE>
-<DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input to this EBC
-<P>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/CanProcess.html#processAction()">processAction</A></CODE> in interface <CODE><A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;<A HREF="../../../../net/objectzoo/ebc/impl/ProcessBase.html" title="type parameter in ProcessBase">ProcessParameter</A>&gt;</CODE></DL>
-</DD>
-<DD><DL>
-
-<DT><B>Returns:</B><DD>the process action of this EBC</DL>
-</DD>
-</DL>
-<HR>
-
 <A NAME="process(java.lang.Object)"><!-- --></A><A NAME="process(ProcessParameter)"><!-- --></A><H3>
 process</H3>
 <PRE>
@@ -286,9 +228,6 @@ protected abstract void <B>process</B>(<A HREF="../../../../net/objectzoo/ebc/im
 <DD>This method is to be provided by subclasses to actually implement what's taking place when
  the process action is invoked.
 <P>
-<DD><DL>
-</DL>
-</DD>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>parameter</CODE> - the parameter value for the invocation</DL>
 </DD>
@@ -324,8 +263,8 @@ protected abstract void <B>process</B>(<A HREF="../../../../net/objectzoo/ebc/im
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/impl/ProcessBase.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="ProcessBase.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -345,9 +284,9 @@ protected abstract void <B>process</B>(<A HREF="../../../../net/objectzoo/ebc/im
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ProcessBoard">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>

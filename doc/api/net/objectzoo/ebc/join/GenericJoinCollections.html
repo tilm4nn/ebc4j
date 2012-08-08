@@ -74,7 +74,7 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#methods_inherited_from_class_net.objectzoo.ebc.join.Join">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.join.Join">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#methods_inherited_from_class_net.objectzoo.ebc.join.Join">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
 DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;METHOD</FONT></TD>
 </TR>
@@ -91,10 +91,11 @@ net.objectzoo.ebc.join</FONT>
 Class GenericJoinCollections&lt;Input1Element,Input2Element,OutputElement&gt;</H2>
 <PRE>
 <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.ResultBase</A>&lt;Output&gt;
-      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">net.objectzoo.ebc.join.Join</A>&lt;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;Input1Element&gt;,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;Input2Element&gt;,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;OutputElement&gt;&gt;
-          <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">net.objectzoo.ebc.join.JoinCollections</A>&lt;Input1Element,Input2Element,OutputElement&gt;
-              <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.GenericJoinCollections&lt;Input1Element,Input2Element,OutputElement&gt;</B>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.ResultBoard</A>&lt;ResultParameter&gt;
+      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">net.objectzoo.ebc.impl.ResultBase</A>&lt;Output&gt;
+          <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">net.objectzoo.ebc.join.Join</A>&lt;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;Input1Element&gt;,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;Input2Element&gt;,<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;OutputElement&gt;&gt;
+              <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">net.objectzoo.ebc.join.JoinCollections</A>&lt;Input1Element,Input2Element,OutputElement&gt;
+                  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.GenericJoinCollections&lt;Input1Element,Input2Element,OutputElement&gt;</B>
 </PRE>
 <DL>
 <DT><DT><B>Type Parameters:</B><DD><CODE>Input1Element</CODE> - the type of input one's elements<DD><CODE>Input2Element</CODE> - the type of input two's elements<DD><CODE>OutputElement</CODE> - the type of the output's elements</DL>
@@ -141,13 +142,22 @@ This Join base class joins two input collections of the input element types to a
 <B>Field Summary</B></FONT></TH>
 </TR>
 </TABLE>
-&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
+&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.join.Join"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A></B></TH>
+<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html#logger">logger</A>, <A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html#logLevel">logLevel</A></CODE></TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY">DEFAULT_STATE_FACTORY</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBoard"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl">ResultBoard</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html#logger">logger</A>, <A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html#logLevel">logLevel</A>, <A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html#resultEvent">resultEvent</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -176,6 +186,25 @@ This Join base class joins two input collections of the input element types to a
  determined from the given type by taking a constructor that has the fitting parameter types
  for this Join's input element types.</TD>
 </TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(java.lang.Class, net.objectzoo.ebc.state.StateFactory, boolean)">GenericJoinCollections</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt;&nbsp;outputElementType,
+                       <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+                       boolean&nbsp;resetAfterResultEvent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinCollections</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's input element types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(net.objectzoo.ebc.state.StateFactory, boolean)">GenericJoinCollections</A></B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+                       boolean&nbsp;resetAfterResultEvent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinCollections</code> with a constructor for the output element determined
+ from this Join's output element type by taking a constructor that has the fitting parameter
+ types for this Join's input element types.</TD>
+</TR>
 </TABLE>
 &nbsp;
 <!-- ========== METHOD SUMMARY =========== -->
@@ -202,7 +231,16 @@ This Join base class joins two input collections of the input element types to a
 <TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html#resultEvent()">resultEvent</A>, <A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html#sendResult(ResultParameter)">sendResult</A></CODE></TD>
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html#sendResult(ResultParameter)">sendResult</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ResultBoard"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl">ResultBoard</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html#resultEvent()">resultEvent</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -243,6 +281,25 @@ public <B>GenericJoinCollections</B>(boolean&nbsp;resetAfterResultEvent)</PRE>
 </DL>
 <HR>
 
+<A NAME="GenericJoinCollections(net.objectzoo.ebc.state.StateFactory, boolean)"><!-- --></A><H3>
+GenericJoinCollections</H3>
+<PRE>
+public <B>GenericJoinCollections</B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+                              boolean&nbsp;resetAfterResultEvent)</PRE>
+<DL>
+<DD>Initializes this <code>JoinCollections</code> with a constructor for the output element determined
+ from this Join's output element type by taking a constructor that has the fitting parameter
+ types for this Join's input element types.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>inputStorageProvider</CODE> - the <CODE>JoinInputStorageProvider</CODE> to be used by this <code>Join</code>. If <code>null</code>
+        is given then the <CODE>#DEFAULT_INPUT_STORAGE_PROVIDER</CODE> is used or if that is also
+        <code>null</code> a <CODE>BasicInputStorageProvider</CODE> is created.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output element type does not have a fitting constructor</DL>
+</DL>
+<HR>
+
 <A NAME="GenericJoinCollections(java.lang.Class, boolean)"><!-- --></A><H3>
 GenericJoinCollections</H3>
 <PRE>
@@ -255,6 +312,26 @@ public <B>GenericJoinCollections</B>(<A HREF="http://java.sun.com/javase/6/docs/
 <P>
 <DL>
 <DT><B>Parameters:</B><DD><CODE>outputElementType</CODE> - the type of the output elements actually constructed in this Join<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output element type is <code>null</code> or does not have a fitting constructor</DL>
+</DL>
+<HR>
+
+<A NAME="GenericJoinCollections(java.lang.Class, net.objectzoo.ebc.state.StateFactory, boolean)"><!-- --></A><H3>
+GenericJoinCollections</H3>
+<PRE>
+public <B>GenericJoinCollections</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt;&nbsp;outputElementType,
+                              <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+                              boolean&nbsp;resetAfterResultEvent)</PRE>
+<DL>
+<DD>Initializes this <code>JoinCollections</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's input element types.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>outputElementType</CODE> - the type of the output elements actually constructed in this Join<DD><CODE>inputStorageProvider</CODE> - the <CODE>JoinInputStorageProvider</CODE> to be used by this <code>Join</code>. If <code>null</code>
+        is given then the <CODE>#DEFAULT_INPUT_STORAGE_PROVIDER</CODE> is used or if that is also
+        <code>null</code> a <CODE>BasicInputStorageProvider</CODE> is created.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output element type is <code>null</code> or does not have a fitting constructor</DL>
 </DL>
@@ -310,7 +387,7 @@ public <B>GenericJoinCollections</B>(<A HREF="http://java.sun.com/javase/6/docs/
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBase">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#methods_inherited_from_class_net.objectzoo.ebc.join.Join">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_net.objectzoo.ebc.join.Join">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#methods_inherited_from_class_net.objectzoo.ebc.join.Join">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
 DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;METHOD</FONT></TD>
 </TR>

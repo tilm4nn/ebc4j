@@ -54,7 +54,7 @@ function windowTitle()
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/package-tree.html"><B>PREV</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/test/package-tree.html"><B>NEXT</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/map/package-tree.html"><B>NEXT</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/join/package-tree.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="package-tree.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -92,17 +92,31 @@ Class Hierarchy
 <LI TYPE="circle">java.lang.<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang"><B>Object</B></A><UL>
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/CollectionsOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>CollectionsOutputCreator</B></A>&lt;Input1Element,Input2Element,OutputElement&gt; (implements net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,Output&gt;)
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/ConstructableOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>ConstructableOutputCreator</B></A>&lt;Input1,Input2,Output&gt; (implements net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,Output&gt;)
-<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>ObjectAndCollectionOutputCreator</B></A>&lt;Input1,Input2Element,OutputElement&gt; (implements net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,Output&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinInputStorage.html" title="class in net.objectzoo.ebc.join"><B>JoinInputStorage</B></A>&lt;Input1,Input2&gt;<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/ObjectAndCollectionOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>ObjectAndCollectionOutputCreator</B></A>&lt;Input1,Input2Element,OutputElement&gt; (implements net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,Output&gt;)
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/PairOutputCreator.html" title="class in net.objectzoo.ebc.join"><B>PairOutputCreator</B></A>&lt;Input1,Input2&gt; (implements net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;Input1,Input2,Output&gt;)
-<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ResultBase</B></A>&lt;ResultParameter&gt; (implements net.objectzoo.ebc.<A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;)
+<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl"><B>ProcessBoard</B></A>&lt;ProcessParameter&gt; (implements net.objectzoo.ebc.<A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;)
 <UL>
+<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndResultBoard</B></A>&lt;ProcessParameter,ResultParameter&gt; (implements net.objectzoo.ebc.<A HREF="../../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc">ProcessAndResultFlow</A>&lt;ProcessParameter,ResultParameter&gt;)
+<UL>
+<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndResultBase</B></A>&lt;ProcessParameter,ResultParameter&gt;<UL>
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join"><B>JoinProcessAndSignal</B></A>&lt;T&gt; (implements net.objectzoo.ebc.<A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;ResultParameter&gt;)
+</UL>
+</UL>
+</UL>
+<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>ResultBoard</B></A>&lt;ResultParameter&gt; (implements net.objectzoo.ebc.<A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;)
+<UL>
+<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ResultBase</B></A>&lt;ResultParameter&gt;<UL>
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><B>Join</B></A>&lt;Input1,Input2,Output&gt;<UL>
-<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join"><B>GenericJoin</B></A>&lt;Input1,Input2,Output&gt;<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>JoinCollections</B></A>&lt;Input1Element,Input2Element,OutputElement&gt;<UL>
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join"><B>GenericJoin</B></A>&lt;Input1,Input2,Output&gt;<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join"><B>JoinBase</B></A>&lt;Input1,Input2,Output&gt;<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>JoinCollections</B></A>&lt;Input1Element,Input2Element,OutputElement&gt;<UL>
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join"><B>GenericJoinCollections</B></A>&lt;Input1Element,Input2Element,OutputElement&gt;</UL>
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>JoinObjectAndCollection</B></A>&lt;Input1,Input2Element,OutputElement&gt;<UL>
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>GenericJoinObjectAndCollection</B></A>&lt;Input1,Input2Element,OutputElement&gt;</UL>
 <LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join"><B>JoinToPair</B></A>&lt;Input1,Input2&gt;</UL>
 </UL>
+</UL>
+<LI TYPE="circle">net.objectzoo.ebc.impl.<A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>SignalBoard</B></A> (implements net.objectzoo.ebc.<A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A>)
+<UL>
+<LI TYPE="circle">net.objectzoo.ebc.join.<A HREF="../../../../net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join"><B>JoinSignals</B></A></UL>
 </UL>
 </UL>
 <H2>
@@ -141,7 +155,7 @@ Interface Hierarchy
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../net/objectzoo/ebc/impl/package-tree.html"><B>PREV</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/test/package-tree.html"><B>NEXT</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/map/package-tree.html"><B>NEXT</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/join/package-tree.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="package-tree.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
