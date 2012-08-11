@@ -38,11 +38,18 @@ import net.objectzoo.ebc.state.StateFactory;
  * while producing the output.
  * 
  * The Join waits for every input to be set at least once before creating a result event. Once both
- * inputs have been set an output is created and sent for each single input invocation until the
- * Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ * inputs have been set an output is created and sent. After that there are two different modes of
+ * operation depending on the {@code resetAfterResultEvent} parameter setting.
  * 
- * To reset the Join the {@link #resetAction()} can be invoked. If the {@code resetAfterResultEvent}
- * parameter is set at construction time the Join is automatically reset after each result event.
+ * If {@code resetAfterResultEvent} is set to {@code true} (which is the default) then after each
+ * result event the two input values are reset and the procedure to wait for both inputs starts from
+ * the beginning.
+ * 
+ * If {@code resetAfterResultEvent} is set to {@code false} then for each following single input
+ * invocation a new output is created and sent until the Join is manually reset again. If reset the
+ * procedure to wait for both inputs starts from the beginning.
+ * 
+ * To manually reset the Join the {@link #resetAction()} can be invoked.
  * 
  * @author tilmann
  * 
@@ -56,6 +63,19 @@ import net.objectzoo.ebc.state.StateFactory;
 public class JoinCollections<Input1Element, Input2Element, OutputElement> extends
 	Join<Collection<Input1Element>, Collection<Input2Element>, List<OutputElement>>
 {
+	/**
+	 * Creates a new {@code JoinCollections} using the given {@link JoinOutputCreator} to join the
+	 * input elements to the output element.
+	 * 
+	 * @param elementOutputCreator
+	 *        the output element creator to be used
+	 */
+	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
+	{
+		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator),
+			null);
+	}
+	
 	/**
 	 * Creates a new {@code JoinCollections} using the given {@link JoinOutputCreator} to join the
 	 * input elements to the output element.
@@ -78,10 +98,26 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 	 * 
 	 * @param elementOutputCreator
 	 *        the output element creator to be used
-	 * @param inputStorageProvider
-	 *        the {@link JoinInputStorageProvider} to be used by this {@code Join}. If {@code null}
-	 *        is given then the {@link #DEFAULT_INPUT_STORAGE_PROVIDER} is used or if that is also
-	 *        {@code null} a {@link BasicInputStorageProvider} is created.
+	 * @param stateFactory
+	 *        the {@link StateFactory} to be used by this {@code Join}. If {@code null} is given
+	 *        then the {@link #DEFAULT_STATE_FACTORY} is used.
+	 */
+	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator,
+						   StateFactory stateFactory)
+	{
+		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator),
+			stateFactory);
+	}
+	
+	/**
+	 * Creates a new {@code JoinCollections} using the given {@link JoinOutputCreator} to join the
+	 * input elements to the output element.
+	 * 
+	 * @param elementOutputCreator
+	 *        the output element creator to be used
+	 * @param stateFactory
+	 *        the {@link StateFactory} to be used by this {@code Join}. If {@code null} is given
+	 *        then the {@link #DEFAULT_STATE_FACTORY} is used.
 	 * @param resetAfterResultEvent
 	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
@@ -92,9 +128,19 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 			stateFactory, resetAfterResultEvent);
 	}
 	
+	JoinCollections()
+	{
+		super(null);
+	}
+	
 	JoinCollections(boolean resetAfterResultEvent)
 	{
 		super(null, resetAfterResultEvent);
+	}
+	
+	JoinCollections(StateFactory stateFactoryr)
+	{
+		super(stateFactoryr);
 	}
 	
 	JoinCollections(StateFactory stateFactoryr, boolean resetAfterResultEvent)

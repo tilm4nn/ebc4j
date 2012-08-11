@@ -39,11 +39,18 @@ import net.objectzoo.ebc.util.LoggingUtils;
  * input and send results.
  * 
  * The Join waits for every input to be set at least once before creating a result event. Once both
- * inputs have been set an output is created and sent for each single input invocation until the
- * Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ * inputs have been set an output is created and sent. After that there are two different modes of
+ * operation depending on the {@code resetAfterResultEvent} parameter setting.
  * 
- * To reset the Join the {@link #resetAction()} can be invoked. If the {@code resetAfterResultEvent}
- * parameter is set at construction time the Join is automatically reset after each result event.
+ * If {@code resetAfterResultEvent} is set to {@code true} (which is the default) then after each
+ * result event the two input values are reset and the procedure to wait for both inputs starts from
+ * the beginning.
+ * 
+ * If {@code resetAfterResultEvent} is set to {@code false} then for each following single input
+ * invocation a new output is created and sent until the Join is manually reset again. If reset the
+ * procedure to wait for both inputs starts from the beginning.
+ * 
+ * To manually reset the Join the {@link #resetAction()} can be invoked.
  * 
  * To actually create the output an instance of {@link JoinOutputCreator} is used.
  * 
@@ -58,6 +65,7 @@ import net.objectzoo.ebc.util.LoggingUtils;
  */
 public class Join<Input1, Input2, Output> extends ResultBase<Output>
 {
+	/** The {@link StateFactory} to be used by {@link Join}s that are not configured by their own */
 	public static StateFactory DEFAULT_STATE_FACTORY = new BasicStateFactory();
 	
 	@SuppressWarnings("rawtypes")
@@ -115,10 +123,25 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	 * 
 	 * @param outputCreator
 	 *        the output creator to be used
-	 * @param inputStorageProvider
-	 *        the {@link JoinInputStorageProvider} to be used by this {@code Join}. If {@code null}
-	 *        is given then the {@link #DEFAULT_INPUT_STORAGE_PROVIDER} is used or if that is also
-	 *        {@code null} a {@link BasicInputStorageProvider} is created.
+	 * @param stateFactory
+	 *        the {@link StateFactory} to be used by this {@code Join}. If {@code null} is given
+	 *        then the {@link #DEFAULT_STATE_FACTORY} is used.
+	 */
+	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator,
+				StateFactory stateFactory)
+	{
+		this(outputCreator, stateFactory, true);
+	}
+	
+	/**
+	 * Creates a new {@code Join} using the given {@link JoinOutputCreator} to create the output of
+	 * the {@code Join}.
+	 * 
+	 * @param outputCreator
+	 *        the output creator to be used
+	 * @param stateFactory
+	 *        the {@link StateFactory} to be used by this {@code Join}. If {@code null} is given
+	 *        then the {@link #DEFAULT_STATE_FACTORY} is used.
 	 * @param resetAfterResultEvent
 	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
@@ -132,6 +155,11 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 			throw new IllegalArgumentException("outputCreator=null");
 		}
 		this.outputCreator = outputCreator;
+	}
+	
+	Join(StateFactory stateFactory)
+	{
+		this(stateFactory, true);
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
