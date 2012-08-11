@@ -33,6 +33,17 @@ import net.objectzoo.events.Event;
 import net.objectzoo.events.impl.EventDelegate;
 import net.objectzoo.events.impl.EventDistributor;
 
+/**
+ * A base class for a board that {@link SendsResult}.
+ * 
+ * The implementation contains the boilerplate code required to implement the interface and provides
+ * {@link EventDelegate} for event invocations.
+ * 
+ * @author tilmann
+ * 
+ * @param <ResultParameter>
+ *        the type of output of this board
+ */
 public abstract class ResultBoard<ResultParameter> implements SendsResult<ResultParameter>
 {
 	/** The log level used for the trace logging. Defaults to {@link Level#FINEST} */
@@ -41,6 +52,9 @@ public abstract class ResultBoard<ResultParameter> implements SendsResult<Result
 	/** The logger that can be used for this EBC's logging activities */
 	protected final Logger logger = LoggingUtils.getLogger(this);
 	
+	/**
+	 * This {@link EventDelegate} can be used by subclasses to send the result events
+	 */
 	protected final EventDelegate<ResultParameter> resultEvent = new EventDistributor<ResultParameter>();
 	
 	/**

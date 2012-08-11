@@ -33,6 +33,17 @@ import net.objectzoo.ebc.util.LoggingUtils;
 import net.objectzoo.events.impl.EventDelegate;
 import net.objectzoo.events.impl.EventDistributor;
 
+/**
+ * A base class for a board that {@link CanProcess}.
+ * 
+ * The implementation contains the boilerplate code required to implement the interface and provides
+ * an {@link EventDelegate} for action invocations.
+ * 
+ * @author tilmann
+ * 
+ * @param <ProcessParameter>
+ *        the type of input processed by this board
+ */
 public abstract class ProcessBoard<ProcessParameter> implements CanProcess<ProcessParameter>
 {
 	/** The log level used for the trace logging. Defaults to {@link Level#FINEST} */
@@ -41,6 +52,9 @@ public abstract class ProcessBoard<ProcessParameter> implements CanProcess<Proce
 	/** The logger that can be used for this EBC's logging activities */
 	protected final Logger logger = LoggingUtils.getLogger(this);
 	
+	/**
+	 * An {@link EventDelegate} that can be used by subclasses to obtain the process actions
+	 */
 	protected final EventDelegate<ProcessParameter> processAction = new EventDistributor<ProcessParameter>();
 	
 	/**

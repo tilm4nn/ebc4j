@@ -10,7 +10,7 @@ public abstract class FlowExecutorHelpers
 		
 	}
 	
-	public static <FlowType> FlowType createFlow(Class<FlowType> flowClass, FlowCreator flowCreator)
+	public static <FlowType> FlowType createFlow(Class<FlowType> flowClass, FlowFactory flowCreator)
 	{
 		FlowType flow = flowCreator.createFlow(flowClass);
 		

@@ -9,7 +9,7 @@ public abstract class Flow
 {
 	private Flow()
 	{
-		
+		// No instances allowed
 	}
 	
 	public static <T> ResultConnector<T> await(Event<T> event)

@@ -7,9 +7,9 @@ import net.objectzoo.ebc.StartAndResultFlow;
 
 public class FlowExecutor
 {
-	private final FlowCreator flowCreator;
+	private final FlowFactory flowCreator;
 	
-	public FlowExecutor(FlowCreator theFlowCreator)
+	public FlowExecutor(FlowFactory theFlowCreator)
 	{
 		flowCreator = theFlowCreator;
 	}

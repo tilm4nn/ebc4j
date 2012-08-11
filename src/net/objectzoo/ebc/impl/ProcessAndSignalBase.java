@@ -25,6 +25,7 @@
 package net.objectzoo.ebc.impl;
 
 import static net.objectzoo.ebc.builder.Flow.await;
+
 import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.CanProcess;
 import net.objectzoo.ebc.SendsSignal;
@@ -43,6 +44,9 @@ import net.objectzoo.ebc.util.LoggingUtils;
  */
 public abstract class ProcessAndSignalBase<ProcessParameter> extends ProcessAndSignalBoard<ProcessParameter>
 {
+	/**
+	 * Creates a new {@code ProcessAndSignalBase}
+	 */
 	public ProcessAndSignalBase()
 	{
 		await(processAction).then(new Action<ProcessParameter>()

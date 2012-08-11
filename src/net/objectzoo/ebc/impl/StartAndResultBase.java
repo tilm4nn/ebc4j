@@ -43,6 +43,9 @@ import net.objectzoo.ebc.util.LoggingUtils;
  */
 public abstract class StartAndResultBase<ResultParameter> extends StartAndResultBoard<ResultParameter>
 {
+	/**
+	 * Creates a new {@code StartAndResultBase}
+	 */
 	public StartAndResultBase()
 	{
 		Flow.await(startAction).then(new Action0()

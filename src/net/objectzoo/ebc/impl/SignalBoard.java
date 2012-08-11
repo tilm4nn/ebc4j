@@ -34,10 +34,10 @@ import net.objectzoo.events.impl.Event0Delegate;
 import net.objectzoo.events.impl.Event0Distributor;
 
 /**
- * A base class for an EBC that {@link SendsSignal}.
+ * A base class for a board that {@link SendsSignal}.
  * 
  * The implementation contains the boilerplate code required to implement the interface and provides
- * trace logging of event invocations.
+ * an {@link Event0Delegate} for event invocations.
  * 
  * @author tilmann
  */
@@ -49,6 +49,9 @@ public abstract class SignalBoard implements SendsSignal
 	/** The logger that can be used for this EBC's logging activities */
 	protected final Logger logger = LoggingUtils.getLogger(this);
 	
+	/**
+	 * This {@link Event0Delegate} can be used by subclasses to send the signal event
+	 */
 	protected final Event0Delegate signalEvent = new Event0Distributor();
 	
 	/**

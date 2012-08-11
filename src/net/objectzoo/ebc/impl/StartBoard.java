@@ -33,6 +33,14 @@ import net.objectzoo.ebc.util.LoggingUtils;
 import net.objectzoo.events.impl.Event0Delegate;
 import net.objectzoo.events.impl.Event0Distributor;
 
+/**
+ * A base class for a board that {@link CanStart}.
+ * 
+ * The implementation contains the boilerplate code required to implement the interface and provides
+ * an {@link Event0Delegate} for action invocations.
+ * 
+ * @author tilmann
+ */
 public abstract class StartBoard implements CanStart
 {
 	/** The log level used for the trace logging. Defaults to {@link Level#FINEST} */
@@ -41,6 +49,9 @@ public abstract class StartBoard implements CanStart
 	/** The logger that can be used for this EBC's logging activities */
 	protected final Logger logger = LoggingUtils.getLogger(this);
 	
+	/**
+	 * An {@link Event0Delegate} that can be used by subclasses to obtain the start actions
+	 */
 	protected final Event0Delegate startAction = new Event0Distributor();
 	
 	/**

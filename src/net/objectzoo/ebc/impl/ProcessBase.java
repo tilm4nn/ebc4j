@@ -25,6 +25,7 @@
 package net.objectzoo.ebc.impl;
 
 import static net.objectzoo.ebc.builder.Flow.await;
+
 import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.CanProcess;
 import net.objectzoo.ebc.util.LoggingUtils;
@@ -42,6 +43,9 @@ import net.objectzoo.ebc.util.LoggingUtils;
  */
 public abstract class ProcessBase<ProcessParameter> extends ProcessBoard<ProcessParameter>
 {
+	/**
+	 * Creates a new {@code ProcessBase}
+	 */
 	public ProcessBase()
 	{
 		await(processAction).then(new Action<ProcessParameter>()

@@ -38,6 +38,9 @@ import net.objectzoo.ebc.builder.Flow;
  */
 public abstract class StartBase extends StartBoard
 {
+	/**
+	 * Creates a new {@code StartBase}
+	 */
 	public StartBase()
 	{
 		Flow.await(startAction).then(new Action0()

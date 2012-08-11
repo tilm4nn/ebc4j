@@ -39,6 +39,9 @@ import net.objectzoo.ebc.builder.Flow;
  */
 public abstract class StartAndSignalBase extends StartAndSignalBoard
 {
+	/**
+	 * Creates a new {@code StartAndSignalBase}
+	 */
 	public StartAndSignalBase()
 	{
 		Flow.await(startAction).then(new Action0()
