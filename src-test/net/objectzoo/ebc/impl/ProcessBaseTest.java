@@ -30,6 +30,7 @@ import static org.junit.Assert.assertThat;
 import org.junit.Assert;
 import org.junit.Test;
 
+@SuppressWarnings("javadoc")
 public class ProcessBaseTest
 {
 	static class ProcessImpl extends ProcessBase<String>

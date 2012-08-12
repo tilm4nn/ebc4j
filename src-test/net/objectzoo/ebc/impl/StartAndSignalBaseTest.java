@@ -34,6 +34,7 @@ import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.test.MockAction0;
 import net.objectzoo.events.impl.Event0Delegate;
 
+@SuppressWarnings("javadoc")
 public class StartAndSignalBaseTest
 {
 	static class StartAndSignalImpl extends StartAndSignalBase

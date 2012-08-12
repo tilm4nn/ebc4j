@@ -31,11 +31,12 @@ import static org.junit.Assert.fail;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.junit.Test;
+
 import net.objectzoo.ebc.state.StateFactory;
 import net.objectzoo.ebc.test.MockAction;
 
-import org.junit.Test;
-
+@SuppressWarnings("javadoc")
 public class JoinTest
 {
 	protected StateFactory stateFactory = null;

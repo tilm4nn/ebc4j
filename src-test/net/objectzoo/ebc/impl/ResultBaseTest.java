@@ -34,6 +34,7 @@ import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.test.MockAction;
 import net.objectzoo.events.impl.EventDelegate;
 
+@SuppressWarnings("javadoc")
 public class ResultBaseTest
 {
 	static class ResultImpl extends ResultBase<String>

@@ -24,6 +24,7 @@
  */
 package net.objectzoo.ebc.join;
 
+@SuppressWarnings("javadoc")
 public class SubTestObject extends TestObject
 {
 	public SubTestObject(String s, Integer i)

@@ -30,10 +30,11 @@ import static org.junit.Assert.assertThat;
 
 import java.util.Collection;
 
-import net.objectzoo.ebc.test.MockAction;
-
 import org.junit.Test;
 
+import net.objectzoo.ebc.test.MockAction;
+
+@SuppressWarnings("javadoc")
 public class GenericJoinObjectAndCollectionTest
 {
 	@SuppressWarnings("rawtypes")

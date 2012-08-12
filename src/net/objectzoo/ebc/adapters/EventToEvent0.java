@@ -29,15 +29,33 @@ import net.objectzoo.delegates.Action0;
 import net.objectzoo.events.Event;
 import net.objectzoo.events.Event0;
 
+/**
+ * Adapts an {@link Event} to provide the {@link Event0} interface. The implementations just adapts
+ * all subscribed {@link Action0} instances with the {@link Action0ToAction} adapter.
+ * 
+ * @author tilmann
+ * 
+ * @param <T>
+ *        The {@link Event}'s parameter type
+ */
 public class EventToEvent0<T> implements Event0
 {
 	private Event<T> event;
 	
+	/**
+	 * Creates a new {@code EventToEvent0} adapting the given {@link Event} instance
+	 * 
+	 * @param event
+	 *        the {@link Event} to be adapted
+	 */
 	public EventToEvent0(Event<T> event)
 	{
 		this.event = event;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void subscribe(Action0 action) throws IllegalArgumentException
 	{
@@ -46,6 +64,9 @@ public class EventToEvent0<T> implements Event0
 		event.subscribe(mappedAction);
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void unsubscribe(Action0 action) throws IllegalArgumentException
 	{

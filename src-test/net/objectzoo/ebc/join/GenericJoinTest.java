@@ -26,10 +26,12 @@ package net.objectzoo.ebc.join;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-import net.objectzoo.ebc.test.MockAction;
 
 import org.junit.Test;
 
+import net.objectzoo.ebc.test.MockAction;
+
+@SuppressWarnings("javadoc")
 public class GenericJoinTest
 {
 	@Test

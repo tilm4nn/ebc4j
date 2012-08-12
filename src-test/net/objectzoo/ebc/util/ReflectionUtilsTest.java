@@ -40,8 +40,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import net.objectzoo.ebc.util.ReflectionUtils;
-
+@SuppressWarnings("javadoc")
 public class ReflectionUtilsTest
 {
 	private static class Types<T extends Number>
@@ -93,9 +92,9 @@ public class ReflectionUtilsTest
 		}
 	}
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "rawtypes" })
 	@Test
-	public void findControctorWithParameters_returns_correct_contsructor()
+	public void findConstructorWithParameters_returns_correct_contsructor()
 	{
 		Constructor result = ReflectionUtils.findConstructorWithParameters(TestObject.class, String.class,
 			Integer.class);
@@ -104,7 +103,7 @@ public class ReflectionUtilsTest
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void findControctorWithParameters_throws_exception_for_missing_constructor()
+	public void findConstructorWithParameters_throws_exception_for_missing_constructor()
 	{
 		ReflectionUtils.findConstructorWithParameters(TestObject.class, String.class, String.class);
 	}
@@ -158,6 +157,7 @@ public class ReflectionUtilsTest
 	@Test
 	public void getGenericSuperTypeArgument_returns_type_of_first_type_parameter()
 	{
+		@SuppressWarnings("serial")
 		Class<?> result = ReflectionUtils.getRawGenericSuperTypeArgument(new HashMap<Number, String>()
 		{
 		}.getClass(), 0);
@@ -169,6 +169,7 @@ public class ReflectionUtilsTest
 	@Test
 	public void getGenericSuperTypeArgument_returns_type_of_second_type_parameter()
 	{
+		@SuppressWarnings("serial")
 		Class<?> result = ReflectionUtils.getRawGenericSuperTypeArgument(new HashMap<Number, String>()
 		{
 		}.getClass(), 1);

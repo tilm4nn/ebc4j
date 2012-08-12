@@ -30,6 +30,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
+@SuppressWarnings("javadoc")
 public class TestAction0Test
 {
 	@Test

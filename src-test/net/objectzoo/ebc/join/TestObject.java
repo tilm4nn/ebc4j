@@ -24,6 +24,7 @@
  */
 package net.objectzoo.ebc.join;
 
+@SuppressWarnings("javadoc")
 public class TestObject
 {
 	String s;

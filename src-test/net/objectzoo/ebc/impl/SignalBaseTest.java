@@ -24,7 +24,6 @@
  */
 package net.objectzoo.ebc.impl;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
@@ -33,6 +32,7 @@ import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.test.MockAction0;
 import net.objectzoo.events.impl.Event0Delegate;
 
+@SuppressWarnings("javadoc")
 public class SignalBaseTest
 {
 	static class SignalImpl extends SignalBase

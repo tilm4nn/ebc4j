@@ -35,6 +35,7 @@ import org.junit.Test;
 
 import net.objectzoo.ebc.util.Pair;
 
+@SuppressWarnings("javadoc")
 public class ObjectAndCollectionOutputCreatorTest
 {
 	@SuppressWarnings("unchecked")

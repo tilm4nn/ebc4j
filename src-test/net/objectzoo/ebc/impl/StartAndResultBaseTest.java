@@ -35,6 +35,7 @@ import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.test.MockAction;
 import net.objectzoo.events.impl.EventDelegate;
 
+@SuppressWarnings("javadoc")
 public class StartAndResultBaseTest
 {
 	static class StartAndResultImpl extends StartAndResultBase<String>

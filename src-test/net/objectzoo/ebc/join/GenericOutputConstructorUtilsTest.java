@@ -31,6 +31,7 @@ import java.lang.reflect.Constructor;
 import org.junit.Assert;
 import org.junit.Test;
 
+@SuppressWarnings("javadoc")
 public class GenericOutputConstructorUtilsTest
 {
 	static class TestGenericJoinType<Input1, Input2, Output>
