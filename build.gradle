@@ -38,6 +38,9 @@ subprojects {
 	task generateJnarioJava(type: JavaExec)	{
 		dependsOn testClasses
 		
+		inputs.dir project.sourceSets.jnario.jnarioSrcDir
+		outputs.dir project.sourceSets.jnario.jnarioOutputDir
+		
 		classpath = files(project.sourceSets.jnario.compileClasspath)
 
 		main = 'org.jnario.compiler.CompilerMain'
