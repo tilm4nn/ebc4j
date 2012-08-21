@@ -1,0 +1,2 @@
+rootProject.name = 'ebc4j'
+include 'ebc4j', 'ebc4j-async'

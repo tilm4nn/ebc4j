@@ -4,3 +4,5 @@ build
 dist
 ebc4j*.zip
 /build.properties
+.gradle
+generated

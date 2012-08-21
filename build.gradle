@@ -1,0 +1,136 @@
+apply plugin: 'base'
+
+allprojects {
+	version = '1.2'
+	ext.title = 'EBC4J API'
+	ext.vendor = 'object-zoo - Tilmann Kuhn'
+	ext.copy = '2010 - 2012'
+	ext.javadoc = 'http://java.sun.com/javase/6/docs/api/'
+	ext.encoding = 'UTF-8'
+}
+
+subprojects {
+	apply plugin: 'java'
+	
+	sourceSets {
+		jnario {
+			ext.jnarioSrcDir = "src/test/jnario"
+			ext.jnarioOutputDir = "${buildDir}/generated/jnario"
+			
+			java.srcDir jnarioOutputDir
+			output.classesDir = project.sourceSets.test.output.classesDir
+			compileClasspath += main.output
+			compileClasspath += test.output
+		}
+	}
+	
+	dependencies {
+	    compile fileTree(dir: '../lib/main', include: '**/*.jar')
+		testCompile fileTree(dir: '../lib/test', include: '**/*.jar')
+	}
+	
+	configurations {
+		jnarioCompile.extendsFrom testCompile
+		jnarioRuntime.extendsFrom testRuntime
+		jnarioRuntime.extendsFrom jnarioCompile
+	}
+	
+	task generateJnarioJava(type: JavaExec)	{
+		dependsOn testClasses
+		
+		classpath = files(project.sourceSets.jnario.compileClasspath)
+
+		main = 'org.jnario.compiler.CompilerMain'
+		args = ['-d', project.sourceSets.jnario.jnarioOutputDir,
+		        '-cp', classpath.getAsPath(),
+		        '-encoding', encoding,
+		        project.sourceSets.jnario.jnarioSrcDir]
+		        
+		doFirst	{
+			delete project.sourceSets.jnario.jnarioOutputDir
+		}
+	}
+	
+	compileJnarioJava {
+		dependsOn generateJnarioJava
+	}
+	
+	test {
+		dependsOn jnarioClasses
+		
+		include 'net/objectzoo/ebc/AllSpecsAndFeaturesSuite.class'
+		
+		beforeTest { descriptor ->
+			logger.lifecycle("Running test: " + descriptor)
+		}
+		onOutput { descriptor, event ->
+			logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message)
+		}
+	}
+		
+	jar	{
+		manifest {
+			attributes("Implementation-Title": project.title, "Implementation-Version": project.version, "Implementation-Vendor": project.vendor)
+		}
+	}
+}
+
+project(':ebc4j') {
+	jar	{
+		from sourceSets.main.allJava
+	}
+}
+
+project(':ebc4j-async') {
+	dependencies {
+		compile project(':ebc4j')
+		testCompile project(':ebc4j').sourceSets.test.output
+	}
+}
+
+task javadoc(type: Javadoc) {
+    destinationDir = new File("${rootDir}/doc/api")
+    source = files(subprojects.collect { project -> project.sourceSets.main.allJava })
+    classpath = files(subprojects.collect { project -> project.sourceSets.main.compileClasspath })
+}
+
+task distZip(type: Zip) {
+	dependsOn ':ebc4j:build'
+	dependsOn ':ebc4j-async:build'
+	dependsOn ':javadoc'
+
+	into("${baseName}-${version}") {
+		from (rootDir)
+		{
+			include '*.*'
+			exclude { file -> file.directory }
+			exclude '*.jar'
+		}
+		from (rootDir)
+		{
+			include 'doc/**/*', 'ebc4j/**/*', 'ebc4j-async/**/*', 'lib-test/**/*'
+			exclude '*/**/build', '*/**/generated'
+		}
+		from (files (subprojects.collect { project -> project.jar.destinationDir }))
+		{
+			include '*.jar'
+		}
+	}
+}
+
+allprojects {
+	javadoc	{
+		options {
+			setUse(true)
+			setAuthor(true)
+			setVersion(true) 
+			setNoTimestamp(true)
+			encoding project.encoding
+			links project.javadoc
+			overview "${rootDir}/doc/index.html"
+			docTitle "<h1>${project.title} ${project.version}</h1>"
+			windowTitle "${project.title} ${project.version}"
+			bottom "Copyright &copy; ${project.copy} - ${project.vendor}"
+		}
+	}
+}
