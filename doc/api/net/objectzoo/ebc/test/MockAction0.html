@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-MockAction0 (EBC4J API (Version 1.1))
+MockAction0 (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ MockAction0 (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="MockAction0 (EBC4J API (Version 1.1))";
+        parent.document.title="MockAction0 (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -94,15 +94,15 @@ Class MockAction0</H2>
   <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.test.MockAction0</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></DD>
+<DT><B>All Implemented Interfaces:</B> <DD>net.objectzoo.delegates.Action0</DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>MockAction0</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></DL>
+<DT><PRE>public class <B>MockAction0</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements net.objectzoo.delegates.Action0</DL>
 </PRE>
 
 <P>
-The <code>MockAction0</code> is an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> implementation that can be used in (unit) tests to
+The <code>MockAction0</code> is an <CODE>Action0</CODE> implementation that can be used in (unit) tests to
  count the signals of a tested EBC.
  
  The <code>MockAction0</code> can be invoked as many times as the maximum invocations allowed value
@@ -250,7 +250,7 @@ public void <B>invoke</B>()</PRE>
  specifies. Excessive calls lead to an <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/AssertionError.html?is-external=true" title="class or interface in java.lang"><CODE>AssertionError</CODE></A> being thrown.
 <P>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true#invoke()" title="class or interface in net.objectzoo.delegates">invoke</A></CODE> in interface <CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></CODE></DL>
+<DT><B>Specified by:</B><DD><CODE>invoke</CODE> in interface <CODE>net.objectzoo.delegates.Action0</CODE></DL>
 </DD>
 <DD><DL>
 
@@ -391,6 +391,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

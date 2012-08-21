@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-StartBoard (EBC4J API (Version 1.1))
+StartBoard (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ StartBoard (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="StartBoard (EBC4J API (Version 1.1))";
+        parent.document.title="StartBoard (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -105,6 +105,17 @@ Class StartBoard</H2>
 </PRE>
 
 <P>
+A base class for a board that <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A>.
+ 
+ The implementation contains the boilerplate code required to implement the interface and provides
+ an <CODE>Event0Delegate</CODE> for action invocations.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>tilmann</DD>
+</DL>
 <HR>
 
 <P>
@@ -134,11 +145,11 @@ Class StartBoard</H2>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/impl/Event0Delegate.html?is-external=true" title="class or interface in net.objectzoo.events.impl">Event0Delegate</A></CODE></FONT></TD>
+<CODE>protected &nbsp;net.objectzoo.events.impl.Event0Delegate</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html#startAction">startAction</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An <CODE>Event0Delegate</CODE> that can be used by subclasses to obtain the start actions</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -168,11 +179,11 @@ Class StartBoard</H2>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html#startAction()">startAction</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to start this EBC</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action0</CODE> that is used to start this EBC</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -224,8 +235,10 @@ protected final <A HREF="http://java.sun.com/javase/6/docs/api/java/util/logging
 <A NAME="startAction"><!-- --></A><H3>
 startAction</H3>
 <PRE>
-protected final <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/impl/Event0Delegate.html?is-external=true" title="class or interface in net.objectzoo.events.impl">Event0Delegate</A> <B>startAction</B></PRE>
+protected final net.objectzoo.events.impl.Event0Delegate <B>startAction</B></PRE>
 <DL>
+<DD>An <CODE>Event0Delegate</CODE> that can be used by subclasses to obtain the start actions
+<P>
 <DL>
 </DL>
 </DL>
@@ -260,9 +273,9 @@ public <B>StartBoard</B>()</PRE>
 <A NAME="startAction()"><!-- --></A><H3>
 startAction</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A> <B>startAction</B>()</PRE>
+public net.objectzoo.delegates.Action0 <B>startAction</B>()</PRE>
 <DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to start this EBC
+<DD>Provides an <CODE>Action0</CODE> that is used to start this EBC
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/CanStart.html#startAction()">startAction</A></CODE> in interface <CODE><A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A></CODE></DL>
@@ -333,6 +346,6 @@ DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

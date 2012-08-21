@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-net.objectzoo.ebc.impl (EBC4J API (Version 1.1))
+net.objectzoo.ebc.impl (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ net.objectzoo.ebc.impl (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="net.objectzoo.ebc.impl (EBC4J API (Version 1.1))";
+        parent.document.title="net.objectzoo.ebc.impl (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -80,7 +80,7 @@ function windowTitle()
 <H2>
 Package net.objectzoo.ebc.impl
 </H2>
-This package contains base classes that can be used to implement EBCs.
+This package contains base classes that can be used to implement EBCs and boards.
 <P>
 <B>See:</B>
 <BR>
@@ -98,7 +98,7 @@ This package contains base classes that can be used to implement EBCs.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBoard&lt;ProcessParameter,ResultParameter&gt;</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>A base class for a board that <A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> and <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBase&lt;ProcessParameter&gt;</A></B></TD>
@@ -106,7 +106,7 @@ This package contains base classes that can be used to implement EBCs.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBoard&lt;ProcessParameter&gt;</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>A base class for a board that <A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> and <A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl">ProcessBase&lt;ProcessParameter&gt;</A></B></TD>
@@ -114,7 +114,7 @@ This package contains base classes that can be used to implement EBCs.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">ProcessBoard&lt;ProcessParameter&gt;</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>A base class for a board that <A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase&lt;ResultParameter&gt;</A></B></TD>
@@ -122,7 +122,7 @@ This package contains base classes that can be used to implement EBCs.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl">ResultBoard&lt;ResultParameter&gt;</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>A base class for a board that <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/SignalBase.html" title="class in net.objectzoo.ebc.impl">SignalBase</A></B></TD>
@@ -130,7 +130,7 @@ This package contains base classes that can be used to implement EBCs.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl">SignalBoard</A></B></TD>
-<TD>A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.</TD>
+<TD>A base class for a board that <A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl">StartAndResultBase&lt;ResultParameter&gt;</A></B></TD>
@@ -138,7 +138,7 @@ This package contains base classes that can be used to implement EBCs.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard&lt;ResultParameter&gt;</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>A base class for a board that <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> and <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBase</A></B></TD>
@@ -146,7 +146,7 @@ This package contains base classes that can be used to implement EBCs.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBoard</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>A base class for a board that <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> and <A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl">StartBase</A></B></TD>
@@ -154,7 +154,7 @@ This package contains base classes that can be used to implement EBCs.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl">StartBoard</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>A base class for a board that <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A>.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -165,7 +165,7 @@ Package net.objectzoo.ebc.impl Description
 </H2>
 
 <P>
-This package contains base classes that can be used to implement EBCs.
+This package contains base classes that can be used to implement EBCs and boards.
 <P>
 
 <P>
@@ -225,6 +225,6 @@ This package contains base classes that can be used to implement EBCs.
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

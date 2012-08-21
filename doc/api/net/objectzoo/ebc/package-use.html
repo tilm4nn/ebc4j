@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Uses of Package net.objectzoo.ebc (EBC4J API (Version 1.1))
+Uses of Package net.objectzoo.ebc (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Uses of Package net.objectzoo.ebc (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Package net.objectzoo.ebc (EBC4J API (Version 1.1))";
+        parent.document.title="Uses of Package net.objectzoo.ebc (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -93,15 +93,16 @@ Packages that use <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.builder"><B>net.objectzoo.ebc.builder</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>This package contains an internal flow builder DSL implementation that can be used to combine
+ EBCs to flows&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.executor"><B>net.objectzoo.ebc.executor</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>This package contains classes that help when there is need to synchronously execute an EBC flow.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.impl"><B>net.objectzoo.ebc.impl</B></A></TD>
-<TD>This package contains base classes that can be used to implement EBCs.&nbsp;</TD>
+<TD>This package contains base classes that can be used to implement EBCs and boards.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.join"><B>net.objectzoo.ebc.join</B></A></TD>
@@ -110,15 +111,16 @@ Packages that use <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.map"><B>net.objectzoo.ebc.map</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>This package contains EBCs map between different values in an EBC flow.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.split"><B>net.objectzoo.ebc.split</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>This package contains EBCs that allow to split EBC flows.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><A HREF="#net.objectzoo.ebc.state"><B>net.objectzoo.ebc.state</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD><A HREF="#net.objectzoo.ebc.state.async"><B>net.objectzoo.ebc.state.async</B></A></TD>
+<TD>This package contains implementations that are used to implement state holding mechanisms for
+ EBCs executed in asynchronous flows.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -133,7 +135,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanProcess.html#net.objectzoo.ebc"><B>CanProcess</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
@@ -141,21 +143,21 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.</TD>
+ <CODE>Action0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsResult.html#net.objectzoo.ebc"><B>SendsResult</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsResult</code> is capable of sending the output of it's work to subscribed
- listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> to do so.</TD>
+ listeners and thus provides an <CODE>Event</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsSignal.html#net.objectzoo.ebc"><B>SendsSignal</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsSignal</code> is capable of sending a signal when it's work completes to
- subscribed listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> to do so.</TD>
+ subscribed listeners and thus provides an <CODE>Event0</CODE> to do so.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -170,7 +172,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanProcess.html#net.objectzoo.ebc.builder"><B>CanProcess</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
@@ -178,7 +180,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.</TD>
+ <CODE>Action0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/ProcessAndResultFlow.html#net.objectzoo.ebc.builder"><B>ProcessAndResultFlow</B></A></B>
@@ -197,14 +199,14 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsResult</code> is capable of sending the output of it's work to subscribed
- listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> to do so.</TD>
+ listeners and thus provides an <CODE>Event</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsSignal.html#net.objectzoo.ebc.builder"><B>SendsSignal</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsSignal</code> is capable of sending a signal when it's work completes to
- subscribed listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> to do so.</TD>
+ subscribed listeners and thus provides an <CODE>Event0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/StartAndResultFlow.html#net.objectzoo.ebc.builder"><B>StartAndResultFlow</B></A></B>
@@ -231,7 +233,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanProcess.html#net.objectzoo.ebc.executor"><B>CanProcess</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
@@ -239,20 +241,13 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.</TD>
+ <CODE>Action0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/ProcessAndResultFlow.html#net.objectzoo.ebc.executor"><B>ProcessAndResultFlow</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that is capable of processing input with a possible outcome of a result being sent.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsResult.html#net.objectzoo.ebc.executor"><B>SendsResult</B></A></B>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsResult</code> is capable of sending the output of it's work to subscribed
- listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/StartAndResultFlow.html#net.objectzoo.ebc.executor"><B>StartAndResultFlow</B></A></B>
@@ -273,7 +268,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanProcess.html#net.objectzoo.ebc.impl"><B>CanProcess</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
@@ -281,7 +276,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.</TD>
+ <CODE>Action0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/ProcessAndResultFlow.html#net.objectzoo.ebc.impl"><B>ProcessAndResultFlow</B></A></B>
@@ -300,14 +295,14 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsResult</code> is capable of sending the output of it's work to subscribed
- listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> to do so.</TD>
+ listeners and thus provides an <CODE>Event</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsSignal.html#net.objectzoo.ebc.impl"><B>SendsSignal</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsSignal</code> is capable of sending a signal when it's work completes to
- subscribed listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> to do so.</TD>
+ subscribed listeners and thus provides an <CODE>Event0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/StartAndResultFlow.html#net.objectzoo.ebc.impl"><B>StartAndResultFlow</B></A></B>
@@ -334,7 +329,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanProcess.html#net.objectzoo.ebc.join"><B>CanProcess</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
@@ -342,7 +337,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.</TD>
+ <CODE>Action0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/ProcessAndResultFlow.html#net.objectzoo.ebc.join"><B>ProcessAndResultFlow</B></A></B>
@@ -355,14 +350,14 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsResult</code> is capable of sending the output of it's work to subscribed
- listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> to do so.</TD>
+ listeners and thus provides an <CODE>Event</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsSignal.html#net.objectzoo.ebc.join"><B>SendsSignal</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsSignal</code> is capable of sending a signal when it's work completes to
- subscribed listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> to do so.</TD>
+ subscribed listeners and thus provides an <CODE>Event0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/StartAndResultFlow.html#net.objectzoo.ebc.join"><B>StartAndResultFlow</B></A></B>
@@ -383,7 +378,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanProcess.html#net.objectzoo.ebc.map"><B>CanProcess</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
@@ -397,7 +392,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsResult</code> is capable of sending the output of it's work to subscribed
- listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> to do so.</TD>
+ listeners and thus provides an <CODE>Event</CODE> to do so.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -412,7 +407,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanProcess.html#net.objectzoo.ebc.split"><B>CanProcess</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
@@ -420,7 +415,7 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.</TD>
+ <CODE>Action0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/ProcessAndResultFlow.html#net.objectzoo.ebc.split"><B>ProcessAndResultFlow</B></A></B>
@@ -439,14 +434,14 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsResult</code> is capable of sending the output of it's work to subscribed
- listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> to do so.</TD>
+ listeners and thus provides an <CODE>Event</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsSignal.html#net.objectzoo.ebc.split"><B>SendsSignal</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsSignal</code> is capable of sending a signal when it's work completes to
- subscribed listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> to do so.</TD>
+ subscribed listeners and thus provides an <CODE>Event0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../net/objectzoo/ebc/class-use/StartAndSignalFlow.html#net.objectzoo.ebc.split"><B>StartAndSignalFlow</B></A></B>
@@ -457,48 +452,48 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 </TABLE>
 &nbsp;
 <P>
-<A NAME="net.objectzoo.ebc.state"><!-- --></A>
+<A NAME="net.objectzoo.ebc.state.async"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 <TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A> used by <A HREF="../../../net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A></FONT></TH>
+Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A> used by <A HREF="../../../net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanProcess.html#net.objectzoo.ebc.state"><B>CanProcess</B></A></B>
+<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanProcess.html#net.objectzoo.ebc.state.async"><B>CanProcess</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanStart.html#net.objectzoo.ebc.state"><B>CanStart</B></A></B>
+<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/CanStart.html#net.objectzoo.ebc.state.async"><B>CanStart</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.</TD>
+ <CODE>Action0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/ProcessAndResultFlow.html#net.objectzoo.ebc.state"><B>ProcessAndResultFlow</B></A></B>
+<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/ProcessAndResultFlow.html#net.objectzoo.ebc.state.async"><B>ProcessAndResultFlow</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that is capable of processing input with a possible outcome of a result being sent.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsResult.html#net.objectzoo.ebc.state"><B>SendsResult</B></A></B>
+<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsResult.html#net.objectzoo.ebc.state.async"><B>SendsResult</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsResult</code> is capable of sending the output of it's work to subscribed
- listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> to do so.</TD>
+ listeners and thus provides an <CODE>Event</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsSignal.html#net.objectzoo.ebc.state"><B>SendsSignal</B></A></B>
+<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/SendsSignal.html#net.objectzoo.ebc.state.async"><B>SendsSignal</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that <code>SendsSignal</code> is capable of sending a signal when it's work completes to
- subscribed listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> to do so.</TD>
+ subscribed listeners and thus provides an <CODE>Event0</CODE> to do so.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/StartAndSignalFlow.html#net.objectzoo.ebc.state"><B>StartAndSignalFlow</B></A></B>
+<TD><B><A HREF="../../../net/objectzoo/ebc/class-use/StartAndSignalFlow.html#net.objectzoo.ebc.state.async"><B>StartAndSignalFlow</B></A></B>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An EBC that is capable of being invoked with a possible outcome of a signal being sent.</TD>
@@ -560,6 +555,6 @@ Classes in <A HREF="../../../net/objectzoo/ebc/package-summary.html">net.objectz
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Uses of Package net.objectzoo.ebc.state (EBC4J API (Version 1.1))
+Uses of Package net.objectzoo.ebc.state (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Uses of Package net.objectzoo.ebc.state (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Package net.objectzoo.ebc.state (EBC4J API (Version 1.1))";
+        parent.document.title="Uses of Package net.objectzoo.ebc.state (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -94,7 +94,13 @@ Packages that use <A HREF="../../../../net/objectzoo/ebc/state/package-summary.h
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.state"><B>net.objectzoo.ebc.state</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>This package contains interfaces and classes that are use to implement different state holding
+ mechanisms for EBCs.&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><A HREF="#net.objectzoo.ebc.state.async"><B>net.objectzoo.ebc.state.async</B></A></TD>
+<TD>This package contains implementations that are used to implement state holding mechanisms for
+ EBCs executed in asynchronous flows.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -109,7 +115,7 @@ Classes in <A HREF="../../../../net/objectzoo/ebc/state/package-summary.html">ne
 <TD><B><A HREF="../../../../net/objectzoo/ebc/state/class-use/StateFactory.html#net.objectzoo.ebc.join"><B>StateFactory</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A <code>StateFactory</code> is used to create a new <A HREF="../../../../net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> instances.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -124,19 +130,46 @@ Classes in <A HREF="../../../../net/objectzoo/ebc/state/package-summary.html">ne
 <TD><B><A HREF="../../../../net/objectzoo/ebc/state/class-use/State.html#net.objectzoo.ebc.state"><B>State</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This interface represents a state that can be hold by an EBC.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../../net/objectzoo/ebc/state/class-use/StateFactory.html#net.objectzoo.ebc.state"><B>StateFactory</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A <code>StateFactory</code> is used to create a new <A HREF="../../../../net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> instances.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><B><A HREF="../../../../net/objectzoo/ebc/state/class-use/ValueFactory.html#net.objectzoo.ebc.state"><B>ValueFactory</B></A></B>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The <code>ValueFactory</code> is used to create the initial value for a <A HREF="../../../../net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> hold by an EBC.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+<A NAME="net.objectzoo.ebc.state.async"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+Classes in <A HREF="../../../../net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A> used by <A HREF="../../../../net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><B><A HREF="../../../../net/objectzoo/ebc/state/class-use/State.html#net.objectzoo.ebc.state.async"><B>State</B></A></B>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This interface represents a state that can be hold by an EBC.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><B><A HREF="../../../../net/objectzoo/ebc/state/class-use/StateFactory.html#net.objectzoo.ebc.state.async"><B>StateFactory</B></A></B>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A <code>StateFactory</code> is used to create a new <A HREF="../../../../net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> instances.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><B><A HREF="../../../../net/objectzoo/ebc/state/class-use/ValueFactory.html#net.objectzoo.ebc.state.async"><B>ValueFactory</B></A></B>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The <code>ValueFactory</code> is used to create the initial value for a <A HREF="../../../../net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> hold by an EBC.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -195,6 +228,6 @@ Classes in <A HREF="../../../../net/objectzoo/ebc/state/package-summary.html">ne
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-CanStart (EBC4J API (Version 1.1))
+CanStart (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ CanStart (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="CanStart (EBC4J API (Version 1.1))";
+        parent.document.title="CanStart (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -93,7 +93,7 @@ Interface CanStart</H2>
 <DT><B>All Known Subinterfaces:</B> <DD><A HREF="../../../net/objectzoo/ebc/EntryPoint.html" title="interface in net.objectzoo.ebc">EntryPoint</A>, <A HREF="../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;ResultParameter&gt;, <A HREF="../../../net/objectzoo/ebc/StartAndSignalFlow.html" title="interface in net.objectzoo.ebc">StartAndSignalFlow</A></DD>
 </DL>
 <DL>
-<DT><B>All Known Implementing Classes:</B> <DD><A HREF="../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>, <A HREF="../../../net/objectzoo/ebc/split/SplitSignal.html" title="class in net.objectzoo.ebc.split">SplitSignal</A>, <A HREF="../../../net/objectzoo/ebc/state/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">StartAndClearThreadLocalStateStore</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl">StartAndResultBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBoard</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl">StartBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl">StartBoard</A></DD>
+<DT><B>All Known Implementing Classes:</B> <DD><A HREF="../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>, <A HREF="../../../net/objectzoo/ebc/split/SplitSignal.html" title="class in net.objectzoo.ebc.split">SplitSignal</A>, <A HREF="../../../net/objectzoo/ebc/state/async/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">StartAndClearThreadLocalStateStore</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl">StartAndResultBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBoard</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl">StartBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl">StartBoard</A></DD>
 </DL>
 <HR>
 <DL>
@@ -102,7 +102,7 @@ Interface CanStart</H2>
 
 <P>
 An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.
+ <CODE>Action0</CODE> to do so.
 <P>
 
 <P>
@@ -124,11 +124,11 @@ An EBC that <code>CanStart</code> can be invoked to perform same work and thus p
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../net/objectzoo/ebc/CanStart.html#startAction()">startAction</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to start this EBC</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action0</CODE> that is used to start this EBC</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -147,9 +147,9 @@ An EBC that <code>CanStart</code> can be invoked to perform same work and thus p
 <A NAME="startAction()"><!-- --></A><H3>
 startAction</H3>
 <PRE>
-<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A> <B>startAction</B>()</PRE>
+net.objectzoo.delegates.Action0 <B>startAction</B>()</PRE>
 <DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to start this EBC
+<DD>Provides an <CODE>Action0</CODE> that is used to start this EBC
 <P>
 <DD><DL>
 
@@ -217,6 +217,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHO
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

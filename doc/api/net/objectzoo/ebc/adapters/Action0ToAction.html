@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Action0ToAction (EBC4J API (Version 1.1))
+Action0ToAction (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Action0ToAction (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Action0ToAction (EBC4J API (Version 1.1))";
+        parent.document.title="Action0ToAction (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -94,17 +94,17 @@ Class Action0ToAction&lt;T&gt;</H2>
   <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.adapters.Action0ToAction&lt;T&gt;</B>
 </PRE>
 <DL>
-<DT><DT><B>Type Parameters:</B><DD><CODE>T</CODE> - The <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>'s parameter type</DL>
+<DT><DT><B>Type Parameters:</B><DD><CODE>T</CODE> - The <CODE>Action</CODE>'s parameter type</DL>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;T&gt;</DD>
+<DT><B>All Implemented Interfaces:</B> <DD>net.objectzoo.delegates.Action&lt;T&gt;</DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>Action0ToAction&lt;T&gt;</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;T&gt;</DL>
+<DT><PRE>public class <B>Action0ToAction&lt;T&gt;</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements net.objectzoo.delegates.Action&lt;T&gt;</DL>
 </PRE>
 
 <P>
-Adapts an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to provide the <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> interface. The implementations just
+Adapts an <CODE>Action0</CODE> to provide the <CODE>Action</CODE> interface. The implementations just
  forwards any calls ignoring the given call parameter value.
 <P>
 
@@ -126,11 +126,11 @@ Adapts an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Actio
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/adapters/Action0ToAction.html#Action0ToAction(net.objectzoo.delegates.Action0)">Action0ToAction</A></B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A>&nbsp;action)</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/adapters/Action0ToAction.html#Action0ToAction(net.objectzoo.delegates.Action0)">Action0ToAction</A></B>(net.objectzoo.delegates.Action0&nbsp;action)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a new <code>Action0ToAction</code> forwarding the incoming calls to the given
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> instance.</TD>
+ <CODE>Action0</CODE> instance.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -192,10 +192,10 @@ Adapts an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Actio
 <A NAME="Action0ToAction(net.objectzoo.delegates.Action0)"><!-- --></A><H3>
 Action0ToAction</H3>
 <PRE>
-public <B>Action0ToAction</B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A>&nbsp;action)</PRE>
+public <B>Action0ToAction</B>(net.objectzoo.delegates.Action0&nbsp;action)</PRE>
 <DL>
 <DD>Create a new <code>Action0ToAction</code> forwarding the incoming calls to the given
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> instance.
+ <CODE>Action0</CODE> instance.
 <P>
 <DL>
 <DT><B>Parameters:</B><DD><CODE>action</CODE> - </DL>
@@ -217,7 +217,7 @@ invoke</H3>
 public void <B>invoke</B>(<A HREF="../../../../net/objectzoo/ebc/adapters/Action0ToAction.html" title="type parameter in Action0ToAction">T</A>&nbsp;parameter)</PRE>
 <DL>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true#invoke(T)" title="class or interface in net.objectzoo.delegates">invoke</A></CODE> in interface <CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/adapters/Action0ToAction.html" title="type parameter in Action0ToAction">T</A>&gt;</CODE></DL>
+<DT><B>Specified by:</B><DD><CODE>invoke</CODE> in interface <CODE>net.objectzoo.delegates.Action&lt;<A HREF="../../../../net/objectzoo/ebc/adapters/Action0ToAction.html" title="type parameter in Action0ToAction">T</A>&gt;</CODE></DL>
 </DD>
 <DD><DL>
 </DL>
@@ -312,6 +312,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-FlowExecutor (EBC4J API (Version 1.1))
+FlowExecutor (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ FlowExecutor (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="FlowExecutor (EBC4J API (Version 1.1))";
+        parent.document.title="FlowExecutor (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -53,8 +53,8 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/executor/FlowCreator.html" title="interface in net.objectzoo.ebc.executor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutorHelpers.html" title="class in net.objectzoo.ebc.executor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/executor/FlowExecutor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="FlowExecutor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -99,6 +99,16 @@ Class FlowExecutor</H2>
 </PRE>
 
 <P>
+The <code>FlowExecuter</code> supports both: Execution of existing flows with one of it's
+ <code>static</code> methods and the execution of flows created per execution using the given
+ <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>tilmann</DD>
+</DL>
 <HR>
 
 <P>
@@ -112,10 +122,11 @@ Class FlowExecutor</H2>
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#FlowExecutor(net.objectzoo.ebc.executor.FlowCreator)">FlowExecutor</A></B>(<A HREF="../../../../net/objectzoo/ebc/executor/FlowCreator.html" title="interface in net.objectzoo.ebc.executor">FlowCreator</A>&nbsp;theFlowCreator)</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#FlowExecutor(net.objectzoo.ebc.executor.FlowFactory)">FlowExecutor</A></B>(<A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor">FlowFactory</A>&nbsp;theFlowCreator)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>FlwoExecutor</code> using the given <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A> to create new flow
+ instances</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -143,7 +154,8 @@ void</CODE></FONT></TD>
         ProcessParameter&nbsp;input)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates the flow determined by the given flow class using this executor's <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by <A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#process(FlowType, ProcessParameter)"><CODE>process(CanProcess, Object)</CODE></A></TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -161,7 +173,7 @@ void</CODE></FONT></TD>
         ProcessParameter&nbsp;input)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Executes the given <A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> flow with the given input parameter</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -179,7 +191,9 @@ ResultParameter</CODE></FONT></TD>
                        ProcessParameter&nbsp;input)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates the flow determined by the given flow class using this executor's <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by
+ <A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#processAndReturnResult(FlowType, ProcessParameter)"><CODE>processAndReturnResult(ProcessAndResultFlow, Object)</CODE></A></TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -197,7 +211,8 @@ ResultParameter</CODE></FONT></TD>
                        ProcessParameter&nbsp;input)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Executes the given <A HREF="../../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>ProcessAndResultFlow</CODE></A> flow with the given input parameter and
+ returns the final result.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -214,7 +229,8 @@ void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#start(java.lang.Class)">start</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;FlowType&gt;&nbsp;flowClass)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates the flow determined by the given flow class using this executor's <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by <A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#start(FlowType)"><CODE>start(CanStart)</CODE></A></TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -231,7 +247,7 @@ void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#start(FlowType)">start</A></B>(FlowType&nbsp;flow)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Executes the given <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> flow</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -248,7 +264,9 @@ ResultParameter</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(java.lang.Class)">startAndReturnResult</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;FlowType&gt;&nbsp;flowClass)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates the flow determined by the given flow class using this executor's <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by
+ <A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(FlowType)"><CODE>startAndReturnResult(StartAndResultFlow)</CODE></A></TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -265,7 +283,7 @@ ResultParameter</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(FlowType)">startAndReturnResult</A></B>(FlowType&nbsp;flow)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Executes the given <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> flow and returns the final result.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -290,11 +308,16 @@ ResultParameter</CODE></FONT></TD>
 </TR>
 </TABLE>
 
-<A NAME="FlowExecutor(net.objectzoo.ebc.executor.FlowCreator)"><!-- --></A><H3>
+<A NAME="FlowExecutor(net.objectzoo.ebc.executor.FlowFactory)"><!-- --></A><H3>
 FlowExecutor</H3>
 <PRE>
-public <B>FlowExecutor</B>(<A HREF="../../../../net/objectzoo/ebc/executor/FlowCreator.html" title="interface in net.objectzoo.ebc.executor">FlowCreator</A>&nbsp;theFlowCreator)</PRE>
+public <B>FlowExecutor</B>(<A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor">FlowFactory</A>&nbsp;theFlowCreator)</PRE>
 <DL>
+<DD>Creates a new <code>FlwoExecutor</code> using the given <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A> to create new flow
+ instances
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>theFlowCreator</CODE> - the <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A> used to create flow instances</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -313,8 +336,11 @@ process</H3>
 public &lt;ProcessParameter,FlowType extends <A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;&gt; void <B>process</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;FlowType&gt;&nbsp;flowClass,
                                                                                      ProcessParameter&nbsp;input)</PRE>
 <DL>
+<DD>Creates the flow determined by the given flow class using this executor's <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by <A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#process(FlowType, ProcessParameter)"><CODE>process(CanProcess, Object)</CODE></A>
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>flowClass</CODE> - the <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang"><CODE>Class</CODE></A> of the flow to be created<DD><CODE>input</CODE> - the input parameter to be processed by the flow</DL>
 </DD>
 </DL>
 <HR>
@@ -325,8 +351,13 @@ processAndReturnResult</H3>
 public &lt;ProcessParameter,ResultParameter,FlowType extends <A HREF="../../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc">ProcessAndResultFlow</A>&lt;ProcessParameter,ResultParameter&gt;&gt; ResultParameter <B>processAndReturnResult</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;FlowType&gt;&nbsp;flowClass,
                                                                                                                                                          ProcessParameter&nbsp;input)</PRE>
 <DL>
+<DD>Creates the flow determined by the given flow class using this executor's <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by
+ <A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#processAndReturnResult(FlowType, ProcessParameter)"><CODE>processAndReturnResult(ProcessAndResultFlow, Object)</CODE></A>
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>flowClass</CODE> - the <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang"><CODE>Class</CODE></A> of the flow to be created<DD><CODE>input</CODE> - the input parameter to be processed by the flow
+<DT><B>Returns:</B><DD>the final result sent by the flow</DL>
 </DD>
 </DL>
 <HR>
@@ -336,8 +367,11 @@ start</H3>
 <PRE>
 public &lt;FlowType extends <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>&gt; void <B>start</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;FlowType&gt;&nbsp;flowClass)</PRE>
 <DL>
+<DD>Creates the flow determined by the given flow class using this executor's <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by <A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#start(FlowType)"><CODE>start(CanStart)</CODE></A>
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>flowClass</CODE> - the <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang"><CODE>Class</CODE></A> of the flow to be created</DL>
 </DD>
 </DL>
 <HR>
@@ -347,8 +381,13 @@ startAndReturnResult</H3>
 <PRE>
 public &lt;ResultParameter,FlowType extends <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;ResultParameter&gt;&gt; ResultParameter <B>startAndReturnResult</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;FlowType&gt;&nbsp;flowClass)</PRE>
 <DL>
+<DD>Creates the flow determined by the given flow class using this executor's <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by
+ <A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(FlowType)"><CODE>startAndReturnResult(StartAndResultFlow)</CODE></A>
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>flowClass</CODE> - the <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang"><CODE>Class</CODE></A> of the flow to be created
+<DT><B>Returns:</B><DD>the final result sent by the flow</DL>
 </DD>
 </DL>
 <HR>
@@ -359,8 +398,10 @@ process</H3>
 public static &lt;ProcessParameter,FlowType extends <A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;&gt; void <B>process</B>(FlowType&nbsp;flow,
                                                                                             ProcessParameter&nbsp;input)</PRE>
 <DL>
+<DD>Executes the given <A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> flow with the given input parameter
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>flow</CODE> - the flow to be executed<DD><CODE>input</CODE> - the input parameter provided to the flow</DL>
 </DD>
 </DL>
 <HR>
@@ -371,8 +412,13 @@ processAndReturnResult</H3>
 public static &lt;ProcessParameter,ResultParameter,FlowType extends <A HREF="../../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc">ProcessAndResultFlow</A>&lt;ProcessParameter,ResultParameter&gt;&gt; ResultParameter <B>processAndReturnResult</B>(FlowType&nbsp;flow,
                                                                                                                                                                 ProcessParameter&nbsp;input)</PRE>
 <DL>
+<DD>Executes the given <A HREF="../../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>ProcessAndResultFlow</CODE></A> flow with the given input parameter and
+ returns the final result. This method is not thread save regarding simultaneous executions of
+ the flow!
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>flow</CODE> - the flow to be executed<DD><CODE>input</CODE> - the input parameter to be processed by the flow
+<DT><B>Returns:</B><DD>the final result sent by the flow</DL>
 </DD>
 </DL>
 <HR>
@@ -382,8 +428,10 @@ start</H3>
 <PRE>
 public static &lt;FlowType extends <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>&gt; void <B>start</B>(FlowType&nbsp;flow)</PRE>
 <DL>
+<DD>Executes the given <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> flow
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>flow</CODE> - the flow to be executed</DL>
 </DD>
 </DL>
 <HR>
@@ -393,8 +441,12 @@ startAndReturnResult</H3>
 <PRE>
 public static &lt;ResultParameter,FlowType extends <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;ResultParameter&gt;&gt; ResultParameter <B>startAndReturnResult</B>(FlowType&nbsp;flow)</PRE>
 <DL>
+<DD>Executes the given <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> flow and returns the final result. This method
+ is not thread save regarding simultaneous executions of the flow!
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>flow</CODE> - the flow to be executed
+<DT><B>Returns:</B><DD>the final result sent by the flow</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -428,8 +480,8 @@ public static &lt;ResultParameter,FlowType extends <A HREF="../../../../net/obje
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/executor/FlowCreator.html" title="interface in net.objectzoo.ebc.executor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutorHelpers.html" title="class in net.objectzoo.ebc.executor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?net/objectzoo/ebc/executor/FlowExecutor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="FlowExecutor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -458,6 +510,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

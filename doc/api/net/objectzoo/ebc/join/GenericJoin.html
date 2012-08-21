@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-GenericJoin (EBC4J API (Version 1.1))
+GenericJoin (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ GenericJoin (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="GenericJoin (EBC4J API (Version 1.1))";
+        parent.document.title="GenericJoin (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -112,11 +112,18 @@ This Join base class joins two input values to an output value that has a constr
  input actions and a result event as well as trace logging of value input and send results.
  
  The Join waits for every input to be set at least once before creating a result event. Once both
- inputs have been set an output is created and sent for each single input invocation until the
- Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ inputs have been set an output is created and sent. After that there are two different modes of
+ operation depending on the <code>resetAfterResultEvent</code> parameter setting.
  
- To reset the Join the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()"><CODE>Join.resetAction()</CODE></A> can be invoked. If the <code>resetAfterResultEvent</code>
- parameter is set at construction time the Join is automatically reset after each result event.
+ If <code>resetAfterResultEvent</code> is set to <code>true</code> (which is the default) then after each
+ result event the two input values are reset and the procedure to wait for both inputs starts from
+ the beginning.
+ 
+ If <code>resetAfterResultEvent</code> is set to <code>false</code> then for each following single input
+ invocation a new output is created and sent until the Join is manually reset again. If reset the
+ procedure to wait for both inputs starts from the beginning.
+ 
+ To manually reset the Join the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()"><CODE>Join.resetAction()</CODE></A> can be invoked.
  
  To use this Join create a (possibly anonymous) subclass that specifies concrete type parameters.
 <P>
@@ -166,6 +173,14 @@ This Join base class joins two input values to an output value that has a constr
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin()">GenericJoin</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from this Join's
+ output type by taking a constructor that has the fitting parameter types for this Join's
+ input types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(boolean)">GenericJoin</A></B>(boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
@@ -174,8 +189,25 @@ This Join base class joins two input values to an output value that has a constr
  input types.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(java.lang.Class)">GenericJoin</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Output</A>&gt;&nbsp;outputType)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from the given
+ type by taking a constructor that has the fitting parameter types for this Join's input
+ types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(java.lang.Class, boolean)">GenericJoin</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Output</A>&gt;&nbsp;outputType,
             boolean&nbsp;resetAfterResultEvent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from the given
+ type by taking a constructor that has the fitting parameter types for this Join's input
+ types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(java.lang.Class, net.objectzoo.ebc.state.StateFactory)">GenericJoin</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Output</A>&gt;&nbsp;outputType,
+            <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from the given
@@ -191,6 +223,14 @@ This Join base class joins two input values to an output value that has a constr
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from the given
  type by taking a constructor that has the fitting parameter types for this Join's input
  types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(net.objectzoo.ebc.state.StateFactory)">GenericJoin</A></B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from this Join's
+ output type by taking a constructor that has the fitting parameter types for this Join's
+ input types.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(net.objectzoo.ebc.state.StateFactory, boolean)">GenericJoin</A></B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
@@ -261,6 +301,22 @@ This Join base class joins two input values to an output value that has a constr
 </TR>
 </TABLE>
 
+<A NAME="GenericJoin()"><!-- --></A><H3>
+GenericJoin</H3>
+<PRE>
+public <B>GenericJoin</B>()</PRE>
+<DL>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from this Join's
+ output type by taking a constructor that has the fitting parameter types for this Join's
+ input types.
+<P>
+<DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output type does not have a fitting constructor</DL>
+</DL>
+<HR>
+
 <A NAME="GenericJoin(boolean)"><!-- --></A><H3>
 GenericJoin</H3>
 <PRE>
@@ -277,6 +333,23 @@ public <B>GenericJoin</B>(boolean&nbsp;resetAfterResultEvent)</PRE>
 </DL>
 <HR>
 
+<A NAME="GenericJoin(net.objectzoo.ebc.state.StateFactory)"><!-- --></A><H3>
+GenericJoin</H3>
+<PRE>
+public <B>GenericJoin</B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</PRE>
+<DL>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from this Join's
+ output type by taking a constructor that has the fitting parameter types for this Join's
+ input types.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this <code>Join</code>. If <code>null</code> is given
+        then the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output type does not have a fitting constructor</DL>
+</DL>
+<HR>
+
 <A NAME="GenericJoin(net.objectzoo.ebc.state.StateFactory, boolean)"><!-- --></A><H3>
 GenericJoin</H3>
 <PRE>
@@ -288,11 +361,26 @@ public <B>GenericJoin</B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFact
  input types.
 <P>
 <DL>
-<DT><B>Parameters:</B><DD><CODE>inputStorageProvider</CODE> - the <CODE>JoinInputStorageProvider</CODE> to be used by this <code>Join</code>. If <code>null</code>
-        is given then the <CODE>#DEFAULT_INPUT_STORAGE_PROVIDER</CODE> is used or if that is also
-        <code>null</code> a <CODE>BasicInputStorageProvider</CODE> is created.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event
+<DT><B>Parameters:</B><DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this <code>Join</code>. If <code>null</code> is given
+        then the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output type does not have a fitting constructor</DL>
+</DL>
+<HR>
+
+<A NAME="GenericJoin(java.lang.Class)"><!-- --></A><H3>
+GenericJoin</H3>
+<PRE>
+public <B>GenericJoin</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Output</A>&gt;&nbsp;outputType)</PRE>
+<DL>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from the given
+ type by taking a constructor that has the fitting parameter types for this Join's input
+ types.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>outputType</CODE> - the type of the output actually constructed in this Join
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output type is <code>null</code> or does not have a fitting constructor</DL>
 </DL>
 <HR>
 
@@ -313,6 +401,24 @@ public <B>GenericJoin</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/la
 </DL>
 <HR>
 
+<A NAME="GenericJoin(java.lang.Class, net.objectzoo.ebc.state.StateFactory)"><!-- --></A><H3>
+GenericJoin</H3>
+<PRE>
+public <B>GenericJoin</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Output</A>&gt;&nbsp;outputType,
+                   <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</PRE>
+<DL>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from the given
+ type by taking a constructor that has the fitting parameter types for this Join's input
+ types.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>outputType</CODE> - the type of the output actually constructed in this Join<DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this <code>Join</code>. If <code>null</code> is given
+        then the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output type is <code>null</code> or does not have a fitting constructor</DL>
+</DL>
+<HR>
+
 <A NAME="GenericJoin(java.lang.Class, net.objectzoo.ebc.state.StateFactory, boolean)"><!-- --></A><H3>
 GenericJoin</H3>
 <PRE>
@@ -325,9 +431,8 @@ public <B>GenericJoin</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/la
  types.
 <P>
 <DL>
-<DT><B>Parameters:</B><DD><CODE>outputType</CODE> - the type of the output actually constructed in this Join<DD><CODE>inputStorageProvider</CODE> - the <CODE>JoinInputStorageProvider</CODE> to be used by this <code>Join</code>. If <code>null</code>
-        is given then the <CODE>#DEFAULT_INPUT_STORAGE_PROVIDER</CODE> is used or if that is also
-        <code>null</code> a <CODE>BasicInputStorageProvider</CODE> is created.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event
+<DT><B>Parameters:</B><DD><CODE>outputType</CODE> - the type of the output actually constructed in this Join<DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this <code>Join</code>. If <code>null</code> is given
+        then the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the output type is <code>null</code> or does not have a fitting constructor</DL>
 </DL>
@@ -392,6 +497,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

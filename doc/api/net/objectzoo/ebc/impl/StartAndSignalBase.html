@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-StartAndSignalBase (EBC4J API (Version 1.1))
+StartAndSignalBase (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ StartAndSignalBase (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="StartAndSignalBase (EBC4J API (Version 1.1))";
+        parent.document.title="StartAndSignalBase (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -99,7 +99,7 @@ Class StartAndSignalBase</H2>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>, <A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A>, <A HREF="../../../../net/objectzoo/ebc/StartAndSignalFlow.html" title="interface in net.objectzoo.ebc">StartAndSignalFlow</A></DD>
 </DL>
 <DL>
-<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/objectzoo/ebc/split/SplitSignal.html" title="class in net.objectzoo.ebc.split">SplitSignal</A>, <A HREF="../../../../net/objectzoo/ebc/state/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">StartAndClearThreadLocalStateStore</A></DD>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/objectzoo/ebc/split/SplitSignal.html" title="class in net.objectzoo.ebc.split">SplitSignal</A>, <A HREF="../../../../net/objectzoo/ebc/state/async/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">StartAndClearThreadLocalStateStore</A></DD>
 </DL>
 <HR>
 <DL>
@@ -161,7 +161,7 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/CanStart.htm
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html#StartAndSignalBase()">StartAndSignalBase</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>StartAndSignalBase</code></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -245,6 +245,8 @@ StartAndSignalBase</H3>
 <PRE>
 public <B>StartAndSignalBase</B>()</PRE>
 <DL>
+<DD>Creates a new <code>StartAndSignalBase</code>
+<P>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -343,6 +345,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

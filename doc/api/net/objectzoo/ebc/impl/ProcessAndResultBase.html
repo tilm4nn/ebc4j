@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-ProcessAndResultBase (EBC4J API (Version 1.1))
+ProcessAndResultBase (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ ProcessAndResultBase (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ProcessAndResultBase (EBC4J API (Version 1.1))";
+        parent.document.title="ProcessAndResultBase (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -101,7 +101,7 @@ Class ProcessAndResultBase&lt;ProcessParameter,ResultParameter&gt;</H2>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;, <A HREF="../../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc">ProcessAndResultFlow</A>&lt;ProcessParameter,ResultParameter&gt;, <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;ResultParameter&gt;</DD>
 </DL>
 <DL>
-<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>, <A HREF="../../../../net/objectzoo/ebc/map/MapPairToItem1.html" title="class in net.objectzoo.ebc.map">MapPairToItem1</A>, <A HREF="../../../../net/objectzoo/ebc/map/MapPairToItem2.html" title="class in net.objectzoo.ebc.map">MapPairToItem2</A>, <A HREF="../../../../net/objectzoo/ebc/state/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">ProcessAndClearThreadLocalStateStore</A>, <A HREF="../../../../net/objectzoo/ebc/split/SplitProcess.html" title="class in net.objectzoo.ebc.split">SplitProcess</A>, <A HREF="../../../../net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split">SplitProcessToSignal</A></DD>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>, <A HREF="../../../../net/objectzoo/ebc/map/MapPairToItem1.html" title="class in net.objectzoo.ebc.map">MapPairToItem1</A>, <A HREF="../../../../net/objectzoo/ebc/map/MapPairToItem2.html" title="class in net.objectzoo.ebc.map">MapPairToItem2</A>, <A HREF="../../../../net/objectzoo/ebc/state/async/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">ProcessAndClearThreadLocalStateStore</A>, <A HREF="../../../../net/objectzoo/ebc/split/SplitProcess.html" title="class in net.objectzoo.ebc.split">SplitProcess</A>, <A HREF="../../../../net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split">SplitProcessToSignal</A></DD>
 </DL>
 <HR>
 <DL>
@@ -163,7 +163,7 @@ A base class for an EBC that <A HREF="../../../../net/objectzoo/ebc/CanProcess.h
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndResultBase.html#ProcessAndResultBase()">ProcessAndResultBase</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>ProcessAndResultBase</code></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -247,6 +247,8 @@ ProcessAndResultBase</H3>
 <PRE>
 public <B>ProcessAndResultBase</B>()</PRE>
 <DL>
+<DD>Creates a new <code>ProcessAndResultBase</code>
+<P>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -345,6 +347,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

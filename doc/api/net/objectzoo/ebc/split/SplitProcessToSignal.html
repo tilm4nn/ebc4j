@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-SplitProcessToSignal (EBC4J API (Version 1.1))
+SplitProcessToSignal (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ SplitProcessToSignal (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="SplitProcessToSignal (EBC4J API (Version 1.1))";
+        parent.document.title="SplitProcessToSignal (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -107,7 +107,7 @@ Class SplitProcessToSignal&lt;Parameter&gt;</H2>
 </PRE>
 
 <P>
-The <code>SplitProcess</code> distributes the process and its parameter to multiple regular
+The <code>SplitProcessToSignal</code> distributes the process and its parameter to multiple regular
  subscribers and to multiple signal subscribers.
 <P>
 
@@ -182,11 +182,11 @@ The <code>SplitProcess</code> distributes the process and its parameter to multi
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.events.Event0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/split/SplitProcessToSignal.html#signalEvent()">signalEvent</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Event0</CODE> that is used to send the work completed signal of this EBC</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ProcessAndResultBase"><!-- --></A>
@@ -269,7 +269,6 @@ process</H3>
 <PRE>
 protected void <B>process</B>(<A HREF="../../../../net/objectzoo/ebc/split/SplitProcessToSignal.html" title="type parameter in SplitProcessToSignal">Parameter</A>&nbsp;parameter)</PRE>
 <DL>
-<DD><B>Description copied from class: <CODE><A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndResultBase.html#process(ProcessParameter)">ProcessAndResultBase</A></CODE></B></DD>
 <DD>This method is to be provided by subclasses to actually implement what's taking place when
  the process action is invoked.
 <P>
@@ -285,10 +284,9 @@ protected void <B>process</B>(<A HREF="../../../../net/objectzoo/ebc/split/Split
 <A NAME="signalEvent()"><!-- --></A><H3>
 signalEvent</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A> <B>signalEvent</B>()</PRE>
+public net.objectzoo.events.Event0 <B>signalEvent</B>()</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../net/objectzoo/ebc/SendsSignal.html#signalEvent()">SendsSignal</A></CODE></B></DD>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC
+<DD>Provides an <CODE>Event0</CODE> that is used to send the work completed signal of this EBC
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/SendsSignal.html#signalEvent()">signalEvent</A></CODE> in interface <CODE><A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A></CODE></DL>
@@ -359,6 +357,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

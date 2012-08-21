@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-JoinBase (EBC4J API (Version 1.1))
+JoinBase (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ JoinBase (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JoinBase (EBC4J API (Version 1.1))";
+        parent.document.title="JoinBase (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -97,6 +97,8 @@ Class JoinBase&lt;Input1,Input2,Output&gt;</H2>
               <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.JoinBase&lt;Input1,Input2,Output&gt;</B>
 </PRE>
 <DL>
+<DT><DT><B>Type Parameters:</B><DD><CODE>Input1</CODE> - the type of input one of this Join<DD><CODE>Input2</CODE> - the type of input two of this Join<DD><CODE>Output</CODE> - the type of output of this Join</DL>
+<DL>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;Output&gt;</DD>
 </DL>
 <HR>
@@ -105,6 +107,28 @@ Class JoinBase&lt;Input1,Input2,Output&gt;</H2>
 </PRE>
 
 <P>
+This is a base class that can be extended to easily implement custom <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A>s.
+ 
+ The Join waits for every input to be set at least once before creating a result event. Once both
+ inputs have been set an output is created and sent. After that there are two different modes of
+ operation depending on the <code>resetAfterResultEvent</code> parameter setting.
+ 
+ If <code>resetAfterResultEvent</code> is set to <code>true</code> (which is the default) then after each
+ result event the two input values are reset and the procedure to wait for both inputs starts from
+ the beginning.
+ 
+ If <code>resetAfterResultEvent</code> is set to <code>false</code> then for each following single input
+ invocation a new output is created and sent until the Join is manually reset again. If reset the
+ procedure to wait for both inputs starts from the beginning.
+ 
+ To manually reset the Join the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()"><CODE>Join.resetAction()</CODE></A> can be invoked.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>tilmann</DD>
+</DL>
 <HR>
 
 <P>
@@ -147,10 +171,29 @@ Class JoinBase&lt;Input1,Input2,Output&gt;</H2>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected </CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#JoinBase()">JoinBase</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>createOutput(Object, Object)</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected </CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#JoinBase(boolean)">JoinBase</A></B>(boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>createOutput(Object, Object)</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected </CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#JoinBase(net.objectzoo.ebc.state.StateFactory)">JoinBase</A></B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>createOutput(Object, Object)</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -159,7 +202,8 @@ Class JoinBase&lt;Input1,Input2,Output&gt;</H2>
          boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>createOutput(Object, Object)</CODE></A>.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -178,7 +222,7 @@ Class JoinBase&lt;Input1,Input2,Output&gt;</H2>
              <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input2</A>&nbsp;input2)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new output object that joins the two input values</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.join.Join"><!-- --></A>
@@ -230,11 +274,41 @@ Class JoinBase&lt;Input1,Input2,Output&gt;</H2>
 </TR>
 </TABLE>
 
+<A NAME="JoinBase()"><!-- --></A><H3>
+JoinBase</H3>
+<PRE>
+protected <B>JoinBase</B>()</PRE>
+<DL>
+<DD>Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>createOutput(Object, Object)</CODE></A>.
+<P>
+</DL>
+<HR>
+
 <A NAME="JoinBase(boolean)"><!-- --></A><H3>
 JoinBase</H3>
 <PRE>
 protected <B>JoinBase</B>(boolean&nbsp;resetAfterResultEvent)</PRE>
 <DL>
+<DD>Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>createOutput(Object, Object)</CODE></A>.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event</DL>
+</DL>
+<HR>
+
+<A NAME="JoinBase(net.objectzoo.ebc.state.StateFactory)"><!-- --></A><H3>
+JoinBase</H3>
+<PRE>
+protected <B>JoinBase</B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</PRE>
+<DL>
+<DD>Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>createOutput(Object, Object)</CODE></A>.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this <code>Join</code>. If <code>null</code> is given
+        then the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.</DL>
 </DL>
 <HR>
 
@@ -244,6 +318,12 @@ JoinBase</H3>
 protected <B>JoinBase</B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
                    boolean&nbsp;resetAfterResultEvent)</PRE>
 <DL>
+<DD>Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>createOutput(Object, Object)</CODE></A>.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this <code>Join</code>. If <code>null</code> is given
+        then the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -262,8 +342,11 @@ createOutput</H3>
 protected abstract <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Output</A> <B>createOutput</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input1</A>&nbsp;input1,
                                        <A HREF="../../../../net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input2</A>&nbsp;input2)</PRE>
 <DL>
+<DD>Creates a new output object that joins the two input values
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>input1</CODE> - the input one value<DD><CODE>input2</CODE> - the input two value
+<DT><B>Returns:</B><DD>the newly created output object</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -327,6 +410,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

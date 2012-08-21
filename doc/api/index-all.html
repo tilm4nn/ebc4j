@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Index (EBC4J API (Version 1.1))
+Index (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Index (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Index (EBC4J API (Version 1.1))";
+        parent.document.title="Index (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -80,13 +80,10 @@ function windowTitle()
 <A NAME="_A_"><!-- --></A><H2>
 <B>A</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/adapters/Action0ToAction.html" title="class in net.objectzoo.ebc.adapters"><B>Action0ToAction</B></A>&lt;<A HREF="./net/objectzoo/ebc/adapters/Action0ToAction.html" title="type parameter in Action0ToAction">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/adapters/package-summary.html">net.objectzoo.ebc.adapters</A><DD>Adapts an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to provide the <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> interface.<DT><A HREF="./net/objectzoo/ebc/adapters/Action0ToAction.html#Action0ToAction(net.objectzoo.delegates.Action0)"><B>Action0ToAction(Action0)</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/adapters/Action0ToAction.html" title="class in net.objectzoo.ebc.adapters"><B>Action0ToAction</B></A>&lt;<A HREF="./net/objectzoo/ebc/adapters/Action0ToAction.html" title="type parameter in Action0ToAction">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/adapters/package-summary.html">net.objectzoo.ebc.adapters</A><DD>Adapts an <CODE>Action0</CODE> to provide the <CODE>Action</CODE> interface.<DT><A HREF="./net/objectzoo/ebc/adapters/Action0ToAction.html#Action0ToAction(net.objectzoo.delegates.Action0)"><B>Action0ToAction(Action0)</B></A> - 
 Constructor for class net.objectzoo.ebc.adapters.<A HREF="./net/objectzoo/ebc/adapters/Action0ToAction.html" title="class in net.objectzoo.ebc.adapters">Action0ToAction</A>
 <DD>Create a new <code>Action0ToAction</code> forwarding the incoming calls to the given
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> instance.
-<DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutorHelpers.html#appendResultContainer(net.objectzoo.ebc.SendsResult)"><B>appendResultContainer(SendsResult&lt;OutputParameter&gt;)</B></A> - 
-Static method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutorHelpers.html" title="class in net.objectzoo.ebc.executor">FlowExecutorHelpers</A>
-<DD>&nbsp;
+ <CODE>Action0</CODE> instance.
 <DT><A HREF="./net/objectzoo/ebc/test/MockAction.html#assertInvoked()"><B>assertInvoked()</B></A> - 
 Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test">MockAction</A>
 <DD>Assert that this <code>MockAction</code> has been invoked throwing an <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/AssertionError.html?is-external=true" title="class or interface in java.lang"><CODE>AssertionError</CODE></A> if
@@ -105,22 +102,28 @@ Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAct
  the given message if not.
 <DT><A HREF="./net/objectzoo/ebc/builder/Flow.html#await(net.objectzoo.events.Event)"><B>await(Event&lt;T&gt;)</B></A> - 
 Static method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/Flow.html" title="class in net.objectzoo.ebc.builder">Flow</A>
-<DD>&nbsp;
+<DD>The flow started with this methods waits for the given <CODE>Event</CODE> and then continues with
+ whatever is attached to the returned <A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder"><CODE>SendsResultConnector</CODE></A>.
 <DT><A HREF="./net/objectzoo/ebc/builder/Flow.html#await(net.objectzoo.ebc.SendsResult)"><B>await(SendsResult&lt;T&gt;)</B></A> - 
 Static method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/Flow.html" title="class in net.objectzoo.ebc.builder">Flow</A>
-<DD>&nbsp;
+<DD>The flow started with this methods waits for the result event of the given
+ <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A> and then continues with whatever is attached to the returned
+ <A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder"><CODE>SendsResultConnector</CODE></A>.
 <DT><A HREF="./net/objectzoo/ebc/builder/Flow.html#await(net.objectzoo.events.Event0)"><B>await(Event0)</B></A> - 
 Static method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/Flow.html" title="class in net.objectzoo.ebc.builder">Flow</A>
-<DD>&nbsp;
+<DD>The flow started with this methods waits for the given <CODE>Event0</CODE> and then continues with
+ whatever is attached to the returned <A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html" title="class in net.objectzoo.ebc.builder"><CODE>SendsSignalConnector</CODE></A>.
 <DT><A HREF="./net/objectzoo/ebc/builder/Flow.html#await(net.objectzoo.ebc.SendsSignal)"><B>await(SendsSignal)</B></A> - 
 Static method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/Flow.html" title="class in net.objectzoo.ebc.builder">Flow</A>
-<DD>&nbsp;
+<DD>The flow started with this methods waits for the signal event of the given
+ <A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A> and then continues with whatever is attached to the returned
+ <A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html" title="class in net.objectzoo.ebc.builder"><CODE>SendsSignalConnector</CODE></A>.
 </DL>
 <HR>
 <A NAME="_B_"><!-- --></A><H2>
 <B>B</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/state/BasicStateFactory.html" title="class in net.objectzoo.ebc.state"><B>BasicStateFactory</B></A> - Class in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/state/BasicStateFactory.html#BasicStateFactory()"><B>BasicStateFactory()</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/state/BasicStateFactory.html" title="class in net.objectzoo.ebc.state"><B>BasicStateFactory</B></A> - Class in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>A <A HREF="./net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> implementation that creates <CODE>BasicState</CODE> instances.<DT><A HREF="./net/objectzoo/ebc/state/BasicStateFactory.html#BasicStateFactory()"><B>BasicStateFactory()</B></A> - 
 Constructor for class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/BasicStateFactory.html" title="class in net.objectzoo.ebc.state">BasicStateFactory</A>
 <DD>&nbsp;
 </DL>
@@ -128,11 +131,11 @@ Constructor for class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state
 <A NAME="_C_"><!-- --></A><H2>
 <B>C</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><B>CanProcess</B></A>&lt;<A HREF="./net/objectzoo/ebc/CanProcess.html" title="type parameter in CanProcess">ProcessParameter</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+<DT><A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><B>CanProcess</B></A>&lt;<A HREF="./net/objectzoo/ebc/CanProcess.html" title="type parameter in CanProcess">ProcessParameter</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.<DT><A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><B>CanStart</B></A> - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that <code>CanStart</code> can be invoked to perform same work and thus provides an
- <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> to do so.<DT><A HREF="./net/objectzoo/ebc/state/ThreadLocalStateStore.html#clear()"><B>clear()</B></A> - 
-Static method in class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/ThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">ThreadLocalStateStore</A>
-<DD>&nbsp;
+ <CODE>Action0</CODE> to do so.<DT><A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateStore.html#clear()"><B>clear()</B></A> - 
+Static method in class net.objectzoo.ebc.state.async.<A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">ThreadLocalStateStore</A>
+<DD>Clears all state saved in this store bound to the current executing thread
 <DT><A HREF="./net/objectzoo/ebc/join/JoinInputStorage.html#clearInput()"><B>clearInput()</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinInputStorage.html" title="class in net.objectzoo.ebc.join">JoinInputStorage</A>
 <DD>Clears both inputs in this storage.
@@ -149,24 +152,21 @@ Method in interface net.objectzoo.ebc.<A HREF="./net/objectzoo/ebc/Configurable.
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/ConstructableOutputCreator.html" title="class in net.objectzoo.ebc.join">ConstructableOutputCreator</A>
 <DD>Crates a new <code>ConstructableOutputCreator</code> using the given <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/reflect/Constructor.html?is-external=true" title="class or interface in java.lang.reflect"><CODE>Constructor</CODE></A> to create
  output values.
+<DT><A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateFactory.html#create(net.objectzoo.ebc.state.ValueFactory)"><B>create(ValueFactory&lt;Value&gt;)</B></A> - 
+Method in class net.objectzoo.ebc.state.async.<A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateFactory.html" title="class in net.objectzoo.ebc.state.async">ThreadLocalStateFactory</A>
+<DD>Creates an new <A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> instance
 <DT><A HREF="./net/objectzoo/ebc/state/BasicStateFactory.html#create(net.objectzoo.ebc.state.ValueFactory)"><B>create(ValueFactory&lt;Value&gt;)</B></A> - 
 Method in class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/BasicStateFactory.html" title="class in net.objectzoo.ebc.state">BasicStateFactory</A>
-<DD>&nbsp;
+<DD>Creates an new <A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> instance
 <DT><A HREF="./net/objectzoo/ebc/state/StateFactory.html#create(net.objectzoo.ebc.state.ValueFactory)"><B>create(ValueFactory&lt;Value&gt;)</B></A> - 
 Method in interface net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/state/ThreadLocalStateFactory.html#create(net.objectzoo.ebc.state.ValueFactory)"><B>create(ValueFactory&lt;Value&gt;)</B></A> - 
-Method in class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/ThreadLocalStateFactory.html" title="class in net.objectzoo.ebc.state">ThreadLocalStateFactory</A>
-<DD>&nbsp;
+<DD>Creates an new <A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> instance
 <DT><A HREF="./net/objectzoo/ebc/state/ValueFactory.html#create()"><B>create()</B></A> - 
 Method in interface net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/ValueFactory.html" title="interface in net.objectzoo.ebc.state">ValueFactory</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/executor/FlowCreator.html#createFlow(java.lang.Class)"><B>createFlow(Class&lt;? extends FlowType&gt;)</B></A> - 
-Method in interface net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowCreator.html" title="interface in net.objectzoo.ebc.executor">FlowCreator</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutorHelpers.html#createFlow(java.lang.Class, net.objectzoo.ebc.executor.FlowCreator)"><B>createFlow(Class&lt;FlowType&gt;, FlowCreator)</B></A> - 
-Static method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutorHelpers.html" title="class in net.objectzoo.ebc.executor">FlowExecutorHelpers</A>
-<DD>&nbsp;
+<DD>Creates a new initial value for an EBC <A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A>
+<DT><A HREF="./net/objectzoo/ebc/executor/FlowFactory.html#createFlow(java.lang.Class)"><B>createFlow(Class&lt;? extends FlowType&gt;)</B></A> - 
+Method in interface net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor">FlowFactory</A>
+<DD>Creates a new flow of the given type
 <DT><A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html#createOutput(java.util.Collection, java.util.Collection)"><B>createOutput(Collection&lt;Input1Element&gt;, Collection&lt;Input2Element&gt;)</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/CollectionsOutputCreator.html" title="class in net.objectzoo.ebc.join">CollectionsOutputCreator</A>
 <DD>Creates a new output object that joins the two input values
@@ -175,7 +175,7 @@ Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Constru
 <DD>Creates a new output object that joins the two input values
 <DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><B>createOutput(Input1, Input2)</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>
-<DD>&nbsp;
+<DD>Creates a new output object that joins the two input values
 <DT><A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html#createOutput(Input1, Input2)"><B>createOutput(Input1, Input2)</B></A> - 
 Method in interface net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>
 <DD>Creates a new output object that joins the two input values
@@ -195,7 +195,7 @@ Static variable in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/uti
 <DD>This is the default log level used by the EBC implementations and base classes
 <DT><A HREF="./net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><B>DEFAULT_STATE_FACTORY</B></A> - 
 Static variable in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
-<DD>&nbsp;
+<DD>The <A HREF="./net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by <A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A>s that are not configured with their own
 <DT><A HREF="./net/objectzoo/ebc/DependsOn.html" title="interface in net.objectzoo.ebc"><B>DependsOn</B></A>&lt;<A HREF="./net/objectzoo/ebc/DependsOn.html" title="type parameter in DependsOn">Dependency</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that <code>DependsOn</code> another object, can be explicitly tagged with this interface.</DL>
 <HR>
 <A NAME="_E_"><!-- --></A><H2>
@@ -213,9 +213,9 @@ Method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/Pair.ht
 <DD>
  
  Two pairs are equal if both of their contained items are equal.
-<DT><A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html" title="class in net.objectzoo.ebc.adapters"><B>EventToEvent0</B></A>&lt;<A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html" title="type parameter in EventToEvent0">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/adapters/package-summary.html">net.objectzoo.ebc.adapters</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html#EventToEvent0(net.objectzoo.events.Event)"><B>EventToEvent0(Event&lt;T&gt;)</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html" title="class in net.objectzoo.ebc.adapters"><B>EventToEvent0</B></A>&lt;<A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html" title="type parameter in EventToEvent0">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/adapters/package-summary.html">net.objectzoo.ebc.adapters</A><DD>Adapts an <CODE>Event</CODE> to provide the <CODE>Event0</CODE> interface.<DT><A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html#EventToEvent0(net.objectzoo.events.Event)"><B>EventToEvent0(Event&lt;T&gt;)</B></A> - 
 Constructor for class net.objectzoo.ebc.adapters.<A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html" title="class in net.objectzoo.ebc.adapters">EventToEvent0</A>
-<DD>&nbsp;
+<DD>Creates a new <code>EventToEvent0</code> adapting the given <CODE>Event</CODE> instance
 </DL>
 <HR>
 <A NAME="_F_"><!-- --></A><H2>
@@ -225,16 +225,30 @@ Constructor for class net.objectzoo.ebc.adapters.<A HREF="./net/objectzoo/ebc/ad
 Static method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util">ReflectionUtils</A>
 <DD>Tries to find a <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/reflect/Constructor.html?is-external=true" title="class or interface in java.lang.reflect"><CODE>Constructor</CODE></A> in the object type that takes the two parameter types as
  parameters.
-<DT><A HREF="./net/objectzoo/ebc/builder/Flow.html" title="class in net.objectzoo.ebc.builder"><B>Flow</B></A> - Class in <A HREF="./net/objectzoo/ebc/builder/package-summary.html">net.objectzoo.ebc.builder</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/executor/FlowCreator.html" title="interface in net.objectzoo.ebc.executor"><B>FlowCreator</B></A> - Interface in <A HREF="./net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor"><B>FlowExecutor</B></A> - Class in <A HREF="./net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#FlowExecutor(net.objectzoo.ebc.executor.FlowCreator)"><B>FlowExecutor(FlowCreator)</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/builder/Flow.html" title="class in net.objectzoo.ebc.builder"><B>Flow</B></A> - Class in <A HREF="./net/objectzoo/ebc/builder/package-summary.html">net.objectzoo.ebc.builder</A><DD>This class contains some <code>static</code> methods used to start a DSL sentence used to create a
+ flow of EBCs<DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor"><B>FlowExecutor</B></A> - Class in <A HREF="./net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A><DD>The <code>FlowExecuter</code> supports both: Execution of existing flows with one of it's
+ <code>static</code> methods and the execution of flows created per execution using the given
+ <A HREF="./net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#FlowExecutor(net.objectzoo.ebc.executor.FlowFactory)"><B>FlowExecutor(FlowFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor">FlowExecutor</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutorHelpers.html" title="class in net.objectzoo.ebc.executor"><B>FlowExecutorHelpers</B></A> - Class in <A HREF="./net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A><DD>&nbsp;</DL>
+<DD>Creates a new <code>FlwoExecutor</code> using the given <A HREF="./net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A> to create new flow
+ instances
+<DT><A HREF="./net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><B>FlowFactory</B></A> - Interface in <A HREF="./net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A><DD>A factory that can be used to create flow instances.</DL>
 <HR>
 <A NAME="_G_"><!-- --></A><H2>
 <B>G</B></H2>
 <DL>
 <DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join"><B>GenericJoin</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Input1</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Input2</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join base class joins two input values to an output value that has a constructor taking the
- two input values as parameters.<DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(boolean)"><B>GenericJoin(boolean)</B></A> - 
+ two input values as parameters.<DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html#GenericJoin()"><B>GenericJoin()</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from this Join's
+ output type by taking a constructor that has the fitting parameter types for this Join's
+ input types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(boolean)"><B>GenericJoin(boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from this Join's
+ output type by taking a constructor that has the fitting parameter types for this Join's
+ input types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(net.objectzoo.ebc.state.StateFactory)"><B>GenericJoin(StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>
 <DD>Initializes this <code>Join</code> with a constructor for the output determined from this Join's
  output type by taking a constructor that has the fitting parameter types for this Join's
@@ -244,7 +258,17 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/G
 <DD>Initializes this <code>Join</code> with a constructor for the output determined from this Join's
  output type by taking a constructor that has the fitting parameter types for this Join's
  input types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(java.lang.Class)"><B>GenericJoin(Class&lt;? extends Output&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from the given
+ type by taking a constructor that has the fitting parameter types for this Join's input
+ types.
 <DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(java.lang.Class, boolean)"><B>GenericJoin(Class&lt;? extends Output&gt;, boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>
+<DD>Initializes this <code>Join</code> with a constructor for the output determined from the given
+ type by taking a constructor that has the fitting parameter types for this Join's input
+ types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(java.lang.Class, net.objectzoo.ebc.state.StateFactory)"><B>GenericJoin(Class&lt;? extends Output&gt;, StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoin.html" title="class in net.objectzoo.ebc.join">GenericJoin</A>
 <DD>Initializes this <code>Join</code> with a constructor for the output determined from the given
  type by taking a constructor that has the fitting parameter types for this Join's input
@@ -256,7 +280,17 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/G
  types.
 <DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join"><B>GenericJoinCollections</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">Input1Element</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join base class joins two input collections of the input element types to a collection of
  the output element type by using a constructor of the output element type taking the two input
- element type values as parameters.<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(boolean)"><B>GenericJoinCollections(boolean)</B></A> - 
+ element type values as parameters.<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections()"><B>GenericJoinCollections()</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>
+<DD>Initializes this <code>JoinCollections</code> with a constructor for the output element determined
+ from this Join's output element type by taking a constructor that has the fitting parameter
+ types for this Join's input element types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(boolean)"><B>GenericJoinCollections(boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>
+<DD>Initializes this <code>JoinCollections</code> with a constructor for the output element determined
+ from this Join's output element type by taking a constructor that has the fitting parameter
+ types for this Join's input element types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(net.objectzoo.ebc.state.StateFactory)"><B>GenericJoinCollections(StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>
 <DD>Initializes this <code>JoinCollections</code> with a constructor for the output element determined
  from this Join's output element type by taking a constructor that has the fitting parameter
@@ -266,7 +300,17 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/G
 <DD>Initializes this <code>JoinCollections</code> with a constructor for the output element determined
  from this Join's output element type by taking a constructor that has the fitting parameter
  types for this Join's input element types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(java.lang.Class)"><B>GenericJoinCollections(Class&lt;? extends OutputElement&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>
+<DD>Initializes this <code>JoinCollections</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's input element types.
 <DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(java.lang.Class, boolean)"><B>GenericJoinCollections(Class&lt;? extends OutputElement&gt;, boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>
+<DD>Initializes this <code>JoinCollections</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's input element types.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(java.lang.Class, net.objectzoo.ebc.state.StateFactory)"><B>GenericJoinCollections(Class&lt;? extends OutputElement&gt;, StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinCollections.html" title="class in net.objectzoo.ebc.join">GenericJoinCollections</A>
 <DD>Initializes this <code>JoinCollections</code> with a constructor for the output elements
  determined from the given type by taking a constructor that has the fitting parameter types
@@ -278,7 +322,17 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/G
  for this Join's input element types.
 <DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>GenericJoinObjectAndCollection</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="type parameter in GenericJoinObjectAndCollection">Input1</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="type parameter in GenericJoinObjectAndCollection">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="type parameter in GenericJoinObjectAndCollection">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join base class joins a single first input value with a second collection of input elements
  to a collection of output element by using a constructor of the output element type taking the
- first input type and the second input element type value as parameters.<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(boolean)"><B>GenericJoinObjectAndCollection(boolean)</B></A> - 
+ first input type and the second input element type value as parameters.<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection()"><B>GenericJoinObjectAndCollection()</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>
+<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
+ determined from this Join's output element type by taking a constructor that has the fitting
+ parameter types for this Join's first input type and second input element type.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(boolean)"><B>GenericJoinObjectAndCollection(boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>
+<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
+ determined from this Join's output element type by taking a constructor that has the fitting
+ parameter types for this Join's first input type and second input element type.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(net.objectzoo.ebc.state.StateFactory)"><B>GenericJoinObjectAndCollection(StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>
 <DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
  determined from this Join's output element type by taking a constructor that has the fitting
@@ -288,7 +342,17 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/G
 <DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
  determined from this Join's output element type by taking a constructor that has the fitting
  parameter types for this Join's first input type and second input element type.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(java.lang.Class)"><B>GenericJoinObjectAndCollection(Class&lt;? extends OutputElement&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>
+<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's first input type and second input element type.
 <DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(java.lang.Class, boolean)"><B>GenericJoinObjectAndCollection(Class&lt;? extends OutputElement&gt;, boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>
+<DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's first input type and second input element type.
+<DT><A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(java.lang.Class, net.objectzoo.ebc.state.StateFactory)"><B>GenericJoinObjectAndCollection(Class&lt;? extends OutputElement&gt;, StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">GenericJoinObjectAndCollection</A>
 <DD>Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output elements
  determined from the given type by taking a constructor that has the fitting parameter types
@@ -300,7 +364,7 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/G
  for this Join's first input type and second input element type.
 <DT><A HREF="./net/objectzoo/ebc/state/State.html#get()"><B>get()</B></A> - 
 Method in interface net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state">State</A>
-<DD>&nbsp;
+<DD>Retrieve the current value of the state
 <DT><A HREF="./net/objectzoo/ebc/test/MockAction.html#getFirstResult()"><B>getFirstResult()</B></A> - 
 Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test">MockAction</A>
 <DD>Retrieve the parameter value given to the first invocation of this <code>MockAction</code>.
@@ -373,16 +437,16 @@ Method in interface net.objectzoo.ebc.<A HREF="./net/objectzoo/ebc/DependsOn.htm
 <DD>Provides the given dependency implementation to this EBC.
 <DT><A HREF="./net/objectzoo/ebc/join/Join.html#input1Action()"><B>input1Action()</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input one to this Join
+<DD>Provides an <CODE>Action</CODE> that is used to send input one to this Join
 <DT><A HREF="./net/objectzoo/ebc/join/Join.html#input2Action()"><B>input2Action()</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input two to this Join
+<DD>Provides an <CODE>Action</CODE> that is used to send input two to this Join
 <DT><A HREF="./net/objectzoo/ebc/adapters/Action0ToAction.html#invoke(T)"><B>invoke(T)</B></A> - 
 Method in class net.objectzoo.ebc.adapters.<A HREF="./net/objectzoo/ebc/adapters/Action0ToAction.html" title="class in net.objectzoo.ebc.adapters">Action0ToAction</A>
 <DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html#invoke(ProcessParameter)"><B>invoke(ProcessParameter)</B></A> - 
 Method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html" title="class in net.objectzoo.ebc.executor">ProcessAndResultFlowToFuncAdapter</A>
-<DD>&nbsp;
+<DD>
 <DT><A HREF="./net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html#invoke()"><B>invoke()</B></A> - 
 Method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="class in net.objectzoo.ebc.executor">StartAndResultFlowToFunc0Adapter</A>
 <DD>&nbsp;
@@ -408,19 +472,41 @@ Method in class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAct
 <A NAME="_J_"><!-- --></A><H2>
 <B>J</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><B>Join</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a class that can be used to implement Join EBCs.<DT><A HREF="./net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)"><B>Join(JoinOutputCreator&lt;? super Input1, ? super Input2, ? extends Output&gt;, StateFactory, boolean)</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><B>Join</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,<A HREF="./net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a class that can be used to implement Join EBCs.<DT><A HREF="./net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory)"><B>Join(JoinOutputCreator&lt;? super Input1, ? super Input2, ? extends Output&gt;, StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
 <DD>Creates a new <code>Join</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to create the output of
  the <code>Join</code>.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join"><B>JoinBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input2</A>,<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#JoinBase(boolean)"><B>JoinBase(boolean)</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)"><B>Join(JoinOutputCreator&lt;? super Input1, ? super Input2, ? extends Output&gt;, StateFactory, boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
+<DD>Creates a new <code>Join</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to create the output of
+ the <code>Join</code>.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join"><B>JoinBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Input2</A>,<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="type parameter in JoinBase">Output</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a base class that can be extended to easily implement custom <A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A>s.<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#JoinBase()"><B>JoinBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>
-<DD>&nbsp;
+<DD>Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="./net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>JoinBase.createOutput(Object, Object)</CODE></A>.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#JoinBase(boolean)"><B>JoinBase(boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>
+<DD>Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="./net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>JoinBase.createOutput(Object, Object)</CODE></A>.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#JoinBase(net.objectzoo.ebc.state.StateFactory)"><B>JoinBase(StateFactory)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>
+<DD>Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="./net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>JoinBase.createOutput(Object, Object)</CODE></A>.
 <DT><A HREF="./net/objectzoo/ebc/join/JoinBase.html#JoinBase(net.objectzoo.ebc.state.StateFactory, boolean)"><B>JoinBase(StateFactory, boolean)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinBase.html" title="class in net.objectzoo.ebc.join">JoinBase</A>
-<DD>&nbsp;
+<DD>Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="./net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>JoinBase.createOutput(Object, Object)</CODE></A>.
 <DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join"><B>JoinCollections</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join class joins two input collections of the input element types to a collection of the
  output element type by using a <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the input element types to the
- output element type.<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator, boolean)"><B>JoinCollections(JoinOutputCreator&lt;? super Input1Element, ? super Input2Element, ? extends OutputElement&gt;, boolean)</B></A> - 
+ output element type.<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator)"><B>JoinCollections(JoinOutputCreator&lt;? super Input1Element, ? super Input2Element, ? extends OutputElement&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections</A>
+<DD>Creates a new <code>JoinCollections</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the
+ input elements to the output element.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator, boolean)"><B>JoinCollections(JoinOutputCreator&lt;? super Input1Element, ? super Input2Element, ? extends OutputElement&gt;, boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections</A>
+<DD>Creates a new <code>JoinCollections</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the
+ input elements to the output element.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory)"><B>JoinCollections(JoinOutputCreator&lt;? super Input1Element, ? super Input2Element, ? extends OutputElement&gt;, StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinCollections.html" title="class in net.objectzoo.ebc.join">JoinCollections</A>
 <DD>Creates a new <code>JoinCollections</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the
  input elements to the output element.
@@ -434,7 +520,15 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/J
 <DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join"><B>JoinObjectAndCollection</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>,<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This Join class joins a single first input value with a second collection of input elements to a
  collection of output element by using a <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the first input type
- and the second input element type to the output element type.<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator, boolean)"><B>JoinObjectAndCollection(JoinOutputCreator&lt;? super Input1, ? super Input2Element, ? extends OutputElement&gt;, boolean)</B></A> - 
+ and the second input element type to the output element type.<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator)"><B>JoinObjectAndCollection(JoinOutputCreator&lt;? super Input1, ? super Input2Element, ? extends OutputElement&gt;)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>
+<DD>Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
+ join the first input and second input elements to the output element.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator, boolean)"><B>JoinObjectAndCollection(JoinOutputCreator&lt;? super Input1, ? super Input2Element, ? extends OutputElement&gt;, boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>
+<DD>Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
+ join the first input and second input elements to the output element.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory)"><B>JoinObjectAndCollection(JoinOutputCreator&lt;? super Input1, ? super Input2Element, ? extends OutputElement&gt;, StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>
 <DD>Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
  join the first input and second input elements to the output element.
@@ -442,13 +536,38 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/J
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="class in net.objectzoo.ebc.join">JoinObjectAndCollection</A>
 <DD>Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
  join the first input and second input elements to the output element.
-<DT><A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><B>JoinOutputCreator</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="type parameter in JoinOutputCreator">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="type parameter in JoinOutputCreator">Input2</A>,<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="type parameter in JoinOutputCreator">Output</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This interface describes objects capable of creating output for <A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A>s.<DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join"><B>JoinProcessAndSignal</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="type parameter in JoinProcessAndSignal">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal(boolean)"><B>JoinProcessAndSignal(boolean)</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><B>JoinOutputCreator</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="type parameter in JoinOutputCreator">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="type parameter in JoinOutputCreator">Input2</A>,<A HREF="./net/objectzoo/ebc/join/JoinOutputCreator.html" title="type parameter in JoinOutputCreator">Output</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This interface describes objects capable of creating output for <A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A>s.<DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join"><B>JoinProcessAndSignal</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="type parameter in JoinProcessAndSignal">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a special flow EBC implementation that joins together a process and a signal flow and
+ thus implements the interfaces <A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>ProcessAndResultFlow</CODE></A> and <A HREF="./net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal()"><B>JoinProcessAndSignal()</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join"><B>JoinSignals</B></A> - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html#JoinSignals(boolean)"><B>JoinSignals(boolean)</B></A> - 
+<DD>Creates a new <code>JoinProcessAndSignal</code>
+<DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal(boolean)"><B>JoinProcessAndSignal(boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>
+<DD>Creates a new <code>JoinProcessAndSignal</code>
+<DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal(net.objectzoo.ebc.state.StateFactory)"><B>JoinProcessAndSignal(StateFactory)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>
+<DD>Creates a new <code>JoinProcessAndSignal</code>
+<DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal(net.objectzoo.ebc.state.StateFactory, boolean)"><B>JoinProcessAndSignal(StateFactory, boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>
+<DD>Creates a new <code>JoinProcessAndSignal</code>
+<DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join"><B>JoinSignals</B></A> - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a special flow EBC implementation that joins together two signal flows.<DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html#JoinSignals()"><B>JoinSignals()</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join">JoinSignals</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join"><B>JoinToPair</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="type parameter in JoinToPair">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="type parameter in JoinToPair">Input2</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a Join implementation that joins the two input values to a <A HREF="./net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><CODE>Pair</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html#JoinToPair(boolean)"><B>JoinToPair(boolean)</B></A> - 
+<DD>Creates a new <code>JoinSignals</code>
+<DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html#JoinSignals(boolean)"><B>JoinSignals(boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join">JoinSignals</A>
+<DD>Creates a new <code>JoinSignals</code>
+<DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html#JoinSignals(net.objectzoo.ebc.state.StateFactory)"><B>JoinSignals(StateFactory)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join">JoinSignals</A>
+<DD>Creates a new <code>JoinSignals</code>
+<DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html#JoinSignals(net.objectzoo.ebc.state.StateFactory, boolean)"><B>JoinSignals(StateFactory, boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join">JoinSignals</A>
+<DD>Creates a new <code>JoinSignals</code>
+<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join"><B>JoinToPair</B></A>&lt;<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="type parameter in JoinToPair">Input1</A>,<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="type parameter in JoinToPair">Input2</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A><DD>This is a <A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A> implementation that joins the two input values to a <A HREF="./net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><CODE>Pair</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html#JoinToPair()"><B>JoinToPair()</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join">JoinToPair</A>
+<DD>Crates a new <code>JoinToPair</code>.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html#JoinToPair(boolean)"><B>JoinToPair(boolean)</B></A> - 
+Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join">JoinToPair</A>
+<DD>Crates a new <code>JoinToPair</code>.
+<DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html#JoinToPair(net.objectzoo.ebc.state.StateFactory)"><B>JoinToPair(StateFactory)</B></A> - 
 Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinToPair.html" title="class in net.objectzoo.ebc.join">JoinToPair</A>
 <DD>Crates a new <code>JoinToPair</code>.
 <DT><A HREF="./net/objectzoo/ebc/join/JoinToPair.html#JoinToPair(net.objectzoo.ebc.state.StateFactory, boolean)"><B>JoinToPair(StateFactory, boolean)</B></A> - 
@@ -492,20 +611,20 @@ Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/Start
 <A NAME="_M_"><!-- --></A><H2>
 <B>M</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem1.html" title="class in net.objectzoo.ebc.map"><B>MapPairToItem1</B></A>&lt;<A HREF="./net/objectzoo/ebc/map/MapPairToItem1.html" title="type parameter in MapPairToItem1">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/map/package-summary.html">net.objectzoo.ebc.map</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem1.html#MapPairToItem1()"><B>MapPairToItem1()</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem1.html" title="class in net.objectzoo.ebc.map"><B>MapPairToItem1</B></A>&lt;<A HREF="./net/objectzoo/ebc/map/MapPairToItem1.html" title="type parameter in MapPairToItem1">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/map/package-summary.html">net.objectzoo.ebc.map</A><DD>This EBC maps its input of type <A HREF="./net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><CODE>Pair</CODE></A> to the first item of the input pair.<DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem1.html#MapPairToItem1()"><B>MapPairToItem1()</B></A> - 
 Constructor for class net.objectzoo.ebc.map.<A HREF="./net/objectzoo/ebc/map/MapPairToItem1.html" title="class in net.objectzoo.ebc.map">MapPairToItem1</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem2.html" title="class in net.objectzoo.ebc.map"><B>MapPairToItem2</B></A>&lt;<A HREF="./net/objectzoo/ebc/map/MapPairToItem2.html" title="type parameter in MapPairToItem2">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/map/package-summary.html">net.objectzoo.ebc.map</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem2.html#MapPairToItem2()"><B>MapPairToItem2()</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem2.html" title="class in net.objectzoo.ebc.map"><B>MapPairToItem2</B></A>&lt;<A HREF="./net/objectzoo/ebc/map/MapPairToItem2.html" title="type parameter in MapPairToItem2">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/map/package-summary.html">net.objectzoo.ebc.map</A><DD>This EBC maps its input of type <A HREF="./net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util"><CODE>Pair</CODE></A> to the second item of the input pair.<DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem2.html#MapPairToItem2()"><B>MapPairToItem2()</B></A> - 
 Constructor for class net.objectzoo.ebc.map.<A HREF="./net/objectzoo/ebc/map/MapPairToItem2.html" title="class in net.objectzoo.ebc.map">MapPairToItem2</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test"><B>MockAction</B></A>&lt;<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="type parameter in MockAction">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/test/package-summary.html">net.objectzoo.ebc.test</A><DD>The <code>MockAction</code> is an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> implementation that can be used in (unit) tests to
+<DT><A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test"><B>MockAction</B></A>&lt;<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="type parameter in MockAction">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/test/package-summary.html">net.objectzoo.ebc.test</A><DD>The <code>MockAction</code> is an <CODE>Action</CODE> implementation that can be used in (unit) tests to
  collect the results of a tested EBC.<DT><A HREF="./net/objectzoo/ebc/test/MockAction.html#MockAction()"><B>MockAction()</B></A> - 
 Constructor for class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test">MockAction</A>
 <DD>Creates a new <code>MockAction</code> with a maximum invocations allowed value of one
 <DT><A HREF="./net/objectzoo/ebc/test/MockAction.html#MockAction(int)"><B>MockAction(int)</B></A> - 
 Constructor for class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction.html" title="class in net.objectzoo.ebc.test">MockAction</A>
 <DD>Creates a new <code>MockAction</code> with the given maximum invocations allowed value
-<DT><A HREF="./net/objectzoo/ebc/test/MockAction0.html" title="class in net.objectzoo.ebc.test"><B>MockAction0</B></A> - Class in <A HREF="./net/objectzoo/ebc/test/package-summary.html">net.objectzoo.ebc.test</A><DD>The <code>MockAction0</code> is an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> implementation that can be used in (unit) tests to
+<DT><A HREF="./net/objectzoo/ebc/test/MockAction0.html" title="class in net.objectzoo.ebc.test"><B>MockAction0</B></A> - Class in <A HREF="./net/objectzoo/ebc/test/package-summary.html">net.objectzoo.ebc.test</A><DD>The <code>MockAction0</code> is an <CODE>Action0</CODE> implementation that can be used in (unit) tests to
  count the signals of a tested EBC.<DT><A HREF="./net/objectzoo/ebc/test/MockAction0.html#MockAction0()"><B>MockAction0()</B></A> - 
 Constructor for class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/MockAction0.html" title="class in net.objectzoo.ebc.test">MockAction0</A>
 <DD>Creates a new <code>MockAction0</code> with a maximum invocations allowed value of one
@@ -517,8 +636,11 @@ Constructor for class net.objectzoo.ebc.test.<A HREF="./net/objectzoo/ebc/test/M
 <A NAME="_N_"><!-- --></A><H2>
 <B>N</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/package-summary.html"><B>net.objectzoo.ebc</B></A> - package net.objectzoo.ebc<DD>This package contains interfaces that can be used to define EBCs.<DT><A HREF="./net/objectzoo/ebc/adapters/package-summary.html"><B>net.objectzoo.ebc.adapters</B></A> - package net.objectzoo.ebc.adapters<DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/builder/package-summary.html"><B>net.objectzoo.ebc.builder</B></A> - package net.objectzoo.ebc.builder<DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/executor/package-summary.html"><B>net.objectzoo.ebc.executor</B></A> - package net.objectzoo.ebc.executor<DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/package-summary.html"><B>net.objectzoo.ebc.impl</B></A> - package net.objectzoo.ebc.impl<DD>This package contains base classes that can be used to implement EBCs.<DT><A HREF="./net/objectzoo/ebc/join/package-summary.html"><B>net.objectzoo.ebc.join</B></A> - package net.objectzoo.ebc.join<DD>This package contains some ready to use Join EBCs as well as base classes that can be used to
- implement own specialized Join subclasses.<DT><A HREF="./net/objectzoo/ebc/map/package-summary.html"><B>net.objectzoo.ebc.map</B></A> - package net.objectzoo.ebc.map<DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/split/package-summary.html"><B>net.objectzoo.ebc.split</B></A> - package net.objectzoo.ebc.split<DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/state/package-summary.html"><B>net.objectzoo.ebc.state</B></A> - package net.objectzoo.ebc.state<DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/test/package-summary.html"><B>net.objectzoo.ebc.test</B></A> - package net.objectzoo.ebc.test<DD>This package contains two mock object action implementations that can be used to test EBCs.<DT><A HREF="./net/objectzoo/ebc/util/package-summary.html"><B>net.objectzoo.ebc.util</B></A> - package net.objectzoo.ebc.util<DD>This package contains utility classes that complement the EBCs.</DL>
+<DT><A HREF="./net/objectzoo/ebc/package-summary.html"><B>net.objectzoo.ebc</B></A> - package net.objectzoo.ebc<DD>This package contains interfaces that can be used to define EBCs.<DT><A HREF="./net/objectzoo/ebc/adapters/package-summary.html"><B>net.objectzoo.ebc.adapters</B></A> - package net.objectzoo.ebc.adapters<DD>This package contains some adapter classes<DT><A HREF="./net/objectzoo/ebc/builder/package-summary.html"><B>net.objectzoo.ebc.builder</B></A> - package net.objectzoo.ebc.builder<DD>This package contains an internal flow builder DSL implementation that can be used to combine
+ EBCs to flows<DT><A HREF="./net/objectzoo/ebc/executor/package-summary.html"><B>net.objectzoo.ebc.executor</B></A> - package net.objectzoo.ebc.executor<DD>This package contains classes that help when there is need to synchronously execute an EBC flow.<DT><A HREF="./net/objectzoo/ebc/impl/package-summary.html"><B>net.objectzoo.ebc.impl</B></A> - package net.objectzoo.ebc.impl<DD>This package contains base classes that can be used to implement EBCs and boards.<DT><A HREF="./net/objectzoo/ebc/join/package-summary.html"><B>net.objectzoo.ebc.join</B></A> - package net.objectzoo.ebc.join<DD>This package contains some ready to use Join EBCs as well as base classes that can be used to
+ implement own specialized Join subclasses.<DT><A HREF="./net/objectzoo/ebc/map/package-summary.html"><B>net.objectzoo.ebc.map</B></A> - package net.objectzoo.ebc.map<DD>This package contains EBCs map between different values in an EBC flow.<DT><A HREF="./net/objectzoo/ebc/split/package-summary.html"><B>net.objectzoo.ebc.split</B></A> - package net.objectzoo.ebc.split<DD>This package contains EBCs that allow to split EBC flows.<DT><A HREF="./net/objectzoo/ebc/state/package-summary.html"><B>net.objectzoo.ebc.state</B></A> - package net.objectzoo.ebc.state<DD>This package contains interfaces and classes that are use to implement different state holding
+ mechanisms for EBCs.<DT><A HREF="./net/objectzoo/ebc/state/async/package-summary.html"><B>net.objectzoo.ebc.state.async</B></A> - package net.objectzoo.ebc.state.async<DD>This package contains implementations that are used to implement state holding mechanisms for
+ EBCs executed in asynchronous flows.<DT><A HREF="./net/objectzoo/ebc/test/package-summary.html"><B>net.objectzoo.ebc.test</B></A> - package net.objectzoo.ebc.test<DD>This package contains two mock object action implementations that can be used to test EBCs.<DT><A HREF="./net/objectzoo/ebc/util/package-summary.html"><B>net.objectzoo.ebc.util</B></A> - package net.objectzoo.ebc.util<DD>This package contains utility classes that complement the EBCs.</DL>
 <HR>
 <A NAME="_O_"><!-- --></A><H2>
 <B>O</B></H2>
@@ -546,10 +668,11 @@ Constructor for class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/P
 <DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#process(java.lang.Class, ProcessParameter)"><B>process(Class&lt;FlowType&gt;, ProcessParameter)</B></A> - 
 Method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor">FlowExecutor</A>
-<DD>&nbsp;
+<DD>Creates the flow determined by the given flow class using this executor's <A HREF="./net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by <A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#process(FlowType, ProcessParameter)"><CODE>FlowExecutor.process(CanProcess, Object)</CODE></A>
 <DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#process(FlowType, ProcessParameter)"><B>process(FlowType, ProcessParameter)</B></A> - 
 Static method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor">FlowExecutor</A>
-<DD>&nbsp;
+<DD>Executes the given <A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> flow with the given input parameter
 <DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBase.html#process(ProcessParameter)"><B>process(ProcessParameter)</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBase</A>
 <DD>This method is to be provided by subclasses to actually implement what's taking place when
@@ -564,59 +687,69 @@ Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/Process
  the process action is invoked.
 <DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html#process(T)"><B>process(T)</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>
-<DD>&nbsp;
+<DD>This method is to be provided by subclasses to actually implement what's taking place when
+ the process action is invoked.
 <DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem1.html#process(net.objectzoo.ebc.util.Pair)"><B>process(Pair&lt;T, ?&gt;)</B></A> - 
 Method in class net.objectzoo.ebc.map.<A HREF="./net/objectzoo/ebc/map/MapPairToItem1.html" title="class in net.objectzoo.ebc.map">MapPairToItem1</A>
-<DD>&nbsp;
+<DD>This method is to be provided by subclasses to actually implement what's taking place when
+ the process action is invoked.
 <DT><A HREF="./net/objectzoo/ebc/map/MapPairToItem2.html#process(net.objectzoo.ebc.util.Pair)"><B>process(Pair&lt;?, T&gt;)</B></A> - 
 Method in class net.objectzoo.ebc.map.<A HREF="./net/objectzoo/ebc/map/MapPairToItem2.html" title="class in net.objectzoo.ebc.map">MapPairToItem2</A>
-<DD>&nbsp;
+<DD>This method is to be provided by subclasses to actually implement what's taking place when
+ the process action is invoked.
 <DT><A HREF="./net/objectzoo/ebc/split/SplitProcess.html#process(Parameter)"><B>process(Parameter)</B></A> - 
 Method in class net.objectzoo.ebc.split.<A HREF="./net/objectzoo/ebc/split/SplitProcess.html" title="class in net.objectzoo.ebc.split">SplitProcess</A>
-<DD>&nbsp;
+<DD>This method is to be provided by subclasses to actually implement what's taking place when
+ the process action is invoked.
 <DT><A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html#process(Parameter)"><B>process(Parameter)</B></A> - 
 Method in class net.objectzoo.ebc.split.<A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split">SplitProcessToSignal</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/state/ProcessAndClearThreadLocalStateStore.html#process(T)"><B>process(T)</B></A> - 
-Method in class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">ProcessAndClearThreadLocalStateStore</A>
-<DD>&nbsp;
+<DD>This method is to be provided by subclasses to actually implement what's taking place when
+ the process action is invoked.
+<DT><A HREF="./net/objectzoo/ebc/state/async/ProcessAndClearThreadLocalStateStore.html#process(T)"><B>process(T)</B></A> - 
+Method in class net.objectzoo.ebc.state.async.<A HREF="./net/objectzoo/ebc/state/async/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">ProcessAndClearThreadLocalStateStore</A>
+<DD>This method is to be provided by subclasses to actually implement what's taking place when
+ the process action is invoked.
 <DT><A HREF="./net/objectzoo/ebc/CanProcess.html#processAction()"><B>processAction()</B></A> - 
 Method in interface net.objectzoo.ebc.<A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input to this EBC
+<DD>Provides an <CODE>Action</CODE> that is used to send input to this EBC
 <DT><A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html#processAction"><B>processAction</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">ProcessBoard</A>
-<DD>&nbsp;
+<DD>An <CODE>EventDelegate</CODE> that can be used by subclasses to obtain the process actions
 <DT><A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html#processAction()"><B>processAction()</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">ProcessBoard</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input to this EBC
-<DT><A HREF="./net/objectzoo/ebc/state/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state"><B>ProcessAndClearThreadLocalStateStore</B></A>&lt;<A HREF="./net/objectzoo/ebc/state/ProcessAndClearThreadLocalStateStore.html" title="type parameter in ProcessAndClearThreadLocalStateStore">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/state/ProcessAndClearThreadLocalStateStore.html#ProcessAndClearThreadLocalStateStore()"><B>ProcessAndClearThreadLocalStateStore()</B></A> - 
-Constructor for class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">ProcessAndClearThreadLocalStateStore</A>
+<DD>Provides an <CODE>Action</CODE> that is used to send input to this EBC
+<DT><A HREF="./net/objectzoo/ebc/state/async/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async"><B>ProcessAndClearThreadLocalStateStore</B></A>&lt;<A HREF="./net/objectzoo/ebc/state/async/ProcessAndClearThreadLocalStateStore.html" title="type parameter in ProcessAndClearThreadLocalStateStore">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A><DD>This class implements a decorator EBC that simply forwards the processing to the next component
+ in the flow and clears the <A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async"><CODE>ThreadLocalStateStore</CODE></A> after the flows execution.<DT><A HREF="./net/objectzoo/ebc/state/async/ProcessAndClearThreadLocalStateStore.html#ProcessAndClearThreadLocalStateStore()"><B>ProcessAndClearThreadLocalStateStore()</B></A> - 
+Constructor for class net.objectzoo.ebc.state.async.<A HREF="./net/objectzoo/ebc/state/async/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">ProcessAndClearThreadLocalStateStore</A>
 <DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndResultBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="type parameter in ProcessAndResultBase">ProcessParameter</A>,<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="type parameter in ProcessAndResultBase">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> and <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBase.html#ProcessAndResultBase()"><B>ProcessAndResultBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBase</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndResultBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="type parameter in ProcessAndResultBoard">ProcessParameter</A>,<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="type parameter in ProcessAndResultBoard">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html#ProcessAndResultBoard()"><B>ProcessAndResultBoard()</B></A> - 
+<DD>Creates a new <code>ProcessAndResultBase</code>
+<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndResultBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="type parameter in ProcessAndResultBoard">ProcessParameter</A>,<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="type parameter in ProcessAndResultBoard">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for a board that <A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> and <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html#ProcessAndResultBoard()"><B>ProcessAndResultBoard()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBoard</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><B>ProcessAndResultFlow</B></A>&lt;<A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="type parameter in ProcessAndResultFlow">ProcessParameter</A>,<A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="type parameter in ProcessAndResultFlow">ResultParameter</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that is capable of processing input with a possible outcome of a result being sent.<DT><A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html" title="class in net.objectzoo.ebc.executor"><B>ProcessAndResultFlowToFuncAdapter</B></A>&lt;<A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html" title="type parameter in ProcessAndResultFlowToFuncAdapter">ProcessParameter</A>,<A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html" title="type parameter in ProcessAndResultFlowToFuncAdapter">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html#ProcessAndResultFlowToFuncAdapter(net.objectzoo.ebc.ProcessAndResultFlow)"><B>ProcessAndResultFlowToFuncAdapter(ProcessAndResultFlow&lt;ProcessParameter, ResultParameter&gt;)</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><B>ProcessAndResultFlow</B></A>&lt;<A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="type parameter in ProcessAndResultFlow">ProcessParameter</A>,<A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="type parameter in ProcessAndResultFlow">ResultParameter</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that is capable of processing input with a possible outcome of a result being sent.<DT><A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html" title="class in net.objectzoo.ebc.executor"><B>ProcessAndResultFlowToFuncAdapter</B></A>&lt;<A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html" title="type parameter in ProcessAndResultFlowToFuncAdapter">ProcessParameter</A>,<A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html" title="type parameter in ProcessAndResultFlowToFuncAdapter">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A><DD>This adapter adapts an <A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>ProcessAndResultFlow</CODE></A> to a <CODE>Func</CODE>.<DT><A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html#ProcessAndResultFlowToFuncAdapter(net.objectzoo.ebc.ProcessAndResultFlow)"><B>ProcessAndResultFlowToFuncAdapter(ProcessAndResultFlow&lt;ProcessParameter, ResultParameter&gt;)</B></A> - 
 Constructor for class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/ProcessAndResultFlowToFuncAdapter.html" title="class in net.objectzoo.ebc.executor">ProcessAndResultFlowToFuncAdapter</A>
-<DD>&nbsp;
+<DD>Creates a new <code>ProcessAndResultFlowToFuncAdapter</code>
 <DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#processAndReturnResult(java.lang.Class, ProcessParameter)"><B>processAndReturnResult(Class&lt;FlowType&gt;, ProcessParameter)</B></A> - 
 Method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor">FlowExecutor</A>
-<DD>&nbsp;
+<DD>Creates the flow determined by the given flow class using this executor's <A HREF="./net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by
+ <A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#processAndReturnResult(FlowType, ProcessParameter)"><CODE>FlowExecutor.processAndReturnResult(ProcessAndResultFlow, Object)</CODE></A>
 <DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#processAndReturnResult(FlowType, ProcessParameter)"><B>processAndReturnResult(FlowType, ProcessParameter)</B></A> - 
 Static method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor">FlowExecutor</A>
-<DD>&nbsp;
+<DD>Executes the given <A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>ProcessAndResultFlow</CODE></A> flow with the given input parameter and
+ returns the final result.
 <DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndSignalBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="type parameter in ProcessAndSignalBase">ProcessParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> and <A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBase.html#ProcessAndSignalBase()"><B>ProcessAndSignalBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBase</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndSignalBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="type parameter in ProcessAndSignalBoard">ProcessParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html#ProcessAndSignalBoard()"><B>ProcessAndSignalBoard()</B></A> - 
+<DD>Creates a new <code>ProcessAndSignalBase</code>
+<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>ProcessAndSignalBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="type parameter in ProcessAndSignalBoard">ProcessParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for a board that <A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> and <A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html#ProcessAndSignalBoard()"><B>ProcessAndSignalBoard()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBoard</A>
 <DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/ProcessAndSignalFlow.html" title="interface in net.objectzoo.ebc"><B>ProcessAndSignalFlow</B></A>&lt;<A HREF="./net/objectzoo/ebc/ProcessAndSignalFlow.html" title="type parameter in ProcessAndSignalFlow">ProcessParameter</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that is capable of processing input with a possible outcome of a signal being sent.<DT><A HREF="./net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl"><B>ProcessBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ProcessBase.html" title="type parameter in ProcessBase">ProcessParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ProcessBase.html#ProcessBase()"><B>ProcessBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl">ProcessBase</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl"><B>ProcessBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html" title="type parameter in ProcessBoard">ProcessParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html#ProcessBoard()"><B>ProcessBoard()</B></A> - 
+<DD>Creates a new <code>ProcessBase</code>
+<DT><A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl"><B>ProcessBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html" title="type parameter in ProcessBoard">ProcessParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for a board that <A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html#ProcessBoard()"><B>ProcessBoard()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">ProcessBoard</A>
 <DD>&nbsp;
 </DL>
@@ -624,45 +757,42 @@ Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/P
 <A NAME="_R_"><!-- --></A><H2>
 <B>R</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util"><B>ReflectionUtils</B></A> - Class in <A HREF="./net/objectzoo/ebc/util/package-summary.html">net.objectzoo.ebc.util</A><DD>This class defines some Reflection utility methods used by the generic <code>Join</code> EBCs.<DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutorHelpers.html#removeResultContainer(net.objectzoo.ebc.test.MockAction, net.objectzoo.ebc.SendsResult)"><B>removeResultContainer(MockAction&lt;OutputParameter&gt;, SendsResult&lt;OutputParameter&gt;)</B></A> - 
-Static method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutorHelpers.html" title="class in net.objectzoo.ebc.executor">FlowExecutorHelpers</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/join/Join.html#resetAction()"><B>resetAction()</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/util/ReflectionUtils.html" title="class in net.objectzoo.ebc.util"><B>ReflectionUtils</B></A> - Class in <A HREF="./net/objectzoo/ebc/util/package-summary.html">net.objectzoo.ebc.util</A><DD>This class defines some Reflection utility methods used by the generic <code>Join</code> EBCs.<DT><A HREF="./net/objectzoo/ebc/join/Join.html#resetAction()"><B>resetAction()</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join">Join</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to reset this Join
+<DD>Provides an <CODE>Action0</CODE> that is used to reset this Join
 <DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html#resetAction()"><B>resetAction()</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>
-<DD>&nbsp;
+<DD>Provides an <CODE>Action0</CODE> that is used to reset this EBC
 <DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html#resetAction()"><B>resetAction()</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join">JoinSignals</A>
-<DD>&nbsp;
+<DD>Provides an <CODE>Action0</CODE> that is used to reset this EBC
 <DT><A HREF="./net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl"><B>ResultBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ResultBase.html" title="type parameter in ResultBase">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ResultBase.html#ResultBase()"><B>ResultBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ResultBase.html" title="class in net.objectzoo.ebc.impl">ResultBase</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>ResultBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ResultBoard.html" title="type parameter in ResultBoard">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/ResultBoard.html#ResultBoard()"><B>ResultBoard()</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>ResultBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/ResultBoard.html" title="type parameter in ResultBoard">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for a board that <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/ResultBoard.html#ResultBoard()"><B>ResultBoard()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl">ResultBoard</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder"><B>ResultConnector</B></A>&lt;<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="type parameter in ResultConnector">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/builder/package-summary.html">net.objectzoo.ebc.builder</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html#resultEvent"><B>resultEvent</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html#resultEvent"><B>resultEvent</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBoard</A>
-<DD>&nbsp;
+<DD>This <CODE>EventDelegate</CODE> can be used by subclasses to send the result events
 <DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html#resultEvent()"><B>resultEvent()</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBoard</A>
 <DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/impl/ResultBoard.html#resultEvent"><B>resultEvent</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl">ResultBoard</A>
-<DD>&nbsp;
+<DD>This <CODE>EventDelegate</CODE> can be used by subclasses to send the result events
 <DT><A HREF="./net/objectzoo/ebc/impl/ResultBoard.html#resultEvent()"><B>resultEvent()</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ResultBoard.html" title="class in net.objectzoo.ebc.impl">ResultBoard</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> that is used to send the output of this EBC
+<DD>Provides an <CODE>Event</CODE> that is used to send the output of this EBC
 <DT><A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html#resultEvent"><B>resultEvent</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard</A>
-<DD>&nbsp;
+<DD>This <CODE>EventDelegate</CODE> can be used by subclasses to send the result events
 <DT><A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html#resultEvent()"><B>resultEvent()</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> that is used to send the output of this EBC
+<DD>Provides an <CODE>Event</CODE> that is used to send the output of this EBC
 <DT><A HREF="./net/objectzoo/ebc/SendsResult.html#resultEvent()"><B>resultEvent()</B></A> - 
 Method in interface net.objectzoo.ebc.<A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> that is used to send the output of this EBC
+<DD>Provides an <CODE>Event</CODE> that is used to send the output of this EBC
 </DL>
 <HR>
 <A NAME="_S_"><!-- --></A><H2>
@@ -687,10 +817,12 @@ Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/SignalB
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBase</A>
 <DD>This method can be used by subclasses to send the signal.
 <DT><A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><B>SendsResult</B></A>&lt;<A HREF="./net/objectzoo/ebc/SendsResult.html" title="type parameter in SendsResult">ResultParameter</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that <code>SendsResult</code> is capable of sending the output of it's work to subscribed
- listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event</CODE></A> to do so.<DT><A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><B>SendsSignal</B></A> - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that <code>SendsSignal</code> is capable of sending a signal when it's work completes to
- subscribed listeners and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> to do so.<DT><A HREF="./net/objectzoo/ebc/state/State.html#set(Value)"><B>set(Value)</B></A> - 
+ listeners and thus provides an <CODE>Event</CODE> to do so.<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder"><B>SendsResultConnector</B></A>&lt;<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="type parameter in SendsResultConnector">T</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/builder/package-summary.html">net.objectzoo.ebc.builder</A><DD>Instances of this class allow the DSL like definition of EBC flows by attaching the next EBC to a
+ flow that ended with a <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A> or <CODE>Event</CODE>.<DT><A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><B>SendsSignal</B></A> - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that <code>SendsSignal</code> is capable of sending a signal when it's work completes to
+ subscribed listeners and thus provides an <CODE>Event0</CODE> to do so.<DT><A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html" title="class in net.objectzoo.ebc.builder"><B>SendsSignalConnector</B></A> - Class in <A HREF="./net/objectzoo/ebc/builder/package-summary.html">net.objectzoo.ebc.builder</A><DD>Instances of this class allow the DSL like definition of EBC flows by attaching the next EBC to a
+ flow that ended with a <A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A> or <CODE>Event0</CODE>.<DT><A HREF="./net/objectzoo/ebc/state/State.html#set(Value)"><B>set(Value)</B></A> - 
 Method in interface net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state">State</A>
-<DD>&nbsp;
+<DD>Set the current state to a new value
 <DT><A HREF="./net/objectzoo/ebc/join/JoinInputStorage.html#setInput1(Input1)"><B>setInput1(Input1)</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinInputStorage.html" title="class in net.objectzoo.ebc.join">JoinInputStorage</A>
 <DD>Store the input1 in this storage.
@@ -706,37 +838,37 @@ Method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/Pair.ht
 <DT><A HREF="./net/objectzoo/ebc/impl/SignalBase.html" title="class in net.objectzoo.ebc.impl"><B>SignalBase</B></A> - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/SignalBase.html#SignalBase()"><B>SignalBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/SignalBase.html" title="class in net.objectzoo.ebc.impl">SignalBase</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>SignalBoard</B></A> - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/SignalBoard.html#SignalBoard()"><B>SignalBoard()</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>SignalBoard</B></A> - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for a board that <A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/SignalBoard.html#SignalBoard()"><B>SignalBoard()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl">SignalBoard</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/SignalConnector.html" title="class in net.objectzoo.ebc.builder"><B>SignalConnector</B></A> - Class in <A HREF="./net/objectzoo/ebc/builder/package-summary.html">net.objectzoo.ebc.builder</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html#signalEvent"><B>signalEvent</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html#signalEvent"><B>signalEvent</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBoard</A>
-<DD>&nbsp;
+<DD>This <CODE>Event0Delegate</CODE> can be used by subclasses to send the signal event
 <DT><A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html#signalEvent()"><B>signalEvent()</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBoard</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC
+<DD>Provides an <CODE>Event0</CODE> that is used to send the work completed signal of this EBC
 <DT><A HREF="./net/objectzoo/ebc/impl/SignalBoard.html#signalEvent"><B>signalEvent</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl">SignalBoard</A>
-<DD>&nbsp;
+<DD>This <CODE>Event0Delegate</CODE> can be used by subclasses to send the signal event
 <DT><A HREF="./net/objectzoo/ebc/impl/SignalBoard.html#signalEvent()"><B>signalEvent()</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/SignalBoard.html" title="class in net.objectzoo.ebc.impl">SignalBoard</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC
+<DD>Provides an <CODE>Event0</CODE> that is used to send the work completed signal of this EBC
 <DT><A HREF="./net/objectzoo/ebc/impl/StartAndSignalBoard.html#signalEvent"><B>signalEvent</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBoard</A>
-<DD>&nbsp;
+<DD>This <CODE>Event0Delegate</CODE> can be used by subclasses to send the signal event
 <DT><A HREF="./net/objectzoo/ebc/impl/StartAndSignalBoard.html#signalEvent()"><B>signalEvent()</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBoard</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC
+<DD>Provides an <CODE>Event0</CODE> that is used to send the work completed signal of this EBC
 <DT><A HREF="./net/objectzoo/ebc/SendsSignal.html#signalEvent()"><B>signalEvent()</B></A> - 
 Method in interface net.objectzoo.ebc.<A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC
+<DD>Provides an <CODE>Event0</CODE> that is used to send the work completed signal of this EBC
 <DT><A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html#signalEvent()"><B>signalEvent()</B></A> - 
 Method in class net.objectzoo.ebc.split.<A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split">SplitProcessToSignal</A>
-<DD>&nbsp;
+<DD>Provides an <CODE>Event0</CODE> that is used to send the work completed signal of this EBC
 <DT><A HREF="./net/objectzoo/ebc/split/SplitProcess.html" title="class in net.objectzoo.ebc.split"><B>SplitProcess</B></A>&lt;<A HREF="./net/objectzoo/ebc/split/SplitProcess.html" title="type parameter in SplitProcess">Parameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/split/package-summary.html">net.objectzoo.ebc.split</A><DD>The <code>SplitProcess</code> distributes the process and its parameter to multiple subscribers.<DT><A HREF="./net/objectzoo/ebc/split/SplitProcess.html#SplitProcess()"><B>SplitProcess()</B></A> - 
 Constructor for class net.objectzoo.ebc.split.<A HREF="./net/objectzoo/ebc/split/SplitProcess.html" title="class in net.objectzoo.ebc.split">SplitProcess</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split"><B>SplitProcessToSignal</B></A>&lt;<A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html" title="type parameter in SplitProcessToSignal">Parameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/split/package-summary.html">net.objectzoo.ebc.split</A><DD>The <code>SplitProcess</code> distributes the process and its parameter to multiple regular
+<DT><A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split"><B>SplitProcessToSignal</B></A>&lt;<A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html" title="type parameter in SplitProcessToSignal">Parameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/split/package-summary.html">net.objectzoo.ebc.split</A><DD>The <code>SplitProcessToSignal</code> distributes the process and its parameter to multiple regular
  subscribers and to multiple signal subscribers.<DT><A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html#SplitProcessToSignal()"><B>SplitProcessToSignal()</B></A> - 
 Constructor for class net.objectzoo.ebc.split.<A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split">SplitProcessToSignal</A>
 <DD>&nbsp;
@@ -745,10 +877,11 @@ Constructor for class net.objectzoo.ebc.split.<A HREF="./net/objectzoo/ebc/split
 <DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#start(java.lang.Class)"><B>start(Class&lt;FlowType&gt;)</B></A> - 
 Method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor">FlowExecutor</A>
-<DD>&nbsp;
+<DD>Creates the flow determined by the given flow class using this executor's <A HREF="./net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by <A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#start(FlowType)"><CODE>FlowExecutor.start(CanStart)</CODE></A>
 <DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#start(FlowType)"><B>start(FlowType)</B></A> - 
 Static method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor">FlowExecutor</A>
-<DD>&nbsp;
+<DD>Executes the given <A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> flow
 <DT><A HREF="./net/objectzoo/ebc/impl/StartAndResultBase.html#start()"><B>start()</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl">StartAndResultBase</A>
 <DD>This method is to be provided by subclasses to actually implement what's taking place when
@@ -763,112 +896,121 @@ Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartBa
  the start action is invoked.
 <DT><A HREF="./net/objectzoo/ebc/split/SplitSignal.html#start()"><B>start()</B></A> - 
 Method in class net.objectzoo.ebc.split.<A HREF="./net/objectzoo/ebc/split/SplitSignal.html" title="class in net.objectzoo.ebc.split">SplitSignal</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/state/StartAndClearThreadLocalStateStore.html#start()"><B>start()</B></A> - 
-Method in class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">StartAndClearThreadLocalStateStore</A>
-<DD>&nbsp;
+<DD>This method is to be provided by subclasses to actually implement what's taking place when
+ the start action is invoked.
+<DT><A HREF="./net/objectzoo/ebc/state/async/StartAndClearThreadLocalStateStore.html#start()"><B>start()</B></A> - 
+Method in class net.objectzoo.ebc.state.async.<A HREF="./net/objectzoo/ebc/state/async/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">StartAndClearThreadLocalStateStore</A>
+<DD>This method is to be provided by subclasses to actually implement what's taking place when
+ the start action is invoked.
 <DT><A HREF="./net/objectzoo/ebc/CanStart.html#startAction()"><B>startAction()</B></A> - 
 Method in interface net.objectzoo.ebc.<A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to start this EBC
+<DD>Provides an <CODE>Action0</CODE> that is used to start this EBC
 <DT><A HREF="./net/objectzoo/ebc/impl/StartBoard.html#startAction"><B>startAction</B></A> - 
 Variable in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl">StartBoard</A>
-<DD>&nbsp;
+<DD>An <CODE>Event0Delegate</CODE> that can be used by subclasses to obtain the start actions
 <DT><A HREF="./net/objectzoo/ebc/impl/StartBoard.html#startAction()"><B>startAction()</B></A> - 
 Method in class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl">StartBoard</A>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to start this EBC
+<DD>Provides an <CODE>Action0</CODE> that is used to start this EBC
 <DT><A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html#startAction()"><B>startAction()</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>
-<DD>&nbsp;
+<DD>Provides an <CODE>Action0</CODE> that is used to start this EBC
 <DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html#startAction1()"><B>startAction1()</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join">JoinSignals</A>
-<DD>&nbsp;
+<DD>Provides an <CODE>Action0</CODE> that is used to set this EBCs first input
 <DT><A HREF="./net/objectzoo/ebc/join/JoinSignals.html#startAction2()"><B>startAction2()</B></A> - 
 Method in class net.objectzoo.ebc.join.<A HREF="./net/objectzoo/ebc/join/JoinSignals.html" title="class in net.objectzoo.ebc.join">JoinSignals</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/state/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state"><B>StartAndClearThreadLocalStateStore</B></A> - Class in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/state/StartAndClearThreadLocalStateStore.html#StartAndClearThreadLocalStateStore()"><B>StartAndClearThreadLocalStateStore()</B></A> - 
-Constructor for class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">StartAndClearThreadLocalStateStore</A>
+<DD>Provides an <CODE>Action0</CODE> that is used to start this EBCs second input
+<DT><A HREF="./net/objectzoo/ebc/state/async/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async"><B>StartAndClearThreadLocalStateStore</B></A> - Class in <A HREF="./net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A><DD>This class implements a decorator EBC that simply forwards the processing to the next component
+ in the flow and clears the <A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async"><CODE>ThreadLocalStateStore</CODE></A> after the flows execution.<DT><A HREF="./net/objectzoo/ebc/state/async/StartAndClearThreadLocalStateStore.html#StartAndClearThreadLocalStateStore()"><B>StartAndClearThreadLocalStateStore()</B></A> - 
+Constructor for class net.objectzoo.ebc.state.async.<A HREF="./net/objectzoo/ebc/state/async/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">StartAndClearThreadLocalStateStore</A>
 <DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl"><B>StartAndResultBase</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/StartAndResultBase.html" title="type parameter in StartAndResultBase">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> and <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/StartAndResultBase.html#StartAndResultBase()"><B>StartAndResultBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndResultBase.html" title="class in net.objectzoo.ebc.impl">StartAndResultBase</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>StartAndResultBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html" title="type parameter in StartAndResultBoard">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html#StartAndResultBoard()"><B>StartAndResultBoard()</B></A> - 
+<DD>Creates a new <code>StartAndResultBase</code>
+<DT><A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl"><B>StartAndResultBoard</B></A>&lt;<A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html" title="type parameter in StartAndResultBoard">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for a board that <A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> and <A HREF="./net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html#StartAndResultBoard()"><B>StartAndResultBoard()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><B>StartAndResultFlow</B></A>&lt;<A HREF="./net/objectzoo/ebc/StartAndResultFlow.html" title="type parameter in StartAndResultFlow">ResultParameter</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that is capable of being invoked with a possible outcome of a result being sent.<DT><A HREF="./net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="class in net.objectzoo.ebc.executor"><B>StartAndResultFlowToFunc0Adapter</B></A>&lt;<A HREF="./net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="type parameter in StartAndResultFlowToFunc0Adapter">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html#StartAndResultFlowToFunc0Adapter(net.objectzoo.ebc.StartAndResultFlow)"><B>StartAndResultFlowToFunc0Adapter(StartAndResultFlow&lt;ResultParameter&gt;)</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><B>StartAndResultFlow</B></A>&lt;<A HREF="./net/objectzoo/ebc/StartAndResultFlow.html" title="type parameter in StartAndResultFlow">ResultParameter</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that is capable of being invoked with a possible outcome of a result being sent.<DT><A HREF="./net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="class in net.objectzoo.ebc.executor"><B>StartAndResultFlowToFunc0Adapter</B></A>&lt;<A HREF="./net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="type parameter in StartAndResultFlowToFunc0Adapter">ResultParameter</A>&gt; - Class in <A HREF="./net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A><DD>This adapter adapts an <A HREF="./net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> to a <CODE>Func0</CODE>.<DT><A HREF="./net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html#StartAndResultFlowToFunc0Adapter(net.objectzoo.ebc.StartAndResultFlow)"><B>StartAndResultFlowToFunc0Adapter(StartAndResultFlow&lt;ResultParameter&gt;)</B></A> - 
 Constructor for class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="class in net.objectzoo.ebc.executor">StartAndResultFlowToFunc0Adapter</A>
-<DD>&nbsp;
+<DD>Creates a new <code>StartAndResultFlowToFunc0Adapter</code>
 <DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(java.lang.Class)"><B>startAndReturnResult(Class&lt;FlowType&gt;)</B></A> - 
 Method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor">FlowExecutor</A>
-<DD>&nbsp;
+<DD>Creates the flow determined by the given flow class using this executor's <A HREF="./net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by
+ <A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(FlowType)"><CODE>FlowExecutor.startAndReturnResult(StartAndResultFlow)</CODE></A>
 <DT><A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(FlowType)"><B>startAndReturnResult(FlowType)</B></A> - 
 Static method in class net.objectzoo.ebc.executor.<A HREF="./net/objectzoo/ebc/executor/FlowExecutor.html" title="class in net.objectzoo.ebc.executor">FlowExecutor</A>
-<DD>&nbsp;
+<DD>Executes the given <A HREF="./net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> flow and returns the final result.
 <DT><A HREF="./net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl"><B>StartAndSignalBase</B></A> - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> and <A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/StartAndSignalBase.html#StartAndSignalBase()"><B>StartAndSignalBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBase</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/impl/StartAndSignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>StartAndSignalBoard</B></A> - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/StartAndSignalBoard.html#StartAndSignalBoard()"><B>StartAndSignalBoard()</B></A> - 
+<DD>Creates a new <code>StartAndSignalBase</code>
+<DT><A HREF="./net/objectzoo/ebc/impl/StartAndSignalBoard.html" title="class in net.objectzoo.ebc.impl"><B>StartAndSignalBoard</B></A> - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for a board that <A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> and <A HREF="./net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/StartAndSignalBoard.html#StartAndSignalBoard()"><B>StartAndSignalBoard()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBoard</A>
 <DD>&nbsp;
 <DT><A HREF="./net/objectzoo/ebc/StartAndSignalFlow.html" title="interface in net.objectzoo.ebc"><B>StartAndSignalFlow</B></A> - Interface in <A HREF="./net/objectzoo/ebc/package-summary.html">net.objectzoo.ebc</A><DD>An EBC that is capable of being invoked with a possible outcome of a signal being sent.<DT><A HREF="./net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl"><B>StartBase</B></A> - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for an EBC that <A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/StartBase.html#StartBase()"><B>StartBase()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartBase.html" title="class in net.objectzoo.ebc.impl">StartBase</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl"><B>StartBoard</B></A> - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/impl/StartBoard.html#StartBoard()"><B>StartBoard()</B></A> - 
+<DD>Creates a new <code>StartBase</code>
+<DT><A HREF="./net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl"><B>StartBoard</B></A> - Class in <A HREF="./net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A><DD>A base class for a board that <A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/impl/StartBoard.html#StartBoard()"><B>StartBoard()</B></A> - 
 Constructor for class net.objectzoo.ebc.impl.<A HREF="./net/objectzoo/ebc/impl/StartBoard.html" title="class in net.objectzoo.ebc.impl">StartBoard</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><B>State</B></A>&lt;<A HREF="./net/objectzoo/ebc/state/State.html" title="type parameter in State">Value</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><B>StateFactory</B></A> - Interface in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html#subscribe(net.objectzoo.delegates.Action0)"><B>subscribe(Action0)</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><B>State</B></A>&lt;<A HREF="./net/objectzoo/ebc/state/State.html" title="type parameter in State">Value</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>This interface represents a state that can be hold by an EBC.<DT><A HREF="./net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><B>StateFactory</B></A> - Interface in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>A <code>StateFactory</code> is used to create a new <A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> instances.<DT><A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html#subscribe(net.objectzoo.delegates.Action0)"><B>subscribe(Action0)</B></A> - 
 Method in class net.objectzoo.ebc.adapters.<A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html" title="class in net.objectzoo.ebc.adapters">EventToEvent0</A>
-<DD>&nbsp;
+<DD>
 </DL>
 <HR>
 <A NAME="_T_"><!-- --></A><H2>
 <B>T</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html#then(net.objectzoo.ebc.ProcessAndResultFlow)"><B>then(ProcessAndResultFlow&lt;? super T, T2&gt;)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#then(net.objectzoo.ebc.ProcessAndResultFlow)"><B>then(ProcessAndResultFlow&lt;? super T, T2&gt;)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches a <A HREF="./net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>ProcessAndResultFlow</CODE></A> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#then(net.objectzoo.ebc.ProcessAndSignalFlow)"><B>then(ProcessAndSignalFlow&lt;? super T&gt;)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches a <A HREF="./net/objectzoo/ebc/ProcessAndSignalFlow.html" title="interface in net.objectzoo.ebc"><CODE>ProcessAndSignalFlow</CODE></A> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#then(net.objectzoo.ebc.CanProcess)"><B>then(CanProcess&lt;? super T&gt;)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches a <A HREF="./net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#then(net.objectzoo.delegates.Action)"><B>then(Action&lt;? super T&gt;)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches an <CODE>Action</CODE> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#then(net.objectzoo.ebc.StartAndResultFlow)"><B>then(StartAndResultFlow&lt;T2&gt;)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches a <A HREF="./net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#then(net.objectzoo.ebc.StartAndSignalFlow)"><B>then(StartAndSignalFlow)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches a <A HREF="./net/objectzoo/ebc/StartAndSignalFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndSignalFlow</CODE></A> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#then(net.objectzoo.ebc.CanStart)"><B>then(CanStart)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches a <A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#then(net.objectzoo.delegates.Action0)"><B>then(Action0)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches an <CODE>Action0</CODE> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html#then(net.objectzoo.ebc.StartAndSignalFlow)"><B>then(StartAndSignalFlow)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html" title="class in net.objectzoo.ebc.builder">SendsSignalConnector</A>
+<DD>Attaches a <A HREF="./net/objectzoo/ebc/StartAndSignalFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndSignalFlow</CODE></A> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html#then(net.objectzoo.ebc.StartAndResultFlow)"><B>then(StartAndResultFlow&lt;T&gt;)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html" title="class in net.objectzoo.ebc.builder">SendsSignalConnector</A>
+<DD>Attaches a <A HREF="./net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html#then(net.objectzoo.ebc.CanStart)"><B>then(CanStart)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html" title="class in net.objectzoo.ebc.builder">SendsSignalConnector</A>
+<DD>Attaches a <A HREF="./net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html#then(net.objectzoo.delegates.Action0)"><B>then(Action0)</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html" title="class in net.objectzoo.ebc.builder">SendsSignalConnector</A>
+<DD>Attaches an <CODE>Action0</CODE> at the end of the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#thenSplit()"><B>thenSplit()</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches and returns a new <A HREF="./net/objectzoo/ebc/split/SplitProcess.html" title="class in net.objectzoo.ebc.split"><CODE>SplitProcess</CODE></A> to the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html#thenSplit()"><B>thenSplit()</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsSignalConnector.html" title="class in net.objectzoo.ebc.builder">SendsSignalConnector</A>
+<DD>Attaches and returns a new <A HREF="./net/objectzoo/ebc/split/SplitSignal.html" title="class in net.objectzoo.ebc.split"><CODE>SplitSignal</CODE></A> to the current flow
+<DT><A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html#thenSplitProcessToSignal()"><B>thenSplitProcessToSignal()</B></A> - 
+Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>
+<DD>Attaches and returns a new <A HREF="./net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split"><CODE>SplitProcessToSignal</CODE></A> to the current flow
+<DT><A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateFactory.html" title="class in net.objectzoo.ebc.state.async"><B>ThreadLocalStateFactory</B></A> - Class in <A HREF="./net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A><DD>A <A HREF="./net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> implementation that creates <CODE>ThreadLocalState</CODE> instances<DT><A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateFactory.html#ThreadLocalStateFactory()"><B>ThreadLocalStateFactory()</B></A> - 
+Constructor for class net.objectzoo.ebc.state.async.<A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateFactory.html" title="class in net.objectzoo.ebc.state.async">ThreadLocalStateFactory</A>
 <DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html#then(net.objectzoo.ebc.ProcessAndSignalFlow)"><B>then(ProcessAndSignalFlow&lt;? super T&gt;)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html#then(net.objectzoo.ebc.CanProcess)"><B>then(CanProcess&lt;? super T&gt;)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html#then(net.objectzoo.delegates.Action)"><B>then(Action&lt;? super T&gt;)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html#then(net.objectzoo.ebc.StartAndResultFlow)"><B>then(StartAndResultFlow&lt;T2&gt;)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html#then(net.objectzoo.ebc.StartAndSignalFlow)"><B>then(StartAndSignalFlow)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html#then(net.objectzoo.ebc.CanStart)"><B>then(CanStart)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html#then(net.objectzoo.delegates.Action0)"><B>then(Action0)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/SignalConnector.html#then(net.objectzoo.ebc.StartAndSignalFlow)"><B>then(StartAndSignalFlow)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SignalConnector.html" title="class in net.objectzoo.ebc.builder">SignalConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/SignalConnector.html#then(net.objectzoo.ebc.StartAndResultFlow)"><B>then(StartAndResultFlow&lt;T&gt;)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SignalConnector.html" title="class in net.objectzoo.ebc.builder">SignalConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/SignalConnector.html#then(net.objectzoo.ebc.CanStart)"><B>then(CanStart)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SignalConnector.html" title="class in net.objectzoo.ebc.builder">SignalConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/SignalConnector.html#then(net.objectzoo.delegates.Action0)"><B>then(Action0)</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SignalConnector.html" title="class in net.objectzoo.ebc.builder">SignalConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/ResultConnector.html#thenSplit()"><B>thenSplit()</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/builder/SignalConnector.html#thenSplit()"><B>thenSplit()</B></A> - 
-Method in class net.objectzoo.ebc.builder.<A HREF="./net/objectzoo/ebc/builder/SignalConnector.html" title="class in net.objectzoo.ebc.builder">SignalConnector</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/state/ThreadLocalStateFactory.html" title="class in net.objectzoo.ebc.state"><B>ThreadLocalStateFactory</B></A> - Class in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/state/ThreadLocalStateFactory.html#ThreadLocalStateFactory()"><B>ThreadLocalStateFactory()</B></A> - 
-Constructor for class net.objectzoo.ebc.state.<A HREF="./net/objectzoo/ebc/state/ThreadLocalStateFactory.html" title="class in net.objectzoo.ebc.state">ThreadLocalStateFactory</A>
-<DD>&nbsp;
-<DT><A HREF="./net/objectzoo/ebc/state/ThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state"><B>ThreadLocalStateStore</B></A> - Class in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>&nbsp;<DT><A HREF="./net/objectzoo/ebc/util/Pair.html#toString()"><B>toString()</B></A> - 
+<DT><A HREF="./net/objectzoo/ebc/state/async/ThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async"><B>ThreadLocalStateStore</B></A> - Class in <A HREF="./net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A><DD>The <code>ThreadLocalStateStore</code> has the responsibility to save the state values per
+ <CODE>ThreadLocalState</CODE> and per <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Thread.html?is-external=true" title="class or interface in java.lang"><CODE>Thread</CODE></A>.<DT><A HREF="./net/objectzoo/ebc/util/Pair.html#toString()"><B>toString()</B></A> - 
 Method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/Pair.html" title="class in net.objectzoo.ebc.util">Pair</A>
 <DD>
 </DL>
@@ -878,13 +1020,13 @@ Method in class net.objectzoo.ebc.util.<A HREF="./net/objectzoo/ebc/util/Pair.ht
 <DL>
 <DT><A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html#unsubscribe(net.objectzoo.delegates.Action0)"><B>unsubscribe(Action0)</B></A> - 
 Method in class net.objectzoo.ebc.adapters.<A HREF="./net/objectzoo/ebc/adapters/EventToEvent0.html" title="class in net.objectzoo.ebc.adapters">EventToEvent0</A>
-<DD>&nbsp;
+<DD>
 </DL>
 <HR>
 <A NAME="_V_"><!-- --></A><H2>
 <B>V</B></H2>
 <DL>
-<DT><A HREF="./net/objectzoo/ebc/state/ValueFactory.html" title="interface in net.objectzoo.ebc.state"><B>ValueFactory</B></A>&lt;<A HREF="./net/objectzoo/ebc/state/ValueFactory.html" title="type parameter in ValueFactory">Value</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>&nbsp;</DL>
+<DT><A HREF="./net/objectzoo/ebc/state/ValueFactory.html" title="interface in net.objectzoo.ebc.state"><B>ValueFactory</B></A>&lt;<A HREF="./net/objectzoo/ebc/state/ValueFactory.html" title="type parameter in ValueFactory">Value</A>&gt; - Interface in <A HREF="./net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A><DD>The <code>ValueFactory</code> is used to create the initial value for a <A HREF="./net/objectzoo/ebc/state/State.html" title="interface in net.objectzoo.ebc.state"><CODE>State</CODE></A> hold by an EBC.</DL>
 <HR>
 <A HREF="#_A_">A</A> <A HREF="#_B_">B</A> <A HREF="#_C_">C</A> <A HREF="#_D_">D</A> <A HREF="#_E_">E</A> <A HREF="#_F_">F</A> <A HREF="#_G_">G</A> <A HREF="#_H_">H</A> <A HREF="#_I_">I</A> <A HREF="#_J_">J</A> <A HREF="#_L_">L</A> <A HREF="#_M_">M</A> <A HREF="#_N_">N</A> <A HREF="#_O_">O</A> <A HREF="#_P_">P</A> <A HREF="#_R_">R</A> <A HREF="#_S_">S</A> <A HREF="#_T_">T</A> <A HREF="#_U_">U</A> <A HREF="#_V_">V</A> 
 
@@ -939,6 +1081,6 @@ Method in class net.objectzoo.ebc.adapters.<A HREF="./net/objectzoo/ebc/adapters
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

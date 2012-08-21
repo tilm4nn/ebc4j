@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-ProcessAndSignalBoard (EBC4J API (Version 1.1))
+ProcessAndSignalBoard (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ ProcessAndSignalBoard (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ProcessAndSignalBoard (EBC4J API (Version 1.1))";
+        parent.document.title="ProcessAndSignalBoard (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -95,6 +95,8 @@ Class ProcessAndSignalBoard&lt;ProcessParameter&gt;</H2>
       <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.impl.ProcessAndSignalBoard&lt;ProcessParameter&gt;</B>
 </PRE>
 <DL>
+<DT><DT><B>Type Parameters:</B><DD><CODE>ProcessParameter</CODE> - the type of input processed by this board</DL>
+<DL>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;ProcessParameter&gt;, <A HREF="../../../../net/objectzoo/ebc/ProcessAndSignalFlow.html" title="interface in net.objectzoo.ebc">ProcessAndSignalFlow</A>&lt;ProcessParameter&gt;, <A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A></DD>
 </DL>
 <DL>
@@ -106,6 +108,17 @@ Class ProcessAndSignalBoard&lt;ProcessParameter&gt;</H2>
 </PRE>
 
 <P>
+A base class for a board that <A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc"><CODE>CanProcess</CODE></A> and <A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A>.
+ 
+ The implementation contains the boilerplate code required to implement the interfaces and
+ provides <CODE>EventDelegate</CODE>s for action and event invocations.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>tilmann</DD>
+</DL>
 <HR>
 
 <P>
@@ -119,11 +132,11 @@ Class ProcessAndSignalBoard&lt;ProcessParameter&gt;</H2>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/impl/Event0Delegate.html?is-external=true" title="class or interface in net.objectzoo.events.impl">Event0Delegate</A></CODE></FONT></TD>
+<CODE>protected &nbsp;net.objectzoo.events.impl.Event0Delegate</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndSignalBoard.html#signalEvent">signalEvent</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This <CODE>Event0Delegate</CODE> can be used by subclasses to send the signal event</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.ProcessBoard"><!-- --></A>
@@ -162,11 +175,11 @@ Class ProcessAndSignalBoard&lt;ProcessParameter&gt;</H2>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.events.Event0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndSignalBoard.html#signalEvent()">signalEvent</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Event0</CODE> that is used to send the work completed signal of this EBC</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ProcessBoard"><!-- --></A>
@@ -212,8 +225,10 @@ Class ProcessAndSignalBoard&lt;ProcessParameter&gt;</H2>
 <A NAME="signalEvent"><!-- --></A><H3>
 signalEvent</H3>
 <PRE>
-protected final <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/impl/Event0Delegate.html?is-external=true" title="class or interface in net.objectzoo.events.impl">Event0Delegate</A> <B>signalEvent</B></PRE>
+protected final net.objectzoo.events.impl.Event0Delegate <B>signalEvent</B></PRE>
 <DL>
+<DD>This <CODE>Event0Delegate</CODE> can be used by subclasses to send the signal event
+<P>
 <DL>
 </DL>
 </DL>
@@ -248,9 +263,9 @@ public <B>ProcessAndSignalBoard</B>()</PRE>
 <A NAME="signalEvent()"><!-- --></A><H3>
 signalEvent</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A> <B>signalEvent</B>()</PRE>
+public net.objectzoo.events.Event0 <B>signalEvent</B>()</PRE>
 <DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events"><CODE>Event0</CODE></A> that is used to send the work completed signal of this EBC
+<DD>Provides an <CODE>Event0</CODE> that is used to send the work completed signal of this EBC
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/SendsSignal.html#signalEvent()">signalEvent</A></CODE> in interface <CODE><A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc">SendsSignal</A></CODE></DL>
@@ -321,6 +336,6 @@ DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

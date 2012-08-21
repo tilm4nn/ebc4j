@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-net.objectzoo.ebc.builder (EBC4J API (Version 1.1))
+net.objectzoo.ebc.builder (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ net.objectzoo.ebc.builder (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="net.objectzoo.ebc.builder (EBC4J API (Version 1.1))";
+        parent.document.title="net.objectzoo.ebc.builder (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -80,6 +80,13 @@ function windowTitle()
 <H2>
 Package net.objectzoo.ebc.builder
 </H2>
+This package contains an internal flow builder DSL implementation that can be used to combine
+ EBCs to flows
+<P>
+<B>See:</B>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#package_description"><B>Description</B></A>
+<P>
 
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
@@ -88,18 +95,31 @@ Package net.objectzoo.ebc.builder
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/builder/Flow.html" title="class in net.objectzoo.ebc.builder">Flow</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>This class contains some <code>static</code> methods used to start a DSL sentence used to create a
+ flow of EBCs</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector&lt;T&gt;</A></B></TD>
-<TD>&nbsp;</TD>
+<TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector&lt;T&gt;</A></B></TD>
+<TD>Instances of this class allow the DSL like definition of EBC flows by attaching the next EBC to a
+ flow that ended with a <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A> or <CODE>Event</CODE>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/builder/SignalConnector.html" title="class in net.objectzoo.ebc.builder">SignalConnector</A></B></TD>
-<TD>&nbsp;</TD>
+<TD WIDTH="15%"><B><A HREF="../../../../net/objectzoo/ebc/builder/SendsSignalConnector.html" title="class in net.objectzoo.ebc.builder">SendsSignalConnector</A></B></TD>
+<TD>Instances of this class allow the DSL like definition of EBC flows by attaching the next EBC to a
+ flow that ended with a <A HREF="../../../../net/objectzoo/ebc/SendsSignal.html" title="interface in net.objectzoo.ebc"><CODE>SendsSignal</CODE></A> or <CODE>Event0</CODE>.</TD>
 </TR>
 </TABLE>
 &nbsp;
+
+<P>
+<A NAME="package_description"><!-- --></A><H2>
+Package net.objectzoo.ebc.builder Description
+</H2>
+
+<P>
+This package contains an internal flow builder DSL implementation that can be used to combine
+ EBCs to flows
+<P>
 
 <P>
 <DL>
@@ -158,6 +178,6 @@ Package net.objectzoo.ebc.builder
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

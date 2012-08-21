@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-StartAndResultFlowToFunc0Adapter (EBC4J API (Version 1.1))
+StartAndResultFlowToFunc0Adapter (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ StartAndResultFlowToFunc0Adapter (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="StartAndResultFlowToFunc0Adapter (EBC4J API (Version 1.1))";
+        parent.document.title="StartAndResultFlowToFunc0Adapter (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -94,14 +94,28 @@ Class StartAndResultFlowToFunc0Adapter&lt;ResultParameter&gt;</H2>
   <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.executor.StartAndResultFlowToFunc0Adapter&lt;ResultParameter&gt;</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Func0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Func0</A>&lt;ResultParameter&gt;</DD>
+<DT><DT><B>Type Parameters:</B><DD><CODE>ResultParameter</CODE> - the result parameter type of the flow</DL>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>net.objectzoo.delegates.Func0&lt;ResultParameter&gt;</DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>StartAndResultFlowToFunc0Adapter&lt;ResultParameter&gt;</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Func0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Func0</A>&lt;ResultParameter&gt;</DL>
+<DT><PRE>public class <B>StartAndResultFlowToFunc0Adapter&lt;ResultParameter&gt;</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements net.objectzoo.delegates.Func0&lt;ResultParameter&gt;</DL>
 </PRE>
 
 <P>
+This adapter adapts an <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> to a <CODE>Func0</CODE>. It does this by subscribing
+ to the final result event for each single <CODE>Func0</CODE> invocation and returning the last result
+ send after the flow execution before finally unsubscribing from the event again and returning to
+ the caller. Doing so this implementation is inherently not thread save regarding multiple
+ simultaneous execution of the flow and flows that contain asynchronous execution chains.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>tilmann</DD>
+</DL>
 <HR>
 
 <P>
@@ -118,7 +132,7 @@ Class StartAndResultFlowToFunc0Adapter&lt;ResultParameter&gt;</H2>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html#StartAndResultFlowToFunc0Adapter(net.objectzoo.ebc.StartAndResultFlow)">StartAndResultFlowToFunc0Adapter</A></B>(<A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;<A HREF="../../../../net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="type parameter in StartAndResultFlowToFunc0Adapter">ResultParameter</A>&gt;&nbsp;theFlow)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>StartAndResultFlowToFunc0Adapter</code></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -166,6 +180,10 @@ StartAndResultFlowToFunc0Adapter</H3>
 <PRE>
 public <B>StartAndResultFlowToFunc0Adapter</B>(<A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;<A HREF="../../../../net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="type parameter in StartAndResultFlowToFunc0Adapter">ResultParameter</A>&gt;&nbsp;theFlow)</PRE>
 <DL>
+<DD>Creates a new <code>StartAndResultFlowToFunc0Adapter</code>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>theFlow</CODE> - the flow to be adapted</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -184,7 +202,7 @@ invoke</H3>
 public <A HREF="../../../../net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="type parameter in StartAndResultFlowToFunc0Adapter">ResultParameter</A> <B>invoke</B>()</PRE>
 <DL>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Func0.html?is-external=true#invoke()" title="class or interface in net.objectzoo.delegates">invoke</A></CODE> in interface <CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Func0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Func0</A>&lt;<A HREF="../../../../net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="type parameter in StartAndResultFlowToFunc0Adapter">ResultParameter</A>&gt;</CODE></DL>
+<DT><B>Specified by:</B><DD><CODE>invoke</CODE> in interface <CODE>net.objectzoo.delegates.Func0&lt;<A HREF="../../../../net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="type parameter in StartAndResultFlowToFunc0Adapter">ResultParameter</A>&gt;</CODE></DL>
 </DD>
 <DD><DL>
 </DL>
@@ -251,6 +269,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Join (EBC4J API (Version 1.1))
+Join (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Join (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Join (EBC4J API (Version 1.1))";
+        parent.document.title="Join (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -114,11 +114,18 @@ This is a class that can be used to implement Join EBCs. The class implements th
  input and send results.
  
  The Join waits for every input to be set at least once before creating a result event. Once both
- inputs have been set an output is created and sent for each single input invocation until the
- Join is reset again. If reset the procedure to wait for both inputs starts from the beginning.
+ inputs have been set an output is created and sent. After that there are two different modes of
+ operation depending on the <code>resetAfterResultEvent</code> parameter setting.
  
- To reset the Join the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()"><CODE>resetAction()</CODE></A> can be invoked. If the <code>resetAfterResultEvent</code>
- parameter is set at construction time the Join is automatically reset after each result event.
+ If <code>resetAfterResultEvent</code> is set to <code>true</code> (which is the default) then after each
+ result event the two input values are reset and the procedure to wait for both inputs starts from
+ the beginning.
+ 
+ If <code>resetAfterResultEvent</code> is set to <code>false</code> then for each following single input
+ invocation a new output is created and sent until the Join is manually reset again. If reset the
+ procedure to wait for both inputs starts from the beginning.
+ 
+ To manually reset the Join the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()"><CODE>resetAction()</CODE></A> can be invoked.
  
  To actually create the output an instance of <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> is used.
 <P>
@@ -145,7 +152,7 @@ This is a class that can be used to implement Join EBCs. The class implements th
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY">DEFAULT_STATE_FACTORY</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A>s that are not configured with their own</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="fields_inherited_from_class_net.objectzoo.ebc.impl.ResultBoard"><!-- --></A>
@@ -165,6 +172,14 @@ This is a class that can be used to implement Join EBCs. The class implements th
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 <TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
 <B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory)">Join</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputCreator,
+     <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>Join</code> using the given <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to create the output of
+ the <code>Join</code>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)">Join</A></B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputCreator,
@@ -187,27 +202,27 @@ This is a class that can be used to implement Join EBCs. The class implements th
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>&gt;</CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input1Action()">input1Action</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input one to this Join</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action</CODE> that is used to send input one to this Join</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>&gt;</CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#input2Action()">input2Action</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input two to this Join</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action</CODE> that is used to send input two to this Join</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/Join.html#resetAction()">resetAction</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to reset this Join</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action0</CODE> that is used to reset this Join</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ResultBase"><!-- --></A>
@@ -255,6 +270,8 @@ DEFAULT_STATE_FACTORY</H3>
 <PRE>
 public static <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A> <B>DEFAULT_STATE_FACTORY</B></PRE>
 <DL>
+<DD>The <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A>s that are not configured with their own
+<P>
 <DL>
 </DL>
 </DL>
@@ -269,6 +286,21 @@ public static <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" ti
 </TR>
 </TABLE>
 
+<A NAME="Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory)"><!-- --></A><H3>
+Join</H3>
+<PRE>
+public <B>Join</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,? super <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,? extends <A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputCreator,
+            <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</PRE>
+<DL>
+<DD>Creates a new <code>Join</code> using the given <A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to create the output of
+ the <code>Join</code>.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>outputCreator</CODE> - the output creator to be used<DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this <code>Join</code>. If <code>null</code> is given
+        then the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>DEFAULT_STATE_FACTORY</CODE></A> is used.</DL>
+</DL>
+<HR>
+
 <A NAME="Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)"><!-- --></A><H3>
 Join</H3>
 <PRE>
@@ -280,9 +312,8 @@ public <B>Join</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator
  the <code>Join</code>.
 <P>
 <DL>
-<DT><B>Parameters:</B><DD><CODE>outputCreator</CODE> - the output creator to be used<DD><CODE>inputStorageProvider</CODE> - the <CODE>JoinInputStorageProvider</CODE> to be used by this <code>Join</code>. If <code>null</code>
-        is given then the <CODE>#DEFAULT_INPUT_STORAGE_PROVIDER</CODE> is used or if that is also
-        <code>null</code> a <CODE>BasicInputStorageProvider</CODE> is created.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event</DL>
+<DT><B>Parameters:</B><DD><CODE>outputCreator</CODE> - the output creator to be used<DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this <code>Join</code>. If <code>null</code> is given
+        then the <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>DEFAULT_STATE_FACTORY</CODE></A> is used.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the <code>Join</code> is automatically reset after each result event</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -298,9 +329,9 @@ public <B>Join</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinOutputCreator
 <A NAME="input1Action()"><!-- --></A><H3>
 input1Action</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>&gt; <B>input1Action</B>()</PRE>
+public net.objectzoo.delegates.Action&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>&gt; <B>input1Action</B>()</PRE>
 <DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input one to this Join
+<DD>Provides an <CODE>Action</CODE> that is used to send input one to this Join
 <P>
 <DD><DL>
 
@@ -312,9 +343,9 @@ public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.h
 <A NAME="input2Action()"><!-- --></A><H3>
 input2Action</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>&gt; <B>input2Action</B>()</PRE>
+public net.objectzoo.delegates.Action&lt;<A HREF="../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>&gt; <B>input2Action</B>()</PRE>
 <DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input two to this Join
+<DD>Provides an <CODE>Action</CODE> that is used to send input two to this Join
 <P>
 <DD><DL>
 
@@ -326,9 +357,9 @@ public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.h
 <A NAME="resetAction()"><!-- --></A><H3>
 resetAction</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A> <B>resetAction</B>()</PRE>
+public net.objectzoo.delegates.Action0 <B>resetAction</B>()</PRE>
 <DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to reset this Join
+<DD>Provides an <CODE>Action0</CODE> that is used to reset this Join
 <P>
 <DD><DL>
 
@@ -396,6 +427,6 @@ DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

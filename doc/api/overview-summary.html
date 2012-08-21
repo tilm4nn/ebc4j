@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Overview (EBC4J API (Version 1.1))
+Overview (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Overview (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Overview (EBC4J API (Version 1.1))";
+        parent.document.title="Overview (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -79,9 +79,10 @@ function windowTitle()
 <HR>
 <CENTER>
 <H1>
-<h1>EBC4J API</h1>
+<h1>EBC4J API 1.2</h1>
 </H1>
 </CENTER>
+EBC4J API
 
 EBC4J is a generic Java API that can be used to implement event based components.
 <P>
@@ -101,19 +102,20 @@ EBC4J is a generic Java API that can be used to implement event based components
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/adapters/package-summary.html">net.objectzoo.ebc.adapters</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>This package contains some adapter classes</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/builder/package-summary.html">net.objectzoo.ebc.builder</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>This package contains an internal flow builder DSL implementation that can be used to combine
+ EBCs to flows</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/executor/package-summary.html">net.objectzoo.ebc.executor</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>This package contains classes that help when there is need to synchronously execute an EBC flow.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/impl/package-summary.html">net.objectzoo.ebc.impl</A></B></TD>
-<TD>This package contains base classes that can be used to implement EBCs.</TD>
+<TD>This package contains base classes that can be used to implement EBCs and boards.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A></B></TD>
@@ -122,15 +124,21 @@ EBC4J is a generic Java API that can be used to implement event based components
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/map/package-summary.html">net.objectzoo.ebc.map</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>This package contains EBCs map between different values in an EBC flow.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/split/package-summary.html">net.objectzoo.ebc.split</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>This package contains EBCs that allow to split EBC flows.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>This package contains interfaces and classes that are use to implement different state holding
+ mechanisms for EBCs.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A></B></TD>
+<TD>This package contains implementations that are used to implement state holding mechanisms for
+ EBCs executed in asynchronous flows.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="net/objectzoo/ebc/test/package-summary.html">net.objectzoo.ebc.test</A></B></TD>
@@ -145,12 +153,27 @@ EBC4J is a generic Java API that can be used to implement event based components
 <P>
 &nbsp;<A NAME="overview_description"><!-- --></A>
 <P>
+<h1>EBC4J API</h1>
 <p>
 EBC4J is a generic Java API that can be used to implement event based components.
 It builds upon the actions and events of the Events4J API and provides base and
 helper classes that can be used to create EBCs for loosely coupled systems, e.g.
-the implementation of a flow design. 
+the implementation of a flow design.
 </p>
+<p>
+It is open source software released under the terms of the <a href="https://object-zoo.assembla.com/spaces/ebc4j/wiki/License">MIT License</a>.
+</p>
+<h2>Documentation</h2>
+<ul>
+<li>
+<a target="_top" href="https://object-zoo.assembla.com/spaces/ebc4j/wiki">
+The non-JavaDoc tutorial and documentation</a>
+</li>
+<li>
+<a href="api/index.html">The JavaDoc of the API</a>
+</li>
+</ul>
+</ul>
 <P>
 
 <P>
@@ -208,6 +231,6 @@ the implementation of a flow design.
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

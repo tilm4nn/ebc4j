@@ -7,5 +7,6 @@ net.objectzoo.ebc.join
 net.objectzoo.ebc.map
 net.objectzoo.ebc.split
 net.objectzoo.ebc.state
+net.objectzoo.ebc.state.async
 net.objectzoo.ebc.test
 net.objectzoo.ebc.util

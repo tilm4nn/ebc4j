@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-CanProcess (EBC4J API (Version 1.1))
+CanProcess (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ CanProcess (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="CanProcess (EBC4J API (Version 1.1))";
+        parent.document.title="CanProcess (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -95,7 +95,7 @@ Interface CanProcess&lt;ProcessParameter&gt;</H2>
 <DT><B>All Known Subinterfaces:</B> <DD><A HREF="../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc">ProcessAndResultFlow</A>&lt;ProcessParameter,ResultParameter&gt;, <A HREF="../../../net/objectzoo/ebc/ProcessAndSignalFlow.html" title="interface in net.objectzoo.ebc">ProcessAndSignalFlow</A>&lt;ProcessParameter&gt;</DD>
 </DL>
 <DL>
-<DT><B>All Known Implementing Classes:</B> <DD><A HREF="../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>, <A HREF="../../../net/objectzoo/ebc/map/MapPairToItem1.html" title="class in net.objectzoo.ebc.map">MapPairToItem1</A>, <A HREF="../../../net/objectzoo/ebc/map/MapPairToItem2.html" title="class in net.objectzoo.ebc.map">MapPairToItem2</A>, <A HREF="../../../net/objectzoo/ebc/state/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">ProcessAndClearThreadLocalStateStore</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBoard</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBoard</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl">ProcessBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">ProcessBoard</A>, <A HREF="../../../net/objectzoo/ebc/split/SplitProcess.html" title="class in net.objectzoo.ebc.split">SplitProcess</A>, <A HREF="../../../net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split">SplitProcessToSignal</A></DD>
+<DT><B>All Known Implementing Classes:</B> <DD><A HREF="../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal</A>, <A HREF="../../../net/objectzoo/ebc/map/MapPairToItem1.html" title="class in net.objectzoo.ebc.map">MapPairToItem1</A>, <A HREF="../../../net/objectzoo/ebc/map/MapPairToItem2.html" title="class in net.objectzoo.ebc.map">MapPairToItem2</A>, <A HREF="../../../net/objectzoo/ebc/state/async/ProcessAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">ProcessAndClearThreadLocalStateStore</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndResultBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndResultBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndResultBoard</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndSignalBase.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessAndSignalBoard.html" title="class in net.objectzoo.ebc.impl">ProcessAndSignalBoard</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessBase.html" title="class in net.objectzoo.ebc.impl">ProcessBase</A>, <A HREF="../../../net/objectzoo/ebc/impl/ProcessBoard.html" title="class in net.objectzoo.ebc.impl">ProcessBoard</A>, <A HREF="../../../net/objectzoo/ebc/split/SplitProcess.html" title="class in net.objectzoo.ebc.split">SplitProcess</A>, <A HREF="../../../net/objectzoo/ebc/split/SplitProcessToSignal.html" title="class in net.objectzoo.ebc.split">SplitProcessToSignal</A></DD>
 </DL>
 <HR>
 <DL>
@@ -103,7 +103,7 @@ Interface CanProcess&lt;ProcessParameter&gt;</H2>
 </PRE>
 
 <P>
-An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A>
+An EBC that <code>CanProcess</code> is capable of processing input and thus provides an <CODE>Action</CODE>
  to do so.
 <P>
 
@@ -126,11 +126,11 @@ An EBC that <code>CanProcess</code> is capable of processing input and thus prov
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../net/objectzoo/ebc/CanProcess.html" title="type parameter in CanProcess">ProcessParameter</A>&gt;</CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action&lt;<A HREF="../../../net/objectzoo/ebc/CanProcess.html" title="type parameter in CanProcess">ProcessParameter</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../net/objectzoo/ebc/CanProcess.html#processAction()">processAction</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input to this EBC</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action</CODE> that is used to send input to this EBC</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -149,9 +149,9 @@ An EBC that <code>CanProcess</code> is capable of processing input and thus prov
 <A NAME="processAction()"><!-- --></A><H3>
 processAction</H3>
 <PRE>
-<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action</A>&lt;<A HREF="../../../net/objectzoo/ebc/CanProcess.html" title="type parameter in CanProcess">ProcessParameter</A>&gt; <B>processAction</B>()</PRE>
+net.objectzoo.delegates.Action&lt;<A HREF="../../../net/objectzoo/ebc/CanProcess.html" title="type parameter in CanProcess">ProcessParameter</A>&gt; <B>processAction</B>()</PRE>
 <DL>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action</CODE></A> that is used to send input to this EBC
+<DD>Provides an <CODE>Action</CODE> that is used to send input to this EBC
 <P>
 <DD><DL>
 
@@ -219,6 +219,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHO
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

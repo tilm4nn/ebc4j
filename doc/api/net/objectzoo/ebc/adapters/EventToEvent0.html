@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-EventToEvent0 (EBC4J API (Version 1.1))
+EventToEvent0 (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ EventToEvent0 (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="EventToEvent0 (EBC4J API (Version 1.1))";
+        parent.document.title="EventToEvent0 (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -94,14 +94,25 @@ Class EventToEvent0&lt;T&gt;</H2>
   <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.adapters.EventToEvent0&lt;T&gt;</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A></DD>
+<DT><DT><B>Type Parameters:</B><DD><CODE>T</CODE> - The <CODE>Event</CODE>'s parameter type</DL>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>net.objectzoo.events.Event0</DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>EventToEvent0&lt;T&gt;</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A></DL>
+<DT><PRE>public class <B>EventToEvent0&lt;T&gt;</B><DT>extends <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements net.objectzoo.events.Event0</DL>
 </PRE>
 
 <P>
+Adapts an <CODE>Event</CODE> to provide the <CODE>Event0</CODE> interface. The implementations just adapts
+ all subscribed <CODE>Action0</CODE> instances with the <A HREF="../../../../net/objectzoo/ebc/adapters/Action0ToAction.html" title="class in net.objectzoo.ebc.adapters"><CODE>Action0ToAction</CODE></A> adapter.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>tilmann</DD>
+</DL>
 <HR>
 
 <P>
@@ -115,10 +126,10 @@ Class EventToEvent0&lt;T&gt;</H2>
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html#EventToEvent0(net.objectzoo.events.Event)">EventToEvent0</A></B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events">Event</A>&lt;<A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html" title="type parameter in EventToEvent0">T</A>&gt;&nbsp;event)</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html#EventToEvent0(net.objectzoo.events.Event)">EventToEvent0</A></B>(net.objectzoo.events.Event&lt;<A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html" title="type parameter in EventToEvent0">T</A>&gt;&nbsp;event)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>EventToEvent0</code> adapting the given <CODE>Event</CODE> instance</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -149,18 +160,18 @@ Class EventToEvent0&lt;T&gt;</H2>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html#subscribe(net.objectzoo.delegates.Action0)">subscribe</A></B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A>&nbsp;action)</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html#subscribe(net.objectzoo.delegates.Action0)">subscribe</A></B>(net.objectzoo.delegates.Action0&nbsp;action)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html#unsubscribe(net.objectzoo.delegates.Action0)">unsubscribe</A></B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A>&nbsp;action)</CODE>
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html#unsubscribe(net.objectzoo.delegates.Action0)">unsubscribe</A></B>(net.objectzoo.delegates.Action0&nbsp;action)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -188,8 +199,12 @@ Class EventToEvent0&lt;T&gt;</H2>
 <A NAME="EventToEvent0(net.objectzoo.events.Event)"><!-- --></A><H3>
 EventToEvent0</H3>
 <PRE>
-public <B>EventToEvent0</B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event.html?is-external=true" title="class or interface in net.objectzoo.events">Event</A>&lt;<A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html" title="type parameter in EventToEvent0">T</A>&gt;&nbsp;event)</PRE>
+public <B>EventToEvent0</B>(net.objectzoo.events.Event&lt;<A HREF="../../../../net/objectzoo/ebc/adapters/EventToEvent0.html" title="type parameter in EventToEvent0">T</A>&gt;&nbsp;event)</PRE>
 <DL>
+<DD>Creates a new <code>EventToEvent0</code> adapting the given <CODE>Event</CODE> instance
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>event</CODE> - the <CODE>Event</CODE> to be adapted</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -205,11 +220,13 @@ public <B>EventToEvent0</B>(<A HREF="http://events4j-api.assembla.me/net/objectz
 <A NAME="subscribe(net.objectzoo.delegates.Action0)"><!-- --></A><H3>
 subscribe</H3>
 <PRE>
-public void <B>subscribe</B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A>&nbsp;action)
+public void <B>subscribe</B>(net.objectzoo.delegates.Action0&nbsp;action)
                throws <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></PRE>
 <DL>
+<DD>
+<P>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true#subscribe(net.objectzoo.delegates.Action0)" title="class or interface in net.objectzoo.events">subscribe</A></CODE> in interface <CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A></CODE></DL>
+<DT><B>Specified by:</B><DD><CODE>subscribe</CODE> in interface <CODE>net.objectzoo.events.Event0</CODE></DL>
 </DD>
 <DD><DL>
 
@@ -222,11 +239,13 @@ public void <B>subscribe</B>(<A HREF="http://events4j-api.assembla.me/net/object
 <A NAME="unsubscribe(net.objectzoo.delegates.Action0)"><!-- --></A><H3>
 unsubscribe</H3>
 <PRE>
-public void <B>unsubscribe</B>(<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A>&nbsp;action)
+public void <B>unsubscribe</B>(net.objectzoo.delegates.Action0&nbsp;action)
                  throws <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></PRE>
 <DL>
+<DD>
+<P>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true#unsubscribe(net.objectzoo.delegates.Action0)" title="class or interface in net.objectzoo.events">unsubscribe</A></CODE> in interface <CODE><A HREF="http://events4j-api.assembla.me/net/objectzoo/events/Event0.html?is-external=true" title="class or interface in net.objectzoo.events">Event0</A></CODE></DL>
+<DT><B>Specified by:</B><DD><CODE>unsubscribe</CODE> in interface <CODE>net.objectzoo.events.Event0</CODE></DL>
 </DD>
 <DD><DL>
 
@@ -323,6 +342,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

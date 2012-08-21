@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Uses of Interface net.objectzoo.ebc.state.StateFactory (EBC4J API (Version 1.1))
+Uses of Interface net.objectzoo.ebc.state.StateFactory (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Uses of Interface net.objectzoo.ebc.state.StateFactory (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface net.objectzoo.ebc.state.StateFactory (EBC4J API (Version 1.1))";
+        parent.document.title="Uses of Interface net.objectzoo.ebc.state.StateFactory (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -39,7 +39,7 @@ function windowTitle()
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><FONT CLASS="NavBarFont1"><B>Class</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Use</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
@@ -94,7 +94,13 @@ Packages that use <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.h
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.state"><B>net.objectzoo.ebc.state</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>This package contains interfaces and classes that are use to implement different state holding
+ mechanisms for EBCs.&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><A HREF="#net.objectzoo.ebc.state.async"><B>net.objectzoo.ebc.state.async</B></A></TD>
+<TD>This package contains implementations that are used to implement state holding mechanisms for
+ EBCs executed in asynchronous flows.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -119,7 +125,7 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
 <TD><CODE><B>Join.</B><B><A HREF="../../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY">DEFAULT_STATE_FACTORY</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="class in net.objectzoo.ebc.join"><CODE>Join</CODE></A>s that are not configured with their own</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -128,6 +134,15 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableSubHeadingColor">
 <TH ALIGN="left" COLSPAN="2">Constructors in <A HREF="../../../../../net/objectzoo/ebc/join/package-summary.html">net.objectzoo.ebc.join</A> with parameters of type <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(java.lang.Class, net.objectzoo.ebc.state.StateFactory)">GenericJoin</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Output</A>&gt;&nbsp;outputType,
+            <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from the given
+ type by taking a constructor that has the fitting parameter types for this Join's input
+ types.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(java.lang.Class, net.objectzoo.ebc.state.StateFactory, boolean)">GenericJoin</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../net/objectzoo/ebc/join/GenericJoin.html" title="type parameter in GenericJoin">Output</A>&gt;&nbsp;outputType,
@@ -140,6 +155,14 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
  types.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(net.objectzoo.ebc.state.StateFactory)">GenericJoin</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from this Join's
+ output type by taking a constructor that has the fitting parameter types for this Join's
+ input types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoin.html#GenericJoin(net.objectzoo.ebc.state.StateFactory, boolean)">GenericJoin</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
             boolean&nbsp;resetAfterResultEvent)</CODE>
 
@@ -147,6 +170,15 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>Join</code> with a constructor for the output determined from this Join's
  output type by taking a constructor that has the fitting parameter types for this Join's
  input types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(java.lang.Class, net.objectzoo.ebc.state.StateFactory)">GenericJoinCollections</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt;&nbsp;outputElementType,
+                       <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinCollections</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's input element types.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(java.lang.Class, net.objectzoo.ebc.state.StateFactory, boolean)">GenericJoinCollections</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinCollections.html" title="type parameter in GenericJoinCollections">OutputElement</A>&gt;&nbsp;outputElementType,
@@ -159,6 +191,14 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
  for this Join's input element types.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(net.objectzoo.ebc.state.StateFactory)">GenericJoinCollections</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinCollections</code> with a constructor for the output element determined
+ from this Join's output element type by taking a constructor that has the fitting parameter
+ types for this Join's input element types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinCollections.html#GenericJoinCollections(net.objectzoo.ebc.state.StateFactory, boolean)">GenericJoinCollections</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
                        boolean&nbsp;resetAfterResultEvent)</CODE>
 
@@ -166,6 +206,15 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinCollections</code> with a constructor for the output element determined
  from this Join's output element type by taking a constructor that has the fitting parameter
  types for this Join's input element types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(java.lang.Class, net.objectzoo.ebc.state.StateFactory)">GenericJoinObjectAndCollection</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="type parameter in GenericJoinObjectAndCollection">OutputElement</A>&gt;&nbsp;outputElementType,
+                               <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output elements
+ determined from the given type by taking a constructor that has the fitting parameter types
+ for this Join's first input type and second input element type.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(java.lang.Class, net.objectzoo.ebc.state.StateFactory, boolean)">GenericJoinObjectAndCollection</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html" title="type parameter in GenericJoinObjectAndCollection">OutputElement</A>&gt;&nbsp;outputElementType,
@@ -178,6 +227,14 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
  for this Join's first input type and second input element type.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(net.objectzoo.ebc.state.StateFactory)">GenericJoinObjectAndCollection</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
+ determined from this Join's output element type by taking a constructor that has the fitting
+ parameter types for this Join's first input type and second input element type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/GenericJoinObjectAndCollection.html#GenericJoinObjectAndCollection(net.objectzoo.ebc.state.StateFactory, boolean)">GenericJoinObjectAndCollection</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
                                boolean&nbsp;resetAfterResultEvent)</CODE>
 
@@ -185,6 +242,14 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes this <code>JoinObjectAndCollection</code> with a constructor for the output element
  determined from this Join's output element type by taking a constructor that has the fitting
  parameter types for this Join's first input type and second input element type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory)">Join</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputCreator,
+     <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>Join</code> using the given <A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to create the output of
+ the <code>Join</code>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/Join.html#Join(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)">Join</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input1</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Input2</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/Join.html" title="type parameter in Join">Output</A>&gt;&nbsp;outputCreator,
@@ -196,11 +261,27 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
  the <code>Join</code>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinBase.html#JoinBase(net.objectzoo.ebc.state.StateFactory)">JoinBase</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>JoinBase.createOutput(Object, Object)</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinBase.html#JoinBase(net.objectzoo.ebc.state.StateFactory, boolean)">JoinBase</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
          boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinBase</code> creating its output using the implementation of the abstract
+ method <A HREF="../../../../../net/objectzoo/ebc/join/JoinBase.html#createOutput(Input1, Input2)"><CODE>JoinBase.createOutput(Object, Object)</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory)">JoinCollections</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt;&nbsp;elementOutputCreator,
+                <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinCollections</code> using the given <A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to join the
+ input elements to the output element.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html#JoinCollections(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)">JoinCollections</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input1Element</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">Input2Element</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/JoinCollections.html" title="type parameter in JoinCollections">OutputElement</A>&gt;&nbsp;elementOutputCreator,
@@ -212,6 +293,14 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
  input elements to the output element.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory)">JoinObjectAndCollection</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;&nbsp;elementOutputCreator,
+                        <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
+ join the first input and second input elements to the output element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html#JoinObjectAndCollection(net.objectzoo.ebc.join.JoinOutputCreator, net.objectzoo.ebc.state.StateFactory, boolean)">JoinObjectAndCollection</A></B>(<A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join">JoinOutputCreator</A>&lt;? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input1</A>,? super <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">Input2Element</A>,? extends <A HREF="../../../../../net/objectzoo/ebc/join/JoinObjectAndCollection.html" title="type parameter in JoinObjectAndCollection">OutputElement</A>&gt;&nbsp;elementOutputCreator,
                         <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
                         boolean&nbsp;resetAfterResultEvent)</CODE>
@@ -219,6 +308,38 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinObjectAndCollection</code> using the given <A HREF="../../../../../net/objectzoo/ebc/join/JoinOutputCreator.html" title="interface in net.objectzoo.ebc.join"><CODE>JoinOutputCreator</CODE></A> to
  join the first input and second input elements to the output element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal(net.objectzoo.ebc.state.StateFactory)">JoinProcessAndSignal</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinProcessAndSignal</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal(net.objectzoo.ebc.state.StateFactory, boolean)">JoinProcessAndSignal</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+                     boolean&nbsp;resetAfterResultEvent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinProcessAndSignal</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinSignals.html#JoinSignals(net.objectzoo.ebc.state.StateFactory)">JoinSignals</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinSignals</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinSignals.html#JoinSignals(net.objectzoo.ebc.state.StateFactory, boolean)">JoinSignals</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+            boolean&nbsp;resetAfterSignalEvent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinSignals</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinToPair.html#JoinToPair(net.objectzoo.ebc.state.StateFactory)">JoinToPair</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crates a new <code>JoinToPair</code>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/join/JoinToPair.html#JoinToPair(net.objectzoo.ebc.state.StateFactory, boolean)">JoinToPair</A></B>(<A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
@@ -250,15 +371,32 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
 <TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/state/BasicStateFactory.html" title="class in net.objectzoo.ebc.state">BasicStateFactory</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> implementation that creates <CODE>BasicState</CODE> instances.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+<A NAME="net.objectzoo.ebc.state.async"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A> in <A HREF="../../../../../net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left" COLSPAN="2">Classes in <A HREF="../../../../../net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A> that implement <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;class</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/state/ThreadLocalStateFactory.html" title="class in net.objectzoo.ebc.state">ThreadLocalStateFactory</A></B></CODE>
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/state/async/ThreadLocalStateFactory.html" title="class in net.objectzoo.ebc.state.async">ThreadLocalStateFactory</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> implementation that creates <CODE>ThreadLocalState</CODE> instances</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -279,7 +417,7 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><FONT CLASS="NavBarFont1"><B>Class</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Use</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
@@ -317,6 +455,6 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/state/StateFactory.html" title
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

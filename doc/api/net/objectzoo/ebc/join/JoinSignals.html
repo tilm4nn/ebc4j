@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-JoinSignals (EBC4J API (Version 1.1))
+JoinSignals (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ JoinSignals (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JoinSignals (EBC4J API (Version 1.1))";
+        parent.document.title="JoinSignals (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -103,6 +103,28 @@ Class JoinSignals</H2>
 </PRE>
 
 <P>
+This is a special flow EBC implementation that joins together two signal flows.
+ 
+ The EBC waits for every input to be set at least once before creating a result event. Once both
+ inputs have been set an output is created and sent. After that there are two different modes of
+ operation depending on the <code>resetAfterResultEvent</code> parameter setting.
+ 
+ If <code>resetAfterResultEvent</code> is set to <code>true</code> (which is the default) then after each
+ result event the two input values are reset and the procedure to wait for both inputs starts from
+ the beginning.
+ 
+ If <code>resetAfterResultEvent</code> is set to <code>false</code> then for each following single input
+ invocation a new output is created and sent until the EBC is manually reset again. If reset the
+ procedure to wait for both inputs starts from the beginning.
+ 
+ To manually reset the EBC the <A HREF="../../../../net/objectzoo/ebc/join/JoinSignals.html#resetAction()"><CODE>resetAction()</CODE></A> can be invoked.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>tilmann</DD>
+</DL>
 <HR>
 
 <P>
@@ -134,10 +156,29 @@ Class JoinSignals</H2>
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinSignals.html#JoinSignals()">JoinSignals</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinSignals</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinSignals.html#JoinSignals(boolean)">JoinSignals</A></B>(boolean&nbsp;resetAfterSignalEvent)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinSignals</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinSignals.html#JoinSignals(net.objectzoo.ebc.state.StateFactory)">JoinSignals</A></B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinSignals</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinSignals.html#JoinSignals(net.objectzoo.ebc.state.StateFactory, boolean)">JoinSignals</A></B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+            boolean&nbsp;resetAfterSignalEvent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinSignals</code></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -151,27 +192,27 @@ Class JoinSignals</H2>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinSignals.html#resetAction()">resetAction</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action0</CODE> that is used to reset this EBC</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinSignals.html#startAction1()">startAction1</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action0</CODE> that is used to set this EBCs first input</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinSignals.html#startAction2()">startAction2</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action0</CODE> that is used to start this EBCs second input</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.SignalBoard"><!-- --></A>
@@ -205,11 +246,52 @@ Class JoinSignals</H2>
 </TR>
 </TABLE>
 
+<A NAME="JoinSignals()"><!-- --></A><H3>
+JoinSignals</H3>
+<PRE>
+public <B>JoinSignals</B>()</PRE>
+<DL>
+<DD>Creates a new <code>JoinSignals</code>
+<P>
+</DL>
+<HR>
+
 <A NAME="JoinSignals(boolean)"><!-- --></A><H3>
 JoinSignals</H3>
 <PRE>
 public <B>JoinSignals</B>(boolean&nbsp;resetAfterSignalEvent)</PRE>
 <DL>
+<DD>Creates a new <code>JoinSignals</code>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>resetAfterSignalEvent</CODE> - if set to <code>true</code> the EBC is automatically reset after each result event</DL>
+</DL>
+<HR>
+
+<A NAME="JoinSignals(net.objectzoo.ebc.state.StateFactory)"><!-- --></A><H3>
+JoinSignals</H3>
+<PRE>
+public <B>JoinSignals</B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</PRE>
+<DL>
+<DD>Creates a new <code>JoinSignals</code>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this EBC. If <code>null</code> is given then the
+        <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.</DL>
+</DL>
+<HR>
+
+<A NAME="JoinSignals(net.objectzoo.ebc.state.StateFactory, boolean)"><!-- --></A><H3>
+JoinSignals</H3>
+<PRE>
+public <B>JoinSignals</B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+                   boolean&nbsp;resetAfterSignalEvent)</PRE>
+<DL>
+<DD>Creates a new <code>JoinSignals</code>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this EBC. If <code>null</code> is given then the
+        <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.<DD><CODE>resetAfterSignalEvent</CODE> - if set to <code>true</code> the EBC is automatically reset after each result event</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -225,10 +307,13 @@ public <B>JoinSignals</B>(boolean&nbsp;resetAfterSignalEvent)</PRE>
 <A NAME="startAction1()"><!-- --></A><H3>
 startAction1</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A> <B>startAction1</B>()</PRE>
+public net.objectzoo.delegates.Action0 <B>startAction1</B>()</PRE>
 <DL>
+<DD>Provides an <CODE>Action0</CODE> that is used to set this EBCs first input
+<P>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the first start action of this EBC</DL>
 </DD>
 </DL>
 <HR>
@@ -236,10 +321,13 @@ public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.
 <A NAME="startAction2()"><!-- --></A><H3>
 startAction2</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A> <B>startAction2</B>()</PRE>
+public net.objectzoo.delegates.Action0 <B>startAction2</B>()</PRE>
 <DL>
+<DD>Provides an <CODE>Action0</CODE> that is used to start this EBCs second input
+<P>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the second start action of this EBC</DL>
 </DD>
 </DL>
 <HR>
@@ -247,10 +335,13 @@ public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.
 <A NAME="resetAction()"><!-- --></A><H3>
 resetAction</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A> <B>resetAction</B>()</PRE>
+public net.objectzoo.delegates.Action0 <B>resetAction</B>()</PRE>
 <DL>
+<DD>Provides an <CODE>Action0</CODE> that is used to reset this EBC
+<P>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the reset action of this EBC</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -314,6 +405,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

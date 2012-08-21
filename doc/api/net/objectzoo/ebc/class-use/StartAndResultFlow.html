@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Uses of Interface net.objectzoo.ebc.StartAndResultFlow (EBC4J API (Version 1.1))
+Uses of Interface net.objectzoo.ebc.StartAndResultFlow (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Uses of Interface net.objectzoo.ebc.StartAndResultFlow (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface net.objectzoo.ebc.StartAndResultFlow (EBC4J API (Version 1.1))";
+        parent.document.title="Uses of Interface net.objectzoo.ebc.StartAndResultFlow (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -39,7 +39,7 @@ function windowTitle()
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><FONT CLASS="NavBarFont1"><B>Class</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Use</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
@@ -89,15 +89,16 @@ Packages that use <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.builder"><B>net.objectzoo.ebc.builder</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>This package contains an internal flow builder DSL implementation that can be used to combine
+ EBCs to flows&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.executor"><B>net.objectzoo.ebc.executor</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>This package contains classes that help when there is need to synchronously execute an EBC flow.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.impl"><B>net.objectzoo.ebc.impl</B></A></TD>
-<TD>This package contains base classes that can be used to implement EBCs.&nbsp;</TD>
+<TD>This package contains base classes that can be used to implement EBCs and boards.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.join"><B>net.objectzoo.ebc.join</B></A></TD>
@@ -127,14 +128,14 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="i
 <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
 <TR ALIGN="right" VALIGN="">
 <TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T&gt; <A HREF="../../../../net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>&lt;T&gt;</CODE></FONT></TD>
+<CODE>&lt;T&gt; <A HREF="../../../../net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>&lt;T&gt;</CODE></FONT></TD>
 </TR>
 </TABLE>
 </CODE></FONT></TD>
-<TD><CODE><B>SignalConnector.</B><B><A HREF="../../../../net/objectzoo/ebc/builder/SignalConnector.html#then(net.objectzoo.ebc.StartAndResultFlow)">then</A></B>(<A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;T&gt;&nbsp;flow)</CODE>
+<TD><CODE><B>SendsSignalConnector.</B><B><A HREF="../../../../net/objectzoo/ebc/builder/SendsSignalConnector.html#then(net.objectzoo.ebc.StartAndResultFlow)">then</A></B>(<A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;T&gt;&nbsp;flow)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attaches a <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> at the end of the current flow</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -142,14 +143,14 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="i
 <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
 <TR ALIGN="right" VALIGN="">
 <TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T2&gt; <A HREF="../../../../net/objectzoo/ebc/builder/ResultConnector.html" title="class in net.objectzoo.ebc.builder">ResultConnector</A>&lt;T2&gt;</CODE></FONT></TD>
+<CODE>&lt;T2&gt; <A HREF="../../../../net/objectzoo/ebc/builder/SendsResultConnector.html" title="class in net.objectzoo.ebc.builder">SendsResultConnector</A>&lt;T2&gt;</CODE></FONT></TD>
 </TR>
 </TABLE>
 </CODE></FONT></TD>
-<TD><CODE><B>ResultConnector.</B><B><A HREF="../../../../net/objectzoo/ebc/builder/ResultConnector.html#then(net.objectzoo.ebc.StartAndResultFlow)">then</A></B>(<A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;T2&gt;&nbsp;flow)</CODE>
+<TD><CODE><B>SendsResultConnector.</B><B><A HREF="../../../../net/objectzoo/ebc/builder/SendsResultConnector.html#then(net.objectzoo.ebc.StartAndResultFlow)">then</A></B>(<A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;T2&gt;&nbsp;flow)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attaches a <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> at the end of the current flow</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -183,7 +184,9 @@ ResultParameter</CODE></FONT></TD>
 <TD><CODE><B>FlowExecutor.</B><B><A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(java.lang.Class)">startAndReturnResult</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;FlowType&gt;&nbsp;flowClass)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates the flow determined by the given flow class using this executor's <A HREF="../../../../net/objectzoo/ebc/executor/FlowFactory.html" title="interface in net.objectzoo.ebc.executor"><CODE>FlowFactory</CODE></A>
+ instance and then executes the flow as described by
+ <A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(FlowType)"><CODE>FlowExecutor.startAndReturnResult(StartAndResultFlow)</CODE></A></TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -200,7 +203,7 @@ ResultParameter</CODE></FONT></TD>
 <TD><CODE><B>FlowExecutor.</B><B><A HREF="../../../../net/objectzoo/ebc/executor/FlowExecutor.html#startAndReturnResult(FlowType)">startAndReturnResult</A></B>(FlowType&nbsp;flow)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Executes the given <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A> flow and returns the final result.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -214,7 +217,7 @@ ResultParameter</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html#StartAndResultFlowToFunc0Adapter(net.objectzoo.ebc.StartAndResultFlow)">StartAndResultFlowToFunc0Adapter</A></B>(<A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;<A HREF="../../../../net/objectzoo/ebc/executor/StartAndResultFlowToFunc0Adapter.html" title="type parameter in StartAndResultFlowToFunc0Adapter">ResultParameter</A>&gt;&nbsp;theFlow)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>StartAndResultFlowToFunc0Adapter</code></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -247,7 +250,7 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="i
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/impl/StartAndResultBoard.html" title="class in net.objectzoo.ebc.impl">StartAndResultBoard&lt;ResultParameter&gt;</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A base class for a board that <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc"><CODE>CanStart</CODE></A> and <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc"><CODE>SendsResult</CODE></A>.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -272,7 +275,8 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="i
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="class in net.objectzoo.ebc.join">JoinProcessAndSignal&lt;T&gt;</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a special flow EBC implementation that joins together a process and a signal flow and
+ thus implements the interfaces <A HREF="../../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>ProcessAndResultFlow</CODE></A> and <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A>.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -293,7 +297,7 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="i
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><FONT CLASS="NavBarFont1"><B>Class</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Use</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
@@ -331,6 +335,6 @@ Uses of <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="i
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

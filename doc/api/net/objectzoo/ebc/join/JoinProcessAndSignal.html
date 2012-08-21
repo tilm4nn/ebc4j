@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-JoinProcessAndSignal (EBC4J API (Version 1.1))
+JoinProcessAndSignal (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ JoinProcessAndSignal (EBC4J API (Version 1.1))
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JoinProcessAndSignal (EBC4J API (Version 1.1))";
+        parent.document.title="JoinProcessAndSignal (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -97,6 +97,8 @@ Class JoinProcessAndSignal&lt;T&gt;</H2>
               <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.objectzoo.ebc.join.JoinProcessAndSignal&lt;T&gt;</B>
 </PRE>
 <DL>
+<DT><DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the in and output type of the process flow that is joined</DL>
+<DL>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../net/objectzoo/ebc/CanProcess.html" title="interface in net.objectzoo.ebc">CanProcess</A>&lt;T&gt;, <A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A>, <A HREF="../../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc">ProcessAndResultFlow</A>&lt;T,T&gt;, <A HREF="../../../../net/objectzoo/ebc/SendsResult.html" title="interface in net.objectzoo.ebc">SendsResult</A>&lt;T&gt;, <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc">StartAndResultFlow</A>&lt;T&gt;</DD>
 </DL>
 <HR>
@@ -105,6 +107,29 @@ Class JoinProcessAndSignal&lt;T&gt;</H2>
 </PRE>
 
 <P>
+This is a special flow EBC implementation that joins together a process and a signal flow and
+ thus implements the interfaces <A HREF="../../../../net/objectzoo/ebc/ProcessAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>ProcessAndResultFlow</CODE></A> and <A HREF="../../../../net/objectzoo/ebc/StartAndResultFlow.html" title="interface in net.objectzoo.ebc"><CODE>StartAndResultFlow</CODE></A>.
+ 
+ The EBC waits for every input to be set at least once before creating a result event. Once both
+ inputs have been set an output is created and sent. After that there are two different modes of
+ operation depending on the <code>resetAfterResultEvent</code> parameter setting.
+ 
+ If <code>resetAfterResultEvent</code> is set to <code>true</code> (which is the default) then after each
+ result event the two input values are reset and the procedure to wait for both inputs starts from
+ the beginning.
+ 
+ If <code>resetAfterResultEvent</code> is set to <code>false</code> then for each following single input
+ invocation a new output is created and sent until the EBC is manually reset again. If reset the
+ procedure to wait for both inputs starts from the beginning.
+ 
+ To manually reset the EBC the <A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html#resetAction()"><CODE>resetAction()</CODE></A> can be invoked.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>tilmann</DD>
+</DL>
 <HR>
 
 <P>
@@ -145,10 +170,29 @@ Class JoinProcessAndSignal&lt;T&gt;</H2>
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal()">JoinProcessAndSignal</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinProcessAndSignal</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal(boolean)">JoinProcessAndSignal</A></B>(boolean&nbsp;resetAfterResultEvent)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinProcessAndSignal</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal(net.objectzoo.ebc.state.StateFactory)">JoinProcessAndSignal</A></B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinProcessAndSignal</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html#JoinProcessAndSignal(net.objectzoo.ebc.state.StateFactory, boolean)">JoinProcessAndSignal</A></B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+                     boolean&nbsp;resetAfterResultEvent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new <code>JoinProcessAndSignal</code></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -171,19 +215,19 @@ Class JoinProcessAndSignal&lt;T&gt;</H2>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html#resetAction()">resetAction</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action0</CODE> that is used to reset this EBC</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A></CODE></FONT></TD>
+<CODE>&nbsp;net.objectzoo.delegates.Action0</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html#startAction()">startAction</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to start this EBC</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides an <CODE>Action0</CODE> that is used to start this EBC</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_net.objectzoo.ebc.impl.ProcessAndResultBase"><!-- --></A>
@@ -253,11 +297,52 @@ Class JoinProcessAndSignal&lt;T&gt;</H2>
 </TR>
 </TABLE>
 
+<A NAME="JoinProcessAndSignal()"><!-- --></A><H3>
+JoinProcessAndSignal</H3>
+<PRE>
+public <B>JoinProcessAndSignal</B>()</PRE>
+<DL>
+<DD>Creates a new <code>JoinProcessAndSignal</code>
+<P>
+</DL>
+<HR>
+
 <A NAME="JoinProcessAndSignal(boolean)"><!-- --></A><H3>
 JoinProcessAndSignal</H3>
 <PRE>
 public <B>JoinProcessAndSignal</B>(boolean&nbsp;resetAfterResultEvent)</PRE>
 <DL>
+<DD>Creates a new <code>JoinProcessAndSignal</code>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the EBC is automatically reset after each result event</DL>
+</DL>
+<HR>
+
+<A NAME="JoinProcessAndSignal(net.objectzoo.ebc.state.StateFactory)"><!-- --></A><H3>
+JoinProcessAndSignal</H3>
+<PRE>
+public <B>JoinProcessAndSignal</B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory)</PRE>
+<DL>
+<DD>Creates a new <code>JoinProcessAndSignal</code>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this EBC. If <code>null</code> is given then the
+        <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.</DL>
+</DL>
+<HR>
+
+<A NAME="JoinProcessAndSignal(net.objectzoo.ebc.state.StateFactory, boolean)"><!-- --></A><H3>
+JoinProcessAndSignal</H3>
+<PRE>
+public <B>JoinProcessAndSignal</B>(<A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state">StateFactory</A>&nbsp;stateFactory,
+                            boolean&nbsp;resetAfterResultEvent)</PRE>
+<DL>
+<DD>Creates a new <code>JoinProcessAndSignal</code>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>stateFactory</CODE> - the <A HREF="../../../../net/objectzoo/ebc/state/StateFactory.html" title="interface in net.objectzoo.ebc.state"><CODE>StateFactory</CODE></A> to be used by this EBC. If <code>null</code> is given then the
+        <A HREF="../../../../net/objectzoo/ebc/join/Join.html#DEFAULT_STATE_FACTORY"><CODE>Join.DEFAULT_STATE_FACTORY</CODE></A> is used.<DD><CODE>resetAfterResultEvent</CODE> - if set to <code>true</code> the EBC is automatically reset after each result event</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -273,10 +358,9 @@ public <B>JoinProcessAndSignal</B>(boolean&nbsp;resetAfterResultEvent)</PRE>
 <A NAME="startAction()"><!-- --></A><H3>
 startAction</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A> <B>startAction</B>()</PRE>
+public net.objectzoo.delegates.Action0 <B>startAction</B>()</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../net/objectzoo/ebc/CanStart.html#startAction()">CanStart</A></CODE></B></DD>
-<DD>Provides an <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates"><CODE>Action0</CODE></A> that is used to start this EBC
+<DD>Provides an <CODE>Action0</CODE> that is used to start this EBC
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../net/objectzoo/ebc/CanStart.html#startAction()">startAction</A></CODE> in interface <CODE><A HREF="../../../../net/objectzoo/ebc/CanStart.html" title="interface in net.objectzoo.ebc">CanStart</A></CODE></DL>
@@ -293,7 +377,6 @@ process</H3>
 <PRE>
 protected void <B>process</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinProcessAndSignal.html" title="type parameter in JoinProcessAndSignal">T</A>&nbsp;parameter)</PRE>
 <DL>
-<DD><B>Description copied from class: <CODE><A HREF="../../../../net/objectzoo/ebc/impl/ProcessAndResultBase.html#process(ProcessParameter)">ProcessAndResultBase</A></CODE></B></DD>
 <DD>This method is to be provided by subclasses to actually implement what's taking place when
  the process action is invoked.
 <P>
@@ -309,13 +392,16 @@ protected void <B>process</B>(<A HREF="../../../../net/objectzoo/ebc/join/JoinPr
 <A NAME="resetAction()"><!-- --></A><H3>
 resetAction</H3>
 <PRE>
-public <A HREF="http://events4j-api.assembla.me/net/objectzoo/delegates/Action0.html?is-external=true" title="class or interface in net.objectzoo.delegates">Action0</A> <B>resetAction</B>()</PRE>
+public net.objectzoo.delegates.Action0 <B>resetAction</B>()</PRE>
 <DL>
+<DD>Provides an <CODE>Action0</CODE> that is used to reset this EBC
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the reset action of this EBC</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -379,6 +465,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>

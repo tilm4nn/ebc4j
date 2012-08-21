@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Uses of Class net.objectzoo.ebc.impl.StartAndSignalBase (EBC4J API (Version 1.1))
+Uses of Class net.objectzoo.ebc.impl.StartAndSignalBase (EBC4J API 1.2)
 </TITLE>
 
 
@@ -13,7 +13,7 @@ Uses of Class net.objectzoo.ebc.impl.StartAndSignalBase (EBC4J API (Version 1.1)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class net.objectzoo.ebc.impl.StartAndSignalBase (EBC4J API (Version 1.1))";
+        parent.document.title="Uses of Class net.objectzoo.ebc.impl.StartAndSignalBase (EBC4J API 1.2)";
     }
 }
 </SCRIPT>
@@ -39,7 +39,7 @@ function windowTitle()
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl"><FONT CLASS="NavBarFont1"><B>Class</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Use</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
@@ -89,11 +89,12 @@ Packages that use <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalB
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#net.objectzoo.ebc.split"><B>net.objectzoo.ebc.split</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>This package contains EBCs that allow to split EBC flows.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><A HREF="#net.objectzoo.ebc.state"><B>net.objectzoo.ebc.state</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD><A HREF="#net.objectzoo.ebc.state.async"><B>net.objectzoo.ebc.state.async</B></A></TD>
+<TD>This package contains implementations that are used to implement state holding mechanisms for
+ EBCs executed in asynchronous flows.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -123,11 +124,11 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" 
 </TABLE>
 &nbsp;
 <P>
-<A NAME="net.objectzoo.ebc.state"><!-- --></A>
+<A NAME="net.objectzoo.ebc.state.async"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 <TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-Uses of <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBase</A> in <A HREF="../../../../../net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A></FONT></TH>
+Uses of <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBase</A> in <A HREF="../../../../../net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A></FONT></TH>
 </TR>
 </TABLE>
 &nbsp;
@@ -135,15 +136,16 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" 
 
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left" COLSPAN="2">Subclasses of <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBase</A> in <A HREF="../../../../../net/objectzoo/ebc/state/package-summary.html">net.objectzoo.ebc.state</A></FONT></TH>
+<TH ALIGN="left" COLSPAN="2">Subclasses of <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl">StartAndSignalBase</A> in <A HREF="../../../../../net/objectzoo/ebc/state/async/package-summary.html">net.objectzoo.ebc.state.async</A></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;class</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/state/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state">StartAndClearThreadLocalStateStore</A></B></CODE>
+<TD><CODE><B><A HREF="../../../../../net/objectzoo/ebc/state/async/StartAndClearThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async">StartAndClearThreadLocalStateStore</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This class implements a decorator EBC that simply forwards the processing to the next component
+ in the flow and clears the <A HREF="../../../../../net/objectzoo/ebc/state/async/ThreadLocalStateStore.html" title="class in net.objectzoo.ebc.state.async"><CODE>ThreadLocalStateStore</CODE></A> after the flows execution.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -164,7 +166,7 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" 
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" title="class in net.objectzoo.ebc.impl"><FONT CLASS="NavBarFont1"><B>Class</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Use</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
   <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
@@ -202,6 +204,6 @@ Uses of <A HREF="../../../../../net/objectzoo/ebc/impl/StartAndSignalBase.html" 
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &copy; 2000-2011 - object-zoo - Tilmann Kuhn
+Copyright &copy; 2010 - 2012 - object-zoo - Tilmann Kuhn
 </BODY>
 </HTML>
