@@ -11,8 +11,8 @@ import static extension org.jnario.lib.Should.*
 
 describe Join
 {
-	val mockOutputCreator = mock(typeof(JoinOutputCreator))
-	val subject = new Join<Object, Object, Object>(mockOutputCreator)
+    val mockOutputCreator = mock(typeof(JoinOutputCreator))
+    val subject = new Join<Object, Object, Object>(mockOutputCreator)
 	
 	fact "waits for input1 to continue"
 	{
@@ -150,52 +150,53 @@ describe Join
 		}
 	}
 	
-	context "constructors"
-	{
-		val stateFactory = mock(typeof(StateFactory))
-		
-		fact "throw exceptions for null stateFactory"
-		{
+    context "constructors"
+    {
+        val stateFactory = mock(typeof(StateFactory))
+        
+        fact "throw exceptions for null stateFactory"
+        {
 // Does not compile
-//			Join::DEFAULT_STATE_FACTORY = null
-			
-			Join::setDefaultStateFactory(null)
-			try
-			{
-				new Join() should throw IllegalArgumentException
-				new Join(true) should throw IllegalArgumentException
-				new Join(null as StateFactory) should throw IllegalArgumentException
-				new Join(null as StateFactory, true) should throw IllegalArgumentException
-				new Join(mockOutputCreator) should throw IllegalArgumentException
-				new Join(mockOutputCreator, true) should throw IllegalArgumentException
-				new Join(mockOutputCreator, null as StateFactory) should throw IllegalArgumentException
-				new Join(mockOutputCreator, null as StateFactory, true) should throw IllegalArgumentException
-			}
-			finally
-			{
+//          Join::DEFAULT_STATE_FACTORY = null
+            
+            Join::setDefaultStateFactory(null)
+            try
+            {
+                // Does not compile
+                // new Join() should throw IllegalArgumentException
+                new Join(true as Boolean) should throw IllegalArgumentException
+                new Join(null as StateFactory) should throw IllegalArgumentException
+                new Join(null as StateFactory, true) should throw IllegalArgumentException
+                new Join(mockOutputCreator) should throw IllegalArgumentException
+                new Join(mockOutputCreator, true) should throw IllegalArgumentException
+                new Join(mockOutputCreator, null as StateFactory) should throw IllegalArgumentException
+                new Join(mockOutputCreator, null as StateFactory, true) should throw IllegalArgumentException
+            }
+            finally
+            {
 // Does not compile
-//			Join::DEFAULT_STATE_FACTORY = new BasicStateFactory			
-				
-				Join::setDefaultStateFactory(new BasicStateFactory)
-			}
-		}
-		
-		fact "throw exceptions for null outputCreator"
-		{
-			new Join(null as JoinOutputCreator) should throw IllegalArgumentException
-			new Join(null as JoinOutputCreator, true) should throw IllegalArgumentException
-			new Join(null as JoinOutputCreator, stateFactory) should throw IllegalArgumentException
-			new Join(null as JoinOutputCreator, stateFactory, true) should throw IllegalArgumentException
-		}
-		
-		fact "use given stateFactory"
-		{
-			new Join(stateFactory)
-			new Join(stateFactory, true)
-			new Join(mockOutputCreator, stateFactory)
-			new Join(mockOutputCreator, stateFactory, true)
-			
-			verify(stateFactory, times(4)).create(anyObject)
-		}
-	}
+//          Join::DEFAULT_STATE_FACTORY = new BasicStateFactory         
+                
+                Join::setDefaultStateFactory(new BasicStateFactory)
+            }
+        }
+        
+        fact "throw exceptions for null outputCreator"
+        {
+            new Join(null as JoinOutputCreator) should throw IllegalArgumentException
+            new Join(null as JoinOutputCreator, true) should throw IllegalArgumentException
+            new Join(null as JoinOutputCreator, stateFactory) should throw IllegalArgumentException
+            new Join(null as JoinOutputCreator, stateFactory, true) should throw IllegalArgumentException
+        }
+        
+        fact "use given stateFactory"
+        {
+            new Join(stateFactory)
+            new Join(stateFactory, true)
+            new Join(mockOutputCreator, stateFactory)
+            new Join(mockOutputCreator, stateFactory, true)
+            
+            verify(stateFactory, times(4)).create(anyObject)
+        }
+    }
 }
