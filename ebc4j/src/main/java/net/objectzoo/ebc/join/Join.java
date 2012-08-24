@@ -70,6 +70,8 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	 */
 	public static StateFactory DEFAULT_STATE_FACTORY = new BasicStateFactory();
 	
+	static final boolean DEFAULT_RESET_AFTER_RESULT_EVENT = true;
+	
 	@SuppressWarnings("rawtypes")
 	private static final ValueFactory<JoinInputStorage> inputStorageFactory = new ValueFactory<JoinInputStorage>()
 	{
@@ -125,6 +127,33 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	 * 
 	 * @param outputCreator
 	 *        the output creator to be used
+	 */
+	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator)
+	{
+		this(outputCreator, (StateFactory) null, (Boolean) null);
+	}
+	
+	/**
+	 * Creates a new {@code Join} using the given {@link JoinOutputCreator} to create the output of
+	 * the {@code Join}.
+	 * 
+	 * @param outputCreator
+	 *        the output creator to be used
+	 * @param resetAfterResultEvent
+	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
+	 */
+	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator,
+				boolean resetAfterResultEvent)
+	{
+		this(outputCreator, (StateFactory) null, resetAfterResultEvent);
+	}
+	
+	/**
+	 * Creates a new {@code Join} using the given {@link JoinOutputCreator} to create the output of
+	 * the {@code Join}.
+	 * 
+	 * @param outputCreator
+	 *        the output creator to be used
 	 * @param stateFactory
 	 *        the {@link StateFactory} to be used by this {@code Join}. If {@code null} is given
 	 *        then the {@link #DEFAULT_STATE_FACTORY} is used.
@@ -132,7 +161,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator,
 				StateFactory stateFactory)
 	{
-		this(outputCreator, stateFactory, true);
+		this(outputCreator, stateFactory, (Boolean) null);
 	}
 	
 	/**
@@ -148,7 +177,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	 *        if set to {@code true} the {@code Join} is automatically reset after each result event
 	 */
 	public Join(JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator,
-				StateFactory stateFactory, boolean resetAfterResultEvent)
+				StateFactory stateFactory, Boolean resetAfterResultEvent)
 	{
 		this(stateFactory, resetAfterResultEvent);
 		
@@ -159,15 +188,33 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		this.outputCreator = outputCreator;
 	}
 	
+	Join()
+	{
+		this((StateFactory) null, (Boolean) null);
+	}
+	
+	Join(boolean resetAfterResultEvent)
+	{
+		this((StateFactory) null, resetAfterResultEvent);
+	}
+	
 	Join(StateFactory stateFactory)
 	{
-		this(stateFactory, true);
+		this(stateFactory, (Boolean) null);
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	Join(StateFactory stateFactory, boolean resetAfterResultEvent)
+	Join(StateFactory stateFactory, Boolean resetAfterResultEvent)
 	{
-		this.resetAfterResultEvent = resetAfterResultEvent;
+		if (resetAfterResultEvent == null)
+		{
+			this.resetAfterResultEvent = true;
+		}
+		else
+		{
+			this.resetAfterResultEvent = resetAfterResultEvent;
+		}
+		
 		if (stateFactory == null)
 		{
 			if (DEFAULT_STATE_FACTORY == null)

@@ -75,7 +75,6 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	public GenericJoinCollections()
 	{
 		super();
-		
 		initOutputElementCreator();
 	}
 	
@@ -92,7 +91,6 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	public GenericJoinCollections(boolean resetAfterResultEvent)
 	{
 		super(resetAfterResultEvent);
-		
 		initOutputElementCreator();
 	}
 	
@@ -110,7 +108,6 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	public GenericJoinCollections(StateFactory stateFactory)
 	{
 		super(stateFactory);
-		
 		initOutputElementCreator();
 	}
 	
@@ -130,7 +127,6 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	public GenericJoinCollections(StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
 		super(stateFactory, resetAfterResultEvent);
-		
 		initOutputElementCreator();
 	}
 	
@@ -147,7 +143,6 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	public GenericJoinCollections(Class<? extends OutputElement> outputElementType)
 	{
 		super();
-		
 		initOutputElementCreator(outputElementType);
 	}
 	
@@ -166,7 +161,6 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	public GenericJoinCollections(Class<? extends OutputElement> outputElementType, boolean resetAfterResultEvent)
 	{
 		super(resetAfterResultEvent);
-		
 		initOutputElementCreator(outputElementType);
 	}
 	
@@ -186,7 +180,6 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 	public GenericJoinCollections(Class<? extends OutputElement> outputElementType, StateFactory stateFactory)
 	{
 		super(stateFactory);
-		
 		initOutputElementCreator(outputElementType);
 	}
 	
@@ -209,7 +202,6 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 								  boolean resetAfterResultEvent)
 	{
 		super(stateFactory, resetAfterResultEvent);
-		
 		initOutputElementCreator(outputElementType);
 	}
 	
@@ -236,6 +228,6 @@ public abstract class GenericJoinCollections<Input1Element, Input2Element, Outpu
 		outputElementCreator = new ConstructableOutputCreator<Input1Element, Input2Element, OutputElement>(
 			outputConstructor);
 		
-		setOutputElementCreator(outputElementCreator);
+		initOutputElementCreator(outputElementCreator);
 	}
 }

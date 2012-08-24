@@ -24,7 +24,7 @@
  */
 package net.objectzoo.ebc.join;
 
-import static net.objectzoo.ebc.builder.Flow.await;
+import static net.objectzoo.ebc.builder.Flow.*;
 
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.ProcessAndResultFlow;
@@ -64,7 +64,8 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	 */
 	public JoinProcessAndSignal()
 	{
-		this(null);
+		join = new Join<T, Void, T>();
+		init();
 	}
 	
 	/**
@@ -75,7 +76,8 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	 */
 	public JoinProcessAndSignal(boolean resetAfterResultEvent)
 	{
-		this(null, resetAfterResultEvent);
+		join = new Join<T, Void, T>(resetAfterResultEvent);
+		init();
 	}
 	
 	/**
@@ -87,7 +89,8 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	 */
 	public JoinProcessAndSignal(StateFactory stateFactory)
 	{
-		this(stateFactory, true);
+		join = new Join<T, Void, T>(stateFactory);
+		init();
 	}
 	
 	/**
@@ -101,15 +104,30 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	 */
 	public JoinProcessAndSignal(StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
-		join = new Join<T, Void, T>(new JoinOutputCreator<T, Void, T>()
+		join = new Join<T, Void, T>(stateFactory, resetAfterResultEvent);
+		init();
+	}
+	
+	private void init()
+	{
+		initOutputCreator();
+		initFlow();
+	}
+	
+	private void initOutputCreator()
+	{
+		join.setOutputCreator(new JoinOutputCreator<T, Void, T>()
 		{
 			@Override
 			public T createOutput(T input1, Void input2)
 			{
 				return input1;
 			}
-		}, stateFactory, resetAfterResultEvent);
-		
+		});
+	}
+	
+	private void initFlow()
+	{
 		await(join).then(resultEvent);
 	}
 	

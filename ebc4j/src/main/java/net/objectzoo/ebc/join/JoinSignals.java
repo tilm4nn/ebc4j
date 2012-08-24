@@ -24,7 +24,7 @@
  */
 package net.objectzoo.ebc.join;
 
-import static net.objectzoo.ebc.builder.Flow.await;
+import static net.objectzoo.ebc.builder.Flow.*;
 
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.impl.SignalBoard;
@@ -58,7 +58,8 @@ public class JoinSignals extends SignalBoard
 	 */
 	public JoinSignals()
 	{
-		this(null);
+		join = new Join<Void, Void, Void>();
+		init();
 	}
 	
 	/**
@@ -69,7 +70,8 @@ public class JoinSignals extends SignalBoard
 	 */
 	public JoinSignals(boolean resetAfterSignalEvent)
 	{
-		this(null, resetAfterSignalEvent);
+		join = new Join<Void, Void, Void>(resetAfterSignalEvent);
+		init();
 	}
 	
 	/**
@@ -81,7 +83,8 @@ public class JoinSignals extends SignalBoard
 	 */
 	public JoinSignals(StateFactory stateFactory)
 	{
-		this(stateFactory, true);
+		join = new Join<Void, Void, Void>(stateFactory);
+		init();
 	}
 	
 	/**
@@ -95,15 +98,30 @@ public class JoinSignals extends SignalBoard
 	 */
 	public JoinSignals(StateFactory stateFactory, boolean resetAfterSignalEvent)
 	{
-		join = new Join<Void, Void, Void>(new JoinOutputCreator<Void, Void, Void>()
+		join = new Join<Void, Void, Void>(stateFactory, resetAfterSignalEvent);
+		init();
+	}
+	
+	private void init()
+	{
+		initOutputCreator();
+		initFlow();
+	}
+	
+	private void initOutputCreator()
+	{
+		join.setOutputCreator(new JoinOutputCreator<Void, Void, Void>()
 		{
 			@Override
 			public Void createOutput(Void input1, Void input2)
 			{
 				return null;
 			}
-		}, stateFactory, resetAfterSignalEvent);
-		
+		});
+	}
+	
+	private void initFlow()
+	{
 		await(join).then(signalEvent);
 	}
 	

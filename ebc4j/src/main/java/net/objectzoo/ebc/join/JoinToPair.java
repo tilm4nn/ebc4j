@@ -58,7 +58,8 @@ public class JoinToPair<Input1, Input2> extends Join<Input1, Input2, Pair<Input1
 	 */
 	public JoinToPair()
 	{
-		super(new PairOutputCreator<Input1, Input2>(), null);
+		super();
+		setOutputCreator();
 	}
 	
 	/**
@@ -69,7 +70,8 @@ public class JoinToPair<Input1, Input2> extends Join<Input1, Input2, Pair<Input1
 	 */
 	public JoinToPair(boolean resetAfterResultEvent)
 	{
-		super(new PairOutputCreator<Input1, Input2>(), null, resetAfterResultEvent);
+		super(resetAfterResultEvent);
+		setOutputCreator();
 	}
 	
 	/**
@@ -81,7 +83,8 @@ public class JoinToPair<Input1, Input2> extends Join<Input1, Input2, Pair<Input1
 	 */
 	public JoinToPair(StateFactory stateFactory)
 	{
-		super(new PairOutputCreator<Input1, Input2>(), stateFactory);
+		super(stateFactory);
+		setOutputCreator();
 	}
 	
 	/**
@@ -95,6 +98,12 @@ public class JoinToPair<Input1, Input2> extends Join<Input1, Input2, Pair<Input1
 	 */
 	public JoinToPair(StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
-		super(new PairOutputCreator<Input1, Input2>(), stateFactory, resetAfterResultEvent);
+		super(stateFactory, resetAfterResultEvent);
+		setOutputCreator();
+	}
+	
+	private void setOutputCreator()
+	{
+		setOutputCreator(new PairOutputCreator<Input1, Input2>());
 	}
 }

@@ -72,8 +72,8 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 	 */
 	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
 	{
-		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator),
-			null);
+		super();
+		initOutputElementCreator(elementOutputCreator);
 	}
 	
 	/**
@@ -88,8 +88,8 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator,
 						   boolean resetAfterResultEvent)
 	{
-		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator),
-			null, resetAfterResultEvent);
+		super(resetAfterResultEvent);
+		initOutputElementCreator(elementOutputCreator);
 	}
 	
 	/**
@@ -105,8 +105,8 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator,
 						   StateFactory stateFactory)
 	{
-		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator),
-			stateFactory);
+		super(stateFactory);
+		initOutputElementCreator(elementOutputCreator);
 	}
 	
 	/**
@@ -124,18 +124,18 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 	public JoinCollections(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator,
 						   StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
-		super(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(elementOutputCreator),
-			stateFactory, resetAfterResultEvent);
+		super(stateFactory, resetAfterResultEvent);
+		initOutputElementCreator(elementOutputCreator);
 	}
 	
 	JoinCollections()
 	{
-		super(null);
+		super();
 	}
 	
 	JoinCollections(boolean resetAfterResultEvent)
 	{
-		super(null, resetAfterResultEvent);
+		super(resetAfterResultEvent);
 	}
 	
 	JoinCollections(StateFactory stateFactoryr)
@@ -148,7 +148,7 @@ public class JoinCollections<Input1Element, Input2Element, OutputElement> extend
 		super(stateFactoryr, resetAfterResultEvent);
 	}
 	
-	void setOutputElementCreator(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
+	void initOutputElementCreator(JoinOutputCreator<? super Input1Element, ? super Input2Element, ? extends OutputElement> elementOutputCreator)
 	{
 		setOutputCreator(new CollectionsOutputCreator<Input1Element, Input2Element, OutputElement>(
 			elementOutputCreator));

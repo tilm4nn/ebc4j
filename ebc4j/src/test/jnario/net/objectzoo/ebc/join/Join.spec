@@ -1,6 +1,6 @@
 package net.objectzoo.ebc.join
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.*
 import static org.mockito.Mockito.*
 import static org.hamcrest.Matcher.*
 import net.objectzoo.ebc.state.StateFactory
@@ -11,106 +11,101 @@ import static extension org.jnario.lib.Should.*
 
 describe Join
 {
-	val outputCreator = mock(typeof(JoinOutputCreator))
-	val sut = new Join<Object, Object, Object>(outputCreator, null)
+	val mockOutputCreator = mock(typeof(JoinOutputCreator))
+	val subject = new Join<Object, Object, Object>(mockOutputCreator)
 	
 	fact "waits for input1 to continue"
 	{
-		sut.input2Action.invoke(new Object)
-		sut.input2Action.invoke(new Object)
-		sut.input2Action.invoke(new Object)
+		subject.input2Action.invoke(21)
+		subject.input2Action.invoke(22)
+		subject.input2Action.invoke(23)
 		
-		verify(outputCreator, never).createOutput(anyObject, anyObject)
+		verify(mockOutputCreator, never).createOutput(anyObject, anyObject)
 	}
 	
 	fact "waits for input2 to continue"
 	{
-		sut.input1Action.invoke(new Object)
-		sut.input1Action.invoke(new Object)
-		sut.input1Action.invoke(new Object)
+		subject.input1Action.invoke(11)
+		subject.input1Action.invoke(12)
+		subject.input1Action.invoke(13)
 		
-		verify(outputCreator, never).createOutput(anyObject, anyObject)
+		verify(mockOutputCreator, never).createOutput(anyObject, anyObject)
 	}
 	
 	fact "creates output for last input1"
 	{
-		val input1 = new Object;
+		subject.input1Action.invoke(11)
+		subject.input1Action.invoke(12)
+		subject.input2Action.invoke(21)
 		
-		sut.input1Action.invoke(new Object)
-		sut.input1Action.invoke(input1)
-		sut.input2Action.invoke(new Object)
-		
-		verify(outputCreator).createOutput(same(input1), anyObject)
+		verify(mockOutputCreator).createOutput(eq(12), anyObject)
 	}
 	
 	fact "creates output for last input2"
 	{
-		val input2 = new Object;
+		subject.input2Action.invoke(21)
+		subject.input2Action.invoke(22)
+		subject.input1Action.invoke(12)
 		
-		sut.input2Action.invoke(new Object)
-		sut.input2Action.invoke(input2)
-		sut.input1Action.invoke(new Object)
-		
-		verify(outputCreator).createOutput(anyObject, same(input2))
+		verify(mockOutputCreator).createOutput(anyObject, eq(22))
 	}
 	
 	fact "sends created output"
 	{
-		val output = new Object
 		val resultAction = mock(typeof(Action))
-		sut.resultEvent.subscribe(resultAction)
-		when(outputCreator.createOutput(anyObject, anyObject))
-			.thenReturn(output)
+		subject.resultEvent.subscribe(resultAction)
+		when(mockOutputCreator.createOutput(anyObject, anyObject))
+			.thenReturn("out")
 
-		sut.input2Action.invoke(new Object)
-		sut.input1Action.invoke(new Object)
+		subject.input2Action.invoke(21)
+		subject.input1Action.invoke(11)
 		
-		verify(resultAction).invoke(output)
+		verify(resultAction).invoke("out")
 	}
 	
 	context "with resetAfterResultEvent"
 	{
 		fact "resets input1 after result"
 		{
-			sut.input1Action.invoke(new Object)
-			sut.input2Action.invoke(new Object)
-			sut.input2Action.invoke(new Object)
+			subject.input1Action.invoke(11)
+			subject.input2Action.invoke(21)
+			subject.input2Action.invoke(22)
 			
-			verify(outputCreator).createOutput(anyObject, anyObject)
+			verify(mockOutputCreator, times(1)).createOutput(anyObject, anyObject)
 		}
 		
 		fact "resets input2 after result"
 		{
-			sut.input2Action.invoke(new Object)
-			sut.input1Action.invoke(new Object)
-			sut.input1Action.invoke(new Object)
+			subject.input2Action.invoke(21)
+			subject.input1Action.invoke(11)
+			subject.input1Action.invoke(12)
 			
-			verify(outputCreator).createOutput(anyObject, anyObject)
+			verify(mockOutputCreator, times(1)).createOutput(anyObject, anyObject)
 		}
 	}
 	
 	context "without resetAfterResultEvent"
 	{
-		val sut = new Join<Object, Object, Object>(outputCreator, null, false)
+		val subject = new Join<Object, Object, Object>(mockOutputCreator, false)
 			
 		fact "sends new result for changing input2"
 		{ 
-			sut.input1Action.invoke(new Object)
-			sut.input2Action.invoke(new Object)
-			sut.input2Action.invoke(new Object)
-			sut.input2Action.invoke(new Object)
+			subject.input1Action.invoke(11)
+			subject.input2Action.invoke(21)
+			subject.input2Action.invoke(22)
+			subject.input2Action.invoke(23)
 			
-			verify(outputCreator, times(3)).createOutput(anyObject, anyObject)
+			verify(mockOutputCreator, times(3)).createOutput(anyObject, anyObject)
 		}
 		
 		fact "sends new result for changing input1"
 		{
-			sut.input2Action.invoke(new Object)
-			sut.input1Action.invoke(new Object)
-			sut.input1Action.invoke(new Object)
-			sut.input1Action.invoke(new Object)
+			subject.input2Action.invoke(21)
+			subject.input1Action.invoke(11)
+			subject.input1Action.invoke(12)
+			subject.input1Action.invoke(13)
 			
-			verify(outputCreator, times(3)).createOutput(anyObject, anyObject)
+			verify(mockOutputCreator, times(3)).createOutput(anyObject, anyObject)
 		}
 	}
 	
@@ -118,20 +113,20 @@ describe Join
 	{
 		fact "resets input1"
 		{
-			sut.input1Action.invoke(new Object)
-			sut.resetAction.invoke;
-			sut.input2Action.invoke(new Object)
+			subject.input1Action.invoke(11)
+			subject.resetAction.invoke
+			subject.input2Action.invoke(21)
 			
-			verify(outputCreator, never).createOutput(anyObject, anyObject)
+			verify(mockOutputCreator, never).createOutput(anyObject, anyObject)
 		}
 		
 		fact "resets input2"
 		{
-			sut.input2Action.invoke(new Object)
-			sut.resetAction.invoke;
-			sut.input1Action.invoke(new Object)
+			subject.input2Action.invoke(21)
+			subject.resetAction.invoke
+			subject.input1Action.invoke(11)
 			
-			verify(outputCreator, never).createOutput(anyObject, anyObject)
+			verify(mockOutputCreator, never).createOutput(anyObject, anyObject)
 		}
 	}
 	
@@ -139,19 +134,19 @@ describe Join
 	{
 		fact "sets a new JoinOutputCreator"
 		{
-			val sut = new Join<Object, Object, Object>(null)
-			val outputCreator = mock(typeof(JoinOutputCreator))
+			val subject = new Join<Object, Object, Object>()
+			val mockOutputCreator = mock(typeof(JoinOutputCreator))
 			
-			sut.setOutputCreator(outputCreator)
-			sut.input2Action.invoke(new Object)
-			sut.input1Action.invoke(new Object)
+			subject.setOutputCreator(mockOutputCreator)
+			subject.input2Action.invoke(21)
+			subject.input1Action.invoke(11)
 			
-			verify(outputCreator).createOutput(anyObject, anyObject)
+			verify(mockOutputCreator).createOutput(anyObject, anyObject)
 		}
 		
 		fact "throws exception if already set"
 		{
-			sut.setOutputCreator(outputCreator) should throw IllegalStateException
+			subject.setOutputCreator(mockOutputCreator) should throw IllegalStateException
 		}
 	}
 	
@@ -167,10 +162,14 @@ describe Join
 			Join::setDefaultStateFactory(null)
 			try
 			{
+				new Join() should throw IllegalArgumentException
+				new Join(true) should throw IllegalArgumentException
 				new Join(null as StateFactory) should throw IllegalArgumentException
 				new Join(null as StateFactory, true) should throw IllegalArgumentException
-				new Join(outputCreator, null) should throw IllegalArgumentException
-				new Join(outputCreator, null, true) should throw IllegalArgumentException
+				new Join(mockOutputCreator) should throw IllegalArgumentException
+				new Join(mockOutputCreator, true) should throw IllegalArgumentException
+				new Join(mockOutputCreator, null as StateFactory) should throw IllegalArgumentException
+				new Join(mockOutputCreator, null as StateFactory, true) should throw IllegalArgumentException
 			}
 			finally
 			{
@@ -183,16 +182,18 @@ describe Join
 		
 		fact "throw exceptions for null outputCreator"
 		{
-			new Join(null, stateFactory) should throw IllegalArgumentException
-			new Join(null, stateFactory, true) should throw IllegalArgumentException
+			new Join(null as JoinOutputCreator) should throw IllegalArgumentException
+			new Join(null as JoinOutputCreator, true) should throw IllegalArgumentException
+			new Join(null as JoinOutputCreator, stateFactory) should throw IllegalArgumentException
+			new Join(null as JoinOutputCreator, stateFactory, true) should throw IllegalArgumentException
 		}
 		
 		fact "use given stateFactory"
 		{
 			new Join(stateFactory)
 			new Join(stateFactory, true)
-			new Join(outputCreator, stateFactory)
-			new Join(outputCreator, stateFactory, true)
+			new Join(mockOutputCreator, stateFactory)
+			new Join(mockOutputCreator, stateFactory, true)
 			
 			verify(stateFactory, times(4)).create(anyObject)
 		}

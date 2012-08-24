@@ -70,8 +70,7 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	 */
 	public GenericJoin()
 	{
-		super(null);
-		
+		super();
 		initOutputCreator();
 	}
 	
@@ -87,8 +86,7 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	 */
 	public GenericJoin(boolean resetAfterResultEvent)
 	{
-		super(null, resetAfterResultEvent);
-		
+		super(resetAfterResultEvent);
 		initOutputCreator();
 	}
 	
@@ -107,7 +105,6 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	public GenericJoin(StateFactory stateFactory)
 	{
 		super(stateFactory);
-		
 		initOutputCreator();
 	}
 	
@@ -128,7 +125,6 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	public GenericJoin(StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
 		super(stateFactory, resetAfterResultEvent);
-		
 		initOutputCreator();
 	}
 	
@@ -144,8 +140,7 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	 */
 	public GenericJoin(Class<? extends Output> outputType)
 	{
-		super(null);
-		
+		super();
 		initOutputCreator(outputType);
 	}
 	
@@ -163,8 +158,7 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	 */
 	public GenericJoin(Class<? extends Output> outputType, boolean resetAfterResultEvent)
 	{
-		super(null, resetAfterResultEvent);
-		
+		super(resetAfterResultEvent);
 		initOutputCreator(outputType);
 	}
 	
@@ -184,7 +178,6 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	public GenericJoin(Class<? extends Output> outputType, StateFactory stateFactory)
 	{
 		super(stateFactory);
-		
 		initOutputCreator(outputType);
 	}
 	
@@ -206,7 +199,6 @@ public abstract class GenericJoin<Input1, Input2, Output> extends Join<Input1, I
 	public GenericJoin(Class<? extends Output> outputType, StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
 		super(stateFactory, resetAfterResultEvent);
-		
 		initOutputCreator(outputType);
 	}
 	

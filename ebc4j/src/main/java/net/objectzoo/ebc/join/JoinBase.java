@@ -61,7 +61,8 @@ public abstract class JoinBase<Input1, Input2, Output> extends Join<Input1, Inpu
 	 */
 	protected JoinBase()
 	{
-		this(null);
+		super();
+		setOutputCreator();
 	}
 	
 	/**
@@ -73,7 +74,8 @@ public abstract class JoinBase<Input1, Input2, Output> extends Join<Input1, Inpu
 	 */
 	protected JoinBase(boolean resetAfterResultEvent)
 	{
-		this(null, resetAfterResultEvent);
+		super(resetAfterResultEvent);
+		setOutputCreator();
 	}
 	
 	/**
@@ -87,7 +89,7 @@ public abstract class JoinBase<Input1, Input2, Output> extends Join<Input1, Inpu
 	protected JoinBase(StateFactory stateFactory)
 	{
 		super(stateFactory);
-		setOutputCreator(new OutputCreator());
+		setOutputCreator();
 	}
 	
 	/**
@@ -103,6 +105,11 @@ public abstract class JoinBase<Input1, Input2, Output> extends Join<Input1, Inpu
 	protected JoinBase(StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
 		super(stateFactory, resetAfterResultEvent);
+		setOutputCreator();
+	}
+	
+	private void setOutputCreator()
+	{
 		setOutputCreator(new OutputCreator());
 	}
 	

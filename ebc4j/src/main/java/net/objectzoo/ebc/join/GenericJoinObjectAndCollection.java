@@ -74,7 +74,6 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 	public GenericJoinObjectAndCollection()
 	{
 		super();
-		
 		initOutputElementCreator();
 	}
 	
@@ -91,7 +90,6 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 	public GenericJoinObjectAndCollection(boolean resetAfterResultEvent)
 	{
 		super(resetAfterResultEvent);
-		
 		initOutputElementCreator();
 	}
 	
@@ -109,7 +107,6 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 	public GenericJoinObjectAndCollection(StateFactory stateFactory)
 	{
 		super(stateFactory);
-		
 		initOutputElementCreator();
 	}
 	
@@ -129,7 +126,6 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 	public GenericJoinObjectAndCollection(StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
 		super(stateFactory, resetAfterResultEvent);
-		
 		initOutputElementCreator();
 	}
 	
@@ -146,7 +142,6 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 	public GenericJoinObjectAndCollection(Class<? extends OutputElement> outputElementType)
 	{
 		super();
-		
 		initOutputElementCreator(outputElementType);
 	}
 	
@@ -166,7 +161,6 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 										  boolean resetAfterResultEvent)
 	{
 		super(resetAfterResultEvent);
-		
 		initOutputElementCreator(outputElementType);
 	}
 	
@@ -187,7 +181,6 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 										  StateFactory stateFactory)
 	{
 		super(stateFactory);
-		
 		initOutputElementCreator(outputElementType);
 	}
 	
@@ -210,7 +203,6 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 										  StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
 		super(stateFactory, resetAfterResultEvent);
-		
 		initOutputElementCreator(outputElementType);
 	}
 	
@@ -237,6 +229,6 @@ public abstract class GenericJoinObjectAndCollection<Input1, Input2Element, Outp
 		outputElementCreator = new ConstructableOutputCreator<Input1, Input2Element, OutputElement>(
 			outputElementConstructor);
 		
-		setOutputElementCreator(outputElementCreator);
+		initOutputElementCreator(outputElementCreator);
 	}
 }
