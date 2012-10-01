@@ -76,6 +76,20 @@ subprojects {
 			attributes("Implementation-Title": project.title, "Implementation-Version": project.version, "Implementation-Vendor": project.vendor)
 		}
 	}
+	
+	task updateTestResultTimestamps {
+		dependsOn test
+		inputs.files test.outputs.files
+		doLast {
+			def timestamp = System.currentTimeMillis()
+			test.testResultsDir.eachFile { it.lastModified = timestamp }
+			test.testReportDir.eachFile { it.lastModified = timestamp }
+		}
+    }
+	
+	task jenkinsBuild {
+		dependsOn updateTestResultTimestamps
+	}
 }
 
 project(':ebc4j') {
