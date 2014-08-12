@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="ebc4j/src/main/java"/>
-	<classpathentry kind="src" path="ebc4j/src/test/java"/>
-	<classpathentry kind="src" path="ebc4j-async/src/main/java"/>
-	<classpathentry kind="src" path="ebc4j-async/src/test/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="lib/main/events4j-1.2.1.jar"/>
-	<classpathentry kind="lib" path="lib/test/junit/hamcrest-core-1.1.jar"/>
-	<classpathentry kind="lib" path="lib/test/junit/hamcrest-library-1.1.jar"/>
-	<classpathentry kind="lib" path="lib/test/junit/junit-4.10.jar"/>
-	<classpathentry kind="lib" path="lib/test/mockito/mockito-all-1.9.5-rc1.jar"/>
+	<classpathentry exported="true" kind="con" path="org.springsource.ide.eclipse.gradle.classpathcontainer"/>
 	<classpathentry kind="output" path=".eclipse/bin"/>
 </classpath>
