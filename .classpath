@@ -2,20 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="ebc4j/src/main/java"/>
 	<classpathentry kind="src" path="ebc4j/src/test/java"/>
-	<classpathentry kind="src" path="ebc4j/src/test/jnario"/>
-	<classpathentry kind="src" path="ebc4j/src/test/generated"/>
 	<classpathentry kind="src" path="ebc4j-async/src/main/java"/>
 	<classpathentry kind="src" path="ebc4j-async/src/test/java"/>
-	<classpathentry kind="src" path="ebc4j-async/src/test/jnario"/>
-	<classpathentry kind="src" path="ebc4j-async/src/test/generated"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="lib" path="lib/main/events4j-1.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/test/junit/hamcrest-core-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/test/junit/hamcrest-library-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/test/junit/junit-4.10.jar"/>
 	<classpathentry kind="lib" path="lib/test/mockito/mockito-all-1.9.5-rc1.jar"/>
-	<classpathentry kind="lib" path="lib/test/jnario/org.jnario.standalone.maven-0.1.0.jar"/>
-	<classpathentry kind="lib" path="lib/test/jnario/org.eclipse.xtend.standalone-2.3.0.jar"/>
-	<classpathentry kind="lib" path="lib/test/jnario/guava-13.0.jar"/>
 	<classpathentry kind="output" path=".eclipse/bin"/>
 </classpath>
