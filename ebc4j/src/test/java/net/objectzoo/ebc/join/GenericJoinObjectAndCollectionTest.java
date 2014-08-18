@@ -49,8 +49,8 @@ public class GenericJoinObjectAndCollectionTest
 		};
 		sut.resultEvent().subscribe(result);
 		
-		sut.input1Action().invoke("String");
-		sut.input2Action().invoke(asList(1, 2));
+		sut.input1Action().accept("String");
+		sut.input2Action().accept(asList(1, 2));
 		
 		assertThat(result.getLastResult(),
 			is((Collection) asList(new TestObject("String", 1), new TestObject("String", 2))));
@@ -68,8 +68,8 @@ public class GenericJoinObjectAndCollectionTest
 		};
 		sut.resultEvent().subscribe(result);
 		
-		sut.input1Action().invoke("String");
-		sut.input2Action().invoke(asList(1, 2));
+		sut.input1Action().accept("String");
+		sut.input2Action().accept(asList(1, 2));
 		
 		assertThat(result.getLastResult(),
 			is((Collection) asList(new SubTestObject("String", 1), new SubTestObject("String", 2))));

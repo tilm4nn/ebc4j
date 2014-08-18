@@ -19,9 +19,9 @@ public class JoinToPairTest
 		Action mockAction = mock(Action.class);
 		sut.resultEvent().subscribe(mockAction);
 		
-		sut.input1Action().invoke(1);
-		sut.input2Action().invoke(2);
+		sut.input1Action().accept(1);
+		sut.input2Action().accept(2);
 		
-		verify(mockAction).invoke(new Pair(1, 2));
+		verify(mockAction).accept(new Pair(1, 2));
 	}
 }

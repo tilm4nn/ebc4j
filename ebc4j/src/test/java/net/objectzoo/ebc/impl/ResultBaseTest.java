@@ -27,10 +27,11 @@ package net.objectzoo.ebc.impl;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+import java.util.function.Consumer;
+
 import org.junit.Assert;
 import org.junit.Test;
 
-import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.test.MockAction;
 import net.objectzoo.events.impl.EventDelegate;
 
@@ -47,7 +48,7 @@ public class ResultBaseTest
 		String result = null;
 		
 		@Override
-		public void invoke(String param)
+		public void accept(String param)
 		{
 			if (result != null)
 			{
@@ -60,13 +61,13 @@ public class ResultBaseTest
 		}
 		
 		@Override
-		public void subscribe(Action<? super String> arg0) throws IllegalArgumentException
+		public void subscribe(Consumer<? super String> arg0) throws IllegalArgumentException
 		{
 			// Not testing this
 		}
 		
 		@Override
-		public void unsubscribe(Action<? super String> arg0) throws IllegalArgumentException
+		public void unsubscribe(Consumer<? super String> arg0) throws IllegalArgumentException
 		{
 			// Not testing this
 		}

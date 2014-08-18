@@ -39,13 +39,14 @@ public class GenericJoinTest
 	{
 		MockAction<TestObject> result = new MockAction<TestObject>();
 		
-		GenericJoin<String, Integer, TestObject> sut = new GenericJoin<String, Integer, TestObject>(false)
+		GenericJoin<String, Integer, TestObject> sut = new GenericJoin<String, Integer, TestObject>(
+			false)
 		{
 		};
 		sut.resultEvent().subscribe(result);
 		
-		sut.input1Action().invoke("String");
-		sut.input2Action().invoke(1);
+		sut.input1Action().accept("String");
+		sut.input2Action().accept(1);
 		
 		assertThat(result.getLastResult(), is(new TestObject("String", 1)));
 	}
@@ -61,8 +62,8 @@ public class GenericJoinTest
 		};
 		sut.resultEvent().subscribe(result);
 		
-		sut.input1Action().invoke("String");
-		sut.input2Action().invoke(1);
+		sut.input1Action().accept("String");
+		sut.input2Action().accept(1);
 		
 		assertThat(result.getLastResult(), is((TestObject) new SubTestObject("String", 1)));
 	}

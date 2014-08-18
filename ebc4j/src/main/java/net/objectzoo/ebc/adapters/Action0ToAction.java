@@ -52,9 +52,9 @@ public class Action0ToAction<T> implements Action<T>
 	}
 	
 	@Override
-	public void invoke(T parameter)
+	public void accept(T parameter)
 	{
-		action.invoke();
+		action.start();
 	}
 	
 	@Override

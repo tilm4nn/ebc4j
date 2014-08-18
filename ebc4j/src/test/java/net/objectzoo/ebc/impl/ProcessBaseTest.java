@@ -58,7 +58,7 @@ public class ProcessBaseTest
 	{
 		ProcessImpl sut = new ProcessImpl();
 		
-		sut.processAction().invoke("FooBar");
+		sut.processAction().accept("FooBar");
 		
 		assertThat(sut.param, is("FooBar"));
 	}

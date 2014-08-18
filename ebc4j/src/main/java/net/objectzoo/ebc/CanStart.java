@@ -27,7 +27,7 @@ package net.objectzoo.ebc;
 import net.objectzoo.delegates.Action0;
 
 /**
- * An EBC that {@code CanStart} can be invoked to perform same work and thus provides an
+ * An EBC that {@code CanStart} can be invoked to perform some work and thus provides an
  * {@link Action0} to do so.
  * 
  * @author tilmann

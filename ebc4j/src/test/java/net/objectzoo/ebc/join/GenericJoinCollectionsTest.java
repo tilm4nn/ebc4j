@@ -49,8 +49,8 @@ public class GenericJoinCollectionsTest
 		};
 		sut.resultEvent().subscribe(result);
 		
-		sut.input1Action().invoke(asList("String1", "String2"));
-		sut.input2Action().invoke(asList(1, 2));
+		sut.input1Action().accept(asList("String1", "String2"));
+		sut.input2Action().accept(asList(1, 2));
 		
 		assertThat(result.getLastResult(),
 			is((Collection) asList(new TestObject("String1", 1), new TestObject("String2", 2))));
@@ -68,10 +68,11 @@ public class GenericJoinCollectionsTest
 		};
 		sut.resultEvent().subscribe(result);
 		
-		sut.input1Action().invoke(asList("String1", "String2"));
-		sut.input2Action().invoke(asList(1, 2));
+		sut.input1Action().accept(asList("String1", "String2"));
+		sut.input2Action().accept(asList(1, 2));
 		
-		assertThat(result.getLastResult(),
+		assertThat(
+			result.getLastResult(),
 			is((Collection) asList(new SubTestObject("String1", 1), new SubTestObject("String2", 2))));
 	}
 }

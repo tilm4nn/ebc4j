@@ -67,7 +67,7 @@ public class MockAction0 implements Action0
 	 *         if the maximum invocation allowed count has been exceeded
 	 */
 	@Override
-	public synchronized void invoke()
+	public synchronized void start()
 	{
 		if (++invocationCount > maxInvocationsAllowed)
 		{

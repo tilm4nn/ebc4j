@@ -27,7 +27,7 @@ package net.objectzoo.ebc.executor;
 import static net.objectzoo.ebc.executor.FlowExecutorHelpers.appendResultContainer;
 import static net.objectzoo.ebc.executor.FlowExecutorHelpers.removeResultContainer;
 
-import net.objectzoo.delegates.Func;
+import net.objectzoo.delegates.Function;
 import net.objectzoo.ebc.ProcessAndResultFlow;
 import net.objectzoo.ebc.test.MockAction;
 
@@ -46,7 +46,7 @@ import net.objectzoo.ebc.test.MockAction;
  *        the result parameter type of the flow
  */
 public class ProcessAndResultFlowToFuncAdapter<ProcessParameter, ResultParameter> implements
-	Func<ProcessParameter, ResultParameter>
+	Function<ProcessParameter, ResultParameter>
 {
 	private final ProcessAndResultFlow<ProcessParameter, ResultParameter> flow;
 	
@@ -65,11 +65,11 @@ public class ProcessAndResultFlowToFuncAdapter<ProcessParameter, ResultParameter
 	 * {@inheritDoc}
 	 */
 	@Override
-	public ResultParameter invoke(ProcessParameter input)
+	public ResultParameter apply(ProcessParameter input)
 	{
 		MockAction<ResultParameter> resultContainer = appendResultContainer(flow);
 		
-		flow.processAction().invoke(input);
+		flow.processAction().accept(input);
 		
 		removeResultContainer(resultContainer, flow);
 		

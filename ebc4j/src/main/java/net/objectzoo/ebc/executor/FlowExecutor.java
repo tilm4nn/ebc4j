@@ -129,7 +129,7 @@ public class FlowExecutor
 	public static <ProcessParameter, FlowType extends CanProcess<ProcessParameter>> void process(FlowType flow,
 																								 ProcessParameter input)
 	{
-		flow.processAction().invoke(input);
+		flow.processAction().accept(input);
 	}
 	
 	/**
@@ -147,7 +147,7 @@ public class FlowExecutor
 																																									   
 																																									   ProcessParameter input)
 	{
-		return new ProcessAndResultFlowToFuncAdapter<ProcessParameter, ResultParameter>(flow).invoke(input);
+		return new ProcessAndResultFlowToFuncAdapter<ProcessParameter, ResultParameter>(flow).apply(input);
 	}
 	
 	/**
@@ -158,7 +158,7 @@ public class FlowExecutor
 	 */
 	public static <FlowType extends CanStart> void start(FlowType flow)
 	{
-		flow.startAction().invoke();
+		flow.startAction().start();
 	}
 	
 	/**
@@ -171,7 +171,7 @@ public class FlowExecutor
 	 */
 	public static <ResultParameter, FlowType extends StartAndResultFlow<ResultParameter>> ResultParameter startAndReturnResult(FlowType flow)
 	{
-		return new StartAndResultFlowToFunc0Adapter<ResultParameter>(flow).invoke();
+		return new StartAndResultFlowToFunc0Adapter<ResultParameter>(flow).get();
 	}
 	
 }

@@ -55,7 +55,7 @@ public abstract class ProcessAndResultBase<ProcessParameter, ResultParameter> ex
 		await(processAction).then(new Action<ProcessParameter>()
 		{
 			@Override
-			public void invoke(ProcessParameter parameter)
+			public void accept(ProcessParameter parameter)
 			{
 				receiveProcess(parameter);
 			}
@@ -88,6 +88,6 @@ public abstract class ProcessAndResultBase<ProcessParameter, ResultParameter> ex
 	{
 		LoggingUtils.log(logger, logLevel, "sending result: ", parameter);
 		
-		resultEvent.invoke(parameter);
+		resultEvent.accept(parameter);
 	}
 }

@@ -24,7 +24,7 @@
  */
 package net.objectzoo.ebc.join;
 
-import static net.objectzoo.ebc.builder.Flow.*;
+import static net.objectzoo.ebc.builder.Flow.await;
 
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.ProcessAndResultFlow;
@@ -55,7 +55,8 @@ import net.objectzoo.ebc.state.StateFactory;
  * @param <T>
  *        the in and output type of the process flow that is joined
  */
-public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implements StartAndResultFlow<T>
+public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implements
+	StartAndResultFlow<T>
 {
 	private final Join<T, Void, T> join;
 	
@@ -134,9 +135,9 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	private Action0 startAction = new Action0()
 	{
 		@Override
-		public void invoke()
+		public void start()
 		{
-			join.input2Action().invoke(null);
+			join.input2Action().accept(null);
 		}
 	};
 	
@@ -155,7 +156,7 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	@Override
 	protected void process(T parameter)
 	{
-		join.input1Action().invoke(parameter);
+		join.input1Action().accept(parameter);
 	}
 	
 	/**

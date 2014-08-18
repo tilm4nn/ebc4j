@@ -44,7 +44,7 @@ public class SignalBaseTest
 		boolean called = false;
 		
 		@Override
-		public void invoke()
+		public void start()
 		{
 			if (called)
 			{

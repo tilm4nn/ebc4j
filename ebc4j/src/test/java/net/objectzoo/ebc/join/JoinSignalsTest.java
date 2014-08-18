@@ -18,9 +18,9 @@ public class JoinSignalsTest
 		Action0 mockAction = mock(Action0.class);
 		sut.signalEvent().subscribe(mockAction);
 		
-		sut.startAction1().invoke();
-		sut.startAction2().invoke();
+		sut.startAction1().start();
+		sut.startAction2().start();
 		
-		verify(mockAction).invoke();
+		verify(mockAction).start();
 	}
 }

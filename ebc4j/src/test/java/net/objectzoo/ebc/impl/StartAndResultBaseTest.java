@@ -28,10 +28,11 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import java.util.function.Consumer;
+
 import org.junit.Assert;
 import org.junit.Test;
 
-import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.test.MockAction;
 import net.objectzoo.events.impl.EventDelegate;
 
@@ -61,7 +62,7 @@ public class StartAndResultBaseTest
 		String result = null;
 		
 		@Override
-		public void invoke(String param)
+		public void accept(String param)
 		{
 			if (result != null)
 			{
@@ -74,13 +75,13 @@ public class StartAndResultBaseTest
 		}
 		
 		@Override
-		public void subscribe(Action<? super String> arg0) throws IllegalArgumentException
+		public void subscribe(Consumer<? super String> arg0) throws IllegalArgumentException
 		{
 			// Not testing this
 		}
 		
 		@Override
-		public void unsubscribe(Action<? super String> arg0) throws IllegalArgumentException
+		public void unsubscribe(Consumer<? super String> arg0) throws IllegalArgumentException
 		{
 			// Not testing this
 		}
@@ -92,7 +93,7 @@ public class StartAndResultBaseTest
 	{
 		StartAndResultImpl sut = new StartAndResultImpl();
 		
-		sut.startAction().invoke();
+		sut.startAction().start();
 		
 		assertTrue("start has not been called", sut.called);
 	}

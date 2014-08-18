@@ -78,13 +78,13 @@ public class MockAction<T> implements Action<T>
 	 *         if the maximum invocation allowed count has been exceeded
 	 */
 	@Override
-	public synchronized void invoke(T parameter)
+	public synchronized void accept(T parameter)
 	{
 		if (++invocationCount > maxInvocationsAllowed)
 		{
 			throw new AssertionError("Unexpected invocation with " + parameter
-				+ " exceeding max invocations allowed " + maxInvocationsAllowed + ". Already invoked with "
-				+ results);
+				+ " exceeding max invocations allowed " + maxInvocationsAllowed
+				+ ". Already invoked with " + results);
 		}
 		
 		results.add(parameter);

@@ -26,9 +26,9 @@ public class JoinTest
 	@Test
 	public void waits_for_input1_to_continue()
 	{
-		sut.input2Action().invoke(21);
-		sut.input2Action().invoke(22);
-		sut.input2Action().invoke(23);
+		sut.input2Action().accept(21);
+		sut.input2Action().accept(22);
+		sut.input2Action().accept(23);
 		
 		verify(mockOutputCreator, never()).createOutput(anyObject(), anyObject());
 	}
@@ -36,9 +36,9 @@ public class JoinTest
 	@Test
 	public void waits_for_input2_to_continue()
 	{
-		sut.input1Action().invoke(11);
-		sut.input1Action().invoke(12);
-		sut.input1Action().invoke(13);
+		sut.input1Action().accept(11);
+		sut.input1Action().accept(12);
+		sut.input1Action().accept(13);
 		
 		verify(mockOutputCreator, never()).createOutput(anyObject(), anyObject());
 	}
@@ -46,9 +46,9 @@ public class JoinTest
 	@Test
 	public void creates_output_for_last_input1()
 	{
-		sut.input1Action().invoke(11);
-		sut.input1Action().invoke(12);
-		sut.input2Action().invoke(21);
+		sut.input1Action().accept(11);
+		sut.input1Action().accept(12);
+		sut.input2Action().accept(21);
 		
 		verify(mockOutputCreator).createOutput(eq(12), anyObject());
 	}
@@ -56,9 +56,9 @@ public class JoinTest
 	@Test
 	public void creates_output_for_last_input2()
 	{
-		sut.input2Action().invoke(21);
-		sut.input2Action().invoke(22);
-		sut.input1Action().invoke(12);
+		sut.input2Action().accept(21);
+		sut.input2Action().accept(22);
+		sut.input1Action().accept(12);
 		
 		verify(mockOutputCreator).createOutput(anyObject(), eq(22));
 	}
@@ -70,18 +70,18 @@ public class JoinTest
 		sut.resultEvent().subscribe(resultAction);
 		when(mockOutputCreator.createOutput(anyObject(), anyObject())).thenReturn("out");
 		
-		sut.input2Action().invoke(21);
-		sut.input1Action().invoke(11);
+		sut.input2Action().accept(21);
+		sut.input1Action().accept(11);
 		
-		verify(resultAction).invoke("out");
+		verify(resultAction).accept("out");
 	}
 	
 	@Test
 	public void with_resetAfterResultEvent_resets_input1_after_result()
 	{
-		sut.input1Action().invoke(11);
-		sut.input2Action().invoke(21);
-		sut.input2Action().invoke(22);
+		sut.input1Action().accept(11);
+		sut.input2Action().accept(21);
+		sut.input2Action().accept(22);
 		
 		verify(mockOutputCreator, times(1)).createOutput(anyObject(), anyObject());
 	}
@@ -89,9 +89,9 @@ public class JoinTest
 	@Test
 	public void with_resetAfterResultEvent_resets_input2_after_result()
 	{
-		sut.input2Action().invoke(21);
-		sut.input1Action().invoke(11);
-		sut.input1Action().invoke(12);
+		sut.input2Action().accept(21);
+		sut.input1Action().accept(11);
+		sut.input1Action().accept(12);
 		
 		verify(mockOutputCreator, times(1)).createOutput(anyObject(), anyObject());
 	}
@@ -101,10 +101,10 @@ public class JoinTest
 	{
 		sut = new Join(mockOutputCreator, false);
 		
-		sut.input1Action().invoke(11);
-		sut.input2Action().invoke(21);
-		sut.input2Action().invoke(22);
-		sut.input2Action().invoke(23);
+		sut.input1Action().accept(11);
+		sut.input2Action().accept(21);
+		sut.input2Action().accept(22);
+		sut.input2Action().accept(23);
 		
 		verify(mockOutputCreator, times(3)).createOutput(anyObject(), anyObject());
 	}
@@ -114,10 +114,10 @@ public class JoinTest
 	{
 		sut = new Join(mockOutputCreator, false);
 		
-		sut.input2Action().invoke(21);
-		sut.input1Action().invoke(11);
-		sut.input1Action().invoke(12);
-		sut.input1Action().invoke(13);
+		sut.input2Action().accept(21);
+		sut.input1Action().accept(11);
+		sut.input1Action().accept(12);
+		sut.input1Action().accept(13);
 		
 		verify(mockOutputCreator, times(3)).createOutput(anyObject(), anyObject());
 	}
@@ -125,9 +125,9 @@ public class JoinTest
 	@Test
 	public void resetAction_resets_input1()
 	{
-		sut.input1Action().invoke(11);
-		sut.resetAction().invoke();
-		sut.input2Action().invoke(21);
+		sut.input1Action().accept(11);
+		sut.resetAction().start();
+		sut.input2Action().accept(21);
 		
 		verify(mockOutputCreator, never()).createOutput(anyObject(), anyObject());
 	}
@@ -135,9 +135,9 @@ public class JoinTest
 	@Test
 	public void resetAction_resets_input2()
 	{
-		sut.input2Action().invoke(21);
-		sut.resetAction().invoke();
-		sut.input1Action().invoke(11);
+		sut.input2Action().accept(21);
+		sut.resetAction().start();
+		sut.input1Action().accept(11);
 		
 		verify(mockOutputCreator, never()).createOutput(anyObject(), anyObject());
 	}
@@ -149,8 +149,8 @@ public class JoinTest
 		JoinOutputCreator mockOutputCreator = mock(JoinOutputCreator.class);
 		
 		sut.setOutputCreator(mockOutputCreator);
-		sut.input2Action().invoke(21);
-		sut.input1Action().invoke(11);
+		sut.input2Action().accept(21);
+		sut.input1Action().accept(11);
 		
 		verify(mockOutputCreator).createOutput(anyObject(), anyObject());
 	}

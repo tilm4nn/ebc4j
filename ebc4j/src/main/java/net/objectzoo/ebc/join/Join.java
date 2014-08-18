@@ -91,7 +91,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	private final Action<Input1> input1Action = new Action<Input1>()
 	{
 		@Override
-		public void invoke(Input1 input)
+		public void accept(Input1 input)
 		{
 			LoggingUtils.log(logger, logLevel, "receiving input1: ", input);
 			
@@ -102,7 +102,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	private final Action<Input2> input2Action = new Action<Input2>()
 	{
 		@Override
-		public void invoke(Input2 input)
+		public void accept(Input2 input)
 		{
 			LoggingUtils.log(logger, logLevel, "receiving input2: ", input);
 			
@@ -113,7 +113,7 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	private final Action0 resetAction = new Action0()
 	{
 		@Override
-		public void invoke()
+		public void start()
 		{
 			logger.log(logLevel, "receiving reset");
 			

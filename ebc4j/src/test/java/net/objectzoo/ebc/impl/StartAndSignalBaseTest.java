@@ -60,7 +60,7 @@ public class StartAndSignalBaseTest
 		boolean called = false;
 		
 		@Override
-		public void invoke()
+		public void start()
 		{
 			if (called)
 			{
@@ -91,7 +91,7 @@ public class StartAndSignalBaseTest
 	{
 		StartAndSignalImpl sut = new StartAndSignalImpl();
 		
-		sut.startAction().invoke();
+		sut.startAction().start();
 		
 		assertTrue("start has not been called", sut.called);
 	}

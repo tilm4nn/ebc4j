@@ -43,6 +43,6 @@ public abstract class SignalBase extends SignalBoard
 	{
 		logger.log(logLevel, "sending singal");
 		
-		signalEvent.invoke();
+		signalEvent.start();
 	}
 }

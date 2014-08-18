@@ -24,7 +24,7 @@
  */
 package net.objectzoo.ebc.join;
 
-import static net.objectzoo.ebc.builder.Flow.*;
+import static net.objectzoo.ebc.builder.Flow.await;
 
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.impl.SignalBoard;
@@ -128,9 +128,9 @@ public class JoinSignals extends SignalBoard
 	private Action0 startAction1 = new Action0()
 	{
 		@Override
-		public void invoke()
+		public void start()
 		{
-			join.input1Action().invoke(null);
+			join.input1Action().accept(null);
 		}
 	};
 	
@@ -147,9 +147,9 @@ public class JoinSignals extends SignalBoard
 	private Action0 startAction2 = new Action0()
 	{
 		@Override
-		public void invoke()
+		public void start()
 		{
-			join.input2Action().invoke(null);
+			join.input2Action().accept(null);
 		}
 	};
 	

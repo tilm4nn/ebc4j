@@ -18,9 +18,9 @@ public class JoinProcessAndSignalTest
 		Action mockAction = mock(Action.class);
 		sut.resultEvent().subscribe(mockAction);
 		
-		sut.startAction().invoke();
-		sut.processAction().invoke("input");
+		sut.startAction().start();
+		sut.processAction().accept("input");
 		
-		verify(mockAction).invoke("input");
+		verify(mockAction).accept("input");
 	}
 }

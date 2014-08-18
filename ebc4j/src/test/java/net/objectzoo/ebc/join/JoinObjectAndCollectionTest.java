@@ -24,9 +24,9 @@ public class JoinObjectAndCollectionTest
 		when(mockOutputCreator.createOutput(1, "A")).thenReturn("out1");
 		when(mockOutputCreator.createOutput(1, "B")).thenReturn("out2");
 		
-		sut.input1Action().invoke(1);
-		sut.input2Action().invoke(asList("A", "B"));
+		sut.input1Action().accept(1);
+		sut.input2Action().accept(asList("A", "B"));
 		
-		verify(mockAction).invoke(asList("out1", "out2"));
+		verify(mockAction).accept(asList("out1", "out2"));
 	}
 }

@@ -27,7 +27,7 @@ package net.objectzoo.ebc.executor;
 import static net.objectzoo.ebc.executor.FlowExecutorHelpers.appendResultContainer;
 import static net.objectzoo.ebc.executor.FlowExecutorHelpers.removeResultContainer;
 
-import net.objectzoo.delegates.Func0;
+import net.objectzoo.delegates.Function0;
 import net.objectzoo.ebc.StartAndResultFlow;
 import net.objectzoo.ebc.test.MockAction;
 
@@ -43,7 +43,8 @@ import net.objectzoo.ebc.test.MockAction;
  * @param <ResultParameter>
  *        the result parameter type of the flow
  */
-public class StartAndResultFlowToFunc0Adapter<ResultParameter> implements Func0<ResultParameter>
+public class StartAndResultFlowToFunc0Adapter<ResultParameter> implements
+	Function0<ResultParameter>
 {
 	private final StartAndResultFlow<ResultParameter> flow;
 	
@@ -59,11 +60,11 @@ public class StartAndResultFlowToFunc0Adapter<ResultParameter> implements Func0<
 	}
 	
 	@Override
-	public ResultParameter invoke()
+	public ResultParameter get()
 	{
 		MockAction<ResultParameter> resultContainer = appendResultContainer(flow);
 		
-		flow.startAction().invoke();
+		flow.startAction().start();
 		
 		removeResultContainer(resultContainer, flow);
 		

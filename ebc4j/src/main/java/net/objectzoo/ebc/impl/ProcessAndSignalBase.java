@@ -42,7 +42,8 @@ import net.objectzoo.ebc.util.LoggingUtils;
  * @param <ProcessParameter>
  *        the type of input processed by this EBC
  */
-public abstract class ProcessAndSignalBase<ProcessParameter> extends ProcessAndSignalBoard<ProcessParameter>
+public abstract class ProcessAndSignalBase<ProcessParameter> extends
+	ProcessAndSignalBoard<ProcessParameter>
 {
 	/**
 	 * Creates a new {@code ProcessAndSignalBase}
@@ -52,7 +53,7 @@ public abstract class ProcessAndSignalBase<ProcessParameter> extends ProcessAndS
 		await(processAction).then(new Action<ProcessParameter>()
 		{
 			@Override
-			public void invoke(ProcessParameter parameter)
+			public void accept(ProcessParameter parameter)
 			{
 				receiveProcess(parameter);
 			}
@@ -82,6 +83,6 @@ public abstract class ProcessAndSignalBase<ProcessParameter> extends ProcessAndS
 	{
 		logger.log(logLevel, "sending singal");
 		
-		signalEvent.invoke();
+		signalEvent.start();
 	}
 }

@@ -38,8 +38,8 @@ import net.objectzoo.events.impl.Event0Distributor;
  * @param <Parameter>
  *        the type of the process parameter
  */
-public class SplitProcessToSignal<Parameter> extends ProcessAndResultBase<Parameter, Parameter> implements
-	ProcessAndSignalFlow<Parameter>
+public class SplitProcessToSignal<Parameter> extends ProcessAndResultBase<Parameter, Parameter>
+	implements ProcessAndSignalFlow<Parameter>
 {
 	private final Event0Distributor signalEvent = new Event0Distributor();
 	
@@ -57,7 +57,7 @@ public class SplitProcessToSignal<Parameter> extends ProcessAndResultBase<Parame
 	{
 		logger.log(logLevel, "sending singal");
 		
-		signalEvent.invoke();
+		signalEvent.start();
 	}
 	
 	/**

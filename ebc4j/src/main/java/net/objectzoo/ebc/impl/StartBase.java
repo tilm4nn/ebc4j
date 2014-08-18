@@ -46,7 +46,7 @@ public abstract class StartBase extends StartBoard
 		Flow.await(startAction).then(new Action0()
 		{
 			@Override
-			public void invoke()
+			public void start()
 			{
 				receiveStart();
 			}

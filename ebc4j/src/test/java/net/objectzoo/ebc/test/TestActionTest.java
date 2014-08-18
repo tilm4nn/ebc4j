@@ -47,7 +47,7 @@ public class TestActionTest
 	{
 		MockAction<String> sut = new MockAction<String>();
 		
-		sut.invoke("Eins");
+		sut.accept("Eins");
 		
 		assertThat(sut.isInvoked(), is(true));
 	}
@@ -65,9 +65,9 @@ public class TestActionTest
 	{
 		MockAction<String> sut = new MockAction<String>(100);
 		
-		sut.invoke("Eins");
-		sut.invoke("Zwei");
-		sut.invoke("Drei");
+		sut.accept("Eins");
+		sut.accept("Zwei");
+		sut.accept("Drei");
 		
 		assertThat(sut.getInvocationCount(), is(3));
 	}
@@ -77,7 +77,7 @@ public class TestActionTest
 	{
 		MockAction<String> sut = new MockAction<String>();
 		
-		sut.invoke("Eins");
+		sut.accept("Eins");
 		
 		sut.assertInvoked();
 	}
@@ -112,8 +112,8 @@ public class TestActionTest
 	{
 		MockAction<String> sut = new MockAction<String>();
 		
-		sut.invoke("Eins");
-		sut.invoke("Zwei");
+		sut.accept("Eins");
+		sut.accept("Zwei");
 	}
 	
 	@Test
@@ -121,8 +121,8 @@ public class TestActionTest
 	{
 		MockAction<String> sut = new MockAction<String>(2);
 		
-		sut.invoke("Eins");
-		sut.invoke("Zwei");
+		sut.accept("Eins");
+		sut.accept("Zwei");
 	}
 	
 	@Test(expected = AssertionError.class)
@@ -130,9 +130,9 @@ public class TestActionTest
 	{
 		MockAction<String> sut = new MockAction<String>(2);
 		
-		sut.invoke("Eins");
-		sut.invoke("Zwei");
-		sut.invoke("Drei");
+		sut.accept("Eins");
+		sut.accept("Zwei");
+		sut.accept("Drei");
 	}
 	
 	@Test
@@ -140,9 +140,9 @@ public class TestActionTest
 	{
 		MockAction<String> sut = new MockAction<String>(3);
 		
-		sut.invoke("Eins");
-		sut.invoke("Zwei");
-		sut.invoke("Drei");
+		sut.accept("Eins");
+		sut.accept("Zwei");
+		sut.accept("Drei");
 		
 		assertThat(sut.getLastResult(), is("Drei"));
 	}
@@ -160,9 +160,9 @@ public class TestActionTest
 	{
 		MockAction<String> sut = new MockAction<String>(3);
 		
-		sut.invoke("Eins");
-		sut.invoke("Zwei");
-		sut.invoke("Drei");
+		sut.accept("Eins");
+		sut.accept("Zwei");
+		sut.accept("Drei");
 		
 		assertThat(sut.getFirstResult(), is("Eins"));
 	}
@@ -180,9 +180,9 @@ public class TestActionTest
 	{
 		MockAction<String> sut = new MockAction<String>(3);
 		
-		sut.invoke("Eins");
-		sut.invoke("Zwei");
-		sut.invoke("Drei");
+		sut.accept("Eins");
+		sut.accept("Zwei");
+		sut.accept("Drei");
 		
 		assertThat(sut.getResults(), is(asList("Eins", "Zwei", "Drei")));
 	}

@@ -50,6 +50,6 @@ public abstract class ResultBase<ResultParameter> extends ResultBoard<ResultPara
 	{
 		LoggingUtils.log(logger, logLevel, "sending result: ", parameter);
 		
-		resultEvent.invoke(parameter);
+		resultEvent.accept(parameter);
 	}
 }

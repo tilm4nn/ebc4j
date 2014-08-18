@@ -18,8 +18,8 @@ public class JoinBaseTest
 	@Test
 	public void calls_createOutput_with_correct_values()
 	{
-		sut.input1Action().invoke(11);
-		sut.input2Action().invoke(21);
+		sut.input1Action().accept(11);
+		sut.input2Action().accept(21);
 		
 		verify(mockOutputCreator).createOutput(11, 21);
 	}
@@ -31,9 +31,9 @@ public class JoinBaseTest
 		sut.resultEvent().subscribe(resultAction);
 		when(mockOutputCreator.createOutput(anyObject(), anyObject())).thenReturn("out");
 		
-		sut.input1Action().invoke(11);
-		sut.input2Action().invoke(21);
+		sut.input1Action().accept(11);
+		sut.input2Action().accept(21);
 		
-		verify(resultAction).invoke("out");
+		verify(resultAction).accept("out");
 	}
 }

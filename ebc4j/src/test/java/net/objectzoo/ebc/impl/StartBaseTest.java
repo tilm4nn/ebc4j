@@ -55,7 +55,7 @@ public class StartBaseTest
 	{
 		StartImpl sut = new StartImpl();
 		
-		sut.startAction().invoke();
+		sut.startAction().start();
 		
 		assertTrue("start has not been called", sut.called);
 	}

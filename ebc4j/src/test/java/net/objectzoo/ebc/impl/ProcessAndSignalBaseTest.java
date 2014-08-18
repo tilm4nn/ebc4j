@@ -62,7 +62,7 @@ public class ProcessAndSignalBaseTest
 		boolean called = false;
 		
 		@Override
-		public void invoke()
+		public void start()
 		{
 			if (called)
 			{
@@ -93,7 +93,7 @@ public class ProcessAndSignalBaseTest
 	{
 		ProcessAndSignalImpl sut = new ProcessAndSignalImpl();
 		
-		sut.processAction().invoke("FooBar");
+		sut.processAction().accept("FooBar");
 		
 		assertThat(sut.param, is("FooBar"));
 	}

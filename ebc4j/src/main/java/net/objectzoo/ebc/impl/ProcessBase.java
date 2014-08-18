@@ -51,7 +51,7 @@ public abstract class ProcessBase<ProcessParameter> extends ProcessBoard<Process
 		await(processAction).then(new Action<ProcessParameter>()
 		{
 			@Override
-			public void invoke(ProcessParameter parameter)
+			public void accept(ProcessParameter parameter)
 			{
 				receiveProcess(parameter);
 			}

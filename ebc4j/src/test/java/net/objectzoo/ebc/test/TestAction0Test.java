@@ -46,7 +46,7 @@ public class TestAction0Test
 	{
 		MockAction0 sut = new MockAction0();
 		
-		sut.invoke();
+		sut.start();
 		
 		assertThat(sut.isInvoked(), is(true));
 	}
@@ -64,9 +64,9 @@ public class TestAction0Test
 	{
 		MockAction0 sut = new MockAction0(100);
 		
-		sut.invoke();
-		sut.invoke();
-		sut.invoke();
+		sut.start();
+		sut.start();
+		sut.start();
 		
 		assertThat(sut.getInvocationCount(), is(3));
 	}
@@ -76,7 +76,7 @@ public class TestAction0Test
 	{
 		MockAction0 sut = new MockAction0();
 		
-		sut.invoke();
+		sut.start();
 		
 		sut.assertInvoked();
 	}
@@ -111,8 +111,8 @@ public class TestAction0Test
 	{
 		MockAction0 sut = new MockAction0();
 		
-		sut.invoke();
-		sut.invoke();
+		sut.start();
+		sut.start();
 	}
 	
 	@Test
@@ -120,8 +120,8 @@ public class TestAction0Test
 	{
 		MockAction0 sut = new MockAction0(2);
 		
-		sut.invoke();
-		sut.invoke();
+		sut.start();
+		sut.start();
 	}
 	
 	@Test(expected = AssertionError.class)
@@ -129,8 +129,8 @@ public class TestAction0Test
 	{
 		MockAction0 sut = new MockAction0(2);
 		
-		sut.invoke();
-		sut.invoke();
-		sut.invoke();
+		sut.start();
+		sut.start();
+		sut.start();
 	}
 }

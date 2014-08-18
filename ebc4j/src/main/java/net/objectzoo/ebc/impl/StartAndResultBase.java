@@ -41,7 +41,8 @@ import net.objectzoo.ebc.util.LoggingUtils;
  * @param <ResultParameter>
  *        the type of output of this EBC
  */
-public abstract class StartAndResultBase<ResultParameter> extends StartAndResultBoard<ResultParameter>
+public abstract class StartAndResultBase<ResultParameter> extends
+	StartAndResultBoard<ResultParameter>
 {
 	/**
 	 * Creates a new {@code StartAndResultBase}
@@ -51,7 +52,7 @@ public abstract class StartAndResultBase<ResultParameter> extends StartAndResult
 		Flow.await(startAction).then(new Action0()
 		{
 			@Override
-			public void invoke()
+			public void start()
 			{
 				receiveStart();
 			}
@@ -81,6 +82,6 @@ public abstract class StartAndResultBase<ResultParameter> extends StartAndResult
 	{
 		LoggingUtils.log(logger, logLevel, "sending result: ", parameter);
 		
-		resultEvent.invoke(parameter);
+		resultEvent.accept(parameter);
 	}
 }
