@@ -24,10 +24,10 @@
  */
 package net.objectzoo.ebc.impl;
 
-import net.objectzoo.delegates.Action0;
+import static net.objectzoo.ebc.builder.Flow.await;
+
 import net.objectzoo.ebc.CanStart;
 import net.objectzoo.ebc.SendsSignal;
-import net.objectzoo.ebc.builder.Flow;
 
 /**
  * A base class for an EBC that {@link CanStart} and {@link SendsSignal}.
@@ -44,14 +44,7 @@ public abstract class StartAndSignalBase extends StartAndSignalBoard
 	 */
 	public StartAndSignalBase()
 	{
-		Flow.await(startAction).then(new Action0()
-		{
-			@Override
-			public void start()
-			{
-				receiveStart();
-			}
-		});
+		await(startAction).then(this::receiveStart);
 	}
 	
 	private void receiveStart()

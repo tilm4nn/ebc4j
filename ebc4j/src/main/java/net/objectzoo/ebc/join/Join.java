@@ -88,39 +88,6 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	
 	private JoinOutputCreator<? super Input1, ? super Input2, ? extends Output> outputCreator;
 	
-	private final Action<Input1> input1Action = new Action<Input1>()
-	{
-		@Override
-		public void accept(Input1 input)
-		{
-			LoggingUtils.log(logger, logLevel, "receiving input1: ", input);
-			
-			processInput1(input);
-		}
-	};
-	
-	private final Action<Input2> input2Action = new Action<Input2>()
-	{
-		@Override
-		public void accept(Input2 input)
-		{
-			LoggingUtils.log(logger, logLevel, "receiving input2: ", input);
-			
-			processInput2(input);
-		}
-	};
-	
-	private final Action0 resetAction = new Action0()
-	{
-		@Override
-		public void start()
-		{
-			logger.log(logLevel, "receiving reset");
-			
-			processReset();
-		}
-	};
-	
 	/**
 	 * Creates a new {@code Join} using the given {@link JoinOutputCreator} to create the output of
 	 * the {@code Join}.
@@ -227,6 +194,8 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 		this.inputStorage = (State) stateFactory.create(inputStorageFactory);
 	}
 	
+	private final Action<Input1> input1action = this::processInput1;
+	
 	/**
 	 * Provides an {@link Action} that is used to send input one to this Join
 	 * 
@@ -234,8 +203,10 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	 */
 	public Action<Input1> input1Action()
 	{
-		return input1Action;
+		return input1action;
 	}
+	
+	private final Action<Input2> input2Action = this::processInput2;
 	
 	/**
 	 * Provides an {@link Action} that is used to send input two to this Join
@@ -246,6 +217,8 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	{
 		return input2Action;
 	}
+	
+	private final Action0 resetAction = this::processReset;
 	
 	/**
 	 * Provides an {@link Action0} that is used to reset this Join
@@ -259,11 +232,15 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	
 	private void processReset()
 	{
+		logger.log(logLevel, "receiving reset");
+		
 		clearInput(inputStorage.get());
 	}
 	
 	private void processInput1(Input1 input)
 	{
+		LoggingUtils.log(logger, logLevel, "receiving input1: ", input);
+		
 		JoinInputStorage<Input1, Input2> storage = inputStorage.get();
 		
 		storage.setInput1(input);
@@ -272,6 +249,8 @@ public class Join<Input1, Input2, Output> extends ResultBase<Output>
 	
 	private void processInput2(Input2 input)
 	{
+		LoggingUtils.log(logger, logLevel, "receiving input2: ", input);
+		
 		JoinInputStorage<Input1, Input2> storage = inputStorage.get();
 		
 		storage.setInput2(input);

@@ -147,7 +147,7 @@ public class FlowExecutor
 																																									   
 																																									   ProcessParameter input)
 	{
-		return new ProcessAndResultFlowToFuncAdapter<ProcessParameter, ResultParameter>(flow).apply(input);
+		return new ProcessAndResultFlowToFunctionAdapter<ProcessParameter, ResultParameter>(flow).apply(input);
 	}
 	
 	/**
@@ -171,7 +171,7 @@ public class FlowExecutor
 	 */
 	public static <ResultParameter, FlowType extends StartAndResultFlow<ResultParameter>> ResultParameter startAndReturnResult(FlowType flow)
 	{
-		return new StartAndResultFlowToFunc0Adapter<ResultParameter>(flow).get();
+		return new StartAndResultFlowToSupplierAdapter<ResultParameter>(flow).get();
 	}
 	
 }

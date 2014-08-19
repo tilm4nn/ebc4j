@@ -110,7 +110,7 @@ public abstract class JoinBase<Input1, Input2, Output> extends Join<Input1, Inpu
 	
 	private void setOutputCreator()
 	{
-		setOutputCreator(new OutputCreator());
+		setOutputCreator(this::createOutput);
 	}
 	
 	/**
@@ -123,13 +123,4 @@ public abstract class JoinBase<Input1, Input2, Output> extends Join<Input1, Inpu
 	 * @return the newly created output object
 	 */
 	protected abstract Output createOutput(Input1 input1, Input2 input2);
-	
-	private class OutputCreator implements JoinOutputCreator<Input1, Input2, Output>
-	{
-		@Override
-		public Output createOutput(Input1 input1, Input2 input2)
-		{
-			return JoinBase.this.createOutput(input1, input2);
-		}
-	}
 }

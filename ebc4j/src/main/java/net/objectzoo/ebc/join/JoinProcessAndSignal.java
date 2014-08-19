@@ -24,13 +24,13 @@
  */
 package net.objectzoo.ebc.join;
 
-import static net.objectzoo.ebc.builder.Flow.await;
+import java.util.function.Consumer;
 
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.ProcessAndResultFlow;
 import net.objectzoo.ebc.StartAndResultFlow;
-import net.objectzoo.ebc.impl.ProcessAndResultBase;
 import net.objectzoo.ebc.state.StateFactory;
+import net.objectzoo.events.Event;
 
 /**
  * This is a special flow EBC implementation that joins together a process and a signal flow and
@@ -55,8 +55,7 @@ import net.objectzoo.ebc.state.StateFactory;
  * @param <T>
  *        the in and output type of the process flow that is joined
  */
-public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implements
-	StartAndResultFlow<T>
+public class JoinProcessAndSignal<T> implements ProcessAndResultFlow<T, T>, StartAndResultFlow<T>
 {
 	private final Join<T, Void, T> join;
 	
@@ -66,7 +65,7 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	public JoinProcessAndSignal()
 	{
 		join = new Join<T, Void, T>();
-		init();
+		initOutputCreator();
 	}
 	
 	/**
@@ -78,7 +77,7 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	public JoinProcessAndSignal(boolean resetAfterResultEvent)
 	{
 		join = new Join<T, Void, T>(resetAfterResultEvent);
-		init();
+		initOutputCreator();
 	}
 	
 	/**
@@ -91,7 +90,7 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	public JoinProcessAndSignal(StateFactory stateFactory)
 	{
 		join = new Join<T, Void, T>(stateFactory);
-		init();
+		initOutputCreator();
 	}
 	
 	/**
@@ -106,45 +105,19 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	public JoinProcessAndSignal(StateFactory stateFactory, boolean resetAfterResultEvent)
 	{
 		join = new Join<T, Void, T>(stateFactory, resetAfterResultEvent);
-		init();
-	}
-	
-	private void init()
-	{
 		initOutputCreator();
-		initFlow();
 	}
 	
 	private void initOutputCreator()
 	{
-		join.setOutputCreator(new JoinOutputCreator<T, Void, T>()
-		{
-			@Override
-			public T createOutput(T input1, Void input2)
-			{
-				return input1;
-			}
-		});
+		join.setOutputCreator((i1, i2) -> i1);
 	}
 	
-	private void initFlow()
-	{
-		await(join).then(resultEvent);
-	}
-	
-	private Action0 startAction = new Action0()
-	{
-		@Override
-		public void start()
-		{
-			join.input2Action().accept(null);
-		}
-	};
+	private final Action0 startAction = () -> join.input2Action().accept(null);
 	
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Action0 startAction()
 	{
 		return startAction;
@@ -154,9 +127,18 @@ public class JoinProcessAndSignal<T> extends ProcessAndResultBase<T, T> implemen
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected void process(T parameter)
+	public Consumer<T> processAction()
 	{
-		join.input1Action().accept(parameter);
+		return join.input1Action();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Event<T> resultEvent()
+	{
+		return join.resultEvent();
 	}
 	
 	/**

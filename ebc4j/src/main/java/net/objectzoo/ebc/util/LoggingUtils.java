@@ -28,7 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * This class provides some convenience methods to used for logging in the EBCs.
+ * This class provides some convenience methods to be used for logging in the EBCs.
  * 
  * @author tilmann
  */

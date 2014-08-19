@@ -24,7 +24,8 @@
  */
 package net.objectzoo.ebc.builder;
 
-import net.objectzoo.delegates.Action;
+import java.util.function.Consumer;
+
 import net.objectzoo.delegates.Action0;
 import net.objectzoo.ebc.CanProcess;
 import net.objectzoo.ebc.CanStart;
@@ -95,20 +96,22 @@ public class SendsResultConnector<T>
 	 * @param flow
 	 *        the {@link CanProcess} to be attached
 	 */
-	public void then(CanProcess<? super T> flow)
+	public NewFlowConnector then(CanProcess<? super T> flow)
 	{
-		then(flow.processAction());
+		return then(flow.processAction());
 	}
 	
 	/**
-	 * Attaches an {@link Action} at the end of the current flow
+	 * Attaches a {@link Consumer} at the end of the current flow
 	 * 
 	 * @param action
-	 *        the {@link Action} to be attached
+	 *        the {@link Consumer} to be attached
 	 */
-	public void then(Action<? super T> action)
+	public NewFlowConnector then(Consumer<? super T> action)
 	{
 		event.subscribe(action);
+		
+		return new NewFlowConnector();
 	}
 	
 	/**
@@ -145,9 +148,9 @@ public class SendsResultConnector<T>
 	 * @param flow
 	 *        the {@link CanStart} to be attached
 	 */
-	public void then(CanStart flow)
+	public NewFlowConnector then(CanStart flow)
 	{
-		then(flow.startAction());
+		return then(flow.startAction());
 	}
 	
 	/**
@@ -156,9 +159,9 @@ public class SendsResultConnector<T>
 	 * @param action
 	 *        the {@link Action0} to be attached
 	 */
-	public void then(Action0 action)
+	public NewFlowConnector then(Action0 action)
 	{
-		then(new Action0ToAction<T>(action));
+		return then(new Action0ToAction<T>(action));
 	}
 	
 	/**

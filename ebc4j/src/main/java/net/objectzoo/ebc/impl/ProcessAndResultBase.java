@@ -26,7 +26,6 @@ package net.objectzoo.ebc.impl;
 
 import static net.objectzoo.ebc.builder.Flow.await;
 
-import net.objectzoo.delegates.Action;
 import net.objectzoo.ebc.CanProcess;
 import net.objectzoo.ebc.SendsResult;
 import net.objectzoo.ebc.util.LoggingUtils;
@@ -52,14 +51,7 @@ public abstract class ProcessAndResultBase<ProcessParameter, ResultParameter> ex
 	 */
 	public ProcessAndResultBase()
 	{
-		await(processAction).then(new Action<ProcessParameter>()
-		{
-			@Override
-			public void accept(ProcessParameter parameter)
-			{
-				receiveProcess(parameter);
-			}
-		});
+		await(processAction).then(this::receiveProcess);
 	}
 	
 	private void receiveProcess(ProcessParameter parameter)

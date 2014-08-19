@@ -36,6 +36,7 @@ package net.objectzoo.ebc.join;
  * @param <Output>
  *        the type of output of this Join output creator
  */
+@FunctionalInterface
 public interface JoinOutputCreator<Input1, Input2, Output>
 {
 	/**

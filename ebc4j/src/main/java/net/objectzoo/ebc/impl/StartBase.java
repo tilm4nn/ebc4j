@@ -24,9 +24,9 @@
  */
 package net.objectzoo.ebc.impl;
 
-import net.objectzoo.delegates.Action0;
+import static net.objectzoo.ebc.builder.Flow.await;
+
 import net.objectzoo.ebc.CanStart;
-import net.objectzoo.ebc.builder.Flow;
 
 /**
  * A base class for an EBC that {@link CanStart}.
@@ -43,14 +43,7 @@ public abstract class StartBase extends StartBoard
 	 */
 	public StartBase()
 	{
-		Flow.await(startAction).then(new Action0()
-		{
-			@Override
-			public void start()
-			{
-				receiveStart();
-			}
-		});
+		await(startAction).then(this::receiveStart);
 	}
 	
 	private void receiveStart()

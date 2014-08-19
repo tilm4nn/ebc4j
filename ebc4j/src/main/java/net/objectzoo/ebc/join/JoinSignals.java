@@ -24,11 +24,11 @@
  */
 package net.objectzoo.ebc.join;
 
-import static net.objectzoo.ebc.builder.Flow.await;
-
 import net.objectzoo.delegates.Action0;
-import net.objectzoo.ebc.impl.SignalBoard;
+import net.objectzoo.ebc.SendsSignal;
+import net.objectzoo.ebc.adapters.EventToEvent0;
 import net.objectzoo.ebc.state.StateFactory;
+import net.objectzoo.events.Event0;
 
 /**
  * This is a special flow EBC implementation that joins together two signal flows.
@@ -49,9 +49,11 @@ import net.objectzoo.ebc.state.StateFactory;
  * 
  * @author tilmann
  */
-public class JoinSignals extends SignalBoard
+public class JoinSignals implements SendsSignal
 {
 	private final Join<Void, Void, Void> join;
+	
+	private EventToEvent0<Void> signalEvent;
 	
 	/**
 	 * Creates a new {@code JoinSignals}
@@ -105,34 +107,20 @@ public class JoinSignals extends SignalBoard
 	private void init()
 	{
 		initOutputCreator();
-		initFlow();
+		initResultEvent();
 	}
 	
 	private void initOutputCreator()
 	{
-		join.setOutputCreator(new JoinOutputCreator<Void, Void, Void>()
-		{
-			@Override
-			public Void createOutput(Void input1, Void input2)
-			{
-				return null;
-			}
-		});
+		join.setOutputCreator((i1, i2) -> null);
 	}
 	
-	private void initFlow()
+	private void initResultEvent()
 	{
-		await(join).then(signalEvent);
+		signalEvent = new EventToEvent0<Void>(join.resultEvent());
 	}
 	
-	private Action0 startAction1 = new Action0()
-	{
-		@Override
-		public void start()
-		{
-			join.input1Action().accept(null);
-		}
-	};
+	private final Action0 startAction1 = () -> join.input1Action().accept(null);
 	
 	/**
 	 * Provides an {@link Action0} that is used to set this EBCs first input
@@ -144,14 +132,7 @@ public class JoinSignals extends SignalBoard
 		return startAction1;
 	}
 	
-	private Action0 startAction2 = new Action0()
-	{
-		@Override
-		public void start()
-		{
-			join.input2Action().accept(null);
-		}
-	};
+	private final Action0 startAction2 = () -> join.input2Action().accept(null);
 	
 	/**
 	 * Provides an {@link Action0} that is used to start this EBCs second input
@@ -171,5 +152,11 @@ public class JoinSignals extends SignalBoard
 	public Action0 resetAction()
 	{
 		return join.resetAction();
+	}
+	
+	@Override
+	public Event0 signalEvent()
+	{
+		return signalEvent;
 	}
 }

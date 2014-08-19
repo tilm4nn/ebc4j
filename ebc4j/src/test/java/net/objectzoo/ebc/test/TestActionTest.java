@@ -29,6 +29,8 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
+import java.util.function.Supplier;
+
 import org.junit.Test;
 
 @SuppressWarnings("javadoc")
@@ -185,5 +187,36 @@ public class TestActionTest
 		sut.accept("Drei");
 		
 		assertThat(sut.getResults(), is(asList("Eins", "Zwei", "Drei")));
+	}
+	
+	static Supplier<Object> getS(Object o)
+	{
+		return () -> o;
+	}
+	
+	@Test
+	public void testName() throws Exception
+	{
+		TestObj to1 = new TestObj();
+		TestObj to2 = new TestObj();
+		Supplier<Object> s1 = to1.getS();
+		Supplier<Object> s2 = to2.getS();
+		System.out.println(s1.equals(s2));
+		System.out.println(s1 == s2);
+	}
+	
+	public static class TestObj
+	{
+		Supplier<Object> supplier = this::getObject;
+		
+		Supplier<Object> getS()
+		{
+			return supplier;
+		}
+		
+		public Object getObject()
+		{
+			return new Object();
+		}
 	}
 }

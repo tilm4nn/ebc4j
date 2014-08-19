@@ -24,6 +24,8 @@
  */
 package net.objectzoo.ebc;
 
+import java.util.function.Consumer;
+
 import net.objectzoo.delegates.Action;
 
 /**
@@ -38,9 +40,9 @@ import net.objectzoo.delegates.Action;
 public interface CanProcess<ProcessParameter>
 {
 	/**
-	 * Provides an {@link Action} that is used to send input to this EBC
+	 * Provides an {@link Consumer} that is used to send input to this EBC
 	 * 
 	 * @return the process action of this EBC
 	 */
-	Action<ProcessParameter> processAction();
+	Consumer<ProcessParameter> processAction();
 }

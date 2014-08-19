@@ -30,67 +30,66 @@ import net.objectzoo.events.Event;
 import net.objectzoo.events.Event0;
 
 /**
- * This class contains some {@code static} methods used to start a DSL sentence used to create a
- * flow of EBCs
+ * This class contains some {@code static} methods used to continue a DSL sentence with a new flow
+ * of EBCs
  * 
  * @author tilmann
  */
-public final class Flow
+public final class NewFlowConnector
 {
-	private Flow()
+	NewFlowConnector()
 	{
-		// No instances allowed
 	}
 	
 	/**
-	 * The flow started with this method waits for the given {@link Event} and then continues with
-	 * whatever is attached to the returned {@link SendsResultConnector}.
+	 * Waits for the given {@link Event} and then continues with whatever is attached to the
+	 * returned {@link SendsResultConnector}.
 	 * 
 	 * @param event
 	 *        the {@link Event} to be waited for
 	 * @return an {@link SendsResultConnector} to continue the flow creation with
 	 */
-	public static <T> SendsResultConnector<T> await(Event<T> event)
+	public <T> SendsResultConnector<T> await(Event<T> event)
 	{
-		return new SendsResultConnector<T>(event);
+		return Flow.await(event);
 	}
 	
 	/**
-	 * The flow started with this method waits for the result event of the given {@link SendsResult}
-	 * and then continues with whatever is attached to the returned {@link SendsResultConnector}.
+	 * Waits for the result event of the given {@link SendsResult} and then continues with whatever
+	 * is attached to the returned {@link SendsResultConnector}.
 	 * 
 	 * @param flow
 	 *        the {@link SendsResult} to be waited for
 	 * @return an {@link SendsResultConnector} to continue the flow creation with
 	 */
-	public static <T> SendsResultConnector<T> await(SendsResult<T> flow)
+	public <T> SendsResultConnector<T> await(SendsResult<T> flow)
 	{
-		return new SendsResultConnector<T>(flow);
+		return Flow.await(flow);
 	}
 	
 	/**
-	 * The flow started with this method waits for the given {@link Event0} and then continues with
-	 * whatever is attached to the returned {@link SendsSignalConnector}.
+	 * Waits for the given {@link Event0} and then continues with whatever is attached to the
+	 * returned {@link SendsSignalConnector}.
 	 * 
 	 * @param event
 	 *        the {@link Event0} to be waited for
 	 * @return an {@link SendsSignalConnector} to continue the flow creation with
 	 */
-	public static SendsSignalConnector await(Event0 event)
+	public SendsSignalConnector await(Event0 event)
 	{
-		return new SendsSignalConnector(event);
+		return Flow.await(event);
 	}
 	
 	/**
-	 * The flow started with this method waits for the signal event of the given {@link SendsSignal}
-	 * and then continues with whatever is attached to the returned {@link SendsSignalConnector}.
+	 * Waits for the signal event of the given {@link SendsSignal} and then continues with whatever
+	 * is attached to the returned {@link SendsSignalConnector}.
 	 * 
 	 * @param flow
 	 *        the {@link SendsSignal} to be waited for
 	 * @return an {@link SendsSignalConnector} to continue the flow creation with
 	 */
-	public static SendsSignalConnector await(SendsSignal flow)
+	public SendsSignalConnector await(SendsSignal flow)
 	{
-		return new SendsSignalConnector(flow);
+		return Flow.await(flow);
 	}
 }

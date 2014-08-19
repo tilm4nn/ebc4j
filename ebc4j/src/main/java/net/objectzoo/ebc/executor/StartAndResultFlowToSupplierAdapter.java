@@ -27,49 +27,45 @@ package net.objectzoo.ebc.executor;
 import static net.objectzoo.ebc.executor.FlowExecutorHelpers.appendResultContainer;
 import static net.objectzoo.ebc.executor.FlowExecutorHelpers.removeResultContainer;
 
-import net.objectzoo.delegates.Function;
-import net.objectzoo.ebc.ProcessAndResultFlow;
+import java.util.function.Supplier;
+
+import net.objectzoo.ebc.StartAndResultFlow;
 import net.objectzoo.ebc.test.MockAction;
 
 /**
- * This adapter adapts an {@link ProcessAndResultFlow} to a {@link Func}. It does this by
- * subscribing to the final result event for each single {@link Func} invocation and returning the
- * last result send after the flow execution before finally unsubscribing from the event again and
- * returning to the caller. Doing so this implementation is inherently not thread save regarding
+ * This adapter adapts an {@link StartAndResultFlow} to a {@link Supplier}. It does this by
+ * subscribing to the final result event for each single {@link Supplier} invocation and returning
+ * the last result send after the flow execution before finally unsubscribing from the event again
+ * and returning to the caller. Doing so this implementation is inherently not thread save regarding
  * multiple simultaneous execution of the flow and flows that contain asynchronous execution chains.
  * 
  * @author tilmann
  * 
- * @param <ProcessParameter>
- *        the process parameter type of the flow
  * @param <ResultParameter>
  *        the result parameter type of the flow
  */
-public class ProcessAndResultFlowToFuncAdapter<ProcessParameter, ResultParameter> implements
-	Function<ProcessParameter, ResultParameter>
+public class StartAndResultFlowToSupplierAdapter<ResultParameter> implements
+	Supplier<ResultParameter>
 {
-	private final ProcessAndResultFlow<ProcessParameter, ResultParameter> flow;
+	private final StartAndResultFlow<ResultParameter> flow;
 	
 	/**
-	 * Creates a new {@code ProcessAndResultFlowToFuncAdapter}
+	 * Creates a new {@code StartAndResultFlowToFunc0Adapter}
 	 * 
 	 * @param theFlow
 	 *        the flow to be adapted
 	 */
-	public ProcessAndResultFlowToFuncAdapter(ProcessAndResultFlow<ProcessParameter, ResultParameter> theFlow)
+	public StartAndResultFlowToSupplierAdapter(StartAndResultFlow<ResultParameter> theFlow)
 	{
 		flow = theFlow;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
-	public ResultParameter apply(ProcessParameter input)
+	public ResultParameter get()
 	{
 		MockAction<ResultParameter> resultContainer = appendResultContainer(flow);
 		
-		flow.processAction().accept(input);
+		flow.startAction().start();
 		
 		removeResultContainer(resultContainer, flow);
 		

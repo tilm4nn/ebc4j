@@ -87,9 +87,9 @@ public class SendsSignalConnector
 	 * @param flow
 	 *        the {@link CanStart} to be attached
 	 */
-	public void then(CanStart flow)
+	public NewFlowConnector then(CanStart flow)
 	{
-		then(flow.startAction());
+		return then(flow.startAction());
 	}
 	
 	/**
@@ -98,9 +98,11 @@ public class SendsSignalConnector
 	 * @param action
 	 *        the {@link Action0} to be attached
 	 */
-	public void then(Action0 action)
+	public NewFlowConnector then(Action0 action)
 	{
 		event.subscribe(action);
+		
+		return new NewFlowConnector();
 	}
 	
 	/**
