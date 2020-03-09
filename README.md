@@ -43,6 +43,21 @@ EBC4J can be downloaded form the [Releases Page](http://object-zoo.net/ebc4j/rel
 * [Gradle](https://gradle.org/) (Automated build)
 
 ## Release History
+* __1.3__  Renewed
+    - Added Java 8 functions and lambdas support
+    - Switched from Maven to Gradle
+    - Switched from Jnario to JUnit
+    - Switched from Eclipse to IntelliJ IDEA
+    - Switched from Assembla to Github
+* __1.2__ New Features
+    - Fixed GWT support
+    - Refactorings
+    - Added signal Joins
+    - Added Pair mappings
+    - Added Flow building DSL
+    - Added Flow executor
+    - Added Split implemenetations
+    - Added State mechanism
 * __1.1__  New features
     - Added reset option to Joins 
 * __1.0__  First final release
