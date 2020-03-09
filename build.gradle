@@ -63,7 +63,7 @@ project(':ebc4j-async') {
 }
 
 task javadoc(type: Javadoc) {
-    destinationDir = new File("${rootDir}/doc/api")
+    destinationDir = new File("${rootDir}/docs/api")
     source = files(subprojects.collect { project -> project.sourceSets.main.allJava })
     classpath = files(subprojects.collect { project -> project.sourceSets.main.compileClasspath })
 }
@@ -82,7 +82,7 @@ task distZip(type: Zip) {
 		}
 		from (rootDir)
 		{
-			include 'doc/**/*', 'ebc4j/**/*', 'ebc4j-async/**/*', 'lib/**/*'
+			include 'docs/**/*', 'ebc4j/**/*', 'ebc4j-async/**/*', 'lib/**/*'
 			exclude '*/**/build', '*/**/generated'
 		}
 		from (files (subprojects.collect { project -> project.jar.destinationDir }))
