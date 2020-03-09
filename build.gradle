@@ -4,7 +4,6 @@ allprojects {
 	version = '1.3.0'
 	ext.title = 'EBC4J API'
 	ext.vendor = 'object-zoo - Tilmann Kuhn'
-	ext.copy = '2010 - 2014'
 	ext.javadoc = 'http://docs.oracle.com/javase/8/docs/api/'
 	ext.encoding = 'UTF-8'
 }
