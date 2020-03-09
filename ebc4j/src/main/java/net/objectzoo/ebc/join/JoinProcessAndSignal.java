@@ -58,7 +58,7 @@ import net.objectzoo.events.Event;
 public class JoinProcessAndSignal<T> implements ProcessAndResultFlow<T, T>, StartAndResultFlow<T>
 {
 	private final Join<T, Void, T> join;
-	
+
 	/**
 	 * Creates a new {@code JoinProcessAndSignal}
 	 */
@@ -112,9 +112,9 @@ public class JoinProcessAndSignal<T> implements ProcessAndResultFlow<T, T>, Star
 	{
 		join.setOutputCreator((i1, i2) -> i1);
 	}
-	
-	private final Action0 startAction = () -> join.input2Action().accept(null);
-	
+
+	private final Action0 startAction = () -> JoinProcessAndSignal.this.join.input2Action().accept(null);
+
 	/**
 	 * {@inheritDoc}
 	 */

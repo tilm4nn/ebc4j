@@ -120,7 +120,7 @@ public class JoinSignals implements SendsSignal
 		signalEvent = new EventToEvent0<Void>(join.resultEvent());
 	}
 	
-	private final Action0 startAction1 = () -> join.input1Action().accept(null);
+	private final Action0 startAction1 = () -> JoinSignals.this.join.input1Action().accept(null);
 	
 	/**
 	 * Provides an {@link Action0} that is used to set this EBCs first input
@@ -132,7 +132,7 @@ public class JoinSignals implements SendsSignal
 		return startAction1;
 	}
 	
-	private final Action0 startAction2 = () -> join.input2Action().accept(null);
+	private final Action0 startAction2 = () -> JoinSignals.this.join.input2Action().accept(null);
 	
 	/**
 	 * Provides an {@link Action0} that is used to start this EBCs second input
