@@ -26,14 +26,14 @@ EBC4J can be downloaded form the [Releases Page](http://object-zoo.net/ebc4j/rel
 * Generic implementation adapts to most use cases
 * Allow flexible use through strategy object composition for EBCs and Joins
 * Usable in [GWT](http://code.google.com/intl/en-US/webtoolkit/) applications
-* __Zero__ dependencies (except [Events4J API](https://object-zoo.net/events4j) of course)
+* __Zero__ dependencies (except [Events4J API](http://object-zoo.net/events4j) of course)
 
 #### Non-goals:
 * Provide dependency injection framework (there are enough that can be used together with EBC4J)
 * Provide automatic wiring/execution environment
 
 ## How To Use It
-* See yourself in the [CSV Viewer example application](https://object-zoo.net/appkata-csv)
+* See yourself in the [CSV Viewer example application](http://object-zoo.net/appkata-csv)
 * Browse the [JavaDoc](http://doc.object-zoo.net/ebc4j/api)
 
 ## Development Tools
