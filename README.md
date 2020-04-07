@@ -11,9 +11,6 @@ the implementation of a flow design.
 It is open source software released under the terms of the MIT License found in
 the file "LICENSE.txt"
 
-## Download
-EBC4J can be downloaded form the [Releases Page](http://object-zoo.net/ebc4j/releases).
-
 ## Motivation
 #### Problems solved:
 * Provide EBC interfaces and base classes to hide boilerplate code from EBC implementors
@@ -35,6 +32,9 @@ EBC4J can be downloaded form the [Releases Page](http://object-zoo.net/ebc4j/rel
 ## How To Use It
 * See yourself in the [CSV Viewer example application](http://object-zoo.net/appkata-csv)
 * Browse the [JavaDoc](http://doc.object-zoo.net/ebc4j/api)
+* Include Maven artifact from  
+[![](https://jitpack.io/v/net.object-zoo/ebc4j.svg)](https://jitpack.io/#net.object-zoo/ebc4j)
+* Or download form the [Releases Page](http://object-zoo.net/ebc4j/releases)
 
 ## Development Tools
 
