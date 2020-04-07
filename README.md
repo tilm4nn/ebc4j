@@ -1,5 +1,8 @@
 # EBC4J
 
+[![](https://jitci.com/gh/tilm4nn/ebc4j/svg)](https://jitci.com/gh/tilm4nn/ebc4j)
+[![](https://jitpack.io/v/net.object-zoo/ebc4j.svg)](https://jitpack.io/#net.object-zoo/ebc4j)
+
 http://www.object-zoo.net/ebc4j  
 [ebc4j@object-zoo.net](mailto:ebc4j@object-zoo.net)
 
@@ -32,8 +35,7 @@ the file "LICENSE.txt"
 ## How To Use It
 * See yourself in the [CSV Viewer example application](http://object-zoo.net/appkata-csv)
 * Browse the [JavaDoc](http://doc.object-zoo.net/ebc4j/api)
-* Include Maven artifact from  
-[![](https://jitpack.io/v/net.object-zoo/ebc4j.svg)](https://jitpack.io/#net.object-zoo/ebc4j)
+* Include Maven artifact from [JitPack](https://jitpack.io/#net.object-zoo/ebc4j)
 * Or download form the [Releases Page](http://object-zoo.net/ebc4j/releases)
 
 ## Development Tools
@@ -41,6 +43,7 @@ the file "LICENSE.txt"
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/) (IDE)
 * [Infinitest](http://infinitest.github.com/) (Continuous Testing)
 * [Gradle](https://gradle.org/) (Automated build)
+* [JitCI](https://jitci.com/gh/tilm4nn/ebc4j) (Continuous Integration)
 
 ## Release History
 * __1.3__  Renewed
