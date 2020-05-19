@@ -11,7 +11,7 @@ allprojects {
 
 subprojects {
 	apply plugin: 'java-library'
-	apply plugin: 'maven'
+	apply plugin: 'maven-publish'
 
 	sourceCompatibility = 8
     targetCompatibility = 8
@@ -19,6 +19,14 @@ subprojects {
 	repositories {
 		mavenCentral()
 		maven { url 'https://jitpack.io' }
+	}
+
+	publishing {
+		publications {
+			libraryPublication(MavenPublication) {
+				from components.java
+			}
+		}
 	}
 	
 	dependencies {
