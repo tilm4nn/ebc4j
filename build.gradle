@@ -36,26 +36,16 @@ subprojects {
 		testImplementation 'junit:junit:4.13'
 		testImplementation 'org.mockito:mockito-all:1.9.5'
 	}
+
+	java {
+		withJavadocJar()
+		withSourcesJar()
+	}
 	
 	jar	{
 		manifest {
 			attributes("Implementation-Title": project.title, "Implementation-Version": project.version, "Implementation-Vendor": project.vendor)
 		}
-	}
-
-	task sourcesJar(type: Jar, dependsOn: classes) {
-		archiveClassifier = 'sources'
-		from sourceSets.main.allSource
-	}
-
-	task javadocJar(type: Jar, dependsOn: javadoc) {
-		archiveClassifier = 'javadoc'
-		from javadoc
-	}
-
-	artifacts {
-		archives sourcesJar
-		archives javadocJar
 	}
 }
 
