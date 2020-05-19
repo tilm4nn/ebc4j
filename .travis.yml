@@ -11,3 +11,15 @@ before_install:
 branches:
   only:
   - master
+script:
+  - ./gradlew check
+  - ./gradlew javadoc
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: false
+  target-branch: gh-pages
+  local-dir: docs
+  on:
+    branch: master
