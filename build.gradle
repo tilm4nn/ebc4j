@@ -10,7 +10,7 @@ allprojects {
 }
 
 subprojects {
-	apply plugin: 'java'
+	apply plugin: 'java-library'
 	apply plugin: 'maven'
 
 	sourceCompatibility = 8
@@ -22,11 +22,11 @@ subprojects {
 	}
 	
 	dependencies {
-		compile 'net.object-zoo.events4j:events4j:1.3.0'
-		testCompile 'org.hamcrest:hamcrest-core:1.3'
-		testCompile 'org.hamcrest:hamcrest-library:1.3'
-		testCompile 'junit:junit:4.13'
-		testCompile 'org.mockito:mockito-all:1.9.5'
+		api 'net.object-zoo.events4j:events4j:1.3.0'
+		testImplementation 'org.hamcrest:hamcrest-core:1.3'
+		testImplementation 'org.hamcrest:hamcrest-library:1.3'
+		testImplementation 'junit:junit:4.13'
+		testImplementation 'org.mockito:mockito-all:1.9.5'
 	}
 	
 	jar	{
@@ -60,8 +60,8 @@ project(':ebc4j') {
 
 project(':ebc4j-async') {
 	dependencies {
-		compile project(':ebc4j')
-		testCompile project(':ebc4j').sourceSets.test.output
+		api project(':ebc4j')
+		testImplementation project(':ebc4j').sourceSets.test.output
 	}
 }
 
