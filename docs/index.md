@@ -1,4 +1,4 @@
-# Events4J
+# EBC4J
 
 [http://www.object-zoo.net/ebc4j](http://www.object-zoo.net/ebc4j)  
 [ebc4j@object-zoo.net](mailto:ebc4j@object-zoo.net)
