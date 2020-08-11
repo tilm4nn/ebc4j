@@ -1,0 +1,12 @@
+net.objectzoo.ebc
+net.objectzoo.ebc.adapters
+net.objectzoo.ebc.builder
+net.objectzoo.ebc.executor
+net.objectzoo.ebc.impl
+net.objectzoo.ebc.join
+net.objectzoo.ebc.map
+net.objectzoo.ebc.split
+net.objectzoo.ebc.state
+net.objectzoo.ebc.state.async
+net.objectzoo.ebc.test
+net.objectzoo.ebc.util
